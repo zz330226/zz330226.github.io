@@ -154,7 +154,7 @@ index_img: https://picsum.photos/1920/1080
 archive_img: https://picsum.photos/1920/800
 tag_img: https://picsum.photos/1920/800
 category_img: https://picsum.photos/1920/800
-default_top_img:
+default_top_img: https://picsum.photos/1920/800
 
 # 侧边栏
 aside:
