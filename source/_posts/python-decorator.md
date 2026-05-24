@@ -7,7 +7,7 @@ tags:
   - 装饰器
   - 函数式编程
   - 进阶
-cover: /img/python.jpg
+cover: /img/Decorator.jpg
 ---
 
 ## 什么是装饰器
