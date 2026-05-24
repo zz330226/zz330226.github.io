@@ -8,7 +8,7 @@ tags:
   - 部署
   - Linux
   - DevOps
-cover: /img/linux.jpg
+cover: /img/docker.jpg
 ---
 
 ## Docker 简介

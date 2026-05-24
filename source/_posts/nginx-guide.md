@@ -8,7 +8,7 @@ tags:
   - 性能优化
   - Linux
   - 运维
-cover: /img/linux.jpg
+cover: /img/Nginx.jpg
 ---
 
 ## Nginx 简介

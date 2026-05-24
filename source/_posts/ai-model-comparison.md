@@ -9,7 +9,7 @@ tags:
   - AI
   - LLM
   - 对比
-cover: /img/ai.jpg
+cover: /img/models.jpg
 ---
 
 ## 前言

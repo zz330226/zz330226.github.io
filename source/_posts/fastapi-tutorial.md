@@ -8,7 +8,7 @@ tags:
   - Web框架
   - API
   - 异步
-cover: /img/python.jpg
+cover: /img/FastAPI.jpg
 ---
 
 ## FastAPI 简介

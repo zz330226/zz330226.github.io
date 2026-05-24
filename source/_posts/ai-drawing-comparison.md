@@ -8,7 +8,7 @@ tags:
   - Stable Diffusion
   - DALL-E
   - 人工智能
-cover: /img/ai.jpg
+cover: /img/ai_pic.jpg
 ---
 
 ## AI 绘图工具崛起
