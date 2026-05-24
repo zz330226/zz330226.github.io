@@ -1,6 +1,7 @@
 ---
 title: DeepSeek本地部署完整教程
-date: 2026-05-25 10:00:00
+date: 2026-05-17 10:00:00
+sticky: 100
 categories: AI工具箱
 tags:
   - DeepSeek

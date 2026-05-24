@@ -1,6 +1,6 @@
 ---
 title: ChatGPT vs Claude vs DeepSeek全面对比测评
-date: 2026-05-26 10:00:00
+date: 2026-05-16 10:00:00
 categories: AI前沿资讯
 tags:
   - ChatGPT

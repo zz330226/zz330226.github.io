@@ -1,6 +1,6 @@
 ---
 title: 2026年GitHub热门AI开源项目盘点
-date: 2026-06-03 10:00:00
+date: 2026-05-08 10:00:00
 categories: GitHub精选
 tags:
   - GitHub
