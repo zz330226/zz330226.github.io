@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx hexo *)",
+      "Bash(Get-Content \"public\\\\index.html\")",
+      "Bash(Select-String -Pattern \"F5F5F0\")",
+      "Bash(Select-Object -First 3)",
+      "Bash(tasklist)",
+      "Bash(findstr node *)",
+      "Bash(git clone *)",
+      "Bash(mkdir -p source/img && cp themes/butterfly/img/*.jpg source/img/)",
+      "Bash(gh repo *)",
+      "PowerShell(gh repo view zz330226/zz330226.github.io --json id,name,hasDiscussionsEnabled,databaseId 2>&1)",
+      "Bash(curl -s http://localhost:4005)",
+      "Bash(netstat -ano)",
+      "Bash(findstr 4005)",
+      "mcp__plugin_playwright_playwright__browser_wait_for",
+      "mcp__plugin_playwright_playwright__browser_console_messages",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ],
+    "additionalDirectories": [
+      "d:\\Hexo-blog\\blog-demo\\themes\\butterfly\\img"
+    ]
+  }
+}

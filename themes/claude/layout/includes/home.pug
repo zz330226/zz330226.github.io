@@ -1,0 +1,16 @@
+.page-title 最新文章
+.articles-list
+  each post in page.posts.toArray()
+    article.article-card
+      if post.cover
+        a.article-cover(href=post.link || url_for(post.path))
+          img(src=post.cover, alt=post.title)
+      .article-content
+        h2.article-title
+          a(href=url_for(post.path))= post.title
+        .article-meta
+          span.date= date(post.date, 'YYYY-MM-DD')
+          if post.categories && post.categories.length
+            span.category
+              a(href=url_for(post.categories.toArray()[0].path))= post.categories.toArray()[0].name
+        .article-excerpt= post.excerpt || strip_html(post.content).substring(0, 200) + '...'

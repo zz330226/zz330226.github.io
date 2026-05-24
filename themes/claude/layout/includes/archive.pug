@@ -1,0 +1,9 @@
+.page-title 归档
+.archive-list
+  each year, posts in site.posts.group('date', 'YYYY')
+    .archive-year
+      h2.year-title= year
+      each post in posts.toArray()
+        .archive-item
+          span.archive-date= date(post.date, 'MM-DD')
+          a.archive-title(href=url_for(post.path))= post.title

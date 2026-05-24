@@ -1,0 +1,275 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - img "avatar" [ref=e4]
+    - generic [ref=e5]:
+      - link "文章 7" [ref=e6] [cursor=pointer]:
+        - /url: /archives/
+        - generic [ref=e7]: 文章
+        - generic [ref=e8]: "7"
+      - link "标签 29" [ref=e9] [cursor=pointer]:
+        - /url: /tags/
+        - generic [ref=e10]: 标签
+        - generic [ref=e11]: "29"
+      - link "分类 6" [ref=e12] [cursor=pointer]:
+        - /url: /categories/
+        - generic [ref=e13]: 分类
+        - generic [ref=e14]: "6"
+    - generic [ref=e15]:
+      - link "首页" [ref=e17] [cursor=pointer]:
+        - /url: /
+        - text: 首页
+      - link "归档" [ref=e20] [cursor=pointer]:
+        - /url: /archives/
+        - text: 归档
+      - link "分类" [ref=e23] [cursor=pointer]:
+        - /url: /categories/
+        - text: 分类
+      - link "标签" [ref=e26] [cursor=pointer]:
+        - /url: /tags/
+        - text: 标签
+      - link "关于" [ref=e29] [cursor=pointer]:
+        - /url: /about/
+        - text: 关于
+      - link "友链" [ref=e32] [cursor=pointer]:
+        - /url: /link/
+        - text: 友链
+      - link "留言板" [ref=e35] [cursor=pointer]:
+        - /url: /comments/
+        - text: 留言板
+  - generic [ref=e37]:
+    - banner [ref=e38]:
+      - navigation [ref=e39]:
+        - link "AI技术前沿" [ref=e41] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e43]:
+          - link "首页" [ref=e45] [cursor=pointer]:
+            - /url: /
+            - text: 首页
+          - link "归档" [ref=e48] [cursor=pointer]:
+            - /url: /archives/
+            - text: 归档
+          - link "分类" [ref=e51] [cursor=pointer]:
+            - /url: /categories/
+            - text: 分类
+          - link "标签" [ref=e54] [cursor=pointer]:
+            - /url: /tags/
+            - text: 标签
+          - link "关于" [ref=e57] [cursor=pointer]:
+            - /url: /about/
+            - text: 关于
+          - link "友链" [ref=e60] [cursor=pointer]:
+            - /url: /link/
+            - text: 友链
+          - link "留言板" [ref=e63] [cursor=pointer]:
+            - /url: /comments/
+            - text: 留言板
+      - heading "分类" [level=1] [ref=e66]
+    - main [ref=e67]:
+      - generic [ref=e68]:
+        - separator [ref=e69]: 
+        - generic [ref=e72]: 评论
+      - generic [ref=e74]:
+        - generic [ref=e75]:
+          - img "avatar" [ref=e77]
+          - generic [ref=e78]: itx-blog
+          - generic [ref=e79]: itx-blog 的个人博客
+          - generic [ref=e80]:
+            - link "文章 7" [ref=e81] [cursor=pointer]:
+              - /url: /archives/
+              - generic [ref=e82]: 文章
+              - generic [ref=e83]: "7"
+            - link "标签 29" [ref=e84] [cursor=pointer]:
+              - /url: /tags/
+              - generic [ref=e85]: 标签
+              - generic [ref=e86]: "29"
+            - link "分类 6" [ref=e87] [cursor=pointer]:
+              - /url: /categories/
+              - generic [ref=e88]: 分类
+              - generic [ref=e89]: "6"
+          - link "Follow Me" [ref=e90] [cursor=pointer]:
+            - /url: https://github.com/xxxxxx
+            - text: Follow Me
+          - link [ref=e93] [cursor=pointer]:
+            - /url: https://github.com/zz330226
+        - generic [ref=e95]:
+          - generic [ref=e96]:
+            - generic [ref=e97]: 最新文章
+            - generic [ref=e99]:
+              - generic [ref=e100]:
+                - link "Voicebox-开源AI语音工作室部署教程" [ref=e101] [cursor=pointer]:
+                  - /url: /2026/05/24/voicebox-deploy/
+                  - img "Voicebox-开源AI语音工作室部署教程" [ref=e102]
+                - generic [ref=e103]:
+                  - link "Voicebox-开源AI语音工作室部署教程" [ref=e104] [cursor=pointer]:
+                    - /url: /2026/05/24/voicebox-deploy/
+                  - time [ref=e105]: 2026-05-24
+              - generic [ref=e106]:
+                - link "PyTorch深度学习入门" [ref=e107] [cursor=pointer]:
+                  - /url: /2026/05/23/pytorch-intro/
+                  - img "PyTorch深度学习入门" [ref=e108]
+                - generic [ref=e109]:
+                  - link "PyTorch深度学习入门" [ref=e110] [cursor=pointer]:
+                    - /url: /2026/05/23/pytorch-intro/
+                  - time [ref=e111]: 2026-05-23
+              - generic [ref=e112]:
+                - link "10个必备AI工具推荐" [ref=e113] [cursor=pointer]:
+                  - /url: /2026/05/22/ai-tools/
+                  - img "10个必备AI工具推荐" [ref=e114]
+                - generic [ref=e115]:
+                  - link "10个必备AI工具推荐" [ref=e116] [cursor=pointer]:
+                    - /url: /2026/05/22/ai-tools/
+                  - time [ref=e117]: 2026-05-22
+              - generic [ref=e118]:
+                - link "Linux服务器运维笔记" [ref=e119] [cursor=pointer]:
+                  - /url: /2026/05/21/linux-ops/
+                  - img "Linux服务器运维笔记" [ref=e120]
+                - generic [ref=e121]:
+                  - link "Linux服务器运维笔记" [ref=e122] [cursor=pointer]:
+                    - /url: /2026/05/21/linux-ops/
+                  - time [ref=e123]: 2026-05-21
+              - generic [ref=e124]:
+                - link "Python异步编程实战" [ref=e125] [cursor=pointer]:
+                  - /url: /2026/05/20/python-async/
+                  - img "Python异步编程实战" [ref=e126]
+                - generic [ref=e127]:
+                  - link "Python异步编程实战" [ref=e128] [cursor=pointer]:
+                    - /url: /2026/05/20/python-async/
+                  - time [ref=e129]: 2026-05-20
+          - generic [ref=e130]:
+            - generic [ref=e131]: 分类
+            - list [ref=e133]:
+              - listitem [ref=e134]:
+                - link "AI前沿资讯 1" [ref=e135] [cursor=pointer]:
+                  - /url: /categories/AI%E5%89%8D%E6%B2%BF%E8%B5%84%E8%AE%AF/
+                  - generic [ref=e136]: AI前沿资讯
+                  - generic [ref=e137]: "1"
+              - listitem [ref=e138]:
+                - link "AI工具箱 2" [ref=e139] [cursor=pointer]:
+                  - /url: /categories/AI%E5%B7%A5%E5%85%B7%E7%AE%B1/
+                  - generic [ref=e140]: AI工具箱
+                  - generic [ref=e141]: "2"
+              - listitem [ref=e142]:
+                - link "GitHub精选 1" [ref=e143] [cursor=pointer]:
+                  - /url: /categories/GitHub%E7%B2%BE%E9%80%89/
+                  - generic [ref=e144]: GitHub精选
+                  - generic [ref=e145]: "1"
+              - listitem [ref=e146]:
+                - link "Linux运维 1" [ref=e147] [cursor=pointer]:
+                  - /url: /categories/Linux%E8%BF%90%E7%BB%B4/
+                  - generic [ref=e148]: Linux运维
+                  - generic [ref=e149]: "1"
+              - listitem [ref=e150]:
+                - link "Python开发 1" [ref=e151] [cursor=pointer]:
+                  - /url: /categories/Python%E5%BC%80%E5%8F%91/
+                  - generic [ref=e152]: Python开发
+                  - generic [ref=e153]: "1"
+              - listitem [ref=e154]:
+                - link "深度学习 1" [ref=e155] [cursor=pointer]:
+                  - /url: /categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/
+                  - generic [ref=e156]: 深度学习
+                  - generic [ref=e157]: "1"
+          - generic [ref=e158]:
+            - generic [ref=e159]: 标签
+            - generic [ref=e161]:
+              - link "Shell" [ref=e162] [cursor=pointer]:
+                - /url: /tags/Shell/
+              - link "PyTorch" [ref=e163] [cursor=pointer]:
+                - /url: /tags/PyTorch/
+              - link "神经网络" [ref=e164] [cursor=pointer]:
+                - /url: /tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/
+              - link "AI新闻" [ref=e165] [cursor=pointer]:
+                - /url: /tags/AI%E6%96%B0%E9%97%BB/
+              - link "开源项目" [ref=e166] [cursor=pointer]:
+                - /url: /tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/
+              - link "Linux" [ref=e167] [cursor=pointer]:
+                - /url: /tags/Linux/
+              - link "Llama" [ref=e168] [cursor=pointer]:
+                - /url: /tags/Llama/
+              - link "Copilot" [ref=e169] [cursor=pointer]:
+                - /url: /tags/Copilot/
+              - link "ChatGPT" [ref=e170] [cursor=pointer]:
+                - /url: /tags/ChatGPT/
+              - link "Ubuntu" [ref=e171] [cursor=pointer]:
+                - /url: /tags/Ubuntu/
+              - link "本地部署" [ref=e172] [cursor=pointer]:
+                - /url: /tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/
+              - link "语音合成" [ref=e173] [cursor=pointer]:
+                - /url: /tags/%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/
+              - link "异步编程" [ref=e174] [cursor=pointer]:
+                - /url: /tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/
+              - link "AI工具" [ref=e175] [cursor=pointer]:
+                - /url: /tags/AI%E5%B7%A5%E5%85%B7/
+              - link "Meta" [ref=e176] [cursor=pointer]:
+                - /url: /tags/Meta/
+              - link "LLM" [ref=e177] [cursor=pointer]:
+                - /url: /tags/LLM/
+              - link "深度学习" [ref=e178] [cursor=pointer]:
+                - /url: /tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/
+              - link "Claude" [ref=e179] [cursor=pointer]:
+                - /url: /tags/Claude/
+              - link "运维" [ref=e180] [cursor=pointer]:
+                - /url: /tags/%E8%BF%90%E7%BB%B4/
+              - link "监控" [ref=e181] [cursor=pointer]:
+                - /url: /tags/%E7%9B%91%E6%8E%A7/
+              - link "TTS" [ref=e182] [cursor=pointer]:
+                - /url: /tags/TTS/
+              - link "asyncio" [ref=e183] [cursor=pointer]:
+                - /url: /tags/asyncio/
+              - link "效率工具" [ref=e184] [cursor=pointer]:
+                - /url: /tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/
+              - link "Ollama" [ref=e185] [cursor=pointer]:
+                - /url: /tags/Ollama/
+              - link "Anthropic" [ref=e186] [cursor=pointer]:
+                - /url: /tags/Anthropic/
+              - link "并发" [ref=e187] [cursor=pointer]:
+                - /url: /tags/%E5%B9%B6%E5%8F%91/
+              - link "自动化" [ref=e188] [cursor=pointer]:
+                - /url: /tags/%E8%87%AA%E5%8A%A8%E5%8C%96/
+              - link "机器学习" [ref=e189] [cursor=pointer]:
+                - /url: /tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/
+              - link "Python" [ref=e190] [cursor=pointer]:
+                - /url: /tags/Python/
+          - generic [ref=e191]:
+            - generic [ref=e192]: 归档
+            - list [ref=e194]:
+              - listitem [ref=e195]:
+                - link "五月 2026 7" [ref=e196] [cursor=pointer]:
+                  - /url: /archives/2026/05/
+                  - generic [ref=e197]: 五月 2026
+                  - generic [ref=e198]: "7"
+          - generic [ref=e199]:
+            - generic [ref=e200]: 网站信息
+            - generic [ref=e202]:
+              - generic [ref=e203]:
+                - generic [ref=e204]: "文章数目 :"
+                - generic [ref=e205]: "7"
+              - generic [ref=e206]:
+                - generic [ref=e207]: "本站访客数 :"
+                - generic [ref=e208]: "55544858"
+              - generic [ref=e209]:
+                - generic [ref=e210]: "本站总浏览量 :"
+                - generic [ref=e211]: "79169532"
+              - generic [ref=e212]:
+                - generic [ref=e213]: "最后更新时间 :"
+                - generic [ref=e214]: 刚刚
+    - contentinfo [ref=e215]:
+      - generic [ref=e216]:
+        - generic [ref=e217]:
+          - text: © 2024 - 2026 By itx-blog
+          - generic [ref=e218]:
+            - text: 框架
+            - link "Hexo 8.1.2" [ref=e219] [cursor=pointer]:
+              - /url: https://hexo.io
+            - text: "|主题"
+            - link "Butterfly 5.5.5-b1" [ref=e220] [cursor=pointer]:
+              - /url: https://github.com/jerryc127/hexo-theme-butterfly
+        - generic [ref=e221]: Copyright © 2024-2026 By itx-blog
+  - generic [ref=e222]:
+    - generic:
+      - button "日间和夜间模式切换" [ref=e223] [cursor=pointer]
+      - button "单栏和双栏切换" [ref=e225] [cursor=pointer]
+    - generic [ref=e227]:
+      - button "设置" [ref=e228] [cursor=pointer]
+      - link "前往评论" [ref=e230] [cursor=pointer]:
+        - /url: "#post-comment"
+      - button "回到顶部" [ref=e232] [cursor=pointer]

@@ -1,0 +1,32 @@
+<div class="tag-page">
+  <h1 class="page-title"><i class="fas fa-tags"></i> 标签：<%= page.tag %></h1>
+  <div class="articles-list">
+    <% page.posts.sort('-date').each(function(post) { %>
+      <article class="article-card">
+        <% if (post.cover || post.photos && post.photos.length) { %>
+          <div class="article-thumbnail">
+            <a href="<%= url_for(post.path) %>">
+              <img src="<%= post.cover || post.photos[0] %>" alt="<%= post.title %>">
+            </a>
+          </div>
+        <% } else { %>
+          <div class="article-thumbnail">
+            <a href="<%= url_for(post.path) %>">
+              <div class="default-thumbnail">
+                <i class="fas fa-file-alt"></i>
+              </div>
+            </a>
+          </div>
+        <% } %>
+        <div class="article-info">
+          <h2 class="article-title">
+            <a href="<%= url_for(post.path) %>"><%= post.title %></a>
+          </h2>
+          <div class="article-meta">
+            <span class="meta-date"><i class="fas fa-clock"></i> <%= date(post.date, 'YYYY-MM-DD') %></span>
+          </div>
+        </div>
+      </article>
+    <% }); %>
+  </div>
+</div>

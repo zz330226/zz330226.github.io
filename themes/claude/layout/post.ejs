@@ -1,0 +1,103 @@
+<!-- 文章内容区域 -->
+<div class="post-page-wrapper">
+  <!-- 左侧：文章内容 -->
+  <div class="post-main">
+    <!-- 文章头部 -->
+    <div class="post-header">
+      <% if (page.categories && page.categories.length) { %>
+      <div class="post-category">
+        <a href="<%= url_for(page.categories.toArray()[0].path) %>">
+          <i class="fas fa-folder"></i> <%= page.categories.toArray()[0].name %>
+        </a>
+      </div>
+      <% } %>
+      <h1 class="post-title"><%= page.title %></h1>
+      <div class="post-meta">
+        <span><i class="fas fa-clock"></i> <%= date(page.date, 'YYYY-MM-DD') %></span>
+        <span><i class="fas fa-eye"></i> 阅读</span>
+      </div>
+      <% if (page.tags && page.tags.length) { %>
+      <div class="post-tags">
+        <% page.tags.toArray().forEach(function(tag) { %>
+          <a href="<%= url_for(tag.path) %>" class="post-tag"><%= tag.name %></a>
+        <% }); %>
+      </div>
+      <% } %>
+    </div>
+
+    <!-- 文章正文 -->
+    <article class="post-content">
+      <%- page.content %>
+    </article>
+
+    <!-- 文章底部版权 -->
+    <div class="post-copyright">
+      <p><i class="fas fa-copyright"></i> 本文作者：<%= config.author %></p>
+      <p><i class="fas fa-link"></i> 本文链接：<%= config.url %><%= url_for(page.path) %></p>
+      <p><i class="fas fa-book"></i> 版权声明：CC BY-NC-SA 4.0，转载请注明出处</p>
+    </div>
+
+    <!-- 相关文章推荐 -->
+    <div class="related-posts">
+      <div class="section-title"><i class="fas fa-th-list"></i> 相关推荐</div>
+      <div class="related-list">
+        <% var currentCategory = page.categories.toArray()[0]; %>
+        <% if (currentCategory) { %>
+          <% var relatedPosts = site.posts.filter(function(p) { %>
+            <% return p.categories && p.categories.toArray()[0] && p.categories.toArray()[0].name === currentCategory.name && p.title !== page.title; %>
+          <% }).sort('-date').limit(4).toArray(); %>
+          <% if (relatedPosts.length > 0) { %>
+            <% relatedPosts.forEach(function(post) { %>
+              <a href="<%= url_for(post.path) %>" class="related-item">
+                <span class="related-title"><%= post.title %></span>
+                <span class="related-date"><%= date(post.date, 'YYYY-MM-DD') %></span>
+              </a>
+            <% }); %>
+          <% } else { %>
+            <% site.posts.sort('-date').limit(4).forEach(function(post) { %>
+              <% if (post.title !== page.title) { %>
+                <a href="<%= url_for(post.path) %>" class="related-item">
+                  <span class="related-title"><%= post.title %></span>
+                  <span class="related-date"><%= date(post.date, 'YYYY-MM-DD') %></span>
+                </a>
+              <% } %>
+            <% }); %>
+          <% } %>
+        <% } %>
+      </div>
+    </div>
+  </div>
+
+  <!-- 右侧：侧边栏 -->
+  <aside class="post-sidebar">
+    <!-- 搜索框 -->
+    <div class="sidebar-widget search-widget">
+      <div class="widget-title"><i class="fas fa-search"></i> 搜索</div>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="搜索文章...">
+        <button id="searchBtn"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+
+    <!-- 最新文章 -->
+    <div class="sidebar-widget">
+      <div class="widget-title"><i class="fas fa-newspaper"></i> 最新文章</div>
+      <ul class="widget-list">
+        <% site.posts.sort('-date').limit(6).forEach(function(post) { %>
+          <li><a href="<%= url_for(post.path) %>"><%= post.title %></a></li>
+        <% }); %>
+      </ul>
+    </div>
+
+    <!-- 标签云 -->
+    <div class="sidebar-widget tag-cloud-widget">
+      <div class="widget-title"><i class="fas fa-tags"></i> 标签云</div>
+      <div class="tag-cloud-3d" id="tagCloud3d">
+        <% var tagsArray = site.tags.toArray(); %>
+        <% tagsArray.forEach(function(tag, index) { %>
+          <a href="<%= url_for(tag.path) %>" class="tag-3d-item" data-index="<%= index %>"><%= tag.name %></a>
+        <% }); %>
+      </div>
+    </div>
+  </aside>
+</div>

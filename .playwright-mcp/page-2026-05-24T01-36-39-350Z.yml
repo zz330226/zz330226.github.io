@@ -1,0 +1,168 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - img "avatar" [ref=e4]
+    - generic [ref=e5]:
+      - link "文章 1" [ref=e6] [cursor=pointer]:
+        - /url: /archives/
+        - generic [ref=e7]: 文章
+        - generic [ref=e8]: "1"
+      - link "标签 0" [ref=e9] [cursor=pointer]:
+        - /url: /tags/
+        - generic [ref=e10]: 标签
+        - generic [ref=e11]: "0"
+      - link "分类 1" [ref=e12] [cursor=pointer]:
+        - /url: /categories/
+        - generic [ref=e13]: 分类
+        - generic [ref=e14]: "1"
+    - generic [ref=e15]:
+      - link "首页" [ref=e17] [cursor=pointer]:
+        - /url: /
+        - text: 首页
+      - link "归档" [ref=e20] [cursor=pointer]:
+        - /url: /archives/
+        - text: 归档
+      - link "分类" [ref=e23] [cursor=pointer]:
+        - /url: /categories/
+        - text: 分类
+      - link "标签" [ref=e26] [cursor=pointer]:
+        - /url: /tags/
+        - text: 标签
+      - link "关于" [ref=e29] [cursor=pointer]:
+        - /url: /about/
+        - text: 关于
+      - link "友链" [ref=e32] [cursor=pointer]:
+        - /url: /link/
+        - text: 友链
+      - link "留言板" [ref=e35] [cursor=pointer]:
+        - /url: /comments/
+        - text: 留言板
+  - generic [ref=e37]:
+    - banner [ref=e38]:
+      - navigation [ref=e39]:
+        - link "个人博客" [ref=e41] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e43]:
+          - link "首页" [ref=e45] [cursor=pointer]:
+            - /url: /
+            - text: 首页
+          - link "归档" [ref=e48] [cursor=pointer]:
+            - /url: /archives/
+            - text: 归档
+          - link "分类" [ref=e51] [cursor=pointer]:
+            - /url: /categories/
+            - text: 分类
+          - link "标签" [ref=e54] [cursor=pointer]:
+            - /url: /tags/
+            - text: 标签
+          - link "关于" [ref=e57] [cursor=pointer]:
+            - /url: /about/
+            - text: 关于
+          - link "友链" [ref=e60] [cursor=pointer]:
+            - /url: /link/
+            - text: 友链
+          - link "留言板" [ref=e63] [cursor=pointer]:
+            - /url: /comments/
+            - text: 留言板
+      - heading "个人博客" [level=1] [ref=e66]
+    - main [ref=e69]:
+      - generic [ref=e72]:
+        - link "这是另一篇新博文" [ref=e74] [cursor=pointer]:
+          - /url: /2024/09/04/%E8%BF%99%E6%98%AF%E5%8F%A6%E4%B8%80%E7%AF%87%E6%96%B0%E5%8D%9A%E6%96%87/
+          - img "这是另一篇新博文" [ref=e75]
+        - generic [ref=e76]:
+          - link "这是另一篇新博文" [ref=e77] [cursor=pointer]:
+            - /url: /2024/09/04/%E8%BF%99%E6%98%AF%E5%8F%A6%E4%B8%80%E7%AF%87%E6%96%B0%E5%8D%9A%E6%96%87/
+            - text: 这是另一篇新博文
+          - generic [ref=e79]:
+            - generic [ref=e80]:
+              - text: 发表于
+              - time [ref=e82]: 2024-09-04
+            - generic [ref=e83]:
+              - text: "|"
+              - link "大学生涯" [ref=e85] [cursor=pointer]:
+                - /url: /categories/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B6%AF/
+          - generic [ref=e86]: ".video-container { position: relative; width: 100%; padding-top: 56.25%; } .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }"
+      - generic [ref=e87]:
+        - generic [ref=e88]:
+          - img "avatar" [ref=e90]
+          - generic [ref=e91]: itx-blog
+          - generic [ref=e92]: itx-blog 的个人博客
+          - generic [ref=e93]:
+            - link "文章 1" [ref=e94] [cursor=pointer]:
+              - /url: /archives/
+              - generic [ref=e95]: 文章
+              - generic [ref=e96]: "1"
+            - link "标签 0" [ref=e97] [cursor=pointer]:
+              - /url: /tags/
+              - generic [ref=e98]: 标签
+              - generic [ref=e99]: "0"
+            - link "分类 1" [ref=e100] [cursor=pointer]:
+              - /url: /categories/
+              - generic [ref=e101]: 分类
+              - generic [ref=e102]: "1"
+          - link "Follow Me" [ref=e103] [cursor=pointer]:
+            - /url: https://github.com/xxxxxx
+            - text: Follow Me
+          - link [ref=e106] [cursor=pointer]:
+            - /url: https://github.com/zz330226
+        - generic [ref=e108]:
+          - generic [ref=e109]:
+            - generic [ref=e110]: 最新文章
+            - generic [ref=e113]:
+              - link "这是另一篇新博文" [ref=e114] [cursor=pointer]:
+                - /url: /2024/09/04/%E8%BF%99%E6%98%AF%E5%8F%A6%E4%B8%80%E7%AF%87%E6%96%B0%E5%8D%9A%E6%96%87/
+                - img "这是另一篇新博文" [ref=e115]
+              - generic [ref=e116]:
+                - link "这是另一篇新博文" [ref=e117] [cursor=pointer]:
+                  - /url: /2024/09/04/%E8%BF%99%E6%98%AF%E5%8F%A6%E4%B8%80%E7%AF%87%E6%96%B0%E5%8D%9A%E6%96%87/
+                - time [ref=e118]: 2024-09-04
+          - generic [ref=e119]:
+            - generic [ref=e120]: 分类
+            - list [ref=e122]:
+              - listitem [ref=e123]:
+                - link "大学生涯 1" [ref=e124] [cursor=pointer]:
+                  - /url: /categories/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B6%AF/
+                  - generic [ref=e125]: 大学生涯
+                  - generic [ref=e126]: "1"
+          - generic [ref=e127]:
+            - generic [ref=e128]: 归档
+            - list [ref=e130]:
+              - listitem [ref=e131]:
+                - link "九月 2024 1" [ref=e132] [cursor=pointer]:
+                  - /url: /archives/2024/09/
+                  - generic [ref=e133]: 九月 2024
+                  - generic [ref=e134]: "1"
+          - generic [ref=e135]:
+            - generic [ref=e136]: 网站信息
+            - generic [ref=e138]:
+              - generic [ref=e139]:
+                - generic [ref=e140]: "文章数目 :"
+                - generic [ref=e141]: "1"
+              - generic [ref=e142]:
+                - generic [ref=e143]: "本站访客数 :"
+                - generic [ref=e144]: "55538033"
+              - generic [ref=e145]:
+                - generic [ref=e146]: "本站总浏览量 :"
+                - generic [ref=e147]: "79162668"
+              - generic [ref=e148]:
+                - generic [ref=e149]: "最后更新时间 :"
+                - generic [ref=e150]: 7 分钟前
+    - contentinfo [ref=e151]:
+      - generic [ref=e152]:
+        - generic [ref=e153]:
+          - text: © 2024 - 2026 By itx-blog
+          - generic [ref=e154]:
+            - text: 框架
+            - link "Hexo 8.1.2" [ref=e155] [cursor=pointer]:
+              - /url: https://hexo.io
+            - text: "|主题"
+            - link "Butterfly 5.5.4" [ref=e156] [cursor=pointer]:
+              - /url: https://github.com/jerryc127/hexo-theme-butterfly
+        - generic [ref=e157]: Copyright © 2024-2026 By itx-blog
+  - generic [ref=e158]:
+    - generic:
+      - button "日间和夜间模式切换" [ref=e159] [cursor=pointer]
+      - button "单栏和双栏切换" [ref=e161] [cursor=pointer]
+    - generic [ref=e163]:
+      - button "设置" [ref=e164] [cursor=pointer]
+      - button "回到顶部" [ref=e166] [cursor=pointer]

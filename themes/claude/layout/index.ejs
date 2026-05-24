@@ -1,0 +1,155 @@
+<!-- 图片轮播区域 -->
+<section class="carousel-section">
+  <div class="carousel-container">
+    <div class="carousel-slides">
+      <div class="carousel-slide active">
+        <div class="slide-content">
+          <h2 class="slide-title"><i class="fas fa-robot"></i> AI前沿技术</h2>
+          <p class="slide-desc">追踪人工智能最新动态与前沿突破</p>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="slide-content">
+          <h2 class="slide-title"><i class="fab fa-github"></i> GitHub精选</h2>
+          <p class="slide-desc">热门开源项目介绍与本地部署教程</p>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="slide-content">
+          <h2 class="slide-title"><i class="fas fa-terminal"></i> 技术实战</h2>
+          <p class="slide-desc">Python开发 · Linux运维 · 深度学习</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-indicators">
+      <span class="indicator active"></span>
+      <span class="indicator"></span>
+      <span class="indicator"></span>
+    </div>
+  </div>
+</section>
+
+<!-- 主内容区域：左侧文章 + 右侧侧边栏 -->
+<section class="main-content">
+  <div class="content-wrapper">
+    <!-- 左侧文章列表 -->
+    <div class="article-area">
+      <div class="section-title">
+        <i class="fas fa-fire"></i>
+        <span>最新文章</span>
+      </div>
+      <div class="articles-list">
+        <% site.posts.sort('-date').each(function(post) { %>
+          <article class="article-card">
+            <% if (post.cover || post.photos && post.photos.length) { %>
+              <div class="article-thumbnail">
+                <a href="<%= url_for(post.path) %>">
+                  <img src="<%= post.cover || post.photos[0] %>" alt="<%= post.title %>">
+                </a>
+              </div>
+            <% } else { %>
+              <div class="article-thumbnail">
+                <a href="<%= url_for(post.path) %>">
+                  <div class="default-thumbnail">
+                    <i class="fas fa-file-alt"></i>
+                  </div>
+                </a>
+              </div>
+            <% } %>
+            <div class="article-info">
+              <h2 class="article-title">
+                <a href="<%= url_for(post.path) %>"><%= post.title %></a>
+              </h2>
+              <div class="article-meta">
+                <span class="meta-date"><i class="fas fa-clock"></i> <%= date(post.date, 'YYYY-MM-DD') %></span>
+                <% if (post.categories && post.categories.length) { %>
+                  <span class="meta-category"><i class="fas fa-folder"></i> <a href="<%= url_for(post.categories.toArray()[0].path) %>"><%= post.categories.toArray()[0].name %></a></span>
+                <% } %>
+              </div>
+              <div class="article-desc">
+                <%= strip_html(post.content).substring(0, 120) %>...
+              </div>
+            </div>
+          </article>
+        <% }); %>
+      </div>
+    </div>
+
+    <!-- 右侧侧边栏 -->
+    <aside class="sidebar">
+      <!-- 博主介绍 -->
+      <div class="sidebar-widget author-widget">
+        <div class="widget-title"><i class="fas fa-user-circle"></i> 博主介绍</div>
+        <div class="author-avatar">
+          <img src="/img/friend_404.gif" alt="博主头像">
+        </div>
+        <div class="author-name"><%= config.author %></div>
+        <div class="author-desc">专注AI前沿技术分享 | GitHub热门项目部署 | Python开发实战</div>
+        <div class="author-social">
+          <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" title="微博"><i class="fab fa-weibo"></i></a>
+          <a href="#" title="邮箱"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <!-- 最新文章 -->
+      <div class="sidebar-widget">
+        <div class="widget-title"><i class="fas fa-newspaper"></i> 最新文章</div>
+        <ul class="widget-list">
+          <% var recentPosts = site.posts.sort('-date').limit(5).toArray(); %>
+          <% recentPosts.forEach(function(post) { %>
+            <li><a href="<%= url_for(post.path) %>"><%= post.title %></a></li>
+          <% }); %>
+        </ul>
+      </div>
+
+      <!-- 分类 -->
+      <div class="sidebar-widget">
+        <div class="widget-title"><i class="fas fa-folder-open"></i> 分类</div>
+        <ul class="widget-list category-list">
+          <% site.categories.sort('-name').each(function(cat) { %>
+            <li><a href="<%= url_for(cat.path) %>"><i class="fas fa-folder"></i> <%= cat.name %> <span class="count">(<%= cat.posts.length %>)</span></a></li>
+          <% }); %>
+        </ul>
+      </div>
+
+      <!-- 标签云球体 -->
+      <div class="sidebar-widget tag-cloud-widget">
+        <div class="widget-title"><i class="fas fa-tags"></i> 标签云</div>
+        <div class="tag-cloud-3d" id="tagCloud3d">
+          <% var tagsArray = site.tags.toArray(); %>
+          <% tagsArray.forEach(function(tag, index) { %>
+            <a href="<%= url_for(tag.path) %>" class="tag-3d-item" data-index="<%= index %>"><%= tag.name %></a>
+          <% }); %>
+        </div>
+      </div>
+
+      <!-- 归档 -->
+      <div class="sidebar-widget">
+        <div class="widget-title"><i class="fas fa-archive"></i> 归档</div>
+        <ul class="widget-list archive-list">
+          <% var archives = {}; %>
+          <% site.posts.sort('-date').each(function(post) { %>
+            <% var year = date(post.date, 'YYYY'); %>
+            <% if (!archives[year]) archives[year] = 0; %>
+            <% archives[year]++; %>
+          <% }); %>
+          <% Object.keys(archives).sort().reverse().forEach(function(year) { %>
+            <li><a href="/archives/<%= year %>/"><i class="fas fa-calendar"></i> <%= year %> <span class="count">(<%= archives[year] %>)</span></a></li>
+          <% }); %>
+        </ul>
+      </div>
+
+      <!-- 网站信息 -->
+      <div class="sidebar-widget site-info-widget">
+        <div class="widget-title"><i class="fas fa-chart-bar"></i> 网站信息</div>
+        <ul class="site-stats">
+          <li><i class="fas fa-file-alt"></i> 文章数：<%= site.posts.length %></li>
+          <li><i class="fas fa-folder"></i> 分类数：<%= site.categories.length %></li>
+          <li><i class="fas fa-tags"></i> 标签数：<%= site.tags.length %></li>
+          <li><i class="fas fa-clock"></i> 运行天数：<%= Math.floor((new Date() - new Date('2024-01-01')) / (1000 * 60 * 60 * 24)) %> 天</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>

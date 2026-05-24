@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(hexo new *)",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "Bash(hexo clean *)",
+      "Bash(hexo generate *)",
+      "Bash(hexo server *)",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "mcp__plugin_playwright_playwright__browser_snapshot",
+      "Bash(hexo version *)",
+      "WebSearch",
+      "Bash(npm view *)",
+      "Bash(npm install *)",
+      "mcp__plugin_playwright_playwright__browser_evaluate",
+      "Bash(hexo list *)",
+      "mcp__plugin_playwright_playwright__browser_click",
+      "WebFetch(domain:www.anthropic.com)",
+      "mcp__mcpServers__search",
+      "mcp__plugin_github_github__get_file_contents",
+      "mcp__fetch__fetch",
+      "Bash(curl -L -o themes/claude/source/img/butterfly-icon.png \"https://raw.githubusercontent.com/jerryc127/hexo-theme-butterfly/13315f6710e965b8ab0992c2b6b78125c6fa9fff/source/img/butterfly-icon.png\")",
+      "mcp__plugin_github_github__search_code",
+      "Bash(curl -L -o themes/claude/source/img/friend_404.gif \"https://raw.githubusercontent.com/jerryc127/hexo-theme-butterfly/13315f6710e965b8ab0992c2b6b78125c6fa9fff/source/img/friend_404.gif\")",
+      "mcp__mcpServers__extract",
+      "Bash(curl -s -o nul -w \"%{http_code}\" http://localhost:4006)",
+      "WebFetch(domain:github.com)",
+      "Bash(mv \"Claude-4震撼发布-多模态能力大幅提升.md\" \"claude-4-release.md\")",
+      "Bash(mv \"Llama-3-1本地部署完整教程.md\" \"llama-deploy.md\")",
+      "Bash(mv \"Python异步编程实战-asyncio从入门到精通.md\" \"python-async.md\")",
+      "Bash(mv \"Linux服务器运维笔记-系统监控与自动化脚本实战.md\" \"linux-ops.md\")",
+      "Bash(mv \"10个必备AI工具-提升工作效率的秘诀.md\" \"ai-tools.md\")",
+      "mcp__plugin_playwright_playwright__browser_press_key",
+      "Bash(ls d:/Hexo-blog/)",
+      "Read(//d/Hexo-blog/**)",
+      "Bash(curl -s http://localhost:4006)",
+      "mcp__plugin_playwright_playwright__browser_navigate_back"
+    ]
+  }
+}

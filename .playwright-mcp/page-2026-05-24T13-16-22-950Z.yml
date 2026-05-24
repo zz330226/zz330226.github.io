@@ -1,0 +1,708 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - img "avatar" [ref=e4]
+    - generic [ref=e5]:
+      - link "文章 7" [ref=e6] [cursor=pointer]:
+        - /url: /archives/
+        - generic [ref=e7]: 文章
+        - generic [ref=e8]: "7"
+      - link "标签 29" [ref=e9] [cursor=pointer]:
+        - /url: /tags/
+        - generic [ref=e10]: 标签
+        - generic [ref=e11]: "29"
+      - link "分类 6" [ref=e12] [cursor=pointer]:
+        - /url: /categories/
+        - generic [ref=e13]: 分类
+        - generic [ref=e14]: "6"
+    - generic [ref=e15]:
+      - link "首页" [ref=e17] [cursor=pointer]:
+        - /url: /
+        - text: 首页
+      - link "归档" [ref=e20] [cursor=pointer]:
+        - /url: /archives/
+        - text: 归档
+      - link "分类" [ref=e23] [cursor=pointer]:
+        - /url: /categories/
+        - text: 分类
+      - link "标签" [ref=e26] [cursor=pointer]:
+        - /url: /tags/
+        - text: 标签
+      - link "关于" [ref=e29] [cursor=pointer]:
+        - /url: /about/
+        - text: 关于
+      - link "友链" [ref=e32] [cursor=pointer]:
+        - /url: /link/
+        - text: 友链
+      - link "留言板" [ref=e35] [cursor=pointer]:
+        - /url: /comments/
+        - text: 留言板
+  - generic [ref=e37]:
+    - banner [ref=e38]:
+      - navigation [ref=e39]:
+        - link "AI技术前沿" [ref=e41] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e43]:
+          - link "首页" [ref=e45] [cursor=pointer]:
+            - /url: /
+            - text: 首页
+          - link "归档" [ref=e48] [cursor=pointer]:
+            - /url: /archives/
+            - text: 归档
+          - link "分类" [ref=e51] [cursor=pointer]:
+            - /url: /categories/
+            - text: 分类
+          - link "标签" [ref=e54] [cursor=pointer]:
+            - /url: /tags/
+            - text: 标签
+          - link "关于" [ref=e57] [cursor=pointer]:
+            - /url: /about/
+            - text: 关于
+          - link "友链" [ref=e60] [cursor=pointer]:
+            - /url: /link/
+            - text: 友链
+          - link "留言板" [ref=e63] [cursor=pointer]:
+            - /url: /comments/
+            - text: 留言板
+      - generic [ref=e65]:
+        - heading "Voicebox-开源AI语音工作室部署教程" [level=1] [ref=e66]
+        - generic [ref=e67]:
+          - generic [ref=e68]:
+            - generic [ref=e69]:
+              - text: 发表于
+              - time [ref=e71]: 2026-05-24
+              - text: "|"
+              - text: 更新于
+              - time [ref=e73]: 2026-05-24
+            - generic [ref=e74]:
+              - text: "|"
+              - link "AI工具箱" [ref=e76] [cursor=pointer]:
+                - /url: /categories/AI%E5%B7%A5%E5%85%B7%E7%AE%B1/
+          - generic [ref=e78]: 浏览量:12
+    - main [ref=e80]:
+      - generic [ref=e81]:
+        - article [ref=e82]:
+          - heading "项目简介项目简介" [level=2] [ref=e83]:
+            - link "项目简介":
+              - /url: "#项目简介"
+            - text: 项目简介
+          - paragraph [ref=e84]: Voicebox 是一个本地优先的 AI 语音工作室，被誉为 ElevenLabs 和 WisprFlow 的开源替代品。该项目由 jamiepine 开发，目前已获得超过 27.9k Star，采用 MIT 开源许可证。
+          - paragraph [ref=e85]:
+            - strong [ref=e86]: 核心定位
+            - text: ：将语音合成（TTS）、语音识别（STT）和 AI Agent 语音输出三大功能集成在一个应用中，完全本地运行，数据不离设备。
+          - heading "主要特性主要特性" [level=2] [ref=e87]:
+            - link "主要特性":
+              - /url: "#主要特性"
+            - text: 主要特性
+          - heading "🎙️ 语音输出（TTS）🎙️ 语音输出（TTS）" [level=3] [ref=e88]:
+            - link "🎙️ 语音输出（TTS）":
+              - /url: "#🎙️-语音输出（TTS）"
+            - text: 🎙️ 语音输出（TTS）
+          - paragraph [ref=e89]:
+            - text: Voicebox 内置
+            - strong [ref=e90]: 7 个 TTS 引擎
+            - text: ：
+          - table [ref=e92]:
+            - rowgroup [ref=e93]:
+              - row "引擎 特点" [ref=e94]:
+                - columnheader "引擎" [ref=e95]
+                - columnheader "特点" [ref=e96]
+            - rowgroup [ref=e97]:
+              - row "Qwen3-TTS 阿里最新多语言TTS模型" [ref=e98]:
+                - cell "Qwen3-TTS" [ref=e99]
+                - cell "阿里最新多语言TTS模型" [ref=e100]
+              - row "Qwen CustomVoice 支持自定义声音克隆" [ref=e101]:
+                - cell "Qwen CustomVoice" [ref=e102]
+                - cell "支持自定义声音克隆" [ref=e103]
+              - row "LuxTTS 高质量中文语音" [ref=e104]:
+                - cell "LuxTTS" [ref=e105]
+                - cell "高质量中文语音" [ref=e106]
+              - row "Chatterbox Multilingual 多语言支持" [ref=e107]:
+                - cell "Chatterbox Multilingual" [ref=e108]
+                - cell "多语言支持" [ref=e109]
+              - row "Chatterbox Turbo 快速生成模式" [ref=e110]:
+                - cell "Chatterbox Turbo" [ref=e111]
+                - cell "快速生成模式" [ref=e112]
+              - row "HumeAI TADA 情感语音合成" [ref=e113]:
+                - cell "HumeAI TADA" [ref=e114]
+                - cell "情感语音合成" [ref=e115]
+              - row "Kokoro 轻量级高效引擎" [ref=e116]:
+                - cell "Kokoro" [ref=e117]
+                - cell "轻量级高效引擎" [ref=e118]
+          - paragraph [ref=e119]:
+            - strong [ref=e120]: 亮点功能
+            - text: ：
+          - list [ref=e121]:
+            - listitem [ref=e122]:
+              - text: 支持
+              - strong [ref=e123]: 23 种语言
+            - listitem [ref=e124]:
+              - strong [ref=e125]: 零样本语音克隆
+              - text: ：仅需几秒参考音频即可克隆声音
+            - listitem [ref=e126]:
+              - strong [ref=e127]: 50+ 预设声音
+              - text: 可直接使用
+            - listitem [ref=e128]:
+              - strong [ref=e129]: 表情标签支持
+              - text: ：
+              - code [ref=e130]: "[laugh]"
+              - text: 、
+              - code [ref=e131]: "[sigh]"
+              - text: 、
+              - code [ref=e132]: "[gasp]"
+              - text: 等情感控制
+            - listitem [ref=e133]:
+              - strong [ref=e134]: 8 种后处理效果
+              - text: ：变调、混响、延迟、合唱、压缩器等
+            - listitem [ref=e135]:
+              - strong [ref=e136]: 无限长度生成
+              - text: ：自动分块 + 交叉淡入淡出
+          - heading "🎧 语音输入（STT）🎧 语音输入（STT）" [level=3] [ref=e137]:
+            - link "🎧 语音输入（STT）":
+              - /url: "#🎧-语音输入（STT）"
+            - text: 🎧 语音输入（STT）
+          - list [ref=e138]:
+            - listitem [ref=e139]:
+              - text: 基于
+              - strong [ref=e140]: Whisper
+              - text: 的语音转文字
+            - listitem [ref=e141]:
+              - strong [ref=e142]: 全局快捷键听写
+              - text: ，随时随地语音输入
+            - listitem [ref=e143]: macOS 目标感知自动粘贴
+            - listitem [ref=e144]: LLM 润色功能，自动优化语音转出的文字
+          - heading "🤖 Agent 语音输出🤖 Agent 语音输出" [level=3] [ref=e145]:
+            - link "🤖 Agent 语音输出":
+              - /url: "#🤖-Agent-语音输出"
+            - text: 🤖 Agent 语音输出
+          - paragraph [ref=e146]:
+            - text: Voicebox 内置
+            - strong [ref=e147]: MCP 服务器
+            - text: ，一行代码即可让任何 MCP 感知的 AI Agent 说话：
+          - figure [ref=e148]:
+            - generic [ref=e151]: python
+            - table [ref=e153]:
+              - rowgroup [ref=e154]:
+                - row "# 让 Claude Code、Cursor、Cline 等 AI 工具语音输出 mcp_client.say(\"任务已完成！\")" [ref=e155]:
+                  - cell "# 让 Claude Code、Cursor、Cline 等 AI 工具语音输出 mcp_client.say(\"任务已完成！\")" [ref=e156]:
+                    - generic [ref=e157]:
+                      - generic [ref=e158]: "# 让 Claude Code、Cursor、Cline 等 AI 工具语音输出"
+                      - generic [ref=e159]: mcp_client.say("任务已完成！")
+          - paragraph [ref=e160]: 支持的工具包括：
+          - list [ref=e161]:
+            - listitem [ref=e162]: Claude Code
+            - listitem [ref=e163]: Cursor
+            - listitem [ref=e164]: Cline
+            - listitem [ref=e165]: 其他 MCP 协议兼容的 AI 工具
+          - heading "技术架构技术架构" [level=2] [ref=e166]:
+            - link "技术架构":
+              - /url: "#技术架构"
+            - text: 技术架构
+          - paragraph [ref=e167]: Voicebox 采用现代化的技术栈：
+          - table [ref=e169]:
+            - rowgroup [ref=e170]:
+              - row "层级 技术选型" [ref=e171]:
+                - columnheader "层级" [ref=e172]
+                - columnheader "技术选型" [ref=e173]
+            - rowgroup [ref=e174]:
+              - row "桌面应用 Tauri (Rust) - 非 Electron，原生性能" [ref=e175]:
+                - cell "桌面应用" [ref=e176]
+                - cell "Tauri (Rust) - 非 Electron，原生性能" [ref=e177]:
+                  - strong [ref=e178]: Tauri (Rust)
+                  - text: "- 非 Electron，原生性能"
+              - row "前端 React + TypeScript + Tailwind CSS" [ref=e179]:
+                - cell "前端" [ref=e180]
+                - cell "React + TypeScript + Tailwind CSS" [ref=e181]
+              - row "后端 FastAPI (Python)" [ref=e182]:
+                - cell "后端" [ref=e183]
+                - cell "FastAPI (Python)" [ref=e184]
+              - row "推理引擎 MLX (Apple Silicon) / PyTorch (CUDA/ROCm/XPU/CPU)" [ref=e185]:
+                - cell "推理引擎" [ref=e186]
+                - cell "MLX (Apple Silicon) / PyTorch (CUDA/ROCm/XPU/CPU)" [ref=e187]
+              - row "数据库 SQLite" [ref=e188]:
+                - cell "数据库" [ref=e189]
+                - cell "SQLite" [ref=e190]
+              - row "音频处理 Pedalboard (Spotify 开源库)" [ref=e191]:
+                - cell "音频处理" [ref=e192]
+                - cell "Pedalboard (Spotify 开源库)" [ref=e193]
+          - paragraph [ref=e194]:
+            - strong [ref=e195]: 多 GPU 支持
+            - text: ：
+          - list [ref=e196]:
+            - listitem [ref=e197]: Apple Metal
+            - listitem [ref=e198]: NVIDIA CUDA
+            - listitem [ref=e199]: AMD ROCm
+            - listitem [ref=e200]: Intel DirectML
+          - heading "本地部署教程本地部署教程" [level=2] [ref=e201]:
+            - link "本地部署教程":
+              - /url: "#本地部署教程"
+            - text: 本地部署教程
+          - heading "方式一：下载安装包方式一：下载安装包" [level=3] [ref=e202]:
+            - link "方式一：下载安装包":
+              - /url: "#方式一：下载安装包"
+            - text: 方式一：下载安装包
+          - paragraph [ref=e203]: 官方提供各平台安装包：
+          - table [ref=e205]:
+            - rowgroup [ref=e206]:
+              - row "平台 下载地址" [ref=e207]:
+                - columnheader "平台" [ref=e208]
+                - columnheader "下载地址" [ref=e209]
+            - rowgroup [ref=e210]:
+              - row "macOS (Apple Silicon) voicebox.sh/download/mac-arm" [ref=e211]:
+                - cell "macOS (Apple Silicon)" [ref=e212]
+                - cell "voicebox.sh/download/mac-arm" [ref=e213]:
+                  - code [ref=e214]: voicebox.sh/download/mac-arm
+              - row "macOS (Intel) voicebox.sh/download/mac-intel" [ref=e215]:
+                - cell "macOS (Intel)" [ref=e216]
+                - cell "voicebox.sh/download/mac-intel" [ref=e217]:
+                  - code [ref=e218]: voicebox.sh/download/mac-intel
+              - row "Windows voicebox.sh/download/windows" [ref=e219]:
+                - cell "Windows" [ref=e220]
+                - cell "voicebox.sh/download/windows" [ref=e221]:
+                  - code [ref=e222]: voicebox.sh/download/windows
+          - paragraph [ref=e223]: 下载后双击安装即可使用。
+          - heading "方式二：Docker 部署方式二：Docker 部署" [level=3] [ref=e224]:
+            - link "方式二：Docker 部署":
+              - /url: "#方式二：Docker-部署"
+            - text: 方式二：Docker 部署
+          - paragraph [ref=e225]: 适合 Linux 用户或服务器部署：
+          - figure [ref=e226]:
+            - generic [ref=e229]: bash
+            - table [ref=e231]:
+              - rowgroup [ref=e232]:
+                - 'row "# 克隆仓库 git clone https://github.com/jamiepine/voicebox.git cd voicebox # 启动服务 docker compose up" [ref=e233]':
+                  - 'cell "# 克隆仓库 git clone https://github.com/jamiepine/voicebox.git cd voicebox # 启动服务 docker compose up" [ref=e234]':
+                    - generic [ref=e235]:
+                      - generic [ref=e236]: "# 克隆仓库"
+                      - generic [ref=e237]: git clone https://github.com/jamiepine/voicebox.git
+                      - generic [ref=e238]: cd voicebox
+                      - generic [ref=e239]: "# 启动服务"
+                      - text: docker compose up
+          - heading "方式三：源码编译方式三：源码编译" [level=3] [ref=e240]:
+            - link "方式三：源码编译":
+              - /url: "#方式三：源码编译"
+            - text: 方式三：源码编译
+          - paragraph [ref=e241]: 适合开发者自定义修改：
+          - figure [ref=e242]:
+            - generic [ref=e245]: bash
+            - table [ref=e247]:
+              - rowgroup [ref=e248]:
+                - 'row "# 克隆仓库 git clone https://github.com/jamiepine/voicebox.git cd voicebox # 安装前端依赖 pnpm install # 安装后端依赖 cd server pip install -r requirements.txt # 开发模式启动 pnpm tauri dev" [ref=e249]':
+                  - 'cell "# 克隆仓库 git clone https://github.com/jamiepine/voicebox.git cd voicebox # 安装前端依赖 pnpm install # 安装后端依赖 cd server pip install -r requirements.txt # 开发模式启动 pnpm tauri dev" [ref=e250]':
+                    - generic [ref=e251]:
+                      - generic [ref=e252]: "# 克隆仓库"
+                      - generic [ref=e253]: git clone https://github.com/jamiepine/voicebox.git
+                      - generic [ref=e254]: cd voicebox
+                      - generic [ref=e255]: "# 安装前端依赖"
+                      - text: pnpm install
+                      - generic [ref=e256]: "# 安装后端依赖"
+                      - generic [ref=e257]: cd server
+                      - text: pip install -r requirements.txt
+                      - generic [ref=e258]: "# 开发模式启动"
+                      - text: pnpm tauri dev
+          - heading "API 使用示例API 使用示例" [level=2] [ref=e259]:
+            - link "API 使用示例":
+              - /url: "#API-使用示例"
+            - text: API 使用示例
+          - paragraph [ref=e260]: Voicebox 采用 API 优先设计，可通过 REST API 调用：
+          - heading "TTS 语音合成TTS 语音合成" [level=3] [ref=e261]:
+            - link "TTS 语音合成":
+              - /url: "#TTS-语音合成"
+            - text: TTS 语音合成
+          - figure [ref=e262]:
+            - generic [ref=e265]: python
+            - table [ref=e267]:
+              - rowgroup [ref=e268]:
+                - 'row "import requests # 合成语音 response = requests.post( \"http://localhost:8000/tts\", json={ \"text\": \"你好，这是Voicebox语音合成测试\", \"voice\": \"zh-CN-female-1\", \"engine\": \"kokoro\" } ) # 获取音频文件 audio_path = response.json()[\"output_path\"]" [ref=e269]':
+                  - 'cell "import requests # 合成语音 response = requests.post( \"http://localhost:8000/tts\", json={ \"text\": \"你好，这是Voicebox语音合成测试\", \"voice\": \"zh-CN-female-1\", \"engine\": \"kokoro\" } ) # 获取音频文件 audio_path = response.json()[\"output_path\"]" [ref=e270]':
+                    - generic [ref=e271]:
+                      - generic [ref=e272]: import requests
+                      - generic [ref=e273]: "# 合成语音"
+                      - text: response = requests.post(
+                      - generic [ref=e274]: "\"http://localhost:8000/tts\","
+                      - text: "json={"
+                      - generic [ref=e275]: "\"text\": \"你好，这是Voicebox语音合成测试\","
+                      - generic [ref=e276]: "\"voice\": \"zh-CN-female-1\","
+                      - generic [ref=e277]: "\"engine\": \"kokoro\""
+                      - text: "}"
+                      - text: )
+                      - generic [ref=e278]: "# 获取音频文件"
+                      - generic [ref=e279]: audio_path = response.json()["output_path"]
+          - heading "语音克隆语音克隆" [level=3] [ref=e280]:
+            - link "语音克隆":
+              - /url: "#语音克隆"
+            - text: 语音克隆
+          - figure [ref=e281]:
+            - generic [ref=e284]: python
+            - table [ref=e286]:
+              - rowgroup [ref=e287]:
+                - 'row "# 上传参考音频克隆声音 response = requests.post( \"http://localhost:8000/clone\", files={\"audio\": open(\"reference.wav\", \"rb\")}, json={\"name\": \"my_voice\"} ) # 使用克隆的声音合成 requests.post( \"http://localhost:8000/tts\", json={ \"text\": \"这是克隆后的声音\", \"voice\": \"my_voice\" } )" [ref=e288]':
+                  - 'cell "# 上传参考音频克隆声音 response = requests.post( \"http://localhost:8000/clone\", files={\"audio\": open(\"reference.wav\", \"rb\")}, json={\"name\": \"my_voice\"} ) # 使用克隆的声音合成 requests.post( \"http://localhost:8000/tts\", json={ \"text\": \"这是克隆后的声音\", \"voice\": \"my_voice\" } )" [ref=e289]':
+                    - generic [ref=e290]:
+                      - generic [ref=e291]: "# 上传参考音频克隆声音"
+                      - text: response = requests.post(
+                      - generic [ref=e292]: "\"http://localhost:8000/clone\","
+                      - generic [ref=e293]: "files={\"audio\": open(\"reference.wav\", \"rb\")},"
+                      - generic [ref=e294]: "json={\"name\": \"my_voice\"}"
+                      - text: )
+                      - generic [ref=e295]: "# 使用克隆的声音合成"
+                      - text: requests.post(
+                      - generic [ref=e296]: "\"http://localhost:8000/tts\","
+                      - text: "json={"
+                      - generic [ref=e297]: "\"text\": \"这是克隆后的声音\","
+                      - generic [ref=e298]: "\"voice\": \"my_voice\""
+                      - text: "}"
+                      - text: )
+          - heading "MCP Agent 集成MCP Agent 集成" [level=3] [ref=e299]:
+            - link "MCP Agent 集成":
+              - /url: "#MCP-Agent-集成"
+            - text: MCP Agent 集成
+          - figure [ref=e300]:
+            - generic [ref=e303]: python
+            - table [ref=e305]:
+              - rowgroup [ref=e306]:
+                - 'row "from mcp import Client client = Client(\"localhost:8000/mcp\") # 让AI Agent语音输出 client.call(\"say\", {\"text\": \"代码编译成功，无错误！\"})" [ref=e307]':
+                  - 'cell "from mcp import Client client = Client(\"localhost:8000/mcp\") # 让AI Agent语音输出 client.call(\"say\", {\"text\": \"代码编译成功，无错误！\"})" [ref=e308]':
+                    - generic [ref=e309]:
+                      - generic [ref=e310]: from mcp import Client
+                      - generic [ref=e311]: client = Client("localhost:8000/mcp")
+                      - generic [ref=e312]: "# 让AI Agent语音输出"
+                      - generic [ref=e313]: "client.call(\"say\", {\"text\": \"代码编译成功，无错误！\"})"
+          - heading "使用技巧使用技巧" [level=2] [ref=e314]:
+            - link "使用技巧":
+              - /url: "#使用技巧"
+            - text: 使用技巧
+          - heading "1. 表情标签增强语音表现力1. 表情标签增强语音表现力" [level=3] [ref=e315]:
+            - link "1. 表情标签增强语音表现力":
+              - /url: "#1-表情标签增强语音表现力"
+            - text: 1. 表情标签增强语音表现力
+          - figure [ref=e316]:
+            - generic [ref=e319]: text
+            - table [ref=e321]:
+              - rowgroup [ref=e322]:
+                - row "你好[laugh]，很高兴见到你！ 这个消息让人[gasp]太惊讶了。 嗯...[sigh]今天有点累。" [ref=e323]:
+                  - cell "你好[laugh]，很高兴见到你！ 这个消息让人[gasp]太惊讶了。 嗯...[sigh]今天有点累。" [ref=e324]:
+                    - generic [ref=e325]:
+                      - text: 你好[laugh]，很高兴见到你！
+                      - text: 这个消息让人[gasp]太惊讶了。
+                      - text: 嗯...[sigh]今天有点累。
+          - heading "2. 后处理效果组合2. 后处理效果组合" [level=3] [ref=e326]:
+            - link "2. 后处理效果组合":
+              - /url: "#2-后处理效果组合"
+            - text: 2. 后处理效果组合
+          - paragraph [ref=e327]: 推荐配置用于不同场景：
+          - table [ref=e329]:
+            - rowgroup [ref=e330]:
+              - row "场景 效果组合" [ref=e331]:
+                - columnheader "场景" [ref=e332]
+                - columnheader "效果组合" [ref=e333]
+            - rowgroup [ref=e334]:
+              - row "播客录音 混响 30% + 压缩器" [ref=e335]:
+                - cell "播客录音" [ref=e336]
+                - cell "混响 30% + 压缩器" [ref=e337]
+              - row "游戏语音 变调 -2 + 延迟 10ms" [ref=e338]:
+                - cell "游戏语音" [ref=e339]
+                - cell "变调 -2 + 延迟 10ms" [ref=e340]
+              - row "会议纪要 原声 + 轻微压缩" [ref=e341]:
+                - cell "会议纪要" [ref=e342]
+                - cell "原声 + 轻微压缩" [ref=e343]
+              - row "ASMR 混响 50% + 低音增强" [ref=e344]:
+                - cell "ASMR" [ref=e345]
+                - cell "混响 50% + 低音增强" [ref=e346]
+          - heading "3. 快捷键听写3. 快捷键听写" [level=3] [ref=e347]:
+            - link "3. 快捷键听写":
+              - /url: "#3-快捷键听写"
+            - text: 3. 快捷键听写
+          - paragraph [ref=e348]:
+            - text: 设置全局快捷键（如
+            - code [ref=e349]: Ctrl+Shift+V
+            - text: ），在任何应用中：
+          - list [ref=e350]:
+            - listitem [ref=e351]: 按下快捷键开始录音
+            - listitem [ref=e352]: 说话内容实时转文字
+            - listitem [ref=e353]: 松开后自动粘贴到当前光标位置
+          - heading "与同类工具对比与同类工具对比" [level=2] [ref=e354]:
+            - link "与同类工具对比":
+              - /url: "#与同类工具对比"
+            - text: 与同类工具对比
+          - table [ref=e356]:
+            - rowgroup [ref=e357]:
+              - row "特性 Voicebox ElevenLabs WisprFlow" [ref=e358]:
+                - columnheader "特性" [ref=e359]
+                - columnheader "Voicebox" [ref=e360]
+                - columnheader "ElevenLabs" [ref=e361]
+                - columnheader "WisprFlow" [ref=e362]
+            - rowgroup [ref=e363]:
+              - row "开源免费 ✅ MIT ❌ 商业付费 ❌ 商业付费" [ref=e364]:
+                - cell "开源免费" [ref=e365]
+                - cell "✅ MIT" [ref=e366]
+                - cell "❌ 商业付费" [ref=e367]
+                - cell "❌ 商业付费" [ref=e368]
+              - row "本地运行 ✅ 完全本地 ❌ 云端API ❌ 云端API" [ref=e369]:
+                - cell "本地运行" [ref=e370]
+                - cell "✅ 完全本地" [ref=e371]
+                - cell "❌ 云端API" [ref=e372]
+                - cell "❌ 云端API" [ref=e373]
+              - row "数据隐私 ✅ 不上传 ❌ 上传云端 ❌ 上传云端" [ref=e374]:
+                - cell "数据隐私" [ref=e375]
+                - cell "✅ 不上传" [ref=e376]
+                - cell "❌ 上传云端" [ref=e377]
+                - cell "❌ 上传云端" [ref=e378]
+              - row "语音克隆 ✅ 零样本克隆 ✅ 需付费 ❌ 不支持" [ref=e379]:
+                - cell "语音克隆" [ref=e380]
+                - cell "✅ 零样本克隆" [ref=e381]
+                - cell "✅ 需付费" [ref=e382]
+                - cell "❌ 不支持" [ref=e383]
+              - row "TTS引擎数 ✅ 7个引擎 1个 1个" [ref=e384]:
+                - cell "TTS引擎数" [ref=e385]
+                - cell "✅ 7个引擎" [ref=e386]
+                - cell "1个" [ref=e387]
+                - cell "1个" [ref=e388]
+              - row "Agent集成 ✅ MCP协议 ❌ 不支持 ❌ 不支持" [ref=e389]:
+                - cell "Agent集成" [ref=e390]
+                - cell "✅ MCP协议" [ref=e391]
+                - cell "❌ 不支持" [ref=e392]
+                - cell "❌ 不支持" [ref=e393]
+              - row "多语言 ✅ 23种 ✅ 29种 ❌ 仅英语" [ref=e394]:
+                - cell "多语言" [ref=e395]
+                - cell "✅ 23种" [ref=e396]
+                - cell "✅ 29种" [ref=e397]
+                - cell "❌ 仅英语" [ref=e398]
+          - heading "未来路线图未来路线图" [level=2] [ref=e399]:
+            - link "未来路线图":
+              - /url: "#未来路线图"
+            - text: 未来路线图
+          - paragraph [ref=e400]: 项目正在积极开发中，计划功能包括：
+          - list [ref=e401]:
+            - listitem [ref=e402]: Windows/Linux 自动粘贴支持
+            - listitem [ref=e403]: 更多 STT 引擎（Parakeet v3、Qwen3-ASR）
+            - listitem [ref=e404]: 流式转录实时显示
+            - listitem [ref=e405]: 端到端语音 LLM 对话
+            - listitem [ref=e406]: 移动端伴侣应用
+          - heading "总结总结" [level=2] [ref=e407]:
+            - link "总结":
+              - /url: "#总结"
+            - text: 总结
+          - paragraph [ref=e408]: Voicebox 是目前最完整的开源 AI 语音解决方案，适合：
+          - list [ref=e409]:
+            - listitem [ref=e410]:
+              - strong [ref=e411]: 内容创作者
+              - text: ：快速生成配音、播客音频
+            - listitem [ref=e412]:
+              - strong [ref=e413]: 开发者
+              - text: ：集成到 AI Agent 实现语音交互
+            - listitem [ref=e414]:
+              - strong [ref=e415]: 隐私敏感用户
+              - text: ：完全本地处理，数据安全
+            - listitem [ref=e416]:
+              - strong [ref=e417]: 多语言需求
+              - text: ：支持中文、英文等23种语言
+          - paragraph [ref=e418]: 相比商业产品 ElevenLabs，Voicebox 提供了免费、开源、本地化的替代方案，功能更全面，是 AI 语音工具的最佳选择。
+          - separator [ref=e419]
+          - paragraph [ref=e420]:
+            - strong [ref=e421]: 项目地址
+            - text: ：
+            - link "https://github.com/jamiepine/voicebox" [ref=e422] [cursor=pointer]:
+              - /url: https://github.com/jamiepine/voicebox
+          - paragraph [ref=e423]:
+            - strong [ref=e424]: 官方网站
+            - text: ：
+            - link "https://voicebox.sh" [ref=e425] [cursor=pointer]:
+              - /url: https://voicebox.sh/
+        - generic [ref=e426]:
+          - text: 
+          - generic [ref=e427]:
+            - generic [ref=e428]: "文章作者:"
+            - link "itx-blog" [ref=e431] [cursor=pointer]:
+              - /url: http://example.com
+          - generic [ref=e432]:
+            - generic [ref=e433]: "文章链接:"
+            - link "http://example.com/2026/05/24/voicebox-deploy/" [ref=e436] [cursor=pointer]:
+              - /url: http://example.com/2026/05/24/voicebox-deploy/
+          - generic [ref=e437]:
+            - generic [ref=e438]: "版权声明:"
+            - generic [ref=e440]:
+              - text: 本博客所有文章除特别声明外，均采用
+              - link "CC BY-NC-SA 4.0" [ref=e441] [cursor=pointer]:
+                - /url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+              - text: 许可协议。转载请注明来源
+              - link "AI技术前沿" [ref=e442] [cursor=pointer]:
+                - /url: http://example.com
+              - text: ！
+        - generic [ref=e443]:
+          - generic [ref=e444]:
+            - link "AI工具" [ref=e445] [cursor=pointer]:
+              - /url: /tags/AI%E5%B7%A5%E5%85%B7/
+            - link "本地部署" [ref=e446] [cursor=pointer]:
+              - /url: /tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/
+            - link "开源项目" [ref=e447] [cursor=pointer]:
+              - /url: /tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/
+            - link "TTS" [ref=e448] [cursor=pointer]:
+              - /url: /tags/TTS/
+            - link "语音合成" [ref=e449] [cursor=pointer]:
+              - /url: /tags/%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/
+          - generic [ref=e451]:
+            - link "" [ref=e452] [cursor=pointer]:
+              - /url: https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4007%2F2026%2F05%2F24%2Fvoicebox-deploy%2F
+            - link "" [ref=e453] [cursor=pointer]:
+              - /url: https://x.com/intent/tweet?text=Voicebox-%E5%BC%80%E6%BA%90AI%E8%AF%AD%E9%9F%B3%E5%B7%A5%E4%BD%9C%E5%AE%A4%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B%20%7C%20AI%E6%8A%80%E6%9C%AF%E5%89%8D%E6%B2%BF&url=http%3A%2F%2Flocalhost%3A4007%2F2026%2F05%2F24%2Fvoicebox-deploy%2F&via=http%3A%2F%2Flocalhost%3A4007
+            - link "" [ref=e454] [cursor=pointer]:
+              - /url: "javascript:"
+            - link "" [ref=e455] [cursor=pointer]:
+              - /url: https://service.weibo.com/share/share.php?url=http%3A%2F%2Flocalhost%3A4007%2F2026%2F05%2F24%2Fvoicebox-deploy%2F&title=Voicebox-%E5%BC%80%E6%BA%90AI%E8%AF%AD%E9%9F%B3%E5%B7%A5%E4%BD%9C%E5%AE%A4%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B%20%7C%20AI%E6%8A%80%E6%9C%AF%E5%89%8D%E6%B2%BF&pic=%2Fimg%2Fvoicebox.jpg&appkey=
+            - link "" [ref=e456] [cursor=pointer]:
+              - /url: http://connect.qq.com/widget/shareqq/index.html?url=http%3A%2F%2Flocalhost%3A4007%2F2026%2F05%2F24%2Fvoicebox-deploy%2F&title=Voicebox-%E5%BC%80%E6%BA%90AI%E8%AF%AD%E9%9F%B3%E5%B7%A5%E4%BD%9C%E5%AE%A4%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B%20%7C%20AI%E6%8A%80%E6%9C%AF%E5%89%8D%E6%B2%BF&source=Voicebox-%E5%BC%80%E6%BA%90AI%E8%AF%AD%E9%9F%B3%E5%B7%A5%E4%BD%9C%E5%AE%A4%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B%20%7C%20AI%E6%8A%80%E6%9C%AF%E5%89%8D%E6%B2%BF&desc=%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8BVoicebox%20%E6%98%AF%E4%B8%80%E4%B8%AA%E6%9C%AC%E5%9C%B0%E4%BC%98%E5%85%88%E7%9A%84%20AI%20%E8%AF%AD%E9%9F%B3%E5%B7%A5%E4%BD%9C%E5%AE%A4%EF%BC%8C%E8%A2%AB%E8%AA%89%E4%B8%BA%20ElevenLabs%20%E5%92%8C%20WisprFlow%20%E7%9A%84%E5%BC%80%E6%BA%90%E6%9B%BF%E4%BB%A3%E5%93%81%E3%80%82%E8%AF%A5%E9%A1%B9%E7%9B%AE%E7%94%B1%20jamiepine%20%E5%BC%80%E5%8F%91%EF%BC%8C%E7%9B%AE%E5%89%8D%E5%B7%B2%E8%8E%B7%E5%BE%97%E8%B6%85%E8%BF%87%2027.9k%20Star%EF%BC%8C%E9%87%87%E7%94%A8%20MIT%20%E5%BC%80%E6%BA%90%E8%AE%B8%E5%8F%AF%E8%AF%81%E3%80%82%20%E6%A0%B8%E5%BF%83%E5%AE%9A%E4%BD%8D%EF%BC%9A%E5%B0%86%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90%EF%BC%88TTS%EF%BC%89%E3%80%81%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%EF%BC%88STT%EF%BC%89%E5%92%8C%20AI%20Agent%20%E8%AF%AD%E9%9F%B3%E8%BE%93%E5%87%BA%E4%B8%89%E5%A4%A7%E5%8A%9F%E8%83%BD%E9%9B%86%E6%88%90%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8%E4%B8%AD%EF%BC%8C%E5%AE%8C%E5%85%A8%E6%9C%AC%E5%9C%B0%E8%BF%90%E8%A1%8C%EF%BC%8C%E6%95%B0%E6%8D%AE%E4%B8%8D%E7%A6%BB%E8%AE%BE%E5%A4%87%E3%80%82%20%E4%B8%BB%E8%A6%81%E7%89%B9%E6%80%A7%F0%9F%8E%99%EF%B8%8F%20%E8%AF%AD%E9%9F%B3%E8%BE%93%E5%87%BA%EF%BC%88TTS&pics=%2Fimg%2Fvoicebox.jpg&summary="%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8BVoicebox%20%E6%98%AF%E4%B8%80%E4%B8%AA%E6%9C%AC%E5%9C%B0%E4%BC%98%E5%85%88%E7%9A%84%20AI%20%E8%AF%AD%E9%9F%B3%E5%B7%A5%E4%BD%9C%E5%AE%A4%EF%BC%8C%E8%A2%AB%E8%AA%89%E4%B8%BA%20ElevenLabs%20%E5%92%8C%20WisprFlow%20%E7%9A%84%E5%BC%80%E6%BA%90%E6%9B%BF%E4%BB%A3%E5%93%81%E3%80%82%E8%AF%A5%E9%A1%B9%E7%9B%AE%E7%94%B1%20jamiepine%20%E5%BC%80%E5%8F%91%EF%BC%8C%E7%9B%AE%E5%89%8D%E5%B7%B2%E8%8E%B7%E5%BE%97%E8%B6%85%E8%BF%87%2027.9k%20Star%EF%BC%8C%E9%87%87%E7%94%A8%20MIT%20%E5%BC%80%E6%BA%90%E8%AE%B8%E5%8F%AF%E8%AF%81%E3%80%82%20%E6%A0%B8%E5%BF%83%E5%AE%9A%E4%BD%8D%EF%BC%9A%E5%B0%86%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90%EF%BC%88TTS%EF%BC%89%E3%80%81%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%EF%BC%88STT%EF%BC%89%E5%92%8C%20AI%20Agent%20%E8%AF%AD%E9%9F%B3%E8%BE%93%E5%87%BA%E4%B8%89%E5%A4%A7%E5%8A%9F%E8%83%BD%E9%9B%86%E6%88%90%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8%E4%B8%AD%EF%BC%8C%E5%AE%8C%E5%85%A8%E6%9C%AC%E5%9C%B0%E8%BF%90%E8%A1%8C%EF%BC%8C%E6%95%B0%E6%8D%AE%E4%B8%8D%E7%A6%BB%E8%AE%BE%E5%A4%87%E3%80%82%20%E4%B8%BB%E8%A6%81%E7%89%B9%E6%80%A7%F0%9F%8E%99%EF%B8%8F%20%E8%AF%AD%E9%9F%B3%E8%BE%93%E5%87%BA%EF%BC%88TTS"
+        - navigation [ref=e457]:
+          - 'link "cover of next post 下一篇 PyTorch深度学习入门 PyTorch 安装与环境配置# 创建虚拟环境conda create -n pytorch python=3.10conda activate pytorch# 安装PyTorch（GPU版本）pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118# 验证安装python -c \"import torch; print(torch.cuda.is_available())\" Tensor 基础操作import torch# 创建张量x = torch.tensor([1, 2, 3, 4])y = torch.zeros(3, 4)z = torch.randn(2, 3) # 随机正态分布# 张量运算a = torch.add(x, 2)b = x * 2c = x.view(2, 2) # 改变形状# GPU加速if torch.cuda.is_available(): x = x.cuda() 构建第一个神经网络..." [ref=e458] [cursor=pointer]':
+            - /url: /2026/05/23/pytorch-intro/
+            - img "cover of next post" [ref=e459]
+            - generic:
+              - generic [ref=e460]:
+                - generic [ref=e461]: 下一篇
+                - generic [ref=e462]: PyTorch深度学习入门
+              - generic [ref=e464]: "PyTorch 安装与环境配置# 创建虚拟环境conda create -n pytorch python=3.10conda activate pytorch# 安装PyTorch（GPU版本）pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118# 验证安装python -c \"import torch; print(torch.cuda.is_available())\" Tensor 基础操作import torch# 创建张量x = torch.tensor([1, 2, 3, 4])y = torch.zeros(3, 4)z = torch.randn(2, 3) # 随机正态分布# 张量运算a = torch.add(x, 2)b = x * 2c = x.view(2, 2) # 改变形状# GPU加速if torch.cuda.is_available(): x = x.cuda() 构建第一个神经网络..."
+        - generic [ref=e465]:
+          - generic [ref=e466]: 相关推荐
+          - generic [ref=e468]:
+            - 'link "cover 2026-05-19 Llama 3.1 本地部署教程 项目介绍Meta 开源的 Llama 3.1 是目前最强的开源大语言模型之一，8B版本可以在消费级显卡上流畅运行。 GitHub: https://github.com/meta-llama/llama3 环境准备硬件要求 模型版本 显存需求 推荐显卡 8B 8GB RTX 3060/4060 70B 40GB+ RTX 4090 x2 软件环境# Ubuntu 22.04 系统sudo apt updatesudo apt install nvidia-driver-535 部署方式一：Ollama（推荐）# 安装 Ollamacurl -fsSL https://ollama.com/install.sh | sh# 下载 Llama 3.1 8Bollama pull llama3.1:8b# 运行对话ollama run llama3.1:8b# API 服务ollama serve 部署方式二：llama.cpp# 克隆项目git clone https://github.com/ggerganov/llama.cppcd llama.c..." [ref=e469] [cursor=pointer]':
+              - /url: /2026/05/19/llama-deploy/
+              - img "cover" [ref=e470]
+              - generic:
+                - generic [ref=e471]:
+                  - generic [ref=e472]: 2026-05-19
+                  - generic [ref=e474]: Llama 3.1 本地部署教程
+                - generic [ref=e476]: "项目介绍Meta 开源的 Llama 3.1 是目前最强的开源大语言模型之一，8B版本可以在消费级显卡上流畅运行。 GitHub: https://github.com/meta-llama/llama3 环境准备硬件要求 模型版本 显存需求 推荐显卡 8B 8GB RTX 3060/4060 70B 40GB+ RTX 4090 x2 软件环境# Ubuntu 22.04 系统sudo apt updatesudo apt install nvidia-driver-535 部署方式一：Ollama（推荐）# 安装 Ollamacurl -fsSL https://ollama.com/install.sh | sh# 下载 Llama 3.1 8Bollama pull llama3.1:8b# 运行对话ollama run llama3.1:8b# API 服务ollama serve 部署方式二：llama.cpp# 克隆项目git clone https://github.com/ggerganov/llama.cppcd llama.c..."
+            - 'link "cover 2026-05-22 10个必备AI工具推荐 编程开发类1. GitHub CopilotGitHub Copilot 是目前最强的AI编程助手，支持多种IDE。 核心功能： 代码自动补全 根据注释生成代码 单元测试生成 代码解释 使用技巧： // 写清晰的注释// 创建一个函数，接收列表并返回排序后的唯一值// Copilot会自动生成代码def get_unique_sorted(lst): return sorted(set(lst)) 2. CursorCursor是基于VSCode的AI IDE，内置强大AI能力。 优势： 内置Claude/GPT支持 整个项目上下文理解 多文件重构 3. Codeium免费替代Copilot的选择，支持主流IDE。 写作办公类4. Notion AI笔记软件中的AI助手，可以： 自动生成内容大纲 智能摘要长文 多语言翻译 5. GammaAI驱动的演示文稿生成器： 输入: \"创建一个关于AI发展趋势的演示文稿\"输出: 自动生成10页精美PPT 设计创意类6. Midjourney顶级AI绘画工具： /imagine prom..." [ref=e477] [cursor=pointer]':
+              - /url: /2026/05/22/ai-tools/
+              - img "cover" [ref=e478]
+              - generic:
+                - generic [ref=e479]:
+                  - generic [ref=e480]: 2026-05-22
+                  - generic [ref=e482]: 10个必备AI工具推荐
+                - generic [ref=e484]: "编程开发类1. GitHub CopilotGitHub Copilot 是目前最强的AI编程助手，支持多种IDE。 核心功能： 代码自动补全 根据注释生成代码 单元测试生成 代码解释 使用技巧： // 写清晰的注释// 创建一个函数，接收列表并返回排序后的唯一值// Copilot会自动生成代码def get_unique_sorted(lst): return sorted(set(lst)) 2. CursorCursor是基于VSCode的AI IDE，内置强大AI能力。 优势： 内置Claude/GPT支持 整个项目上下文理解 多文件重构 3. Codeium免费替代Copilot的选择，支持主流IDE。 写作办公类4. Notion AI笔记软件中的AI助手，可以： 自动生成内容大纲 智能摘要长文 多语言翻译 5. GammaAI驱动的演示文稿生成器： 输入: \"创建一个关于AI发展趋势的演示文稿\"输出: 自动生成10页精美PPT 设计创意类6. Midjourney顶级AI绘画工具： /imagine prom..."
+        - separator [ref=e485]: 
+        - generic [ref=e486]:
+          - generic [ref=e488]: 评论
+          - iframe [ref=e494]:
+            - generic [active] [ref=f2e1]:
+              - main [ref=f2e3]:
+                - generic [ref=f2e6]: 正在加载评论……
+              - alert [ref=f2e7]
+      - generic [ref=e495]:
+        - generic [ref=e496]:
+          - img "avatar" [ref=e498]
+          - generic [ref=e499]: itx-blog
+          - generic [ref=e500]: itx-blog 的个人博客
+          - generic [ref=e501]:
+            - link "文章 7" [ref=e502] [cursor=pointer]:
+              - /url: /archives/
+              - generic [ref=e503]: 文章
+              - generic [ref=e504]: "7"
+            - link "标签 29" [ref=e505] [cursor=pointer]:
+              - /url: /tags/
+              - generic [ref=e506]: 标签
+              - generic [ref=e507]: "29"
+            - link "分类 6" [ref=e508] [cursor=pointer]:
+              - /url: /categories/
+              - generic [ref=e509]: 分类
+              - generic [ref=e510]: "6"
+          - link "Follow Me" [ref=e511] [cursor=pointer]:
+            - /url: https://github.com/xxxxxx
+            - text: Follow Me
+          - link [ref=e514] [cursor=pointer]:
+            - /url: https://github.com/zz330226
+        - generic [ref=e516]:
+          - generic [ref=e517]:
+            - generic [ref=e518]: 目录
+            - list [ref=e521]:
+              - listitem [ref=e522]:
+                - link "1. 项目简介" [ref=e523] [cursor=pointer]:
+                  - /url: "#%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B"
+              - listitem [ref=e524]:
+                - link "2. 主要特性" [ref=e525] [cursor=pointer]:
+                  - /url: "#%E4%B8%BB%E8%A6%81%E7%89%B9%E6%80%A7"
+              - listitem [ref=e526]:
+                - link "3. 技术架构" [ref=e527] [cursor=pointer]:
+                  - /url: "#%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84"
+              - listitem [ref=e528]:
+                - link "4. 本地部署教程" [ref=e529] [cursor=pointer]:
+                  - /url: "#%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B"
+              - listitem [ref=e530]:
+                - link "5. API 使用示例" [ref=e531] [cursor=pointer]:
+                  - /url: "#API-%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"
+              - listitem [ref=e532]:
+                - link "6. 使用技巧" [ref=e533] [cursor=pointer]:
+                  - /url: "#%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7"
+              - listitem [ref=e534]:
+                - link "7. 与同类工具对比" [ref=e535] [cursor=pointer]:
+                  - /url: "#%E4%B8%8E%E5%90%8C%E7%B1%BB%E5%B7%A5%E5%85%B7%E5%AF%B9%E6%AF%94"
+              - listitem [ref=e536]:
+                - link "8. 未来路线图" [ref=e537] [cursor=pointer]:
+                  - /url: "#%E6%9C%AA%E6%9D%A5%E8%B7%AF%E7%BA%BF%E5%9B%BE"
+              - listitem [ref=e538]:
+                - link "9. 总结" [ref=e539] [cursor=pointer]:
+                  - /url: "#%E6%80%BB%E7%BB%93"
+          - generic [ref=e540]:
+            - generic [ref=e541]: 最新文章
+            - generic [ref=e543]:
+              - generic [ref=e544]:
+                - link "Voicebox-开源AI语音工作室部署教程" [ref=e545] [cursor=pointer]:
+                  - /url: /2026/05/24/voicebox-deploy/
+                  - img "Voicebox-开源AI语音工作室部署教程" [ref=e546]
+                - generic [ref=e547]:
+                  - link "Voicebox-开源AI语音工作室部署教程" [ref=e548] [cursor=pointer]:
+                    - /url: /2026/05/24/voicebox-deploy/
+                  - time [ref=e549]: 2026-05-24
+              - generic [ref=e550]:
+                - link "PyTorch深度学习入门" [ref=e551] [cursor=pointer]:
+                  - /url: /2026/05/23/pytorch-intro/
+                  - img "PyTorch深度学习入门" [ref=e552]
+                - generic [ref=e553]:
+                  - link "PyTorch深度学习入门" [ref=e554] [cursor=pointer]:
+                    - /url: /2026/05/23/pytorch-intro/
+                  - time [ref=e555]: 2026-05-23
+              - generic [ref=e556]:
+                - link "10个必备AI工具推荐" [ref=e557] [cursor=pointer]:
+                  - /url: /2026/05/22/ai-tools/
+                  - img "10个必备AI工具推荐" [ref=e558]
+                - generic [ref=e559]:
+                  - link "10个必备AI工具推荐" [ref=e560] [cursor=pointer]:
+                    - /url: /2026/05/22/ai-tools/
+                  - time [ref=e561]: 2026-05-22
+              - generic [ref=e562]:
+                - link "Linux服务器运维笔记" [ref=e563] [cursor=pointer]:
+                  - /url: /2026/05/21/linux-ops/
+                  - img "Linux服务器运维笔记" [ref=e564]
+                - generic [ref=e565]:
+                  - link "Linux服务器运维笔记" [ref=e566] [cursor=pointer]:
+                    - /url: /2026/05/21/linux-ops/
+                  - time [ref=e567]: 2026-05-21
+              - generic [ref=e568]:
+                - link "Python异步编程实战" [ref=e569] [cursor=pointer]:
+                  - /url: /2026/05/20/python-async/
+                  - img "Python异步编程实战" [ref=e570]
+                - generic [ref=e571]:
+                  - link "Python异步编程实战" [ref=e572] [cursor=pointer]:
+                    - /url: /2026/05/20/python-async/
+                  - time [ref=e573]: 2026-05-20
+    - contentinfo [ref=e574]:
+      - generic [ref=e575]:
+        - generic [ref=e576]:
+          - text: © 2024 - 2026 By itx-blog
+          - generic [ref=e577]:
+            - text: 框架
+            - link "Hexo 8.1.2" [ref=e578] [cursor=pointer]:
+              - /url: https://hexo.io
+            - text: "|主题"
+            - link "Butterfly 5.5.5-b1" [ref=e579] [cursor=pointer]:
+              - /url: https://github.com/jerryc127/hexo-theme-butterfly
+        - generic [ref=e580]: Copyright © 2024-2026 By itx-blog
+  - generic [ref=e581]:
+    - generic:
+      - button "阅读模式" [ref=e582] [cursor=pointer]
+      - button "日间和夜间模式切换" [ref=e584] [cursor=pointer]
+      - button "单栏和双栏切换" [ref=e586] [cursor=pointer]
+    - generic [ref=e588]:
+      - button "设置" [ref=e589] [cursor=pointer]
+      - link "前往评论" [ref=e591] [cursor=pointer]:
+        - /url: "#post-comment"
+      - button "回到顶部" [ref=e593] [cursor=pointer]

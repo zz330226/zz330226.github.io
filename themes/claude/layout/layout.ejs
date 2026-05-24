@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= page.title || config.title %></title>
+  <meta name="author" content="<%= config.author %>">
+  <meta name="description" content="<%= config.description %>">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 导航栏 - 置顶靠右 -->
+  <header class="site-header">
+    <nav class="site-nav">
+      <a class="nav-link" href="/"><i class="fas fa-robot"></i> 首页</a>
+      <a class="nav-link" href="/categories/AI前沿资讯"><i class="fas fa-bolt"></i> AI资讯</a>
+      <a class="nav-link" href="/categories/GitHub精选"><i class="fab fa-github"></i> GitHub</a>
+      <a class="nav-link" href="/categories"><i class="fas fa-folder"></i> 分类</a>
+      <a class="nav-link" href="/tags"><i class="fas fa-tags"></i> 标签</a>
+      <a class="nav-link" href="/about"><i class="fas fa-user"></i> 关于</a>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    <%- body %>
+  </main>
+
+  <!-- 底部版权信息 -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        <span><i class="fas fa-copyright"></i> 2024 - <%= new Date().getFullYear() %> By <%= config.author %></span>
+        <span class="separator">|</span>
+        <span>Powered by <a href="https://hexo.io" target="_blank"><i class="fas fa-cube"></i> Hexo</a></span>
+        <span class="separator">|</span>
+        <span>Theme <a href="#"><i class="fas fa-palette"></i> Claude</a></span>
+      </div>
+      <div class="footer-social">
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="微博"><i class="fab fa-weibo"></i></a>
+        <a href="#" title="邮箱"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

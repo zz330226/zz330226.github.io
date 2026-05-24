@@ -1,0 +1,200 @@
+- generic [active] [ref=e1]:
+  - img "加载头像" [ref=e4]
+  - generic [ref=e6]:
+    - banner [ref=e7]:
+      - navigation [ref=e8]:
+        - generic [ref=e9]:
+          - link "Hexo " [ref=e11] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e12]: Hexo
+            - generic [ref=e13]: 
+          - link "Hexo" [ref=e16] [cursor=pointer]:
+            - /url: javascript:anzhiyu.scrollToDest(0, 500)
+          - generic [ref=e19]:
+            - link "文章" [ref=e20] [cursor=pointer]:
+              - /url: javascript:void(0);
+            - list:
+              - listitem:
+                - link " 隧道":
+                  - /url: /archives/
+                  - generic: 
+                  - text: 隧道
+              - listitem:
+                - link " 分类":
+                  - /url: /categories/
+                  - generic: 
+                  - text: 分类
+              - listitem:
+                - link " 标签":
+                  - /url: /tags/
+                  - generic: 
+                  - text: 标签
+          - generic [ref=e21]:
+            - link "" [ref=e23] [cursor=pointer]:
+              - /url: javascript:void(0);
+              - generic [ref=e24]: 
+            - link "" [ref=e26] [cursor=pointer]:
+              - /url: javascript:void(0);
+              - generic [ref=e27]: 
+            - generic "中控台" [ref=e28] [cursor=pointer]
+            - generic:
+              - text: 
+              - generic:
+                - generic:
+                  - link "":
+                    - /url: javascript:void(0);
+                    - generic: 
+                - generic "边栏显示控制":
+                  - generic:
+                    - generic: 
+                - generic "音乐开关":
+                  - generic:
+                    - generic: 
+            - generic:
+              - link " NaN":
+                - /url: javascript:void(0);
+                - generic: 
+                - generic: NaN
+            - text: 
+    - main [ref=e32]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - text:  
+          - generic [ref=e36]:
+            - link "网络编程 " [ref=e38] [cursor=pointer]:
+              - /url: /categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/
+              - text: 网络编程
+              - generic [ref=e39]: 
+            - link "DOCKER容器 " [ref=e41] [cursor=pointer]:
+              - /url: /categories/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B6%AF/
+              - text: DOCKER容器
+              - generic [ref=e42]: 
+            - text: 
+        - generic [ref=e43]:
+          - generic [ref=e44] [cursor=pointer]:
+            - link "荐 cover" [ref=e46]:
+              - /url: 2024/09/04/这是另一篇新博文/
+              - generic [ref=e47]: 荐
+              - img "cover" [ref=e48]
+            - link "这是另一篇新博文" [ref=e50]:
+              - /url: 2024/09/04/这是另一篇新博文/
+          - text: 
+      - generic [ref=e51]:
+        - generic [ref=e52]:
+          - generic [ref=e55]:
+            - generic [ref=e56]:
+              - link "首页" [ref=e58] [cursor=pointer]:
+                - /url: /
+              - link "大学生涯" [ref=e60] [cursor=pointer]:
+                - /url: /categories/大学生涯/
+            - generic [ref=e62] [cursor=pointer]: 
+            - link "更多" [ref=e63] [cursor=pointer]:
+              - /url: /categories/
+          - generic [ref=e64] [cursor=pointer]:
+            - link "这是另一篇新博文" [ref=e66]:
+              - /url: /2024/09/04/%E8%BF%99%E6%98%AF%E5%8F%A6%E4%B8%80%E7%AF%87%E6%96%B0%E5%8D%9A%E6%96%87/
+              - img "这是另一篇新博文"
+            - generic [ref=e67]:
+              - generic [ref=e68]:
+                - generic [ref=e69]:
+                  - generic [ref=e70]:
+                    - generic [ref=e71]: 
+                    - generic [ref=e72]: Sticky
+                  - generic [ref=e73]: 大学生涯
+                  - generic [ref=e74]: 最新
+                  - link "未读" [ref=e75]:
+                    - /url: /2024/09/04/%E8%BF%99%E6%98%AF%E5%8F%A6%E4%B8%80%E7%AF%87%E6%96%B0%E5%8D%9A%E6%96%87/
+                - link "这是另一篇新博文" [ref=e76]:
+                  - /url: /2024/09/04/%E8%BF%99%E6%98%AF%E5%8F%A6%E4%B8%80%E7%AF%87%E6%96%B0%E5%8D%9A%E6%96%87/
+              - generic [ref=e78]:
+                - text: 
+                - time [ref=e79]: 2024-9-4
+              - generic: ".video-container { position: relative; width: 100%; padding-top: 56.25%; /* 16:9 aspect ratio (height/width = 9/16 * 100%) */ } .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }"
+          - navigation [ref=e80]:
+            - generic [ref=e81]:
+              - generic [ref=e82]: "1"
+              - generic [ref=e83]:
+                - textbox "toPage" [ref=e84]
+                - generic [ref=e86] [cursor=pointer]: 
+        - text:     
+    - contentinfo [ref=e87]:
+      - generic [ref=e90]:
+        - generic [ref=e93]:
+          - text: ©2020 - 2026 By
+          - link "John Doe" [ref=e94] [cursor=pointer]:
+            - /url: /
+        - link "主题" [ref=e96] [cursor=pointer]:
+          - /url: https://github.com/anzhiyu-c/hexo-theme-anzhiyu
+  - generic [ref=e97]:
+    - generic [ref=e98]:
+      - link "Articles 1" [ref=e99] [cursor=pointer]:
+        - /url: /archives/
+        - generic [ref=e100]: Articles
+        - generic [ref=e101]: "1"
+      - link "Tags 0" [ref=e102] [cursor=pointer]:
+        - /url: /tags/
+        - generic [ref=e103]: Tags
+        - generic [ref=e104]: "0"
+      - link "Categories 1" [ref=e105] [cursor=pointer]:
+        - /url: /categories/
+        - generic [ref=e106]: Categories
+        - generic [ref=e107]: "1"
+    - text: Function
+    - link " Display Mode" [ref=e109] [cursor=pointer]:
+      - /url: javascript:void(0);
+      - generic [ref=e110]: 
+      - generic [ref=e111]: Display Mode
+    - generic [ref=e112]:
+      - generic [ref=e113]:
+        - generic [ref=e114]: 网页
+        - link "博客 博客" [ref=e116] [cursor=pointer]:
+          - /url: https://blog.anheyu.com/
+          - img "博客" [ref=e117]
+          - generic [ref=e118]: 博客
+      - generic [ref=e119]:
+        - generic [ref=e120]: 项目
+        - link "安知鱼图床 安知鱼图床" [ref=e122] [cursor=pointer]:
+          - /url: https://image.anheyu.com/
+          - img "安知鱼图床" [ref=e123]
+          - generic [ref=e124]: 安知鱼图床
+    - generic [ref=e126]:
+      - link "文章" [ref=e127] [cursor=pointer]:
+        - /url: javascript:void(0);
+        - generic [ref=e128]: 文章
+      - list [ref=e129]:
+        - listitem [ref=e130]:
+          - link " 隧道" [ref=e131] [cursor=pointer]:
+            - /url: /archives/
+            - generic [ref=e132]: 
+            - generic [ref=e133]: 隧道
+        - listitem [ref=e134]:
+          - link " 分类" [ref=e135] [cursor=pointer]:
+            - /url: /categories/
+            - generic [ref=e136]: 
+            - generic [ref=e137]: 分类
+        - listitem [ref=e138]:
+          - link " 标签" [ref=e139] [cursor=pointer]:
+            - /url: /tags/
+            - generic [ref=e140]: 
+            - generic [ref=e141]: 标签
+    - text: 标签
+  - generic [ref=e142]:
+    - generic:
+      - button "繁" [ref=e143] [cursor=pointer]
+      - button "" [ref=e144] [cursor=pointer]:
+        - generic [ref=e145]: 
+      - button "" [ref=e146] [cursor=pointer]:
+        - generic [ref=e147]: 
+    - generic [ref=e148]:
+      - button "" [ref=e149] [cursor=pointer]:
+        - generic [ref=e150]: 
+      - button "" [ref=e151] [cursor=pointer]:
+        - generic [ref=e152]: 
+  - generic:  
+  - text:                          
+  - generic:
+    - generic: 通知
+    - generic:
+      - generic: 你好呀
+      - generic:
+        - generic: 

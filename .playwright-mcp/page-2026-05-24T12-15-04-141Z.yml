@@ -1,0 +1,492 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - img "avatar" [ref=e4]
+    - generic [ref=e5]:
+      - link "文章 7" [ref=e6] [cursor=pointer]:
+        - /url: /archives/
+        - generic [ref=e7]: 文章
+        - generic [ref=e8]: "7"
+      - link "标签 29" [ref=e9] [cursor=pointer]:
+        - /url: /tags/
+        - generic [ref=e10]: 标签
+        - generic [ref=e11]: "29"
+      - link "分类 6" [ref=e12] [cursor=pointer]:
+        - /url: /categories/
+        - generic [ref=e13]: 分类
+        - generic [ref=e14]: "6"
+    - generic [ref=e15]:
+      - link "首页" [ref=e17] [cursor=pointer]:
+        - /url: /
+        - text: 首页
+      - link "归档" [ref=e20] [cursor=pointer]:
+        - /url: /archives/
+        - text: 归档
+      - link "分类" [ref=e23] [cursor=pointer]:
+        - /url: /categories/
+        - text: 分类
+      - link "标签" [ref=e26] [cursor=pointer]:
+        - /url: /tags/
+        - text: 标签
+      - link "关于" [ref=e29] [cursor=pointer]:
+        - /url: /about/
+        - text: 关于
+      - link "友链" [ref=e32] [cursor=pointer]:
+        - /url: /link/
+        - text: 友链
+      - link "留言板" [ref=e35] [cursor=pointer]:
+        - /url: /comments/
+        - text: 留言板
+  - generic [ref=e37]:
+    - banner [ref=e38]:
+      - navigation [ref=e39]:
+        - link "AI技术前沿" [ref=e41] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e43]:
+          - link "首页" [ref=e45] [cursor=pointer]:
+            - /url: /
+            - text: 首页
+          - link "归档" [ref=e48] [cursor=pointer]:
+            - /url: /archives/
+            - text: 归档
+          - link "分类" [ref=e51] [cursor=pointer]:
+            - /url: /categories/
+            - text: 分类
+          - link "标签" [ref=e54] [cursor=pointer]:
+            - /url: /tags/
+            - text: 标签
+          - link "关于" [ref=e57] [cursor=pointer]:
+            - /url: /about/
+            - text: 关于
+          - link "友链" [ref=e60] [cursor=pointer]:
+            - /url: /link/
+            - text: 友链
+          - link "留言板" [ref=e63] [cursor=pointer]:
+            - /url: /comments/
+            - text: 留言板
+      - heading "AI技术前沿" [level=1] [ref=e66]
+    - main [ref=e69]:
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - link "Voicebox-开源AI语音工作室部署教程" [ref=e74] [cursor=pointer]:
+            - /url: /2026/05/24/voicebox-deploy/
+            - img "Voicebox-开源AI语音工作室部署教程" [ref=e75]
+          - generic [ref=e76]:
+            - link "Voicebox-开源AI语音工作室部署教程" [ref=e77] [cursor=pointer]:
+              - /url: /2026/05/24/voicebox-deploy/
+            - generic [ref=e78]:
+              - generic [ref=e79]:
+                - text: 发表于
+                - time [ref=e81]: 2026-05-24
+              - generic [ref=e82]:
+                - text: "|"
+                - link "AI工具箱" [ref=e84] [cursor=pointer]:
+                  - /url: /categories/AI%E5%B7%A5%E5%85%B7%E7%AE%B1/
+              - generic [ref=e85]:
+                - text: "|"
+                - link "AI工具" [ref=e87] [cursor=pointer]:
+                  - /url: /tags/AI%E5%B7%A5%E5%85%B7/
+                - text: •
+                - link "本地部署" [ref=e89] [cursor=pointer]:
+                  - /url: /tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/
+                - text: •
+                - link "开源项目" [ref=e91] [cursor=pointer]:
+                  - /url: /tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/
+                - text: •
+                - link "TTS" [ref=e93] [cursor=pointer]:
+                  - /url: /tags/TTS/
+                - text: •
+                - link "语音合成" [ref=e95] [cursor=pointer]:
+                  - /url: /tags/%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/
+            - generic [ref=e96]: 项目简介Voicebox 是一个本地优先的 AI 语音工作室，被誉为 ElevenLabs 和 WisprFlow 的开源替代品。该项目由 jamiepine 开发，目前已获得超过 27.9k Star，采用 MIT 开源许可证。 核心定位：将语音合成（TTS）、语音识别（STT）和 AI Agent 语音输出三大功能集成在一个应用中，完全本地运行，数据不离设备。 主要特性🎙️ 语音输出（TTS）Voicebox 内置 7 个 TTS 引擎： 引擎 特点 Qwen3-TTS 阿里最新多语言TTS模型 Qwen CustomVoice 支持自定义声音克隆 LuxTTS 高质量中文语音 Chatterbox Multilingual 多语言支持 Chatterbox Turbo 快速生成模式 HumeAI TADA 情感语音合成 Kokoro 轻量级高效引擎 亮点功能： 支持 23 种语言 零样本语音克隆：仅需几秒参考音频即可克隆声音 50+ 预设声音可直接使用 表情标签支持：[laugh]、[sigh]、[gasp] 等情感控制 8 种后...
+        - generic [ref=e97]:
+          - link "PyTorch深度学习入门" [ref=e99] [cursor=pointer]:
+            - /url: /2026/05/23/pytorch-intro/
+            - img "PyTorch深度学习入门" [ref=e100]
+          - generic [ref=e101]:
+            - link "PyTorch深度学习入门" [ref=e102] [cursor=pointer]:
+              - /url: /2026/05/23/pytorch-intro/
+            - generic [ref=e103]:
+              - generic [ref=e104]:
+                - text: 发表于
+                - time [ref=e106]: 2026-05-23
+              - generic [ref=e107]:
+                - text: "|"
+                - link "深度学习" [ref=e109] [cursor=pointer]:
+                  - /url: /categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/
+              - generic [ref=e110]:
+                - text: "|"
+                - link "Python" [ref=e112] [cursor=pointer]:
+                  - /url: /tags/Python/
+                - text: •
+                - link "PyTorch" [ref=e114] [cursor=pointer]:
+                  - /url: /tags/PyTorch/
+                - text: •
+                - link "深度学习" [ref=e116] [cursor=pointer]:
+                  - /url: /tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/
+                - text: •
+                - link "神经网络" [ref=e118] [cursor=pointer]:
+                  - /url: /tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/
+                - text: •
+                - link "机器学习" [ref=e120] [cursor=pointer]:
+                  - /url: /tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/
+            - generic [ref=e121]: "PyTorch 安装与环境配置# 创建虚拟环境conda create -n pytorch python=3.10conda activate pytorch# 安装PyTorch（GPU版本）pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118# 验证安装python -c \"import torch; print(torch.cuda.is_available())\" Tensor 基础操作import torch# 创建张量x = torch.tensor([1, 2, 3, 4])y = torch.zeros(3, 4)z = torch.randn(2, 3) # 随机正态分布# 张量运算a = torch.add(x, 2)b = x * 2c = x.view(2, 2) # 改变形状# GPU加速if torch.cuda.is_available(): x = x.cuda() 构建第一个神经网络..."
+        - generic [ref=e122]:
+          - link "10个必备AI工具推荐" [ref=e124] [cursor=pointer]:
+            - /url: /2026/05/22/ai-tools/
+            - img "10个必备AI工具推荐" [ref=e125]
+          - generic [ref=e126]:
+            - link "10个必备AI工具推荐" [ref=e127] [cursor=pointer]:
+              - /url: /2026/05/22/ai-tools/
+            - generic [ref=e128]:
+              - generic [ref=e129]:
+                - text: 发表于
+                - time [ref=e131]: 2026-05-22
+              - generic [ref=e132]:
+                - text: "|"
+                - link "AI工具箱" [ref=e134] [cursor=pointer]:
+                  - /url: /categories/AI%E5%B7%A5%E5%85%B7%E7%AE%B1/
+              - generic [ref=e135]:
+                - text: "|"
+                - link "AI工具" [ref=e137] [cursor=pointer]:
+                  - /url: /tags/AI%E5%B7%A5%E5%85%B7/
+                - text: •
+                - link "效率工具" [ref=e139] [cursor=pointer]:
+                  - /url: /tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/
+                - text: •
+                - link "ChatGPT" [ref=e141] [cursor=pointer]:
+                  - /url: /tags/ChatGPT/
+                - text: •
+                - link "Copilot" [ref=e143] [cursor=pointer]:
+                  - /url: /tags/Copilot/
+                - text: •
+                - link "自动化" [ref=e145] [cursor=pointer]:
+                  - /url: /tags/%E8%87%AA%E5%8A%A8%E5%8C%96/
+            - generic [ref=e146]: "编程开发类1. GitHub CopilotGitHub Copilot 是目前最强的AI编程助手，支持多种IDE。 核心功能： 代码自动补全 根据注释生成代码 单元测试生成 代码解释 使用技巧： // 写清晰的注释// 创建一个函数，接收列表并返回排序后的唯一值// Copilot会自动生成代码def get_unique_sorted(lst): return sorted(set(lst)) 2. CursorCursor是基于VSCode的AI IDE，内置强大AI能力。 优势： 内置Claude/GPT支持 整个项目上下文理解 多文件重构 3. Codeium免费替代Copilot的选择，支持主流IDE。 写作办公类4. Notion AI笔记软件中的AI助手，可以： 自动生成内容大纲 智能摘要长文 多语言翻译 5. GammaAI驱动的演示文稿生成器： 输入: \"创建一个关于AI发展趋势的演示文稿\"输出: 自动生成10页精美PPT 设计创意类6. Midjourney顶级AI绘画工具： /imagine prom..."
+        - generic [ref=e147]:
+          - link "Linux服务器运维笔记" [ref=e149] [cursor=pointer]:
+            - /url: /2026/05/21/linux-ops/
+            - img "Linux服务器运维笔记" [ref=e150]
+          - generic [ref=e151]:
+            - link "Linux服务器运维笔记" [ref=e152] [cursor=pointer]:
+              - /url: /2026/05/21/linux-ops/
+            - generic [ref=e153]:
+              - generic [ref=e154]:
+                - text: 发表于
+                - time [ref=e156]: 2026-05-21
+              - generic [ref=e157]:
+                - text: "|"
+                - link "Linux运维" [ref=e159] [cursor=pointer]:
+                  - /url: /categories/Linux%E8%BF%90%E7%BB%B4/
+              - generic [ref=e160]:
+                - text: "|"
+                - link "自动化" [ref=e162] [cursor=pointer]:
+                  - /url: /tags/%E8%87%AA%E5%8A%A8%E5%8C%96/
+                - text: •
+                - link "Linux" [ref=e164] [cursor=pointer]:
+                  - /url: /tags/Linux/
+                - text: •
+                - link "Ubuntu" [ref=e166] [cursor=pointer]:
+                  - /url: /tags/Ubuntu/
+                - text: •
+                - link "运维" [ref=e168] [cursor=pointer]:
+                  - /url: /tags/%E8%BF%90%E7%BB%B4/
+                - text: •
+                - link "监控" [ref=e170] [cursor=pointer]:
+                  - /url: /tags/%E7%9B%91%E6%8E%A7/
+                - text: •
+                - link "Shell" [ref=e172] [cursor=pointer]:
+                  - /url: /tags/Shell/
+            - generic [ref=e173]: "系统监控工具CPU监控# 实时CPU使用率top -bn1 | grep \"Cpu(s)\"# 使用 htop（更友好）htop# 查看CPU核心数nproclscpu 内存监控# 内存使用情况free -h# 详细内存信息cat /proc/meminfo# 按进程排序内存使用ps aux --sort=-%mem | head -10 磁盘监控# 磁盘使用情况df -h# 目录大小统计du -sh /var/log/*# 磁盘IO监控iostat -x 1 自动化运维脚本系统健康检查脚本#!/bin/bash# system_health.sh - 系统健康检查ALERT_THRESHOLD=90# CPU检查CPU_USAGE=$(top -bn1 | grep \"Cpu(s)\" | awk '{print $2}' | cut -d% -f1)if [ $CPU_USAGE -gt $ALERT_THRESHOLD ]; then echo \"警告: CPU使用率 $\x01..."
+        - generic [ref=e174]:
+          - link "Python异步编程实战" [ref=e176] [cursor=pointer]:
+            - /url: /2026/05/20/python-async/
+            - img "Python异步编程实战" [ref=e177]
+          - generic [ref=e178]:
+            - link "Python异步编程实战" [ref=e179] [cursor=pointer]:
+              - /url: /2026/05/20/python-async/
+            - generic [ref=e180]:
+              - generic [ref=e181]:
+                - text: 发表于
+                - time [ref=e183]: 2026-05-20
+              - generic [ref=e184]:
+                - text: "|"
+                - link "Python开发" [ref=e186] [cursor=pointer]:
+                  - /url: /categories/Python%E5%BC%80%E5%8F%91/
+              - generic [ref=e187]:
+                - text: "|"
+                - link "Python" [ref=e189] [cursor=pointer]:
+                  - /url: /tags/Python/
+                - text: •
+                - link "asyncio" [ref=e191] [cursor=pointer]:
+                  - /url: /tags/asyncio/
+                - text: •
+                - link "异步编程" [ref=e193] [cursor=pointer]:
+                  - /url: /tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/
+                - text: •
+                - link "并发" [ref=e195] [cursor=pointer]:
+                  - /url: /tags/%E5%B9%B6%E5%8F%91/
+            - generic [ref=e196]: "为什么需要异步编程在处理大量I/O操作时，同步代码会严重阻塞程序执行。异步编程可以让程序在等待I/O时继续执行其他任务。 同步 vs 异步对比# 同步方式 - 总耗时约6秒import timedef fetch_data(url): time.sleep(2) # 模拟网络请求 return f\"Data from {url}\"def main(): start = time.time() results = [] for url in ['url1', 'url2', 'url3']: results.append(fetch_data(url)) print(f\"耗时: {time.time() - start}秒\") main() # 异步方式 - 总耗时约2秒import asyncioasync def fetch_data(url): awai..."
+        - generic [ref=e197]:
+          - link "Llama 3.1 本地部署教程" [ref=e199] [cursor=pointer]:
+            - /url: /2026/05/19/llama-deploy/
+            - img "Llama 3.1 本地部署教程" [ref=e200]
+          - generic [ref=e201]:
+            - link "Llama 3.1 本地部署教程" [ref=e202] [cursor=pointer]:
+              - /url: /2026/05/19/llama-deploy/
+            - generic [ref=e203]:
+              - generic [ref=e204]:
+                - text: 发表于
+                - time [ref=e206]: 2026-05-19
+              - generic [ref=e207]:
+                - text: "|"
+                - link "GitHub精选" [ref=e209] [cursor=pointer]:
+                  - /url: /categories/GitHub%E7%B2%BE%E9%80%89/
+              - generic [ref=e210]:
+                - text: "|"
+                - link "Llama" [ref=e212] [cursor=pointer]:
+                  - /url: /tags/Llama/
+                - text: •
+                - link "Meta" [ref=e214] [cursor=pointer]:
+                  - /url: /tags/Meta/
+                - text: •
+                - link "本地部署" [ref=e216] [cursor=pointer]:
+                  - /url: /tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/
+                - text: •
+                - link "Ollama" [ref=e218] [cursor=pointer]:
+                  - /url: /tags/Ollama/
+                - text: •
+                - link "开源项目" [ref=e220] [cursor=pointer]:
+                  - /url: /tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/
+            - generic [ref=e221]: "项目介绍Meta 开源的 Llama 3.1 是目前最强的开源大语言模型之一，8B版本可以在消费级显卡上流畅运行。 GitHub: https://github.com/meta-llama/llama3 环境准备硬件要求 模型版本 显存需求 推荐显卡 8B 8GB RTX 3060/4060 70B 40GB+ RTX 4090 x2 软件环境# Ubuntu 22.04 系统sudo apt updatesudo apt install nvidia-driver-535 部署方式一：Ollama（推荐）# 安装 Ollamacurl -fsSL https://ollama.com/install.sh | sh# 下载 Llama 3.1 8Bollama pull llama3.1:8b# 运行对话ollama run llama3.1:8b# API 服务ollama serve 部署方式二：llama.cpp# 克隆项目git clone https://github.com/ggerganov/llama.cppcd llama.c..."
+        - generic [ref=e222]:
+          - link "Claude Opus 4.7发布-编程能力大幅提升" [ref=e224] [cursor=pointer]:
+            - /url: /2026/05/18/claude-4-release/
+            - img "Claude Opus 4.7发布-编程能力大幅提升" [ref=e225]
+          - generic [ref=e226]:
+            - link "Claude Opus 4.7发布-编程能力大幅提升" [ref=e227] [cursor=pointer]:
+              - /url: /2026/05/18/claude-4-release/
+            - generic [ref=e228]:
+              - generic [ref=e229]:
+                - text: 发表于
+                - time [ref=e231]: 2026-05-18
+              - generic [ref=e232]:
+                - text: "|"
+                - link "AI前沿资讯" [ref=e234] [cursor=pointer]:
+                  - /url: /categories/AI%E5%89%8D%E6%B2%BF%E8%B5%84%E8%AE%AF/
+              - generic [ref=e235]:
+                - text: "|"
+                - link "Claude" [ref=e237] [cursor=pointer]:
+                  - /url: /tags/Claude/
+                - text: •
+                - link "Anthropic" [ref=e239] [cursor=pointer]:
+                  - /url: /tags/Anthropic/
+                - text: •
+                - link "LLM" [ref=e241] [cursor=pointer]:
+                  - /url: /tags/LLM/
+                - text: •
+                - link "AI新闻" [ref=e243] [cursor=pointer]:
+                  - /url: /tags/AI%E6%96%B0%E9%97%BB/
+            - generic [ref=e244]: Claude Opus 4.7 正式发布2026年4月16日，Anthropic 正式发布了最新旗舰模型 Claude Opus 4.7，这是当前最强的大语言模型之一。 主要更新亮点1. 编程能力显著提升Opus 4.7 在高级软件工程领域表现出色，尤其擅长处理最困难的编程任务： **SWE-bench Verified 达到 87.6%**，超越 GPT-5.4 **93项编程基准测试提升 13%**，解决了4个 Opus 4.6 和 Sonnet 4.6 都无法完成的任务 能够自主验证输出结果，减少人工监督需求 更好地处理复杂、长时间运行的任务 2. 视觉理解能力增强 支持更高分辨率图像处理 在化学结构解析、技术图表理解方面表现优异 生成更高质量的界面设计、演示文稿和文档 3. 长文本处理能力 1M token 上下文窗口（100万token） 128K 最大输出token 支持自适应思考（adaptive thinking） 在长上下文任务中表现最稳定 4. 安全性增强Opus 4.7 引入了新的网络安全防护机制： 自动检测并阻止高风险网络安全请求 首批应用 An...
+      - generic [ref=e245]:
+        - generic [ref=e246]:
+          - img "avatar" [ref=e248]
+          - generic [ref=e249]: itx-blog
+          - generic [ref=e250]: itx-blog 的个人博客
+          - generic [ref=e251]:
+            - link "文章 7" [ref=e252] [cursor=pointer]:
+              - /url: /archives/
+              - generic [ref=e253]: 文章
+              - generic [ref=e254]: "7"
+            - link "标签 29" [ref=e255] [cursor=pointer]:
+              - /url: /tags/
+              - generic [ref=e256]: 标签
+              - generic [ref=e257]: "29"
+            - link "分类 6" [ref=e258] [cursor=pointer]:
+              - /url: /categories/
+              - generic [ref=e259]: 分类
+              - generic [ref=e260]: "6"
+          - link "Follow Me" [ref=e261] [cursor=pointer]:
+            - /url: https://github.com/xxxxxx
+            - text: Follow Me
+          - link [ref=e264] [cursor=pointer]:
+            - /url: https://github.com/zz330226
+        - generic [ref=e266]:
+          - generic [ref=e267]:
+            - generic [ref=e268]: 最新文章
+            - generic [ref=e270]:
+              - generic [ref=e271]:
+                - link "Voicebox-开源AI语音工作室部署教程" [ref=e272] [cursor=pointer]:
+                  - /url: /2026/05/24/voicebox-deploy/
+                  - img "Voicebox-开源AI语音工作室部署教程" [ref=e273]
+                - generic [ref=e274]:
+                  - link "Voicebox-开源AI语音工作室部署教程" [ref=e275] [cursor=pointer]:
+                    - /url: /2026/05/24/voicebox-deploy/
+                  - time [ref=e276]: 2026-05-24
+              - generic [ref=e277]:
+                - link "PyTorch深度学习入门" [ref=e278] [cursor=pointer]:
+                  - /url: /2026/05/23/pytorch-intro/
+                  - img "PyTorch深度学习入门" [ref=e279]
+                - generic [ref=e280]:
+                  - link "PyTorch深度学习入门" [ref=e281] [cursor=pointer]:
+                    - /url: /2026/05/23/pytorch-intro/
+                  - time [ref=e282]: 2026-05-23
+              - generic [ref=e283]:
+                - link "10个必备AI工具推荐" [ref=e284] [cursor=pointer]:
+                  - /url: /2026/05/22/ai-tools/
+                  - img "10个必备AI工具推荐" [ref=e285]
+                - generic [ref=e286]:
+                  - link "10个必备AI工具推荐" [ref=e287] [cursor=pointer]:
+                    - /url: /2026/05/22/ai-tools/
+                  - time [ref=e288]: 2026-05-22
+              - generic [ref=e289]:
+                - link "Linux服务器运维笔记" [ref=e290] [cursor=pointer]:
+                  - /url: /2026/05/21/linux-ops/
+                  - img "Linux服务器运维笔记" [ref=e291]
+                - generic [ref=e292]:
+                  - link "Linux服务器运维笔记" [ref=e293] [cursor=pointer]:
+                    - /url: /2026/05/21/linux-ops/
+                  - time [ref=e294]: 2026-05-21
+              - generic [ref=e295]:
+                - link "Python异步编程实战" [ref=e296] [cursor=pointer]:
+                  - /url: /2026/05/20/python-async/
+                  - img "Python异步编程实战" [ref=e297]
+                - generic [ref=e298]:
+                  - link "Python异步编程实战" [ref=e299] [cursor=pointer]:
+                    - /url: /2026/05/20/python-async/
+                  - time [ref=e300]: 2026-05-20
+          - generic [ref=e301]:
+            - generic [ref=e302]: 分类
+            - list [ref=e304]:
+              - listitem [ref=e305]:
+                - link "AI前沿资讯 1" [ref=e306] [cursor=pointer]:
+                  - /url: /categories/AI%E5%89%8D%E6%B2%BF%E8%B5%84%E8%AE%AF/
+                  - generic [ref=e307]: AI前沿资讯
+                  - generic [ref=e308]: "1"
+              - listitem [ref=e309]:
+                - link "AI工具箱 2" [ref=e310] [cursor=pointer]:
+                  - /url: /categories/AI%E5%B7%A5%E5%85%B7%E7%AE%B1/
+                  - generic [ref=e311]: AI工具箱
+                  - generic [ref=e312]: "2"
+              - listitem [ref=e313]:
+                - link "GitHub精选 1" [ref=e314] [cursor=pointer]:
+                  - /url: /categories/GitHub%E7%B2%BE%E9%80%89/
+                  - generic [ref=e315]: GitHub精选
+                  - generic [ref=e316]: "1"
+              - listitem [ref=e317]:
+                - link "Linux运维 1" [ref=e318] [cursor=pointer]:
+                  - /url: /categories/Linux%E8%BF%90%E7%BB%B4/
+                  - generic [ref=e319]: Linux运维
+                  - generic [ref=e320]: "1"
+              - listitem [ref=e321]:
+                - link "Python开发 1" [ref=e322] [cursor=pointer]:
+                  - /url: /categories/Python%E5%BC%80%E5%8F%91/
+                  - generic [ref=e323]: Python开发
+                  - generic [ref=e324]: "1"
+              - listitem [ref=e325]:
+                - link "深度学习 1" [ref=e326] [cursor=pointer]:
+                  - /url: /categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/
+                  - generic [ref=e327]: 深度学习
+                  - generic [ref=e328]: "1"
+          - generic [ref=e329]:
+            - generic [ref=e330]: 标签
+            - generic [ref=e332]:
+              - link "Anthropic" [ref=e333] [cursor=pointer]:
+                - /url: /tags/Anthropic/
+              - link "自动化" [ref=e334] [cursor=pointer]:
+                - /url: /tags/%E8%87%AA%E5%8A%A8%E5%8C%96/
+              - link "Shell" [ref=e335] [cursor=pointer]:
+                - /url: /tags/Shell/
+              - link "Meta" [ref=e336] [cursor=pointer]:
+                - /url: /tags/Meta/
+              - link "TTS" [ref=e337] [cursor=pointer]:
+                - /url: /tags/TTS/
+              - link "监控" [ref=e338] [cursor=pointer]:
+                - /url: /tags/%E7%9B%91%E6%8E%A7/
+              - link "Ubuntu" [ref=e339] [cursor=pointer]:
+                - /url: /tags/Ubuntu/
+              - link "LLM" [ref=e340] [cursor=pointer]:
+                - /url: /tags/LLM/
+              - link "语音合成" [ref=e341] [cursor=pointer]:
+                - /url: /tags/%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/
+              - link "机器学习" [ref=e342] [cursor=pointer]:
+                - /url: /tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/
+              - link "asyncio" [ref=e343] [cursor=pointer]:
+                - /url: /tags/asyncio/
+              - link "Claude" [ref=e344] [cursor=pointer]:
+                - /url: /tags/Claude/
+              - link "神经网络" [ref=e345] [cursor=pointer]:
+                - /url: /tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/
+              - link "PyTorch" [ref=e346] [cursor=pointer]:
+                - /url: /tags/PyTorch/
+              - link "本地部署" [ref=e347] [cursor=pointer]:
+                - /url: /tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/
+              - link "AI工具" [ref=e348] [cursor=pointer]:
+                - /url: /tags/AI%E5%B7%A5%E5%85%B7/
+              - link "Python" [ref=e349] [cursor=pointer]:
+                - /url: /tags/Python/
+              - link "AI新闻" [ref=e350] [cursor=pointer]:
+                - /url: /tags/AI%E6%96%B0%E9%97%BB/
+              - link "Linux" [ref=e351] [cursor=pointer]:
+                - /url: /tags/Linux/
+              - link "Llama" [ref=e352] [cursor=pointer]:
+                - /url: /tags/Llama/
+              - link "Ollama" [ref=e353] [cursor=pointer]:
+                - /url: /tags/Ollama/
+              - link "开源项目" [ref=e354] [cursor=pointer]:
+                - /url: /tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/
+              - link "效率工具" [ref=e355] [cursor=pointer]:
+                - /url: /tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/
+              - link "异步编程" [ref=e356] [cursor=pointer]:
+                - /url: /tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/
+              - link "并发" [ref=e357] [cursor=pointer]:
+                - /url: /tags/%E5%B9%B6%E5%8F%91/
+              - link "深度学习" [ref=e358] [cursor=pointer]:
+                - /url: /tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/
+              - link "Copilot" [ref=e359] [cursor=pointer]:
+                - /url: /tags/Copilot/
+              - link "运维" [ref=e360] [cursor=pointer]:
+                - /url: /tags/%E8%BF%90%E7%BB%B4/
+              - link "ChatGPT" [ref=e361] [cursor=pointer]:
+                - /url: /tags/ChatGPT/
+          - generic [ref=e362]:
+            - generic [ref=e363]: 归档
+            - list [ref=e365]:
+              - listitem [ref=e366]:
+                - link "五月 2026 7" [ref=e367] [cursor=pointer]:
+                  - /url: /archives/2026/05/
+                  - generic [ref=e368]: 五月 2026
+                  - generic [ref=e369]: "7"
+          - generic [ref=e370]:
+            - generic [ref=e371]: 网站信息
+            - generic [ref=e373]:
+              - generic [ref=e374]:
+                - generic [ref=e375]: "文章数目 :"
+                - generic [ref=e376]: "7"
+              - generic [ref=e377]:
+                - generic [ref=e378]: "本站访客数 :"
+                - generic [ref=e379]: "55544588"
+              - generic [ref=e380]:
+                - generic [ref=e381]: "本站总浏览量 :"
+                - generic [ref=e382]: "79169260"
+              - generic [ref=e383]:
+                - generic [ref=e384]: "最后更新时间 :"
+                - generic [ref=e385]: 刚刚
+    - contentinfo [ref=e386]:
+      - generic [ref=e387]:
+        - generic [ref=e388]:
+          - text: © 2024 - 2026 By itx-blog
+          - generic [ref=e389]:
+            - text: 框架
+            - link "Hexo 8.1.2" [ref=e390] [cursor=pointer]:
+              - /url: https://hexo.io
+            - text: "|主题"
+            - link "Butterfly 5.5.5-b1" [ref=e391] [cursor=pointer]:
+              - /url: https://github.com/jerryc127/hexo-theme-butterfly
+        - generic [ref=e392]: Copyright © 2024-2026 By itx-blog
+  - generic [ref=e393]:
+    - generic:
+      - button "日间和夜间模式切换" [ref=e394] [cursor=pointer]
+      - button "单栏和双栏切换" [ref=e396] [cursor=pointer]
+    - generic [ref=e398]:
+      - button "设置" [ref=e399] [cursor=pointer]
+      - button "回到顶部" [ref=e401] [cursor=pointer]

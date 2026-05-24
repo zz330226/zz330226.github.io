@@ -1,0 +1,208 @@
+# Butterfly 主题配置
+# 文档: https://butterfly.js.org/
+
+# 导航菜单
+menu:
+  首页: / || fas fa-home
+  归档: /archives/ || fas fa-archive
+  分类: /categories/ || fas fa-folder
+  标签: /tags/ || fas fa-tags
+  关于: /about/ || fas fa-user
+  友链: /link/ || fas fa-link
+  留言板: /comments/ || fas fa-comment
+
+# 代码高亮
+highlight_theme: mac
+
+# 社交链接
+social:
+  fab fa-github: https://github.com/zz330226
+
+# 头像
+avatar: /img/avatar.png
+
+# 网站图标
+favicon: /favicon.ico
+
+# 页脚
+footer:
+  owner:
+    enable: true
+    since: 2024
+  custom_text: Copyright © 2024-2026 By itx-blog
+
+# 文章元信息
+post_meta:
+  page:
+    date_type: created
+    date_format: date
+    categories: true
+    tags: true
+  post:
+    date_type: both
+    date_format: date
+    categories: true
+    tags: true
+
+# TOC目录
+toc:
+  enable: true
+  number: true
+  expand: false
+
+# 文章版权
+post_copyright:
+  enable: true
+  author: itx-blog
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# 相关文章
+related_post:
+  enable: true
+  limit: 6
+
+# 分享
+sharejs:
+  enable: true
+  sites: facebook,twitter,wechat,weibo,qq
+
+# 评论系统 (Giscus)
+comments:
+  use: Giscus
+  lazyload: false
+  count: true
+
+# Giscus 配置
+# 获取参数: https://giscus.app/zh-CN
+giscus:
+  repo: zz330226/zz330226.github.io
+  repo_id: R_kgDOMsQCjA
+  category_id: DIC_kwDOMsQCjM4C9vQM
+  light_theme: light
+  dark_theme: dark
+  option:
+    data-lang: zh-CN
+
+# 搜索
+local_search:
+  enable: true
+
+# 懒加载
+lazyload:
+  enable: true
+
+# Pjax - 暂时关闭
+pjax:
+  enable: false
+
+# 美化/效果 - 使用 Butterfly 默认配色
+theme_color:
+  enable: false
+
+# 显示模式 - 使用默认
+display_mode: light
+
+# 深色模式
+darkmode:
+  enable: true
+  button: true
+  autoChangeMode: false
+
+# 预加载
+instantpage:
+  enable: true
+
+# Snackbar弹窗
+snackbar:
+  enable: true
+  position: top-center
+  bg_light: "#49B1F5"
+  bg_dark: "#1f1f1f"
+
+# 图片大图
+fancybox: true
+
+# 首页文章封面
+cover:
+  index_enable: true
+  aside_enable: true
+  archives_enable: true
+  position: left
+  default_cover:
+    - /img/voicebox.jpg
+    - /img/pytorch.jpg
+    - /img/ai.jpg
+    - /img/linux.jpg
+    - /img/claude.jpg
+    - /img/llama.jpg
+    - /img/python.jpg
+
+# 错误图片
+error_img:
+  flink: /img/friend_404.gif
+  post_page: /img/404.jpg
+
+# 404页面
+error_404:
+  enable: true
+  subtitle: "页面找不到啦"
+  background: /img/404.jpg
+
+# 页面顶部图片
+index_img: https://picsum.photos/1920/1080
+archive_img: https://picsum.photos/1920/800
+tag_img: https://picsum.photos/1920/800
+category_img: https://picsum.photos/1920/800
+default_top_img:
+
+# 侧边栏
+aside:
+  enable: true
+  position: right
+  card_author:
+    enable: true
+    description: itx-blog 的个人博客
+  card_announcement:
+    enable: false
+  card_recent_post:
+    enable: true
+    limit: 5
+  card_categories:
+    enable: true
+    limit: 8
+  card_tags:
+    enable: true
+    limit: 40
+  card_archives:
+    enable: true
+    limit: 8
+  card_webinfo:
+    enable: true
+    post_count: true
+    last_push_date: true
+
+# 访问统计
+busuanzi:
+  site_uv: true
+  site_pv: true
+  page_pv: true
+
+# 运行时间
+runtimeshow:
+  enable: true
+  publish_date: 2024/09/01 00:00:00
+
+# 字数统计
+wordcount:
+  enable: false
+
+# CDN
+CDN:
+  internal_provider: local
+  third_party_provider: jsdelivr
+
+# 注入 - 暂不使用自定义CSS
+inject:
+  head:
+  footer:

@@ -1,0 +1,28 @@
+article.post-article
+  h1.post-title= page.title
+  .post-meta
+    span.date 发表于 #{date(page.date, 'YYYY-MM-DD')}
+    if page.updated
+      span.updated 更新于 #{date(page.updated, 'YYYY-MM-DD')}
+    if page.categories && page.categories.length
+      span.category
+        each cat in page.categories.toArray()
+          a(href=url_for(cat.path))= cat.name
+    if page.tags && page.tags.length
+      span.tags
+        each tag in page.tags.toArray()
+          a.tag(href=url_for(tag.path))= '#' + tag.name
+
+  .post-content
+    != page.content
+
+  .post-footer
+    .post-nav
+      if page.prev
+        a.prev(href=url_for(page.prev.path))
+          i.fa.fa-arrow-left
+          span= page.prev.title
+      if page.next
+        a.next(href=url_for(page.next.path))
+          span= page.next.title
+          i.fa.fa-arrow-right

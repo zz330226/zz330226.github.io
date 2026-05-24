@@ -1,0 +1,460 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - link "AI 指南" [ref=e6] [cursor=pointer]:
+      - /url: https://aizhinan.cc
+      - img "AI 指南" [ref=e7]
+    - list [ref=e11]:
+      - listitem [ref=e12]:
+        - link " AI 智能聊天" [ref=e13] [cursor=pointer]:
+          - /url: https://aizhinan.cc/#term-3
+          - generic [ref=e14]: 
+          - generic [ref=e15]: AI 智能聊天
+      - listitem [ref=e16]:
+        - link " AI 绘画软件" [ref=e17] [cursor=pointer]:
+          - /url: https://aizhinan.cc/#term-11
+          - generic [ref=e18]: 
+          - generic [ref=e19]: AI 绘画软件
+      - listitem [ref=e20]:
+        - link " AI 写作助手" [ref=e21] [cursor=pointer]:
+          - /url: https://aizhinan.cc/#term-2
+          - generic [ref=e22]: 
+          - generic [ref=e23]: AI 写作助手
+      - listitem [ref=e24]:
+        - link " AI 搜索引擎" [ref=e25] [cursor=pointer]:
+          - /url: https://aizhinan.cc/#term-8
+          - generic [ref=e26]: 
+          - generic [ref=e27]: AI 搜索引擎
+    - generic [ref=e28]:
+      - generic:
+        - list
+  - generic [ref=e29]:
+    - generic [ref=e33]:
+      - text: 
+      - generic [ref=e34]:
+        - img [ref=e37] [cursor=pointer]
+        - list [ref=e40]:
+          - listitem [ref=e41]:
+            - link " AI 指南" [ref=e42] [cursor=pointer]:
+              - /url: https://aizhinan.cc/ai
+              - generic [ref=e43]: 
+              - text: AI 指南
+          - listitem [ref=e44]:
+            - link " AI 前沿资讯" [ref=e45] [cursor=pointer]:
+              - /url: https://aizhinan.cc/ai-news
+              - generic [ref=e46]: 
+              - text: AI 前沿资讯
+          - listitem [ref=e47]:
+            - link " AI 使用教程" [ref=e48] [cursor=pointer]:
+              - /url: https://aizhinan.cc/ai-tutorial
+              - generic [ref=e49]: 
+              - text: AI 使用教程
+          - listitem [ref=e50]:
+            - link " 关于" [ref=e51] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e52]: 
+              - text: 关于
+            - text: 
+      - list [ref=e53]:
+        - listitem [ref=e54]:
+          - link "" [ref=e55] [cursor=pointer]:
+            - /url: "javascript:"
+            - generic [ref=e56]: 
+    - generic [ref=e58]:
+      - navigation "breadcrumb" [ref=e59]:
+        - generic [ref=e60]: 
+        - link "首页" [ref=e61] [cursor=pointer]:
+          - /url: https://aizhinan.cc/
+        - text: •
+        - link "AI 前沿资讯" [ref=e62] [cursor=pointer]:
+          - /url: https://aizhinan.cc/ai-news
+        - text: •AI 前沿资讯：探索未来的无限可能
+      - main [ref=e63]:
+        - generic [ref=e65]:
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - heading "AI 前沿资讯：探索未来的无限可能" [level=1] [ref=e69]
+              - generic [ref=e70]:
+                - link " AI 前沿资讯" [ref=e72] [cursor=pointer]:
+                  - /url: https://aizhinan.cc/ai-news
+                  - generic [ref=e73]: 
+                  - text: AI 前沿资讯
+                - generic [ref=e74]:
+                  - generic [ref=e75]: 
+                  - text: 2年前 (2024)
+                - link " AI 指南" [ref=e77] [cursor=pointer]:
+                  - /url: https://aizhinan.cc/author/1
+                  - generic [ref=e78]: 
+                  - text: AI 指南
+                - generic [ref=e80]:
+                  - generic [ref=e81]: 
+                  - text: 1,048
+                - link " 0" [ref=e83] [cursor=pointer]:
+                  - /url: "#comments"
+                  - generic [ref=e84]: 
+                  - text: "0"
+                - link " 0" [ref=e86] [cursor=pointer]:
+                  - /url: javascript:;
+                  - generic [ref=e87]: 
+                  - text: "0"
+            - generic [ref=e88]:
+              - figure [ref=e90]:
+                - link "AI 前沿资讯：探索未来的无限可能" [ref=e91] [cursor=pointer]:
+                  - /url: https://aizhinan.cc/wp-content/uploads/2024/09/1725344150-AI%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%80%E6%96%B0%E8%B5%84%E8%AE%AF-aizhinan.cc.jpg
+                  - img "AI 前沿资讯：探索未来的无限可能" [ref=e92]
+              - heading "一、AI 技术的突破与发展" [level=2] [ref=e93]:
+                - strong [ref=e94]: 一、AI 技术的突破与发展
+              - generic:
+                - insertion:
+                  - generic:
+                    - iframe
+              - heading "（一）大模型的创新迭代" [level=3] [ref=e95]:
+                - strong [ref=e96]: （一）大模型的创新迭代
+              - paragraph [ref=e97]: 近年来，大模型在自然语言处理方面取得了显著的成果。例如，月之暗面宣布在大模型长上下文窗口技术上取得新突破，Kimi 智能助手已支持 200 万字超长无损上下文，并开启产品「内测」。在图像生成领域，商汤科技的「商汤日日新 5.5」大模型能够生成逼真的图像，为设计、创意等领域提供了强大的支持。此外，多模态融合方面也有新进展，科大讯飞的大模型能够结合语音、图像等多种模态信息，实现更精准的交互和理解。
+              - heading "（二）人形机器人的进步" [level=3] [ref=e98]:
+                - strong [ref=e99]: （二）人形机器人的进步
+              - paragraph [ref=e100]: 人形机器人在功能上不断丰富和强大。北京理工大学机电学院智能机器人研究所研制的第七代人形机器人，具备强大的走跑跳功能，身高一米六左右，体重 59 公斤，起跳高度半米多、跳远可跳 1.08 米、奔跑速度 1 小时 7.5 公里。在应用场景方面，人形机器人不仅在危险或重复性高的工作场景中有所应用，如煤矿、水下作业等，还逐渐走进家庭生活，承担做饭、打扫卫生等任务。商业化方面，虽然人形机器人产业化应用仍面临诸多挑战，但一些公司已经开始推出量产版本，并在汽车工厂等领域成功部署。
+              - heading "（三）自动驾驶的提速" [level=3] [ref=e101]:
+                - strong [ref=e102]: （三）自动驾驶的提速
+              - paragraph [ref=e103]: 自动驾驶技术在不断进步。在技术层面，高精度地图、V2X 通信网络等基础设施逐渐完善，提高了自动驾驶的准确性和安全性。法规方面，四部门联合发布通知，为自动驾驶技术的发展和应用提供了政策支持，国内 L3、L4 级自动驾驶合法上路。商业化落地方面，百度 Apollo、华为 HI 等企业积极探索，部分自动驾驶产品已在城市出行、货运物流等场景实现一定规模的应用。
+              - heading "二、AI 技术的广泛应用" [level=2] [ref=e104]
+              - heading "（一）工业领域的变革" [level=3] [ref=e105]:
+                - strong [ref=e106]: （一）工业领域的变革
+              - generic:
+                - insertion:
+                  - generic:
+                    - iframe
+              - paragraph [ref=e107]: 在工业领域，灯塔工厂成为了 AI 技术提升生产效率和质量的典型代表。例如，宁德时代的江苏时代工厂，通过智能化转型，实现产能提升 320%、制造成本降低 33%、碳排放减少 47.4%、质量缺陷减少 99%。其在电芯制造装配环节，高度自动化，卷绕工序精确无比，随后的「AI 检测」环节，配备八个摄像头，融合高精度的 CCD 相机技术和 AR 人工智能检测技术，对电芯进行精准缺陷检测。
+              - paragraph [ref=e108]: 工业富联旗下的台湾南青工厂，作为全球首家 AI 服务器「灯塔工厂」，通过在订单预测、仓库和生产调度、产品设计以及质量和组装测试等领域引入 AI 用力，实现了生产效率提升 73%，产品不良率降低 97%，交货期缩短 21%，单位制造成本降低 39%。
+              - heading "（二）教育领域的创新" [level=3] [ref=e109]:
+                - strong [ref=e110]: （二）教育领域的创新
+              - paragraph [ref=e111]: 教育大模型在教学、辅导和评估等方面发挥着重要作用。例如，在教学中，大模型能够根据学生的学习特点和进度，为其智能推荐学习资源，规划个性化的学习路径。在辅导方面，能够模拟教师进行答疑、评估和反馈，帮助学生及时解决问题。在评估上，通过对学生的学习数据进行分析，为教师提供全面准确的评估报告，以便更好地调整教学策略。
+              - paragraph [ref=e112]: 像小猿学练机，将 AI 大模型与墨水屏平板深度融合，实现了自动捕捉学习数据，生成个性化学习能力图谱，为学生提供从智能推题、AI 批改到薄弱点专练的完整学习生态闭环。
+              - heading "（三）其他领域的拓展" [level=3] [ref=e113]:
+                - strong [ref=e114]: （三）其他领域的拓展
+              - paragraph [ref=e115]:
+                - strong [ref=e116]: 医疗领域
+                - text: ，AI 可用于医学影像分析，辅助医生检测肿瘤、结节等异常情况；实现个性化治疗，预测患者对药物的反应；助力医疗机器人进行手术，提高手术精度和安全性；分析医疗数据以预测疾病风险。
+              - paragraph [ref=e117]:
+                - strong [ref=e118]: 金融领域
+                - text: ，AI 能够协助银行准确预测借款者的还款能力和投资风险，提供智能投资顾问服务，优化交易策略。
+              - paragraph [ref=e119]:
+                - strong [ref=e120]: 天文领域
+                - text: ，AI 帮助处理和分析海量的天文观测数据，发现新的天体和天文现象。
+              - generic:
+                - insertion:
+                  - generic:
+                    - iframe
+              - paragraph [ref=e121]:
+                - strong [ref=e122]: 办公领域
+                - text: ，AI 可以实现智能文档处理、自动化会议安排、智能客服等功能，提高工作效率。
+              - heading "三、AI 技术的国际交流与合作" [level=2] [ref=e123]
+              - heading "（一）中国 AI 技术的出海" [level=3] [ref=e124]:
+                - strong [ref=e125]: （一）中国 AI 技术的出海
+              - paragraph [ref=e126]: 中国的 AI 应用在海外市场展现出了强大的竞争力和吸引力。
+              - paragraph [ref=e127]: 阿里巴巴推出专为东南亚市场打造的 AI 语言大模型 SeaLLMs，与集团在该地区的电子商务和云计算业务战略相契合。字节跳动推出了一系列面向消费者的人工智能应用，包括「人工智能作业助手」 Gauth、AI 剧情互动平台 AnyDoor、面向全球市场的 AI 聊天机器人和应用程序编辑开发平台 Coze。此外，人工智能初创公司 Minimax 也推出了面向国际用户的 AI 聊天应用 Talkie AI。
+              - paragraph [ref=e128]: 通义千问 APP 推出的 EMO 功能震动科技界，其技术论文公开后火遍海内外，应用上线后生成的有趣视频在网络上广泛传播。像 Remini 这样由中国团队开发的 AI 照片修复应用，在海外市场反响热烈，收获了大量用户。
+              - heading "（二）国际合作的成果" [level=3] [ref=e129]:
+                - strong [ref=e130]: （二）国际合作的成果
+              - paragraph [ref=e131]: 英伟达与印度信实工业和塔塔集团建立人工智能合作伙伴关系，共同建设云基础设施，开发大型语言模型以及生成式应用程序。诺和诺德与英伟达合作打造丹麦 AI 超级计算机，旨在促进医疗保健、生命科学和绿能转型的研发和创新。
+              - paragraph [ref=e132]: Meta 发布 Llama 3.1 开源大模型，吸引了全球的关注。巴黎奥运会与阿里通义达成 AI 技术合作，将大量采用来自中国公司的 AI 技术，应用在赛事解说、360° 全景直播转播、视觉图形搜索等领域。
+              - paragraph [ref=e133]: 此外，马斯克宣布由 xAI、推特（X）以及英伟达联合打造的「孟菲斯」超级计算机集群正式开始大模型的训练任务。这些国际合作的案例，推动了 AI 技术的快速发展和广泛应用。
+              - insertion [ref=e135]
+              - heading "四、AI 技术面临的挑战与应对" [level=2] [ref=e137]
+              - heading "（一）技术本身的局限" [level=3] [ref=e138]:
+                - strong [ref=e139]: （一）技术本身的局限
+              - paragraph [ref=e140]: AI 大模型存在诸多风险和不足。例如，过度消耗数据和算力，其参数量已达万亿级别，训练数据规模和算力消耗巨大。同时，存在灾难性遗忘问题，新任务训练可能损害之前任务性能，且在问题求解时无法记住处理过的数据或场景。
+              - paragraph [ref=e141]: 此外，黑盒模型逻辑推理能力弱，缺乏「分而治之」能力，处理复杂问题时表现不佳。而且，大模型不知道自己的错误及原因，更无法改正错误。
+              - heading "（二）治理和伦理问题" [level=3] [ref=e142]:
+                - strong [ref=e143]: （二）治理和伦理问题
+              - paragraph [ref=e144]: AI 发展面临诸多安全、伦理和法规方面的挑战。在安全方面，数据隐私易被侵犯，如个人医疗数据、金融信息等，一旦泄露将造成严重后果。伦理方面，可能影响人类伦理取向与价值判断，生成虚假或有害内容，扰乱社会秩序。法规方面，AI 生成物的版权问题存在争议，用于训练的数据可能侵犯他人版权。同时，AI 创作可能带来结构性失业，冲击传统艺术创作者的工作。
+              - heading "（三）解决方案的探索" [level=3] [ref=e145]:
+                - strong [ref=e146]: （三）解决方案的探索
+              - paragraph [ref=e147]: 为解决 AI 技术问题，各方采取了一系列措施和努力。
+              - paragraph [ref=e148]: 在技术层面，推动算法平台建设及算力设施部署，形成适配医疗健康 AI 大模型的算力资源服务模式。构建规范化、标注化的训练用专病数据库，保障模型的可靠性、真实性及安全性。
+              - paragraph [ref=e149]: 在法规层面，制定相关法律法规和伦理规范，明确 AI 技术的使用范围和限制，加强对违规行为的监管和处罚。
+              - insertion [ref=e151]
+              - paragraph [ref=e153]: 同时，提升公众对 AI 技术的认识和理解，加强跨领域合作，整合政府、企业、学术界和社会组织的力量，共同推动 AI 技术的健康发展。
+              - paragraph [ref=e154]: 此外，鼓励高校和科研机构开展相关研究，培养专业人才，为 AI 技术的发展提供智力支持。
+              - heading "五、AI 技术的未来展望" [level=2] [ref=e155]
+              - heading "（一）发展趋势的预测" [level=3] [ref=e156]:
+                - strong [ref=e157]: （一）发展趋势的预测
+              - paragraph [ref=e158]: 未来，AI 技术将朝着更加智能化、融合化和普适化的方向发展。强化学习将进一步演进，使 AI 在复杂环境中做出更精准、高效的决策。跨学科融合会愈加深入，与生物学、物理学等学科的结合将催生新的应用和突破。多模态智能的发展将使 AI 能够综合处理多种感知信息，实现更自然、流畅的人机交互。
+              - paragraph [ref=e159]: 同时，AI 算法将不断优化与创新，量子计算等新技术的应用有望大幅提升运算速度和效率。
+              - paragraph [ref=e160]: 在应用领域，AI 将在医疗、教育、金融等行业实现更深度的融合与创新。例如，在医疗领域，AI 有望实现更早期的疾病预测和更个性化的精准治疗方案。在教育领域，能够为学生提供更加贴合个体需求的学习路径和资源。
+              - heading "（二）潜在的机遇与挑战" [level=3] [ref=e161]:
+                - strong [ref=e162]: （二）潜在的机遇与挑战
+              - paragraph [ref=e163]: 机遇方面，随着 AI 技术的不断进步，将创造出更多的新兴职业和商业模式，为经济增长注入新动力。同时，能够解决一些全球性的难题，如气候变化、资源短缺等。
+              - paragraph [ref=e164]: 然而，也面临着诸多挑战。数据质量和隐私保护问题将更加严峻，需要建立更完善的法规和技术手段来保障。AI 技术的发展可能导致就业结构的调整，部分传统岗位可能被取代，需要加强职业培训和再就业支持。
+              - insertion [ref=e166]
+              - paragraph [ref=e168]: 此外，AI 伦理和社会影响的问题也需要得到更多关注，确保其发展符合人类的价值观和利益。
+            - generic [ref=e169]:
+              - generic [ref=e170]: 
+              - link "AI最新资讯" [ref=e171] [cursor=pointer]:
+                - /url: https://aizhinan.cc/tag/ai-latest-news
+          - generic [ref=e173]:
+            - strong [ref=e174]: 版权声明：
+            - link "AI 指南" [ref=e175] [cursor=pointer]:
+              - /url: https://aizhinan.cc/author/1
+            - text: 发表于 2024年11月18日 pm2:17。
+            - strong [ref=e176]: 禁止转载：
+            - link "AI 前沿资讯：探索未来的无限可能 | AI 指南" [ref=e177] [cursor=pointer]:
+              - /url: https://aizhinan.cc/152
+          - generic [ref=e178]:
+            - link "上一篇 优质付费机场推荐：SSR/V2Ray/Clash节点购买指南" [ref=e180] [cursor=pointer]:
+              - /url: https://aizhinan.cc/156
+              - text: 上一篇
+              - heading "优质付费机场推荐：SSR/V2Ray/Clash节点购买指南" [level=4] [ref=e181]
+            - link "下一篇 AI诈骗是什么？有哪些类型和手法？如何识别和防范？" [ref=e183] [cursor=pointer]:
+              - /url: https://aizhinan.cc/137
+              - text: 下一篇
+              - heading "AI诈骗是什么？有哪些类型和手法？如何识别和防范？" [level=4] [ref=e184]
+          - heading " 相关文章" [level=4] [ref=e185]:
+            - generic [ref=e186]: 
+            - text: 相关文章
+          - generic [ref=e187]:
+            - generic [ref=e189]:
+              - link [ref=e191] [cursor=pointer]:
+                - /url: https://aizhinan.cc/137
+              - generic [ref=e192]:
+                - link "AI诈骗是什么？有哪些类型和手法？如何识别和防范？" [ref=e194] [cursor=pointer]:
+                  - /url: https://aizhinan.cc/137
+                - generic [ref=e196]:
+                  - link [ref=e197] [cursor=pointer]:
+                    - /url: https://aizhinan.cc/author/1
+                  - link "AI 指南" [ref=e198] [cursor=pointer]:
+                    - /url: https://aizhinan.cc/author/1
+                  - generic [ref=e199]:
+                    - generic [ref=e200]:
+                      - generic [ref=e201]: 
+                      - text: 1,783
+                    - link " 0" [ref=e202] [cursor=pointer]:
+                      - /url: https://aizhinan.cc/137
+                      - generic [ref=e203]: 
+                      - text: "0"
+            - generic [ref=e205]:
+              - link [ref=e207] [cursor=pointer]:
+                - /url: https://aizhinan.cc/146
+              - generic [ref=e208]:
+                - link "避免被假冒快递通知攻击、欺骗的注意事项" [ref=e210] [cursor=pointer]:
+                  - /url: https://aizhinan.cc/146
+                - generic [ref=e212]:
+                  - link [ref=e213] [cursor=pointer]:
+                    - /url: https://aizhinan.cc/author/1
+                  - link "AI 指南" [ref=e214] [cursor=pointer]:
+                    - /url: https://aizhinan.cc/author/1
+                  - generic [ref=e215]:
+                    - generic [ref=e216]:
+                      - generic [ref=e217]: 
+                      - text: "997"
+                    - link " 0" [ref=e218] [cursor=pointer]:
+                      - /url: https://aizhinan.cc/146
+                      - generic [ref=e219]: 
+                      - text: "0"
+            - generic [ref=e221]:
+              - link [ref=e223] [cursor=pointer]:
+                - /url: https://aizhinan.cc/58
+              - generic [ref=e224]:
+                - link "几十年来，微软和苹果公司有哪些恩怨纠葛？" [ref=e226] [cursor=pointer]:
+                  - /url: https://aizhinan.cc/58
+                - generic [ref=e228]:
+                  - link [ref=e229] [cursor=pointer]:
+                    - /url: https://aizhinan.cc/author/1
+                  - link "AI 指南" [ref=e230] [cursor=pointer]:
+                    - /url: https://aizhinan.cc/author/1
+                  - generic [ref=e231]:
+                    - generic [ref=e232]:
+                      - generic [ref=e233]: 
+                      - text: 1,207
+                    - link " 0" [ref=e234] [cursor=pointer]:
+                      - /url: https://aizhinan.cc/58
+                      - generic [ref=e235]: 
+                      - text: "0"
+            - generic [ref=e237]:
+              - link [ref=e239] [cursor=pointer]:
+                - /url: https://aizhinan.cc/284
+              - generic [ref=e240]:
+                - link "AI中的token翻译为「词元」，为何最恰当？" [ref=e242] [cursor=pointer]:
+                  - /url: https://aizhinan.cc/284
+                - generic [ref=e244]:
+                  - link [ref=e245] [cursor=pointer]:
+                    - /url: https://aizhinan.cc/author/1
+                  - link "AI 指南" [ref=e246] [cursor=pointer]:
+                    - /url: https://aizhinan.cc/author/1
+                  - generic [ref=e247]:
+                    - generic [ref=e248]:
+                      - generic [ref=e249]: 
+                      - text: "284"
+                    - link " 0" [ref=e250] [cursor=pointer]:
+                      - /url: https://aizhinan.cc/284
+                      - generic [ref=e251]: 
+                      - text: "0"
+            - generic [ref=e253]:
+              - link [ref=e255] [cursor=pointer]:
+                - /url: https://aizhinan.cc/140
+              - generic [ref=e256]:
+                - link "人工智能在金融领域的应用和未来挑战" [ref=e258] [cursor=pointer]:
+                  - /url: https://aizhinan.cc/140
+                - generic [ref=e260]:
+                  - link [ref=e261] [cursor=pointer]:
+                    - /url: https://aizhinan.cc/author/1
+                  - link "AI 指南" [ref=e262] [cursor=pointer]:
+                    - /url: https://aizhinan.cc/author/1
+                  - generic [ref=e263]:
+                    - generic [ref=e264]:
+                      - generic [ref=e265]: 
+                      - text: 1,154
+                    - link " 0" [ref=e266] [cursor=pointer]:
+                      - /url: https://aizhinan.cc/140
+                      - generic [ref=e267]: 
+                      - text: "0"
+            - generic [ref=e269]:
+              - link [ref=e271] [cursor=pointer]:
+                - /url: https://aizhinan.cc/64
+              - generic [ref=e272]:
+                - link "ChatGPT加持的Bing位居中国搜索市场第2名，百度跌破50%" [ref=e274] [cursor=pointer]:
+                  - /url: https://aizhinan.cc/64
+                - generic [ref=e276]:
+                  - link [ref=e277] [cursor=pointer]:
+                    - /url: https://aizhinan.cc/author/1
+                  - link "AI 指南" [ref=e278] [cursor=pointer]:
+                    - /url: https://aizhinan.cc/author/1
+                  - generic [ref=e279]:
+                    - generic [ref=e280]:
+                      - generic [ref=e281]: 
+                      - text: 1,115
+                    - link " 1" [ref=e282] [cursor=pointer]:
+                      - /url: https://aizhinan.cc/64
+                      - generic [ref=e283]: 
+                      - text: "1"
+        - generic [ref=e285]:
+          - search [ref=e287]:
+            - generic [ref=e288]:
+              - generic [ref=e289]: 搜索：
+              - textbox "搜索：" [ref=e290]
+              - button "搜索" [ref=e291] [cursor=pointer]
+          - insertion [ref=e294]:
+            - iframe [ref=e296]:
+              
+          - generic [ref=e297]:
+            - heading " 最新文章" [level=3] [ref=e299]:
+              - generic [ref=e300]: 
+              - text: 最新文章
+            - generic [ref=e302]:
+              - generic [ref=e303]:
+                - link "AI中的token翻译为「词元」，为何最恰当？" [ref=e305] [cursor=pointer]:
+                  - /url: https://aizhinan.cc/284
+                - generic [ref=e306]:
+                  - link "AI中的token翻译为「词元」，为何最恰当？" [ref=e308] [cursor=pointer]:
+                    - /url: https://aizhinan.cc/284
+                  - generic [ref=e310]:
+                    - time [ref=e311]: 2个月前
+                    - generic [ref=e313]:
+                      - generic [ref=e314]: 
+                      - text: "284"
+              - generic [ref=e315]:
+                - link "大语言模型API的「token」参数怎么设置？最大长度多少最好？" [ref=e317] [cursor=pointer]:
+                  - /url: https://aizhinan.cc/268
+                - generic [ref=e318]:
+                  - link "大语言模型API的「token」参数怎么设置？最大长度多少最好？" [ref=e320] [cursor=pointer]:
+                    - /url: https://aizhinan.cc/268
+                  - generic [ref=e322]:
+                    - time [ref=e323]: 1年前 (2025)
+                    - generic [ref=e325]:
+                      - generic [ref=e326]: 
+                      - text: 12,878
+              - generic [ref=e327]:
+                - link "国外手机号购买教程丨使用接码平台HeroSMS(原SMS-Activate)接收短信验证码的详细步骤" [ref=e329] [cursor=pointer]:
+                  - /url: https://aizhinan.cc/255
+                - generic [ref=e330]:
+                  - link "国外手机号购买教程丨使用接码平台HeroSMS(原SMS-Activate)接收短信验证码的详细步骤" [ref=e332] [cursor=pointer]:
+                    - /url: https://aizhinan.cc/255
+                  - generic [ref=e334]:
+                    - time [ref=e335]: 1年前 (2025)
+                    - generic [ref=e337]:
+                      - generic [ref=e338]: 
+                      - text: 13,129
+              - generic [ref=e339]:
+                - link "DeepSeek等语言模型API参数「token」是什么意思？中文怎么翻译？" [ref=e341] [cursor=pointer]:
+                  - /url: https://aizhinan.cc/253
+                - generic [ref=e342]:
+                  - link "DeepSeek等语言模型API参数「token」是什么意思？中文怎么翻译？" [ref=e344] [cursor=pointer]:
+                    - /url: https://aizhinan.cc/253
+                  - generic [ref=e346]:
+                    - time [ref=e347]: 1年前 (2025)
+                    - generic [ref=e349]:
+                      - generic [ref=e350]: 
+                      - text: 5,746
+              - generic [ref=e351]:
+                - link "2025年DeepSeek R1/V3满血版接入指南：国内平替18大平台免费使用" [ref=e353] [cursor=pointer]:
+                  - /url: https://aizhinan.cc/252
+                - generic [ref=e354]:
+                  - link "2025年DeepSeek R1/V3满血版接入指南：国内平替18大平台免费使用" [ref=e356] [cursor=pointer]:
+                    - /url: https://aizhinan.cc/252
+                  - generic [ref=e358]:
+                    - time [ref=e359]: 1年前 (2025)
+                    - generic [ref=e361]:
+                      - generic [ref=e362]: 
+                      - text: 6,215
+          - generic [ref=e363]:
+            - heading " 热门标签" [level=3] [ref=e365]:
+              - generic [ref=e366]: 
+              - text: 热门标签
+            - generic [ref=e368]:
+              - link "DeepSeek使用教程(19)" [ref=e369] [cursor=pointer]:
+                - /url: https://aizhinan.cc/tag/deepseek-tutorial
+              - link "AI最新资讯(15)" [ref=e370] [cursor=pointer]:
+                - /url: https://aizhinan.cc/tag/ai-latest-news
+              - link "AI智能绘画在线平台(10)" [ref=e371] [cursor=pointer]:
+                - /url: https://aizhinan.cc/sitetag/ai%e6%99%ba%e8%83%bd%e7%bb%98%e7%94%bb%e5%9c%a8%e7%ba%bf%e5%b9%b3%e5%8f%b0
+              - link "AI人工智能绘画(10)" [ref=e372] [cursor=pointer]:
+                - /url: https://aizhinan.cc/sitetag/ai%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%bb%98%e7%94%bb
+              - link "AI聊天机器人(8)" [ref=e373] [cursor=pointer]:
+                - /url: https://aizhinan.cc/sitetag/ai%e8%81%8a%e5%a4%a9%e6%9c%ba%e5%99%a8%e4%ba%ba
+              - link "AI编程工具(8)" [ref=e374] [cursor=pointer]:
+                - /url: https://aizhinan.cc/tag/ai-programming-tool
+              - link "人工智能聊天(8)" [ref=e375] [cursor=pointer]:
+                - /url: https://aizhinan.cc/sitetag/%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e8%81%8a%e5%a4%a9
+              - link "ChatGPT(6)" [ref=e376] [cursor=pointer]:
+                - /url: https://aizhinan.cc/sitetag/chatgpt
+              - link "AI绘画教程(6)" [ref=e377] [cursor=pointer]:
+                - /url: https://aizhinan.cc/tag/ai-painting-tutorial
+              - link "Midijourney使用教程(6)" [ref=e378] [cursor=pointer]:
+                - /url: https://aizhinan.cc/tag/midijourney
+              - link "ChatGPT(6)" [ref=e379] [cursor=pointer]:
+                - /url: https://aizhinan.cc/tag/chatgpt
+              - link "AI写作软件(5)" [ref=e380] [cursor=pointer]:
+                - /url: https://aizhinan.cc/sitetag/ai%e5%86%99%e4%bd%9c%e8%bd%af%e4%bb%b6
+              - link "OpenAI(4)" [ref=e381] [cursor=pointer]:
+                - /url: https://aizhinan.cc/tag/openai
+              - link "Stable Diffusion(4)" [ref=e382] [cursor=pointer]:
+                - /url: https://aizhinan.cc/sitetag/stable-diffusion
+              - link "OpenAI(3)" [ref=e383] [cursor=pointer]:
+                - /url: https://aizhinan.cc/sitetag/openai
+              - link "AI绘画软件下载(3)" [ref=e384] [cursor=pointer]:
+                - /url: https://aizhinan.cc/sitetag/ai%e7%bb%98%e7%94%bb%e8%bd%af%e4%bb%b6%e4%b8%8b%e8%bd%bd
+              - link "二次元AI绘画软件(2)" [ref=e385] [cursor=pointer]:
+                - /url: https://aizhinan.cc/sitetag/%e4%ba%8c%e6%ac%a1%e5%85%83ai%e7%bb%98%e7%94%bb%e8%bd%af%e4%bb%b6
+              - link "Midijourney(2)" [ref=e386] [cursor=pointer]:
+                - /url: https://aizhinan.cc/sitetag/midijourney
+              - link "文心一格AI绘画(1)" [ref=e387] [cursor=pointer]:
+                - /url: https://aizhinan.cc/sitetag/%e6%96%87%e5%bf%83%e4%b8%80%e6%a0%bcai%e7%bb%98%e7%94%bb
+              - link "AI绘画微信小程序(1)" [ref=e388] [cursor=pointer]:
+                - /url: https://aizhinan.cc/sitetag/ai%e7%bb%98%e7%94%bb%e5%be%ae%e4%bf%a1%e5%b0%8f%e7%a8%8b%e5%ba%8f
+              - link "Stable Diffusion模型下载网站(1)" [ref=e389] [cursor=pointer]:
+                - /url: https://aizhinan.cc/sitetag/stable-diffusion%e6%a8%a1%e5%9e%8b%e4%b8%8b%e8%bd%bd%e7%bd%91%e7%ab%99
+              - link "Bing(1)" [ref=e390] [cursor=pointer]:
+                - /url: https://aizhinan.cc/tag/bing
+              - link "AI浏览器插件扩展(1)" [ref=e391] [cursor=pointer]:
+                - /url: https://aizhinan.cc/sitetag/ai%e6%b5%8f%e8%a7%88%e5%99%a8%e6%8f%92%e4%bb%b6%e6%89%a9%e5%b1%95
+    - insertion [ref=e393]
+    - generic [ref=e398]:
+      - text: Copyright © 2026
+      - link "AI 指南" [ref=e399] [cursor=pointer]:
+        - /url: https://aizhinan.cc
+  - contentinfo:
+    - generic [ref=e400]:
+      - text: 
+      - link "" [ref=e401] [cursor=pointer]:
+        - /url: "javascript:"
+        - generic [ref=e402]: 
+  - text:         

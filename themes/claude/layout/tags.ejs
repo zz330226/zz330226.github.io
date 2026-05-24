@@ -1,0 +1,55 @@
+<!-- 标签列表页 - 左右布局 -->
+<div class="post-page-wrapper">
+  <!-- 左侧：标签列表 -->
+  <div class="post-main">
+    <div class="post-header">
+      <h1 class="post-title"><i class="fas fa-tags"></i> 全部标签</h1>
+      <div class="post-meta">
+        <span><i class="fas fa-tag"></i> 共 <%= site.tags.length %> 个标签</span>
+      </div>
+    </div>
+
+    <div class="tag-grid">
+      <% site.tags.sort('-posts').each(function(tag) { %>
+        <a href="<%= url_for(tag.path) %>" class="tag-grid-item">
+          <i class="fas fa-tag"></i>
+          <span class="tag-name"><%= tag.name %></span>
+          <span class="tag-count"><%= tag.posts.length %></span>
+        </a>
+      <% }); %>
+    </div>
+  </div>
+
+  <!-- 右侧：侧边栏 -->
+  <aside class="post-sidebar">
+    <!-- 搜索框 -->
+    <div class="sidebar-widget search-widget">
+      <div class="widget-title"><i class="fas fa-search"></i> 搜索</div>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="搜索文章...">
+        <button id="searchBtn"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+
+    <!-- 最新文章 -->
+    <div class="sidebar-widget">
+      <div class="widget-title"><i class="fas fa-newspaper"></i> 最新文章</div>
+      <ul class="widget-list">
+        <% site.posts.sort('-date').limit(6).forEach(function(post) { %>
+          <li><a href="<%= url_for(post.path) %>"><%= post.title %></a></li>
+        <% }); %>
+      </ul>
+    </div>
+
+    <!-- 标签云 3D -->
+    <div class="sidebar-widget tag-cloud-widget">
+      <div class="widget-title"><i class="fas fa-tags"></i> 标签云</div>
+      <div class="tag-cloud-3d" id="tagCloud3d">
+        <% var tagsArray = site.tags.toArray(); %>
+        <% tagsArray.forEach(function(tag, index) { %>
+          <a href="<%= url_for(tag.path) %>" class="tag-3d-item" data-index="<%= index %>"><%= tag.name %></a>
+        <% }); %>
+      </div>
+    </div>
+  </aside>
+</div>

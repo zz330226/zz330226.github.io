@@ -1,0 +1,9 @@
+.page-title 标签：#{page.tag}
+.articles-list
+  each post in page.posts.toArray()
+    article.article-card
+      .article-content
+        h2.article-title
+          a(href=url_for(post.path))= post.title
+        .article-meta
+          span.date= date(post.date, 'YYYY-MM-DD')

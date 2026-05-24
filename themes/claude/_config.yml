@@ -1,0 +1,36 @@
+# Claude Theme 配置文件
+# 极简深色风格主题
+
+# 网站信息
+site:
+  title: 个人博客
+  subtitle: 记录生活与技术
+  author: itx-blog
+
+# 导航菜单
+menu:
+  首页: /
+  归档: /archives
+  分类: /categories
+  标签: /tags
+  关于: /about
+
+# 社交链接
+social:
+  github: https://github.com/zz330226
+
+# 颜色配置 - Claude风格
+color:
+  background: "#0d0d0d"
+  card: "#1a1a1a"
+  text: "#e5e5e5"
+  title: "#ffffff"
+  accent: "#D97706"  # 橙色
+  accent_hover: "#F59E0B"
+  border: "#2d2d2d"
+  code_bg: "#1f1f1f"
+
+# 页脚
+footer:
+  since: 2024
+  copyright: itx-blog
