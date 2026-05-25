@@ -29,6 +29,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - google3b2104ac1f35ff60.html
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -92,6 +93,13 @@ pagination_dir: page
 include:
 exclude:
 ignore:
+
+robotstxt:
+  path: robots.txt
+  content: "User-agent: *\nAllow: /\nSitemap: https://blog.kkming.dpdns.org/sitemap.xml"
+
+sitemap:
+  path: sitemap.xml
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
