@@ -205,4 +205,6 @@ CDN:
 # 注入 - 暂不使用自定义CSS
 inject:
   head:
-  footer:
+    - <link rel="stylesheet" href="/css/sidebar-search.css">
+  bottom:
+    - <script src="/js/sidebar-search.js"></script>

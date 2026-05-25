@@ -1,0 +1,13 @@
+top:
+  - class_name: card-widget sidebar-search-card
+    id_name: sidebar-search
+    icon: fas fa-search
+    name: 搜索
+    html: |
+      <div class="sidebar-search-wrapper">
+        <div class="sidebar-search-input-wrap">
+          <input id="sidebar-search-input" type="search" placeholder="搜索文章..." autocomplete="off" />
+          <button id="sidebar-search-btn" title="搜索"><i class="fas fa-search"></i></button>
+        </div>
+        <div id="sidebar-search-results" class="sidebar-search-results"></div>
+      </div>
