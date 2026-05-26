@@ -12,7 +12,7 @@ tags:
   - Claude Code
   - Playwright
   - CDP
-cover: /img/browser-automation.jpg
+cover: /img/Harness.jpg
 ---
 
 ## 前言
