@@ -1,0 +1,637 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - img "avatar" [ref=e4]
+    - generic [ref=e5]:
+      - link "文章 20" [ref=e6] [cursor=pointer]:
+        - /url: /archives/
+        - generic [ref=e7]: 文章
+        - generic [ref=e8]: "20"
+      - link "标签 64" [ref=e9] [cursor=pointer]:
+        - /url: /tags/
+        - generic [ref=e10]: 标签
+        - generic [ref=e11]: "64"
+      - link "分类 7" [ref=e12] [cursor=pointer]:
+        - /url: /categories/
+        - generic [ref=e13]: 分类
+        - generic [ref=e14]: "7"
+    - generic [ref=e15]:
+      - link "首页" [ref=e17] [cursor=pointer]:
+        - /url: /
+        - text: 首页
+      - link "归档" [ref=e20] [cursor=pointer]:
+        - /url: /archives/
+        - text: 归档
+      - link "分类" [ref=e23] [cursor=pointer]:
+        - /url: /categories/
+        - text: 分类
+      - link "标签" [ref=e26] [cursor=pointer]:
+        - /url: /tags/
+        - text: 标签
+      - link "关于" [ref=e29] [cursor=pointer]:
+        - /url: /about/
+        - text: 关于
+      - link "友链" [ref=e32] [cursor=pointer]:
+        - /url: /link/
+        - text: 友链
+      - link "留言板" [ref=e35] [cursor=pointer]:
+        - /url: /comments/
+        - text: 留言板
+  - generic [ref=e37]:
+    - banner [ref=e38]:
+      - navigation [ref=e39]:
+        - link "AI技术前沿" [ref=e41] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e43]:
+          - link "首页" [ref=e45] [cursor=pointer]:
+            - /url: /
+            - text: 首页
+          - link "归档" [ref=e48] [cursor=pointer]:
+            - /url: /archives/
+            - text: 归档
+          - link "分类" [ref=e51] [cursor=pointer]:
+            - /url: /categories/
+            - text: 分类
+          - link "标签" [ref=e54] [cursor=pointer]:
+            - /url: /tags/
+            - text: 标签
+          - link "关于" [ref=e57] [cursor=pointer]:
+            - /url: /about/
+            - text: 关于
+          - link "友链" [ref=e60] [cursor=pointer]:
+            - /url: /link/
+            - text: 友链
+          - link "留言板" [ref=e63] [cursor=pointer]:
+            - /url: /comments/
+            - text: 留言板
+      - heading "AI技术前沿" [level=1] [ref=e66]
+    - main [ref=e69]:
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - generic [ref=e72]:
+            - link "Crawl4AI - 开源LLM友好型网络爬虫完全指南" [ref=e74] [cursor=pointer]:
+              - /url: /2026/05/25/crawl4ai-guide/
+              - img "Crawl4AI - 开源LLM友好型网络爬虫完全指南" [ref=e75]
+            - generic [ref=e76]:
+              - link "Crawl4AI - 开源LLM友好型网络爬虫完全指南" [ref=e77] [cursor=pointer]:
+                - /url: /2026/05/25/crawl4ai-guide/
+              - generic [ref=e78]:
+                - generic [ref=e79]:
+                  - text: 发表于
+                  - time [ref=e81]: 2026-05-25
+                - generic [ref=e82]:
+                  - text: "|"
+                  - link "AI工具箱" [ref=e84] [cursor=pointer]:
+                    - /url: /categories/AI%E5%B7%A5%E5%85%B7%E7%AE%B1/
+                - generic [ref=e85]:
+                  - text: "|"
+                  - link "AI" [ref=e87] [cursor=pointer]:
+                    - /url: /tags/AI/
+                  - text: •
+                  - link "LLM" [ref=e89] [cursor=pointer]:
+                    - /url: /tags/LLM/
+                  - text: •
+                  - link "爬虫" [ref=e91] [cursor=pointer]:
+                    - /url: /tags/%E7%88%AC%E8%99%AB/
+                  - text: •
+                  - link "Python" [ref=e93] [cursor=pointer]:
+                    - /url: /tags/Python/
+                  - text: •
+                  - link "开源项目" [ref=e95] [cursor=pointer]:
+                    - /url: /tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/
+                  - text: •
+                  - link "RAG" [ref=e97] [cursor=pointer]:
+                    - /url: /tags/RAG/
+                  - text: •
+                  - link "Playwright" [ref=e99] [cursor=pointer]:
+                    - /url: /tags/Playwright/
+              - generic [ref=e100]: 项目简介Crawl4AI 是目前 GitHub 上星标最多的开源网络爬虫项目（66.2k Stars），专为 AI 时代设计。它的核心理念是将网页内容转换为干净、结构化的 Markdown，为 RAG（检索增强生成）、AI Agent 和数据管道提供高质量的数据源。 “Crawl4AI turns the web into clean, LLM ready Markdown for RAG, agents, and data pipelines.” 项目数据： GitHub Stars：66,200+ 主要语言：Python（98.8%） 许可证：Apache 2.0（可商用） 当前版本：v0.8.6 仓库地址：https://github.com/unclecode/crawl4ai 官网：https://crawl4ai.com 文档：https://docs.crawl4ai.com 为什么选择 Crawl4AI市面上爬虫工具不少，但 Crawl4AI 有几个让人眼前一亮的差异化优势： 1. 真正开源免费 不像很多”开源”爬虫需要付费账户和 API Token，Cr...
+          - generic [ref=e101]:
+            - link "Shannon - AI自主渗透测试工具完全指南" [ref=e103] [cursor=pointer]:
+              - /url: /2026/05/25/shannon-ai-pentest/
+              - img "Shannon - AI自主渗透测试工具完全指南" [ref=e104]
+            - generic [ref=e105]:
+              - link "Shannon - AI自主渗透测试工具完全指南" [ref=e106] [cursor=pointer]:
+                - /url: /2026/05/25/shannon-ai-pentest/
+              - generic [ref=e107]:
+                - generic [ref=e108]:
+                  - text: 发表于
+                  - time [ref=e110]: 2026-05-25
+                - generic [ref=e111]:
+                  - text: "|"
+                  - link "AI工具箱" [ref=e113] [cursor=pointer]:
+                    - /url: /categories/AI%E5%B7%A5%E5%85%B7%E7%AE%B1/
+                - generic [ref=e114]:
+                  - text: "|"
+                  - link "Claude" [ref=e116] [cursor=pointer]:
+                    - /url: /tags/Claude/
+                  - text: •
+                  - link "AI" [ref=e118] [cursor=pointer]:
+                    - /url: /tags/AI/
+                  - text: •
+                  - link "LLM" [ref=e120] [cursor=pointer]:
+                    - /url: /tags/LLM/
+                  - text: •
+                  - link "开源项目" [ref=e122] [cursor=pointer]:
+                    - /url: /tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/
+                  - text: •
+                  - link "渗透测试" [ref=e124] [cursor=pointer]:
+                    - /url: /tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/
+                  - text: •
+                  - link "安全工具" [ref=e126] [cursor=pointer]:
+                    - /url: /tags/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/
+              - generic [ref=e127]: 项目简介Shannon 是由 Keygraph 开发的自主化 AI 白盒渗透测试工具，专为 Web 应用程序和 API 设计。它通过分析源代码、执行真实漏洞利用、生成可复现 PoC 报告的方式，实现端到端的自动化安全测试。 “Thanks to tools like Claude Code and Cursor, your team ships code non-stop. But your penetration test? That happens once a year. This creates a massive security gap.” 项目数据： GitHub Stars：43.6k 主要语言：TypeScript（92.5%） 许可证：AGPL-3.0 最新版本：v1.2.0（2026年5月） 仓库地址：https://github.com/KeygraphHQ/shannon 核心特性1. 完全自主运行单条命令即可启动完整渗透测试流程。Shannon 自动处理 2FA/TOTP 登录（包括 SSO）、浏览器导航、漏洞利用和报告生成，全程无需...
+          - generic [ref=e128]:
+            - link "CodeGraph 部署与使用指南：让 AI 编程助手拥有语义级代码理解力" [ref=e130] [cursor=pointer]:
+              - /url: /2026/05/25/codegraph-guide/
+              - img "CodeGraph 部署与使用指南：让 AI 编程助手拥有语义级代码理解力" [ref=e131]
+            - generic [ref=e132]:
+              - link "CodeGraph 部署与使用指南：让 AI 编程助手拥有语义级代码理解力" [ref=e133] [cursor=pointer]:
+                - /url: /2026/05/25/codegraph-guide/
+              - generic [ref=e134]:
+                - generic [ref=e135]:
+                  - text: 发表于
+                  - time [ref=e137]: 2026-05-25
+                - generic [ref=e138]:
+                  - text: "|"
+                  - link "AI工具" [ref=e140] [cursor=pointer]:
+                    - /url: /categories/AI%E5%B7%A5%E5%85%B7/
+                - generic [ref=e141]:
+                  - text: "|"
+                  - link "AI" [ref=e143] [cursor=pointer]:
+                    - /url: /tags/AI/
+                  - text: •
+                  - link "GitHub" [ref=e145] [cursor=pointer]:
+                    - /url: /tags/GitHub/
+                  - text: •
+                  - link "CodeGraph" [ref=e147] [cursor=pointer]:
+                    - /url: /tags/CodeGraph/
+                  - text: •
+                  - link "Claude Code" [ref=e149] [cursor=pointer]:
+                    - /url: /tags/Claude-Code/
+                  - text: •
+                  - link "MCP" [ref=e151] [cursor=pointer]:
+                    - /url: /tags/MCP/
+              - generic [ref=e152]: 前言最近 GitHub 上增长最快的项目之一，colbymchenry/codegraph 以周增速 18,000+ Star 的速度冲上热门。它的核心理念很简单：给 AI 编程助手装一个「语义级代码搜索引擎」，让 Agent 不再盲目读文件，而是直接查询预构建的知识图谱。 本文详细介绍 CodeGraph 的安装、配置和核心用法。 它解决了什么问题？在使用 Claude Code、Cursor、Codex 等 AI 编程助手时，一个常见痛点是： Agent 想修改一个函数，却要先 grep 全文、逐个读取文件，消耗大量 token 和工具调用。 CodeGraph 的解决方案是： 用 Tree-sitter 解析源码，生成抽象语法树（AST） 提取符号关系（调用链、依赖链、路由映射） 存入本地 SQLite + FTS5 全文搜索索引 通过 MCP Server 暴露语义查询接口 结果：Agent 查询一个函数名，直接返回定义位置、调用者、被调用者、影响范围——无需扫描整个项目。 官方基准测试显示： 工具调用减少 71% Token 消耗减少 57% 延迟...
+          - generic [ref=e153]:
+            - link "Voicebox-开源AI语音工作室部署教程" [ref=e155] [cursor=pointer]:
+              - /url: /2026/05/24/voicebox-deploy/
+              - img "Voicebox-开源AI语音工作室部署教程" [ref=e156]
+            - generic [ref=e157]:
+              - link "Voicebox-开源AI语音工作室部署教程" [ref=e158] [cursor=pointer]:
+                - /url: /2026/05/24/voicebox-deploy/
+              - generic [ref=e159]:
+                - generic [ref=e160]:
+                  - text: 发表于
+                  - time [ref=e162]: 2026-05-24
+                - generic [ref=e163]:
+                  - text: "|"
+                  - link "AI工具箱" [ref=e165] [cursor=pointer]:
+                    - /url: /categories/AI%E5%B7%A5%E5%85%B7%E7%AE%B1/
+                - generic [ref=e166]:
+                  - text: "|"
+                  - link "AI工具" [ref=e168] [cursor=pointer]:
+                    - /url: /tags/AI%E5%B7%A5%E5%85%B7/
+                  - text: •
+                  - link "开源项目" [ref=e170] [cursor=pointer]:
+                    - /url: /tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/
+                  - text: •
+                  - link "本地部署" [ref=e172] [cursor=pointer]:
+                    - /url: /tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/
+                  - text: •
+                  - link "TTS" [ref=e174] [cursor=pointer]:
+                    - /url: /tags/TTS/
+                  - text: •
+                  - link "语音合成" [ref=e176] [cursor=pointer]:
+                    - /url: /tags/%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/
+              - generic [ref=e177]: 项目简介Voicebox 是一个本地优先的 AI 语音工作室，被誉为 ElevenLabs 和 WisprFlow 的开源替代品。该项目由 jamiepine 开发，目前已获得超过 27.9k Star，采用 MIT 开源许可证。 核心定位：将语音合成（TTS）、语音识别（STT）和 AI Agent 语音输出三大功能集成在一个应用中，完全本地运行，数据不离设备。 主要特性🎙️ 语音输出（TTS）Voicebox 内置 7 个 TTS 引擎： 引擎 特点 Qwen3-TTS 阿里最新多语言TTS模型 Qwen CustomVoice 支持自定义声音克隆 LuxTTS 高质量中文语音 Chatterbox Multilingual 多语言支持 Chatterbox Turbo 快速生成模式 HumeAI TADA 情感语音合成 Kokoro 轻量级高效引擎 亮点功能： 支持 23 种语言 零样本语音克隆：仅需几秒参考音频即可克隆声音 50+ 预设声音可直接使用 表情标签支持：[laugh]、[sigh]、[gasp] 等情感控制 8 种后...
+          - generic [ref=e178]:
+            - link "PyTorch深度学习入门" [ref=e180] [cursor=pointer]:
+              - /url: /2026/05/23/pytorch-intro/
+              - img "PyTorch深度学习入门" [ref=e181]
+            - generic [ref=e182]:
+              - link "PyTorch深度学习入门" [ref=e183] [cursor=pointer]:
+                - /url: /2026/05/23/pytorch-intro/
+              - generic [ref=e184]:
+                - generic [ref=e185]:
+                  - text: 发表于
+                  - time [ref=e187]: 2026-05-23
+                - generic [ref=e188]:
+                  - text: "|"
+                  - link "深度学习" [ref=e190] [cursor=pointer]:
+                    - /url: /categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/
+                - generic [ref=e191]:
+                  - text: "|"
+                  - link "Python" [ref=e193] [cursor=pointer]:
+                    - /url: /tags/Python/
+                  - text: •
+                  - link "PyTorch" [ref=e195] [cursor=pointer]:
+                    - /url: /tags/PyTorch/
+                  - text: •
+                  - link "深度学习" [ref=e197] [cursor=pointer]:
+                    - /url: /tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/
+                  - text: •
+                  - link "神经网络" [ref=e199] [cursor=pointer]:
+                    - /url: /tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/
+                  - text: •
+                  - link "机器学习" [ref=e201] [cursor=pointer]:
+                    - /url: /tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/
+              - generic [ref=e202]: "PyTorch 安装与环境配置# 创建虚拟环境conda create -n pytorch python=3.10conda activate pytorch# 安装PyTorch（GPU版本）pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118# 验证安装python -c \"import torch; print(torch.cuda.is_available())\" Tensor 基础操作import torch# 创建张量x = torch.tensor([1, 2, 3, 4])y = torch.zeros(3, 4)z = torch.randn(2, 3) # 随机正态分布# 张量运算a = torch.add(x, 2)b = x * 2c = x.view(2, 2) # 改变形状# GPU加速if torch.cuda.is_available(): x = x.cuda() 构建第一个神经网络..."
+          - generic [ref=e203]:
+            - link "10个必备AI工具推荐" [ref=e205] [cursor=pointer]:
+              - /url: /2026/05/22/ai-tools/
+              - img "10个必备AI工具推荐" [ref=e206]
+            - generic [ref=e207]:
+              - link "10个必备AI工具推荐" [ref=e208] [cursor=pointer]:
+                - /url: /2026/05/22/ai-tools/
+              - generic [ref=e209]:
+                - generic [ref=e210]:
+                  - text: 发表于
+                  - time [ref=e212]: 2026-05-22
+                - generic [ref=e213]:
+                  - text: "|"
+                  - link "AI工具箱" [ref=e215] [cursor=pointer]:
+                    - /url: /categories/AI%E5%B7%A5%E5%85%B7%E7%AE%B1/
+                - generic [ref=e216]:
+                  - text: "|"
+                  - link "ChatGPT" [ref=e218] [cursor=pointer]:
+                    - /url: /tags/ChatGPT/
+                  - text: •
+                  - link "AI工具" [ref=e220] [cursor=pointer]:
+                    - /url: /tags/AI%E5%B7%A5%E5%85%B7/
+                  - text: •
+                  - link "效率工具" [ref=e222] [cursor=pointer]:
+                    - /url: /tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/
+                  - text: •
+                  - link "Copilot" [ref=e224] [cursor=pointer]:
+                    - /url: /tags/Copilot/
+                  - text: •
+                  - link "自动化" [ref=e226] [cursor=pointer]:
+                    - /url: /tags/%E8%87%AA%E5%8A%A8%E5%8C%96/
+              - generic [ref=e227]: "编程开发类1. GitHub CopilotGitHub Copilot 是目前最强的AI编程助手，支持多种IDE。 核心功能： 代码自动补全 根据注释生成代码 单元测试生成 代码解释 使用技巧： // 写清晰的注释// 创建一个函数，接收列表并返回排序后的唯一值// Copilot会自动生成代码def get_unique_sorted(lst): return sorted(set(lst)) 2. CursorCursor是基于VSCode的AI IDE，内置强大AI能力。 优势： 内置Claude/GPT支持 整个项目上下文理解 多文件重构 3. Codeium免费替代Copilot的选择，支持主流IDE。 写作办公类4. Notion AI笔记软件中的AI助手，可以： 自动生成内容大纲 智能摘要长文 多语言翻译 5. GammaAI驱动的演示文稿生成器： 输入: \"创建一个关于AI发展趋势的演示文稿\"输出: 自动生成10页精美PPT 设计创意类6. Midjourney顶级AI绘画工具： /imagine prom..."
+          - generic [ref=e228]:
+            - link "Linux服务器运维笔记" [ref=e230] [cursor=pointer]:
+              - /url: /2026/05/21/linux-ops/
+              - img "Linux服务器运维笔记" [ref=e231]
+            - generic [ref=e232]:
+              - link "Linux服务器运维笔记" [ref=e233] [cursor=pointer]:
+                - /url: /2026/05/21/linux-ops/
+              - generic [ref=e234]:
+                - generic [ref=e235]:
+                  - text: 发表于
+                  - time [ref=e237]: 2026-05-21
+                - generic [ref=e238]:
+                  - text: "|"
+                  - link "Linux运维" [ref=e240] [cursor=pointer]:
+                    - /url: /categories/Linux%E8%BF%90%E7%BB%B4/
+                - generic [ref=e241]:
+                  - text: "|"
+                  - link "自动化" [ref=e243] [cursor=pointer]:
+                    - /url: /tags/%E8%87%AA%E5%8A%A8%E5%8C%96/
+                  - text: •
+                  - link "Linux" [ref=e245] [cursor=pointer]:
+                    - /url: /tags/Linux/
+                  - text: •
+                  - link "Ubuntu" [ref=e247] [cursor=pointer]:
+                    - /url: /tags/Ubuntu/
+                  - text: •
+                  - link "运维" [ref=e249] [cursor=pointer]:
+                    - /url: /tags/%E8%BF%90%E7%BB%B4/
+                  - text: •
+                  - link "监控" [ref=e251] [cursor=pointer]:
+                    - /url: /tags/%E7%9B%91%E6%8E%A7/
+                  - text: •
+                  - link "Shell" [ref=e253] [cursor=pointer]:
+                    - /url: /tags/Shell/
+              - generic [ref=e254]: "系统监控工具CPU监控# 实时CPU使用率top -bn1 | grep \"Cpu(s)\"# 使用 htop（更友好）htop# 查看CPU核心数nproclscpu 内存监控# 内存使用情况free -h# 详细内存信息cat /proc/meminfo# 按进程排序内存使用ps aux --sort=-%mem | head -10 磁盘监控# 磁盘使用情况df -h# 目录大小统计du -sh /var/log/*# 磁盘IO监控iostat -x 1 自动化运维脚本系统健康检查脚本#!/bin/bash# system_health.sh - 系统健康检查ALERT_THRESHOLD=90# CPU检查CPU_USAGE=$(top -bn1 | grep \"Cpu(s)\" | awk '{print $2}' | cut -d% -f1)if [ $CPU_USAGE -gt $ALERT_THRESHOLD ]; then echo \"警告: CPU使用率 $\x01..."
+          - generic [ref=e255]:
+            - link "Python异步编程实战" [ref=e257] [cursor=pointer]:
+              - /url: /2026/05/20/python-async/
+              - img "Python异步编程实战" [ref=e258]
+            - generic [ref=e259]:
+              - link "Python异步编程实战" [ref=e260] [cursor=pointer]:
+                - /url: /2026/05/20/python-async/
+              - generic [ref=e261]:
+                - generic [ref=e262]:
+                  - text: 发表于
+                  - time [ref=e264]: 2026-05-20
+                - generic [ref=e265]:
+                  - text: "|"
+                  - link "Python开发" [ref=e267] [cursor=pointer]:
+                    - /url: /categories/Python%E5%BC%80%E5%8F%91/
+                - generic [ref=e268]:
+                  - text: "|"
+                  - link "Python" [ref=e270] [cursor=pointer]:
+                    - /url: /tags/Python/
+                  - text: •
+                  - link "asyncio" [ref=e272] [cursor=pointer]:
+                    - /url: /tags/asyncio/
+                  - text: •
+                  - link "异步编程" [ref=e274] [cursor=pointer]:
+                    - /url: /tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/
+                  - text: •
+                  - link "并发" [ref=e276] [cursor=pointer]:
+                    - /url: /tags/%E5%B9%B6%E5%8F%91/
+              - generic [ref=e277]: "为什么需要异步编程在处理大量I/O操作时，同步代码会严重阻塞程序执行。异步编程可以让程序在等待I/O时继续执行其他任务。 同步 vs 异步对比# 同步方式 - 总耗时约6秒import timedef fetch_data(url): time.sleep(2) # 模拟网络请求 return f\"Data from {url}\"def main(): start = time.time() results = [] for url in ['url1', 'url2', 'url3']: results.append(fetch_data(url)) print(f\"耗时: {time.time() - start}秒\") main() # 异步方式 - 总耗时约2秒import asyncioasync def fetch_data(url): awai..."
+          - generic [ref=e278]:
+            - link "Llama 3.1 本地部署教程" [ref=e280] [cursor=pointer]:
+              - /url: /2026/05/19/llama-deploy/
+              - img "Llama 3.1 本地部署教程" [ref=e281]
+            - generic [ref=e282]:
+              - link "Llama 3.1 本地部署教程" [ref=e283] [cursor=pointer]:
+                - /url: /2026/05/19/llama-deploy/
+              - generic [ref=e284]:
+                - generic [ref=e285]:
+                  - text: 发表于
+                  - time [ref=e287]: 2026-05-19
+                - generic [ref=e288]:
+                  - text: "|"
+                  - link "GitHub精选" [ref=e290] [cursor=pointer]:
+                    - /url: /categories/GitHub%E7%B2%BE%E9%80%89/
+                - generic [ref=e291]:
+                  - text: "|"
+                  - link "开源项目" [ref=e293] [cursor=pointer]:
+                    - /url: /tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/
+                  - text: •
+                  - link "本地部署" [ref=e295] [cursor=pointer]:
+                    - /url: /tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/
+                  - text: •
+                  - link "Ollama" [ref=e297] [cursor=pointer]:
+                    - /url: /tags/Ollama/
+                  - text: •
+                  - link "Llama" [ref=e299] [cursor=pointer]:
+                    - /url: /tags/Llama/
+                  - text: •
+                  - link "Meta" [ref=e301] [cursor=pointer]:
+                    - /url: /tags/Meta/
+              - generic [ref=e302]: "项目介绍Meta 开源的 Llama 3.1 是目前最强的开源大语言模型之一，8B版本可以在消费级显卡上流畅运行。 GitHub: https://github.com/meta-llama/llama3 环境准备硬件要求 模型版本 显存需求 推荐显卡 8B 8GB RTX 3060/4060 70B 40GB+ RTX 4090 x2 软件环境# Ubuntu 22.04 系统sudo apt updatesudo apt install nvidia-driver-535 部署方式一：Ollama（推荐）# 安装 Ollamacurl -fsSL https://ollama.com/install.sh | sh# 下载 Llama 3.1 8Bollama pull llama3.1:8b# 运行对话ollama run llama3.1:8b# API 服务ollama serve 部署方式二：llama.cpp# 克隆项目git clone https://github.com/ggerganov/llama.cppcd llama.c..."
+          - generic [ref=e303]:
+            - link "Claude Opus 4.7发布-编程能力大幅提升" [ref=e305] [cursor=pointer]:
+              - /url: /2026/05/18/claude-4-release/
+              - img "Claude Opus 4.7发布-编程能力大幅提升" [ref=e306]
+            - generic [ref=e307]:
+              - link "Claude Opus 4.7发布-编程能力大幅提升" [ref=e308] [cursor=pointer]:
+                - /url: /2026/05/18/claude-4-release/
+              - generic [ref=e309]:
+                - generic [ref=e310]:
+                  - text: 发表于
+                  - time [ref=e312]: 2026-05-18
+                - generic [ref=e313]:
+                  - text: "|"
+                  - link "AI前沿资讯" [ref=e315] [cursor=pointer]:
+                    - /url: /categories/AI%E5%89%8D%E6%B2%BF%E8%B5%84%E8%AE%AF/
+                - generic [ref=e316]:
+                  - text: "|"
+                  - link "Claude" [ref=e318] [cursor=pointer]:
+                    - /url: /tags/Claude/
+                  - text: •
+                  - link "LLM" [ref=e320] [cursor=pointer]:
+                    - /url: /tags/LLM/
+                  - text: •
+                  - link "Anthropic" [ref=e322] [cursor=pointer]:
+                    - /url: /tags/Anthropic/
+                  - text: •
+                  - link "AI新闻" [ref=e324] [cursor=pointer]:
+                    - /url: /tags/AI%E6%96%B0%E9%97%BB/
+              - generic [ref=e325]: Claude Opus 4.7 正式发布2026年4月16日，Anthropic 正式发布了最新旗舰模型 Claude Opus 4.7，这是当前最强的大语言模型之一。 主要更新亮点1. 编程能力显著提升Opus 4.7 在高级软件工程领域表现出色，尤其擅长处理最困难的编程任务： **SWE-bench Verified 达到 87.6%**，超越 GPT-5.4 **93项编程基准测试提升 13%**，解决了4个 Opus 4.6 和 Sonnet 4.6 都无法完成的任务 能够自主验证输出结果，减少人工监督需求 更好地处理复杂、长时间运行的任务 2. 视觉理解能力增强 支持更高分辨率图像处理 在化学结构解析、技术图表理解方面表现优异 生成更高质量的界面设计、演示文稿和文档 3. 长文本处理能力 1M token 上下文窗口（100万token） 128K 最大输出token 支持自适应思考（adaptive thinking） 在长上下文任务中表现最稳定 4. 安全性增强Opus 4.7 引入了新的网络安全防护机制： 自动检测并阻止高风险网络安全请求 首批应用 An...
+        - navigation [ref=e326]:
+          - generic [ref=e327]:
+            - generic [ref=e328]: "1"
+            - link "2" [ref=e329] [cursor=pointer]:
+              - /url: /page/2/#content-inner
+            - link [ref=e330] [cursor=pointer]:
+              - /url: /page/2/#content-inner
+      - generic [ref=e332]:
+        - generic [ref=e333]:
+          - img "avatar" [ref=e335]
+          - generic [ref=e336]: itx-blog
+          - generic [ref=e337]: itx-blog 的个人博客
+          - generic [ref=e338]:
+            - link "文章 20" [ref=e339] [cursor=pointer]:
+              - /url: /archives/
+              - generic [ref=e340]: 文章
+              - generic [ref=e341]: "20"
+            - link "标签 64" [ref=e342] [cursor=pointer]:
+              - /url: /tags/
+              - generic [ref=e343]: 标签
+              - generic [ref=e344]: "64"
+            - link "分类 7" [ref=e345] [cursor=pointer]:
+              - /url: /categories/
+              - generic [ref=e346]: 分类
+              - generic [ref=e347]: "7"
+          - link "Follow Me" [ref=e348] [cursor=pointer]:
+            - /url: https://github.com/xxxxxx
+            - text: Follow Me
+          - link [ref=e351] [cursor=pointer]:
+            - /url: https://github.com/zz330226
+        - generic [ref=e353]:
+          - generic [ref=e354]: 搜索
+          - generic [ref=e358]:
+            - searchbox "搜索文章..." [ref=e359]
+            - button "搜索" [ref=e360] [cursor=pointer]
+        - generic [ref=e362]:
+          - generic [ref=e363]:
+            - generic [ref=e364]: 最新文章
+            - generic [ref=e366]:
+              - generic [ref=e367]:
+                - link "Crawl4AI - 开源LLM友好型网络爬虫完全指南" [ref=e368] [cursor=pointer]:
+                  - /url: /2026/05/25/crawl4ai-guide/
+                  - img "Crawl4AI - 开源LLM友好型网络爬虫完全指南" [ref=e369]
+                - generic [ref=e370]:
+                  - link "Crawl4AI - 开源LLM友好型网络爬虫完全指南" [ref=e371] [cursor=pointer]:
+                    - /url: /2026/05/25/crawl4ai-guide/
+                  - time [ref=e372]: 2026-05-25
+              - generic [ref=e373]:
+                - link "Shannon - AI自主渗透测试工具完全指南" [ref=e374] [cursor=pointer]:
+                  - /url: /2026/05/25/shannon-ai-pentest/
+                  - img "Shannon - AI自主渗透测试工具完全指南" [ref=e375]
+                - generic [ref=e376]:
+                  - link "Shannon - AI自主渗透测试工具完全指南" [ref=e377] [cursor=pointer]:
+                    - /url: /2026/05/25/shannon-ai-pentest/
+                  - time [ref=e378]: 2026-05-25
+              - generic [ref=e379]:
+                - link "CodeGraph 部署与使用指南：让 AI 编程助手拥有语义级代码理解力" [ref=e380] [cursor=pointer]:
+                  - /url: /2026/05/25/codegraph-guide/
+                  - img "CodeGraph 部署与使用指南：让 AI 编程助手拥有语义级代码理解力" [ref=e381]
+                - generic [ref=e382]:
+                  - link "CodeGraph 部署与使用指南：让 AI 编程助手拥有语义级代码理解力" [ref=e383] [cursor=pointer]:
+                    - /url: /2026/05/25/codegraph-guide/
+                  - time [ref=e384]: 2026-05-25
+              - generic [ref=e385]:
+                - link "Voicebox-开源AI语音工作室部署教程" [ref=e386] [cursor=pointer]:
+                  - /url: /2026/05/24/voicebox-deploy/
+                  - img "Voicebox-开源AI语音工作室部署教程" [ref=e387]
+                - generic [ref=e388]:
+                  - link "Voicebox-开源AI语音工作室部署教程" [ref=e389] [cursor=pointer]:
+                    - /url: /2026/05/24/voicebox-deploy/
+                  - time [ref=e390]: 2026-05-24
+              - generic [ref=e391]:
+                - link "PyTorch深度学习入门" [ref=e392] [cursor=pointer]:
+                  - /url: /2026/05/23/pytorch-intro/
+                  - img "PyTorch深度学习入门" [ref=e393]
+                - generic [ref=e394]:
+                  - link "PyTorch深度学习入门" [ref=e395] [cursor=pointer]:
+                    - /url: /2026/05/23/pytorch-intro/
+                  - time [ref=e396]: 2026-05-23
+          - generic [ref=e397]:
+            - generic [ref=e398]: 分类
+            - list [ref=e400]:
+              - listitem [ref=e401]:
+                - link "AI前沿资讯 2" [ref=e402] [cursor=pointer]:
+                  - /url: /categories/AI%E5%89%8D%E6%B2%BF%E8%B5%84%E8%AE%AF/
+                  - generic [ref=e403]: AI前沿资讯
+                  - generic [ref=e404]: "2"
+              - listitem [ref=e405]:
+                - link "AI工具 1" [ref=e406] [cursor=pointer]:
+                  - /url: /categories/AI%E5%B7%A5%E5%85%B7/
+                  - generic [ref=e407]: AI工具
+                  - generic [ref=e408]: "1"
+              - listitem [ref=e409]:
+                - link "AI工具箱 6" [ref=e410] [cursor=pointer]:
+                  - /url: /categories/AI%E5%B7%A5%E5%85%B7%E7%AE%B1/
+                  - generic [ref=e411]: AI工具箱
+                  - generic [ref=e412]: "6"
+              - listitem [ref=e413]:
+                - link "GitHub精选 2" [ref=e414] [cursor=pointer]:
+                  - /url: /categories/GitHub%E7%B2%BE%E9%80%89/
+                  - generic [ref=e415]: GitHub精选
+                  - generic [ref=e416]: "2"
+              - listitem [ref=e417]:
+                - link "Linux运维 4" [ref=e418] [cursor=pointer]:
+                  - /url: /categories/Linux%E8%BF%90%E7%BB%B4/
+                  - generic [ref=e419]: Linux运维
+                  - generic [ref=e420]: "4"
+              - listitem [ref=e421]:
+                - link "Python开发 4" [ref=e422] [cursor=pointer]:
+                  - /url: /categories/Python%E5%BC%80%E5%8F%91/
+                  - generic [ref=e423]: Python开发
+                  - generic [ref=e424]: "4"
+              - listitem [ref=e425]:
+                - link "深度学习 1" [ref=e426] [cursor=pointer]:
+                  - /url: /categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/
+                  - generic [ref=e427]: 深度学习
+                  - generic [ref=e428]: "1"
+          - generic [ref=e429]:
+            - generic [ref=e430]: 标签
+            - generic [ref=e432]:
+              - link "Anthropic" [ref=e433] [cursor=pointer]:
+                - /url: /tags/Anthropic/
+              - link "Claude" [ref=e434] [cursor=pointer]:
+                - /url: /tags/Claude/
+              - link "文本处理" [ref=e435] [cursor=pointer]:
+                - /url: /tags/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86/
+              - link "GitHub" [ref=e436] [cursor=pointer]:
+                - /url: /tags/GitHub/
+              - link "AI工具" [ref=e437] [cursor=pointer]:
+                - /url: /tags/AI%E5%B7%A5%E5%85%B7/
+              - link "正则表达式" [ref=e438] [cursor=pointer]:
+                - /url: /tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/
+              - link "监控" [ref=e439] [cursor=pointer]:
+                - /url: /tags/%E7%9B%91%E6%8E%A7/
+              - link "自动化" [ref=e440] [cursor=pointer]:
+                - /url: /tags/%E8%87%AA%E5%8A%A8%E5%8C%96/
+              - link "Midjourney" [ref=e441] [cursor=pointer]:
+                - /url: /tags/Midjourney/
+              - link "Web服务器" [ref=e442] [cursor=pointer]:
+                - /url: /tags/Web%E6%9C%8D%E5%8A%A1%E5%99%A8/
+              - link "TTS" [ref=e443] [cursor=pointer]:
+                - /url: /tags/TTS/
+              - link "Python" [ref=e444] [cursor=pointer]:
+                - /url: /tags/Python/
+              - link "容器" [ref=e445] [cursor=pointer]:
+                - /url: /tags/%E5%AE%B9%E5%99%A8/
+              - link "AI绘图" [ref=e446] [cursor=pointer]:
+                - /url: /tags/AI%E7%BB%98%E5%9B%BE/
+              - link "PyTorch" [ref=e447] [cursor=pointer]:
+                - /url: /tags/PyTorch/
+              - link "MCP" [ref=e448] [cursor=pointer]:
+                - /url: /tags/MCP/
+              - link "异步编程" [ref=e449] [cursor=pointer]:
+                - /url: /tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/
+              - link "CodeGraph" [ref=e450] [cursor=pointer]:
+                - /url: /tags/CodeGraph/
+              - link "DeepSeek" [ref=e451] [cursor=pointer]:
+                - /url: /tags/DeepSeek/
+              - link "RAG" [ref=e452] [cursor=pointer]:
+                - /url: /tags/RAG/
+              - link "Meta" [ref=e453] [cursor=pointer]:
+                - /url: /tags/Meta/
+              - link "对比" [ref=e454] [cursor=pointer]:
+                - /url: /tags/%E5%AF%B9%E6%AF%94/
+              - link "运维" [ref=e455] [cursor=pointer]:
+                - /url: /tags/%E8%BF%90%E7%BB%B4/
+              - link "性能优化" [ref=e456] [cursor=pointer]:
+                - /url: /tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/
+              - link "Copilot" [ref=e457] [cursor=pointer]:
+                - /url: /tags/Copilot/
+              - link "asyncio" [ref=e458] [cursor=pointer]:
+                - /url: /tags/asyncio/
+              - link "渗透测试" [ref=e459] [cursor=pointer]:
+                - /url: /tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/
+              - link "LLM" [ref=e460] [cursor=pointer]:
+                - /url: /tags/LLM/
+              - link "函数式编程" [ref=e461] [cursor=pointer]:
+                - /url: /tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/
+              - link "Claude Code" [ref=e462] [cursor=pointer]:
+                - /url: /tags/Claude-Code/
+              - link "安全工具" [ref=e463] [cursor=pointer]:
+                - /url: /tags/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/
+              - link "部署" [ref=e464] [cursor=pointer]:
+                - /url: /tags/%E9%83%A8%E7%BD%B2/
+              - link "效率工具" [ref=e465] [cursor=pointer]:
+                - /url: /tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/
+              - link "Web框架" [ref=e466] [cursor=pointer]:
+                - /url: /tags/Web%E6%A1%86%E6%9E%B6/
+              - link "AI" [ref=e467] [cursor=pointer]:
+                - /url: /tags/AI/
+              - link "人工智能" [ref=e468] [cursor=pointer]:
+                - /url: /tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/
+              - link "并发" [ref=e469] [cursor=pointer]:
+                - /url: /tags/%E5%B9%B6%E5%8F%91/
+              - link "Ubuntu" [ref=e470] [cursor=pointer]:
+                - /url: /tags/Ubuntu/
+              - link "Playwright" [ref=e471] [cursor=pointer]:
+                - /url: /tags/Playwright/
+              - link "Stable Diffusion" [ref=e472] [cursor=pointer]:
+                - /url: /tags/Stable-Diffusion/
+          - generic [ref=e473]:
+            - generic [ref=e474]: 归档
+            - list [ref=e476]:
+              - listitem [ref=e477]:
+                - link "五月 2026 20" [ref=e478] [cursor=pointer]:
+                  - /url: /archives/2026/05/
+                  - generic [ref=e479]: 五月 2026
+                  - generic [ref=e480]: "20"
+          - generic [ref=e481]:
+            - generic [ref=e482]: 网站信息
+            - generic [ref=e484]:
+              - generic [ref=e485]:
+                - generic [ref=e486]: "文章数目 :"
+                - generic [ref=e487]: "20"
+              - generic [ref=e488]:
+                - generic [ref=e489]: "本站访客数 :"
+                - generic [ref=e490]: "55553024"
+              - generic [ref=e491]:
+                - generic [ref=e492]: "本站总浏览量 :"
+                - generic [ref=e493]: "79177937"
+              - generic [ref=e494]:
+                - generic [ref=e495]: "最后更新时间 :"
+                - generic [ref=e496]: 刚刚
+    - contentinfo [ref=e497]:
+      - generic [ref=e498]:
+        - generic [ref=e499]:
+          - text: © 2024 - 2026 By itx-blog
+          - generic [ref=e500]:
+            - text: 框架
+            - link "Hexo 8.1.2" [ref=e501] [cursor=pointer]:
+              - /url: https://hexo.io
+            - text: "|主题"
+            - link "Butterfly 5.5.5-b1" [ref=e502] [cursor=pointer]:
+              - /url: https://github.com/jerryc127/hexo-theme-butterfly
+        - generic [ref=e503]: Copyright © 2024-2026 By itx-blog
+  - generic [ref=e504]:
+    - generic:
+      - button "日间和夜间模式切换" [ref=e505] [cursor=pointer]
+      - button "单栏和双栏切换" [ref=e507] [cursor=pointer]
+    - generic [ref=e509]:
+      - button "设置" [ref=e510] [cursor=pointer]
+      - button "回到顶部" [ref=e512] [cursor=pointer]

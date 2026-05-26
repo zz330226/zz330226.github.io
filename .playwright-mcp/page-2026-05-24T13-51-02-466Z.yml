@@ -1,0 +1,424 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - img "avatar" [ref=e4]
+    - generic [ref=e5]:
+      - link "文章 7" [ref=e6] [cursor=pointer]:
+        - /url: /archives/
+        - generic [ref=e7]: 文章
+        - generic [ref=e8]: "7"
+      - link "标签 29" [ref=e9] [cursor=pointer]:
+        - /url: /tags/
+        - generic [ref=e10]: 标签
+        - generic [ref=e11]: "29"
+      - link "分类 6" [ref=e12] [cursor=pointer]:
+        - /url: /categories/
+        - generic [ref=e13]: 分类
+        - generic [ref=e14]: "6"
+    - generic [ref=e15]:
+      - link "首页" [ref=e17] [cursor=pointer]:
+        - /url: /
+        - text: 首页
+      - link "归档" [ref=e20] [cursor=pointer]:
+        - /url: /archives/
+        - text: 归档
+      - link "分类" [ref=e23] [cursor=pointer]:
+        - /url: /categories/
+        - text: 分类
+      - link "标签" [ref=e26] [cursor=pointer]:
+        - /url: /tags/
+        - text: 标签
+      - link "关于" [ref=e29] [cursor=pointer]:
+        - /url: /about/
+        - text: 关于
+      - link "友链" [ref=e32] [cursor=pointer]:
+        - /url: /link/
+        - text: 友链
+      - link "留言板" [ref=e35] [cursor=pointer]:
+        - /url: /comments/
+        - text: 留言板
+  - generic [ref=e37]:
+    - banner [ref=e38]:
+      - navigation [ref=e39]:
+        - link "AI技术前沿" [ref=e41] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e43]:
+          - link "首页" [ref=e45] [cursor=pointer]:
+            - /url: /
+            - text: 首页
+          - link "归档" [ref=e48] [cursor=pointer]:
+            - /url: /archives/
+            - text: 归档
+          - link "分类" [ref=e51] [cursor=pointer]:
+            - /url: /categories/
+            - text: 分类
+          - link "标签" [ref=e54] [cursor=pointer]:
+            - /url: /tags/
+            - text: 标签
+          - link "关于" [ref=e57] [cursor=pointer]:
+            - /url: /about/
+            - text: 关于
+          - link "友链" [ref=e60] [cursor=pointer]:
+            - /url: /link/
+            - text: 友链
+          - link "留言板" [ref=e63] [cursor=pointer]:
+            - /url: /comments/
+            - text: 留言板
+      - generic [ref=e65]:
+        - heading "PyTorch深度学习入门" [level=1] [ref=e66]
+        - generic [ref=e67]:
+          - generic [ref=e68]:
+            - generic [ref=e69]:
+              - text: 发表于
+              - time [ref=e71]: 2026-05-23
+              - text: "|"
+              - text: 更新于
+              - time [ref=e73]: 2026-05-24
+            - generic [ref=e74]:
+              - text: "|"
+              - link "深度学习" [ref=e76] [cursor=pointer]:
+                - /url: /categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/
+          - generic [ref=e78]: 浏览量:4
+    - main [ref=e80]:
+      - generic [ref=e81]:
+        - article [ref=e82]:
+          - heading "PyTorch 安装与环境配置PyTorch 安装与环境配置" [level=2] [ref=e83]:
+            - link "PyTorch 安装与环境配置":
+              - /url: "#PyTorch-安装与环境配置"
+            - text: PyTorch 安装与环境配置
+          - figure [ref=e84]:
+            - generic [ref=e87]: bash
+            - table [ref=e89]:
+              - rowgroup [ref=e90]:
+                - 'row "# 创建虚拟环境 conda create -n pytorch python=3.10 conda activate pytorch # 安装PyTorch（GPU版本） pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 # 验证安装 python -c \"import torch; print(torch.cuda.is_available())\"" [ref=e91]':
+                  - 'cell "# 创建虚拟环境 conda create -n pytorch python=3.10 conda activate pytorch # 安装PyTorch（GPU版本） pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 # 验证安装 python -c \"import torch; print(torch.cuda.is_available())\"" [ref=e92]':
+                    - generic [ref=e93]:
+                      - generic [ref=e94]: "# 创建虚拟环境"
+                      - text: conda create -n pytorch python=3.10
+                      - text: conda activate pytorch
+                      - generic [ref=e95]: "# 安装PyTorch（GPU版本）"
+                      - text: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+                      - generic [ref=e96]: "# 验证安装"
+                      - generic [ref=e97]: python -c "import torch; print(torch.cuda.is_available())"
+          - heading "Tensor 基础操作Tensor 基础操作" [level=2] [ref=e98]:
+            - link "Tensor 基础操作":
+              - /url: "#Tensor-基础操作"
+            - text: Tensor 基础操作
+          - figure [ref=e99]:
+            - generic [ref=e102]: python
+            - table [ref=e104]:
+              - rowgroup [ref=e105]:
+                - 'row "import torch # 创建张量 x = torch.tensor([1, 2, 3, 4]) y = torch.zeros(3, 4) z = torch.randn(2, 3) # 随机正态分布 # 张量运算 a = torch.add(x, 2) b = x * 2 c = x.view(2, 2) # 改变形状 # GPU加速 if torch.cuda.is_available(): x = x.cuda()" [ref=e106]':
+                  - 'cell "import torch # 创建张量 x = torch.tensor([1, 2, 3, 4]) y = torch.zeros(3, 4) z = torch.randn(2, 3) # 随机正态分布 # 张量运算 a = torch.add(x, 2) b = x * 2 c = x.view(2, 2) # 改变形状 # GPU加速 if torch.cuda.is_available(): x = x.cuda()" [ref=e107]':
+                    - generic [ref=e108]:
+                      - generic [ref=e109]: import torch
+                      - generic [ref=e110]: "# 创建张量"
+                      - generic [ref=e111]: x = torch.tensor([1, 2, 3, 4])
+                      - generic [ref=e112]: y = torch.zeros(3, 4)
+                      - generic [ref=e113]: "z = torch.randn(2, 3) # 随机正态分布"
+                      - generic [ref=e114]: "# 张量运算"
+                      - generic [ref=e115]: a = torch.add(x, 2)
+                      - generic [ref=e116]: b = x * 2
+                      - generic [ref=e117]: "c = x.view(2, 2) # 改变形状"
+                      - generic [ref=e118]: "# GPU加速"
+                      - generic [ref=e119]: "if torch.cuda.is_available():"
+                      - text: x = x.cuda()
+          - heading "构建第一个神经网络构建第一个神经网络" [level=2] [ref=e120]:
+            - link "构建第一个神经网络":
+              - /url: "#构建第一个神经网络"
+            - text: 构建第一个神经网络
+          - figure [ref=e121]:
+            - generic [ref=e124]: python
+            - table [ref=e126]:
+              - rowgroup [ref=e127]:
+                - 'row "import torch import torch.nn as nn import torch.optim as optim # 定义网络结构 class SimpleNet(nn.Module): def __init__(self): super(SimpleNet, self).__init__() self.fc1 = nn.Linear(784, 128) # 输入层 self.fc2 = nn.Linear(128, 64) # 隐藏层 self.fc3 = nn.Linear(64, 10) # 输出层 self.relu = nn.ReLU() def forward(self, x): x = x.view(-1, 784) x = self.relu(self.fc1(x)) x = self.relu(self.fc2(x)) x = self.fc3(x) return x # 创建模型 model = SimpleNet() # 定义损失函数和优化器 criterion = nn.CrossEntropyLoss() optimizer = optim.Adam(model.parameters(), lr=0.001)" [ref=e128]':
+                  - 'cell "import torch import torch.nn as nn import torch.optim as optim # 定义网络结构 class SimpleNet(nn.Module): def __init__(self): super(SimpleNet, self).__init__() self.fc1 = nn.Linear(784, 128) # 输入层 self.fc2 = nn.Linear(128, 64) # 隐藏层 self.fc3 = nn.Linear(64, 10) # 输出层 self.relu = nn.ReLU() def forward(self, x): x = x.view(-1, 784) x = self.relu(self.fc1(x)) x = self.relu(self.fc2(x)) x = self.fc3(x) return x # 创建模型 model = SimpleNet() # 定义损失函数和优化器 criterion = nn.CrossEntropyLoss() optimizer = optim.Adam(model.parameters(), lr=0.001)" [ref=e129]':
+                    - generic [ref=e130]:
+                      - generic [ref=e131]: import torch
+                      - generic [ref=e132]: import torch.nn as nn
+                      - generic [ref=e133]: import torch.optim as optim
+                      - generic [ref=e134]: "# 定义网络结构"
+                      - generic [ref=e135]: "class SimpleNet(nn.Module):"
+                      - generic [ref=e136]: "def __init__(self):"
+                      - generic [ref=e137]: super(SimpleNet, self).__init__()
+                      - generic [ref=e138]: "self.fc1 = nn.Linear(784, 128) # 输入层"
+                      - generic [ref=e139]: "self.fc2 = nn.Linear(128, 64) # 隐藏层"
+                      - generic [ref=e140]: "self.fc3 = nn.Linear(64, 10) # 输出层"
+                      - generic [ref=e141]: self.relu = nn.ReLU()
+                      - generic [ref=e142]: "def forward(self, x):"
+                      - generic [ref=e143]: x = x.view(-1, 784)
+                      - generic [ref=e144]: x = self.relu(self.fc1(x))
+                      - generic [ref=e145]: x = self.relu(self.fc2(x))
+                      - generic [ref=e146]: x = self.fc3(x)
+                      - generic [ref=e147]: return x
+                      - generic [ref=e148]: "# 创建模型"
+                      - text: model = SimpleNet()
+                      - generic [ref=e149]: "# 定义损失函数和优化器"
+                      - text: criterion = nn.CrossEntropyLoss()
+                      - generic [ref=e150]: optimizer = optim.Adam(model.parameters(), lr=0.001)
+          - heading "训练循环训练循环" [level=2] [ref=e151]:
+            - link "训练循环":
+              - /url: "#训练循环"
+            - text: 训练循环
+          - figure [ref=e152]:
+            - generic [ref=e155]: python
+            - table [ref=e157]:
+              - rowgroup [ref=e158]:
+                - 'row "# 训练函数 def train(model, train_loader, epochs=10): model.train() for epoch in range(epochs): total_loss = 0 for batch_idx, (data, target) in enumerate(train_loader): optimizer.zero_grad() # 清除梯度 output = model(data) # 前向传播 loss = criterion(output, target) # 计算损失 loss.backward() # 反向传播 optimizer.step() # 更新参数 total_loss += loss.item() print(f''Epoch {epoch+1}, Loss: {total_loss/len(train_loader):.4f}'') # 加载MNIST数据 from torchvision import datasets, transforms transform = transforms.Compose([ transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,)) ]) train_data = datasets.MNIST(''data'', train=True, download=True, transform=transform) train_loader = torch.utils.data.DataLoader(train_data, batch_size=64, shuffle=True) # 开始训练 train(model, train_loader)" [ref=e159]':
+                  - 'cell "# 训练函数 def train(model, train_loader, epochs=10): model.train() for epoch in range(epochs): total_loss = 0 for batch_idx, (data, target) in enumerate(train_loader): optimizer.zero_grad() # 清除梯度 output = model(data) # 前向传播 loss = criterion(output, target) # 计算损失 loss.backward() # 反向传播 optimizer.step() # 更新参数 total_loss += loss.item() print(f''Epoch {epoch+1}, Loss: {total_loss/len(train_loader):.4f}'') # 加载MNIST数据 from torchvision import datasets, transforms transform = transforms.Compose([ transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,)) ]) train_data = datasets.MNIST(''data'', train=True, download=True, transform=transform) train_loader = torch.utils.data.DataLoader(train_data, batch_size=64, shuffle=True) # 开始训练 train(model, train_loader)" [ref=e160]':
+                    - generic [ref=e161]:
+                      - generic [ref=e162]: "# 训练函数"
+                      - generic [ref=e163]:
+                        - text: def train(
+                        - generic [ref=e164]: model, train_loader, epochs=10
+                        - text: "):"
+                      - text: model.train()
+                      - generic [ref=e165]: "for epoch in range(epochs):"
+                      - generic [ref=e166]: total_loss = 0
+                      - generic [ref=e167]: "for batch_idx, (data, target) in enumerate(train_loader):"
+                      - generic [ref=e168]: "optimizer.zero_grad() # 清除梯度"
+                      - generic [ref=e169]: "output = model(data) # 前向传播"
+                      - generic [ref=e170]: "loss = criterion(output, target) # 计算损失"
+                      - generic [ref=e171]: "loss.backward() # 反向传播"
+                      - generic [ref=e172]: "optimizer.step() # 更新参数"
+                      - text: total_loss += loss.item()
+                      - generic [ref=e173]:
+                        - text: print(
+                        - generic [ref=e174]:
+                          - text: f'Epoch
+                          - generic [ref=e175]: "{epoch+1}"
+                          - text: ", Loss:"
+                          - generic [ref=e176]: "{total_loss/len(train_loader):.4f}"
+                          - text: "'"
+                        - text: )
+                      - generic [ref=e177]: "# 加载MNIST数据"
+                      - generic [ref=e178]: from torchvision import datasets, transforms
+                      - text: transform = transforms.Compose([
+                      - text: transforms.ToTensor(),
+                      - generic [ref=e179]: transforms.Normalize((0.5,), (0.5,))
+                      - text: "])"
+                      - generic [ref=e180]: train_data = datasets.MNIST('data', train=True, download=True, transform=transform)
+                      - generic [ref=e181]: train_loader = torch.utils.data.DataLoader(train_data, batch_size=64, shuffle=True)
+                      - generic [ref=e182]: "# 开始训练"
+                      - text: train(model, train_loader)
+          - heading "模型保存与加载模型保存与加载" [level=2] [ref=e183]:
+            - link "模型保存与加载":
+              - /url: "#模型保存与加载"
+            - text: 模型保存与加载
+          - figure [ref=e184]:
+            - generic [ref=e187]: python
+            - table [ref=e189]:
+              - rowgroup [ref=e190]:
+                - 'row "# 保存模型 torch.save(model.state_dict(), ''model.pth'') # 加载模型 model = SimpleNet() model.load_state_dict(torch.load(''model.pth'')) model.eval() # 评估模式" [ref=e191]':
+                  - 'cell "# 保存模型 torch.save(model.state_dict(), ''model.pth'') # 加载模型 model = SimpleNet() model.load_state_dict(torch.load(''model.pth'')) model.eval() # 评估模式" [ref=e192]':
+                    - generic [ref=e193]:
+                      - generic [ref=e194]: "# 保存模型"
+                      - generic [ref=e195]: torch.save(model.state_dict(), 'model.pth')
+                      - generic [ref=e196]: "# 加载模型"
+                      - text: model = SimpleNet()
+                      - generic [ref=e197]: model.load_state_dict(torch.load('model.pth'))
+                      - generic [ref=e198]: "model.eval() # 评估模式"
+          - heading "GPU训练技巧GPU训练技巧" [level=2] [ref=e199]:
+            - link "GPU训练技巧":
+              - /url: "#GPU训练技巧"
+            - text: GPU训练技巧
+          - figure [ref=e200]:
+            - generic [ref=e203]: python
+            - table [ref=e205]:
+              - rowgroup [ref=e206]:
+                - 'row "# 检查GPU device = torch.device(''cuda'' if torch.cuda.is_available() else ''cpu'') # 将模型和数据移到GPU model = model.to(device) data, target = data.to(device), target.to(device) # 多GPU训练 if torch.cuda.device_count() > 1: model = nn.DataParallel(model)" [ref=e207]':
+                  - 'cell "# 检查GPU device = torch.device(''cuda'' if torch.cuda.is_available() else ''cpu'') # 将模型和数据移到GPU model = model.to(device) data, target = data.to(device), target.to(device) # 多GPU训练 if torch.cuda.device_count() > 1: model = nn.DataParallel(model)" [ref=e208]':
+                    - generic [ref=e209]:
+                      - generic [ref=e210]: "# 检查GPU"
+                      - generic [ref=e211]: device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+                      - generic [ref=e212]: "# 将模型和数据移到GPU"
+                      - text: model = model.to(device)
+                      - text: data, target = data.to(device), target.to(device)
+                      - generic [ref=e213]: "# 多GPU训练"
+                      - generic [ref=e214]: "if torch.cuda.device_count() > 1:"
+                      - text: model = nn.DataParallel(model)
+        - generic [ref=e215]:
+          - text: 
+          - generic [ref=e216]:
+            - generic [ref=e217]: "文章作者:"
+            - link "itx-blog" [ref=e220] [cursor=pointer]:
+              - /url: https://zz330226.github.io
+          - generic [ref=e221]:
+            - generic [ref=e222]: "文章链接:"
+            - link "https://zz330226.github.io/2026/05/23/pytorch-intro/" [ref=e225] [cursor=pointer]:
+              - /url: https://zz330226.github.io/2026/05/23/pytorch-intro/
+          - generic [ref=e226]:
+            - generic [ref=e227]: "版权声明:"
+            - generic [ref=e229]:
+              - text: 本博客所有文章除特别声明外，均采用
+              - link "CC BY-NC-SA 4.0" [ref=e230] [cursor=pointer]:
+                - /url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+              - text: 许可协议。转载请注明来源
+              - link "AI技术前沿" [ref=e231] [cursor=pointer]:
+                - /url: https://zz330226.github.io
+              - text: ！
+        - generic [ref=e232]:
+          - generic [ref=e233]:
+            - link "Python" [ref=e234] [cursor=pointer]:
+              - /url: /tags/Python/
+            - link "PyTorch" [ref=e235] [cursor=pointer]:
+              - /url: /tags/PyTorch/
+            - link "深度学习" [ref=e236] [cursor=pointer]:
+              - /url: /tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/
+            - link "神经网络" [ref=e237] [cursor=pointer]:
+              - /url: /tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/
+            - link "机器学习" [ref=e238] [cursor=pointer]:
+              - /url: /tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/
+          - generic [ref=e240]:
+            - link "" [ref=e241] [cursor=pointer]:
+              - /url: https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4009%2F2026%2F05%2F23%2Fpytorch-intro%2F
+            - link "" [ref=e242] [cursor=pointer]:
+              - /url: https://x.com/intent/tweet?text=PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%20%7C%20AI%E6%8A%80%E6%9C%AF%E5%89%8D%E6%B2%BF&url=http%3A%2F%2Flocalhost%3A4009%2F2026%2F05%2F23%2Fpytorch-intro%2F&via=http%3A%2F%2Flocalhost%3A4009
+            - link "" [ref=e243] [cursor=pointer]:
+              - /url: "javascript:"
+            - link "" [ref=e244] [cursor=pointer]:
+              - /url: https://service.weibo.com/share/share.php?url=http%3A%2F%2Flocalhost%3A4009%2F2026%2F05%2F23%2Fpytorch-intro%2F&title=PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%20%7C%20AI%E6%8A%80%E6%9C%AF%E5%89%8D%E6%B2%BF&pic=%2Fimg%2Fpytorch.jpg&appkey=
+            - link "" [ref=e245] [cursor=pointer]:
+              - /url: http://connect.qq.com/widget/shareqq/index.html?url=http%3A%2F%2Flocalhost%3A4009%2F2026%2F05%2F23%2Fpytorch-intro%2F&title=PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%20%7C%20AI%E6%8A%80%E6%9C%AF%E5%89%8D%E6%B2%BF&source=PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%20%7C%20AI%E6%8A%80%E6%9C%AF%E5%89%8D%E6%B2%BF&desc=PyTorch%20%E5%AE%89%E8%A3%85%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%23%20%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83conda%20create%20-n%20pytorch%20python%3D3.10conda%20activate%20pytorch%23%20%E5%AE%89%E8%A3%85PyTorch%EF%BC%88GPU%E7%89%88%E6%9C%AC%EF%BC%89pip%20install%20torch%20torchvision%20torchaudio%20--index-url%20https%3A%2F%2Fdownload.pytorch.org%2Fwhl%2Fcu118%23%20%E9%AA%8C%E8%AF%81%E5%AE%89%E8%A3%85pytho&pics=%2Fimg%2Fpytorch.jpg&summary="PyTorch%20%E5%AE%89%E8%A3%85%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%23%20%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83conda%20create%20-n%20pytorch%20python%3D3.10conda%20activate%20pytorch%23%20%E5%AE%89%E8%A3%85PyTorch%EF%BC%88GPU%E7%89%88%E6%9C%AC%EF%BC%89pip%20install%20torch%20torchvision%20torchaudio%20--index-url%20https%3A%2F%2Fdownload.pytorch.org%2Fwhl%2Fcu118%23%20%E9%AA%8C%E8%AF%81%E5%AE%89%E8%A3%85pytho"
+        - navigation [ref=e246]:
+          - link "cover of previous post 上一篇 Voicebox-开源AI语音工作室部署教程 项目简介Voicebox 是一个本地优先的 AI 语音工作室，被誉为 ElevenLabs 和 WisprFlow 的开源替代品。该项目由 jamiepine 开发，目前已获得超过 27.9k Star，采用 MIT 开源许可证。 核心定位：将语音合成（TTS）、语音识别（STT）和 AI Agent 语音输出三大功能集成在一个应用中，完全本地运行，数据不离设备。 主要特性🎙️ 语音输出（TTS）Voicebox 内置 7 个 TTS 引擎： 引擎 特点 Qwen3-TTS 阿里最新多语言TTS模型 Qwen CustomVoice 支持自定义声音克隆 LuxTTS 高质量中文语音 Chatterbox Multilingual 多语言支持 Chatterbox Turbo 快速生成模式 HumeAI TADA 情感语音合成 Kokoro 轻量级高效引擎 亮点功能： 支持 23 种语言 零样本语音克隆：仅需几秒参考音频即可克隆声音 50+ 预设声音可直接使用 表情标签支持：[laugh]、[sigh]、[gasp] 等情感控制 8 种后..." [ref=e247] [cursor=pointer]:
+            - /url: /2026/05/24/voicebox-deploy/
+            - img "cover of previous post" [ref=e248]
+            - generic:
+              - generic [ref=e249]:
+                - generic [ref=e250]: 上一篇
+                - generic [ref=e251]: Voicebox-开源AI语音工作室部署教程
+              - generic [ref=e253]: 项目简介Voicebox 是一个本地优先的 AI 语音工作室，被誉为 ElevenLabs 和 WisprFlow 的开源替代品。该项目由 jamiepine 开发，目前已获得超过 27.9k Star，采用 MIT 开源许可证。 核心定位：将语音合成（TTS）、语音识别（STT）和 AI Agent 语音输出三大功能集成在一个应用中，完全本地运行，数据不离设备。 主要特性🎙️ 语音输出（TTS）Voicebox 内置 7 个 TTS 引擎： 引擎 特点 Qwen3-TTS 阿里最新多语言TTS模型 Qwen CustomVoice 支持自定义声音克隆 LuxTTS 高质量中文语音 Chatterbox Multilingual 多语言支持 Chatterbox Turbo 快速生成模式 HumeAI TADA 情感语音合成 Kokoro 轻量级高效引擎 亮点功能： 支持 23 种语言 零样本语音克隆：仅需几秒参考音频即可克隆声音 50+ 预设声音可直接使用 表情标签支持：[laugh]、[sigh]、[gasp] 等情感控制 8 种后...
+          - 'link "cover of next post 下一篇 10个必备AI工具推荐 编程开发类1. GitHub CopilotGitHub Copilot 是目前最强的AI编程助手，支持多种IDE。 核心功能： 代码自动补全 根据注释生成代码 单元测试生成 代码解释 使用技巧： // 写清晰的注释// 创建一个函数，接收列表并返回排序后的唯一值// Copilot会自动生成代码def get_unique_sorted(lst): return sorted(set(lst)) 2. CursorCursor是基于VSCode的AI IDE，内置强大AI能力。 优势： 内置Claude/GPT支持 整个项目上下文理解 多文件重构 3. Codeium免费替代Copilot的选择，支持主流IDE。 写作办公类4. Notion AI笔记软件中的AI助手，可以： 自动生成内容大纲 智能摘要长文 多语言翻译 5. GammaAI驱动的演示文稿生成器： 输入: \"创建一个关于AI发展趋势的演示文稿\"输出: 自动生成10页精美PPT 设计创意类6. Midjourney顶级AI绘画工具： /imagine prom..." [ref=e254] [cursor=pointer]':
+            - /url: /2026/05/22/ai-tools/
+            - img "cover of next post" [ref=e255]
+            - generic:
+              - generic [ref=e256]:
+                - generic [ref=e257]: 下一篇
+                - generic [ref=e258]: 10个必备AI工具推荐
+              - generic [ref=e260]: "编程开发类1. GitHub CopilotGitHub Copilot 是目前最强的AI编程助手，支持多种IDE。 核心功能： 代码自动补全 根据注释生成代码 单元测试生成 代码解释 使用技巧： // 写清晰的注释// 创建一个函数，接收列表并返回排序后的唯一值// Copilot会自动生成代码def get_unique_sorted(lst): return sorted(set(lst)) 2. CursorCursor是基于VSCode的AI IDE，内置强大AI能力。 优势： 内置Claude/GPT支持 整个项目上下文理解 多文件重构 3. Codeium免费替代Copilot的选择，支持主流IDE。 写作办公类4. Notion AI笔记软件中的AI助手，可以： 自动生成内容大纲 智能摘要长文 多语言翻译 5. GammaAI驱动的演示文稿生成器： 输入: \"创建一个关于AI发展趋势的演示文稿\"输出: 自动生成10页精美PPT 设计创意类6. Midjourney顶级AI绘画工具： /imagine prom..."
+        - generic [ref=e261]:
+          - generic [ref=e262]: 相关推荐
+          - 'link "cover 2026-05-20 Python异步编程实战 为什么需要异步编程在处理大量I/O操作时，同步代码会严重阻塞程序执行。异步编程可以让程序在等待I/O时继续执行其他任务。 同步 vs 异步对比# 同步方式 - 总耗时约6秒import timedef fetch_data(url): time.sleep(2) # 模拟网络请求 return f\"Data from {url}\"def main(): start = time.time() results = [] for url in [''url1'', ''url2'', ''url3'']: results.append(fetch_data(url)) print(f\"耗时: {time.time() - start}秒\") main() # 异步方式 - 总耗时约2秒import asyncioasync def fetch_data(url): awai..." [ref=e265] [cursor=pointer]':
+            - /url: /2026/05/20/python-async/
+            - img "cover" [ref=e266]
+            - generic:
+              - generic [ref=e267]:
+                - generic [ref=e268]: 2026-05-20
+                - generic [ref=e270]: Python异步编程实战
+              - generic [ref=e272]: "为什么需要异步编程在处理大量I/O操作时，同步代码会严重阻塞程序执行。异步编程可以让程序在等待I/O时继续执行其他任务。 同步 vs 异步对比# 同步方式 - 总耗时约6秒import timedef fetch_data(url): time.sleep(2) # 模拟网络请求 return f\"Data from {url}\"def main(): start = time.time() results = [] for url in ['url1', 'url2', 'url3']: results.append(fetch_data(url)) print(f\"耗时: {time.time() - start}秒\") main() # 异步方式 - 总耗时约2秒import asyncioasync def fetch_data(url): awai..."
+        - separator [ref=e273]: 
+        - generic [ref=e274]:
+          - generic [ref=e276]: 评论
+          - iframe [ref=e282]:
+            - main [ref=f17e3]:
+              - generic [ref=f17e6]: 正在加载评论……
+      - generic [ref=e283]:
+        - generic [ref=e284]:
+          - img "avatar" [ref=e286]
+          - generic [ref=e287]: itx-blog
+          - generic [ref=e288]: itx-blog 的个人博客
+          - generic [ref=e289]:
+            - link "文章 7" [ref=e290] [cursor=pointer]:
+              - /url: /archives/
+              - generic [ref=e291]: 文章
+              - generic [ref=e292]: "7"
+            - link "标签 29" [ref=e293] [cursor=pointer]:
+              - /url: /tags/
+              - generic [ref=e294]: 标签
+              - generic [ref=e295]: "29"
+            - link "分类 6" [ref=e296] [cursor=pointer]:
+              - /url: /categories/
+              - generic [ref=e297]: 分类
+              - generic [ref=e298]: "6"
+          - link "Follow Me" [ref=e299] [cursor=pointer]:
+            - /url: https://github.com/xxxxxx
+            - text: Follow Me
+          - link [ref=e302] [cursor=pointer]:
+            - /url: https://github.com/zz330226
+        - generic [ref=e304]:
+          - generic [ref=e305]:
+            - generic [ref=e306]: 目录
+            - list [ref=e309]:
+              - listitem [ref=e310]:
+                - link "1. PyTorch 安装与环境配置" [ref=e311] [cursor=pointer]:
+                  - /url: "#PyTorch-%E5%AE%89%E8%A3%85%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"
+              - listitem [ref=e312]:
+                - link "2. Tensor 基础操作" [ref=e313] [cursor=pointer]:
+                  - /url: "#Tensor-%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C"
+              - listitem [ref=e314]:
+                - link "3. 构建第一个神经网络" [ref=e315] [cursor=pointer]:
+                  - /url: "#%E6%9E%84%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"
+              - listitem [ref=e316]:
+                - link "4. 训练循环" [ref=e317] [cursor=pointer]:
+                  - /url: "#%E8%AE%AD%E7%BB%83%E5%BE%AA%E7%8E%AF"
+              - listitem [ref=e318]:
+                - link "5. 模型保存与加载" [ref=e319] [cursor=pointer]:
+                  - /url: "#%E6%A8%A1%E5%9E%8B%E4%BF%9D%E5%AD%98%E4%B8%8E%E5%8A%A0%E8%BD%BD"
+              - listitem [ref=e320]:
+                - link "6. GPU训练技巧" [ref=e321] [cursor=pointer]:
+                  - /url: "#GPU%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7"
+          - generic [ref=e322]:
+            - generic [ref=e323]: 最新文章
+            - generic [ref=e325]:
+              - generic [ref=e326]:
+                - link "Voicebox-开源AI语音工作室部署教程" [ref=e327] [cursor=pointer]:
+                  - /url: /2026/05/24/voicebox-deploy/
+                  - img "Voicebox-开源AI语音工作室部署教程" [ref=e328]
+                - generic [ref=e329]:
+                  - link "Voicebox-开源AI语音工作室部署教程" [ref=e330] [cursor=pointer]:
+                    - /url: /2026/05/24/voicebox-deploy/
+                  - time [ref=e331]: 2026-05-24
+              - generic [ref=e332]:
+                - link "PyTorch深度学习入门" [ref=e333] [cursor=pointer]:
+                  - /url: /2026/05/23/pytorch-intro/
+                  - img "PyTorch深度学习入门" [ref=e334]
+                - generic [ref=e335]:
+                  - link "PyTorch深度学习入门" [ref=e336] [cursor=pointer]:
+                    - /url: /2026/05/23/pytorch-intro/
+                  - time [ref=e337]: 2026-05-23
+              - generic [ref=e338]:
+                - link "10个必备AI工具推荐" [ref=e339] [cursor=pointer]:
+                  - /url: /2026/05/22/ai-tools/
+                  - img "10个必备AI工具推荐" [ref=e340]
+                - generic [ref=e341]:
+                  - link "10个必备AI工具推荐" [ref=e342] [cursor=pointer]:
+                    - /url: /2026/05/22/ai-tools/
+                  - time [ref=e343]: 2026-05-22
+              - generic [ref=e344]:
+                - link "Linux服务器运维笔记" [ref=e345] [cursor=pointer]:
+                  - /url: /2026/05/21/linux-ops/
+                  - img "Linux服务器运维笔记" [ref=e346]
+                - generic [ref=e347]:
+                  - link "Linux服务器运维笔记" [ref=e348] [cursor=pointer]:
+                    - /url: /2026/05/21/linux-ops/
+                  - time [ref=e349]: 2026-05-21
+              - generic [ref=e350]:
+                - link "Python异步编程实战" [ref=e351] [cursor=pointer]:
+                  - /url: /2026/05/20/python-async/
+                  - img "Python异步编程实战" [ref=e352]
+                - generic [ref=e353]:
+                  - link "Python异步编程实战" [ref=e354] [cursor=pointer]:
+                    - /url: /2026/05/20/python-async/
+                  - time [ref=e355]: 2026-05-20
+    - contentinfo [ref=e356]:
+      - generic [ref=e357]:
+        - generic [ref=e358]:
+          - text: © 2024 - 2026 By itx-blog
+          - generic [ref=e359]:
+            - text: 框架
+            - link "Hexo 8.1.2" [ref=e360] [cursor=pointer]:
+              - /url: https://hexo.io
+            - text: "|主题"
+            - link "Butterfly 5.5.5-b1" [ref=e361] [cursor=pointer]:
+              - /url: https://github.com/jerryc127/hexo-theme-butterfly
+        - generic [ref=e362]: Copyright © 2024-2026 By itx-blog
+  - generic [ref=e363]:
+    - generic:
+      - button "阅读模式" [ref=e364] [cursor=pointer]
+      - button "日间和夜间模式切换" [ref=e366] [cursor=pointer]
+      - button "单栏和双栏切换" [ref=e368] [cursor=pointer]
+    - generic [ref=e370]:
+      - button "设置" [ref=e371] [cursor=pointer]
+      - link "前往评论" [ref=e373] [cursor=pointer]:
+        - /url: "#post-comment"
+      - button "回到顶部" [ref=e375] [cursor=pointer]

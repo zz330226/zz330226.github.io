@@ -34,7 +34,22 @@
       "Bash(ls d:/Hexo-blog/)",
       "Read(//d/Hexo-blog/**)",
       "Bash(curl -s http://localhost:4006)",
-      "mcp__plugin_playwright_playwright__browser_navigate_back"
+      "mcp__plugin_playwright_playwright__browser_navigate_back",
+      "Bash(git commit *)",
+      "Bash(sort -t: -k2)",
+      "Bash(sed -i 's/date: 2026-05-25/date: 2026-05-17/' source/_posts/deepseek-deploy.md)",
+      "Bash(sed -i 's/date: 2026-05-26/date: 2026-05-16/' source/_posts/ai-model-comparison.md)",
+      "Bash(sed -i 's/date: 2026-05-28/date: 2026-05-14/' source/_posts/python-decorator.md)",
+      "Bash(sed -i 's/date: 2026-05-29/date: 2026-05-13/' source/_posts/python-regex.md)",
+      "Bash(sed -i 's/date: 2026-05-31/date: 2026-05-11/' source/_posts/docker-guide.md)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(npm run *)",
+      "Bash(findstr :4000)",
+      "Bash(taskkill //PID 23568 //F)",
+      "Bash(cmd /c \"timeout /t 5 >nul 2>&1\")",
+      "mcp__plugin_github_github__search_repositories",
+      "Bash(curl -sI https://blog.kkming.dpdns.org/google3b2104ac1f35ff60.html)",
+      "Bash(curl -s https://blog.kkming.dpdns.org/google3b2104ac1f35ff60.html)"
     ]
   }
 }
