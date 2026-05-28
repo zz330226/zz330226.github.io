@@ -1,0 +1,543 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>OpenCLI 实战 - 用命令行征服全网150+网站 | AI技术前沿</title><meta name="author" content="itx-blog"><meta name="copyright" content="itx-blog"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="什么是 OpenCLI “Make any website your CLI.”  OpenCLI 是一个 npm 工具，能把任意网站变成你的命令行工具。它通过适配器（Adapter）机制，为每个站点封装一套 CLI 命令，直接调用网站的 API 接口获取结构化数据。 装完之后，你的终端瞬间变成全网数据终端： npm install -g opencliopencli xueqiu hot-sto">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenCLI 实战 - 用命令行征服全网150+网站">
+<meta property="og:url" content="https://kkitx.bond/2026/05/27/opencli-guide/index.html">
+<meta property="og:site_name" content="AI技术前沿">
+<meta property="og:description" content="什么是 OpenCLI “Make any website your CLI.”  OpenCLI 是一个 npm 工具，能把任意网站变成你的命令行工具。它通过适配器（Adapter）机制，为每个站点封装一套 CLI 命令，直接调用网站的 API 接口获取结构化数据。 装完之后，你的终端瞬间变成全网数据终端： npm install -g opencliopencli xueqiu hot-sto">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://kkitx.bond/img/opencli-guide.jpg">
+<meta property="article:published_time" content="2026-05-26T23:30:00.000Z">
+<meta property="article:modified_time" content="2026-05-26T23:33:33.228Z">
+<meta property="article:author" content="itx-blog">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="OpenCLI">
+<meta property="article:tag" content="开源项目">
+<meta property="article:tag" content="爬虫">
+<meta property="article:tag" content="自动化">
+<meta property="article:tag" content="财经数据">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kkitx.bond/img/opencli-guide.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "OpenCLI 实战 - 用命令行征服全网150+网站",
+  "url": "https://kkitx.bond/2026/05/27/opencli-guide/",
+  "image": "https://kkitx.bond/img/opencli-guide.jpg",
+  "datePublished": "2026-05-26T23:30:00.000Z",
+  "dateModified": "2026-05-26T23:33:33.228Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "itx-blog",
+      "url": "https://kkitx.bond"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://kkitx.bond/2026/05/27/opencli-guide/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="EhlOmXPwXuzsvHP_KMoh5sIXnaEzWSRHDOOVMBqeE7o"/><link rel="stylesheet" href="/css/index.css?v=5.5.5-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49B1F5","bgDark":"#1f1f1f","position":"top-center"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'OpenCLI 实战 - 用命令行征服全网150+网站',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/sidebar-search.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">81</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://picsum.photos/1920/800);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">AI技术前沿</span></a><a class="nav-page-title" href="/"><span class="site-name">OpenCLI 实战 - 用命令行征服全网150+网站</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">OpenCLI 实战 - 用命令行征服全网150+网站</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-05-26T23:30:00.000Z" title="发表于 2026-05-27 07:30:00">2026-05-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-05-26T23:33:33.228Z" title="更新于 2026-05-27 07:33:33">2026-05-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/AI%E5%B7%A5%E5%85%B7%E7%AE%B1/">AI工具箱</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="什么是-OpenCLI"><a href="#什么是-OpenCLI" class="headerlink" title="什么是 OpenCLI"></a>什么是 OpenCLI</h2><blockquote>
+<p>“Make any website your CLI.”</p>
+</blockquote>
+<p>OpenCLI 是一个 npm 工具，能把<strong>任意网站变成你的命令行工具</strong>。它通过适配器（Adapter）机制，为每个站点封装一套 CLI 命令，直接调用网站的 API 接口获取结构化数据。</p>
+<p>装完之后，你的终端瞬间变成全网数据终端：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g opencli</span><br><span class="line">opencli xueqiu hot-stock          <span class="comment"># 雪球热股</span></span><br><span class="line">opencli weibo hot                  <span class="comment"># 微博热搜</span></span><br><span class="line">opencli reddit hot -s stocks       <span class="comment"># Reddit r/stocks</span></span><br><span class="line">opencli twitter user -u elonmusk   <span class="comment"># Twitter 用户信息</span></span><br><span class="line">opencli bilibili subtitle &lt;BV号&gt;  <span class="comment"># B站视频字幕</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>当前规模：</strong></p>
+<ul>
+<li>143 个适配器（Adapter）</li>
+<li>859 个命令（Command）</li>
+<li>涵盖社交媒体、财经、新闻、视频、知识社区等</li>
+</ul>
+<h2 id="核心使用技巧"><a href="#核心使用技巧" class="headerlink" title="核心使用技巧"></a>核心使用技巧</h2><h3 id="基本参数"><a href="#基本参数" class="headerlink" title="基本参数"></a>基本参数</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">opencli &lt;site&gt; &lt;<span class="built_in">command</span>&gt; [options]</span><br><span class="line">  --window background   <span class="comment"># 后台运行，不弹浏览器窗口（推荐）</span></span><br><span class="line">  -f yaml               <span class="comment"># YAML 格式化输出（推荐，方便解析）</span></span><br><span class="line">  -f json               <span class="comment"># JSON 格式输出</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="登录态问题"><a href="#登录态问题" class="headerlink" title="登录态问题"></a>登录态问题</h3><p>OpenCLI 的<strong>私有接口依赖浏览器 Cookie</strong>。比如雪球的 <code>feed</code>、微博的 <code>search</code>、Twitter 的 <code>search</code>，都需要先在 Chrome 中登录对应网站，OpenCLI 才能调用。</p>
+<p><strong>处理策略：</strong> 遇到 <code>AUTH_REQUIRED</code> 错误，手动在浏览器登录一次即可，后续命令复用 Cookie。</p>
+<h2 id="五大平台实战测试"><a href="#五大平台实战测试" class="headerlink" title="五大平台实战测试"></a>五大平台实战测试</h2><h3 id="1-B站-—-最完善的体验"><a href="#1-B站-—-最完善的体验" class="headerlink" title="1. B站 — 最完善的体验"></a>1. B站 — 最完善的体验</h3><p>B站适配器功能最齐全，视频信息、字幕提取、摘要生成都能一条命令搞定。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 提取视频字幕（精准到时间轴）</span></span><br><span class="line">opencli bilibili subtitle BV1oBGa6SEty -f yaml --window background</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取视频详情</span></span><br><span class="line">opencli bilibili video BV1oBGa6SEty -f yaml --window background</span><br><span class="line"></span><br><span class="line"><span class="comment"># AI 生成视频摘要</span></span><br><span class="line">opencli bilibili summary BV1oBGa6SEty -f yaml --window background</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出示例（subtitle）：</strong></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">subtitles:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">time:</span> <span class="string">&quot;00:00:01&quot;</span></span><br><span class="line">    <span class="attr">text:</span> <span class="string">&quot;大家好，今天我们来聊聊...&quot;</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">time:</span> <span class="string">&quot;00:00:05&quot;</span></span><br><span class="line">    <span class="attr">text:</span> <span class="string">&quot;这个话题其实在业内已经讨论很久了...&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>评价：⭐⭐⭐⭐⭐</strong> 字幕 API 是原生接口，干净利落，直接拿到 SRT&#x2F;VTT 格式的时间轴字幕。</p>
+<h3 id="2-抖音-—-能用但要绕"><a href="#2-抖音-—-能用但要绕" class="headerlink" title="2. 抖音 — 能用但要绕"></a>2. 抖音 — 能用但要绕</h3><p>抖音的适配器覆盖了基础功能，但<strong>没有原生字幕 API</strong>，和 B站相比差了一截。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 热门话题标签</span></span><br><span class="line">opencli douyin hashtag -f yaml --window background</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用户主页视频列表</span></span><br><span class="line">opencli douyin profile &lt;用户ID&gt; -f yaml --window background</span><br><span class="line"></span><br><span class="line"><span class="comment"># 搜索视频</span></span><br><span class="line">opencli douyin videos --keyword <span class="string">&quot;AI&quot;</span> -f yaml --window background</span><br></pre></td></tr></table></figure>
+
+<p><strong>短链接解析技巧：</strong></p>
+<p>抖音分享链接形如 <code>https://v.douyin.com/RI9KJEWjuPc/</code>，不能直接传给 OpenCLI，需要先拿到真实的 <code>aweme_id</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 第一步：解析短链接拿到 aweme_id</span></span><br><span class="line"><span class="comment"># 用 curl 或 WebFetch 访问短链接，从重定向 URL 中提取 aweme_id</span></span><br><span class="line"><span class="comment"># 例如得到 7644153019826818356</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二步：用 browser 模式打开并提取内容</span></span><br><span class="line">opencli browser dy open <span class="string">&quot;https://www.douyin.com/video/7644153019826818356&quot;</span></span><br><span class="line">opencli browser dy extract</span><br></pre></td></tr></table></figure>
+
+<p><strong>评价：⭐⭐⭐☆</strong> 基础功能可用，但短链接需要手动解析，且无原生字幕支持。口播视频的内容获取只能靠 extract 页面文本。</p>
+<h3 id="3-雪球-—-财经数据利器"><a href="#3-雪球-—-财经数据利器" class="headerlink" title="3. 雪球 — 财经数据利器"></a>3. 雪球 — 财经数据利器</h3><p>雪球适配器是财经场景的主力，公开接口无需登录，私有接口需要 Cookie。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 热门股票（公开，无需登录）</span></span><br><span class="line">opencli xueqiu hot-stock -f yaml --window background</span><br><span class="line"></span><br><span class="line"><span class="comment"># 热门讨论话题（需要登录）</span></span><br><span class="line">opencli xueqiu hot -f yaml --window background</span><br><span class="line"></span><br><span class="line"><span class="comment"># 个股评论区</span></span><br><span class="line">opencli xueqiu comments --stock sh600519 -f yaml --window background</span><br></pre></td></tr></table></figure>
+
+<p><strong>实测 hot-stock 输出：</strong></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">stocks:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">rank:</span> <span class="number">1</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">&quot;中芯国际&quot;</span></span><br><span class="line">    <span class="attr">code:</span> <span class="string">&quot;SH688981&quot;</span></span><br><span class="line">    <span class="attr">heat:</span> <span class="number">982341</span></span><br><span class="line">    <span class="attr">change:</span> <span class="string">&quot;+5.23%&quot;</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">rank:</span> <span class="number">2</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">&quot;贵州茅台&quot;</span></span><br><span class="line">    <span class="attr">code:</span> <span class="string">&quot;SH600519&quot;</span></span><br><span class="line">    <span class="attr">heat:</span> <span class="number">876543</span></span><br><span class="line">    <span class="attr">change:</span> <span class="string">&quot;-1.02%&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>评价：⭐⭐⭐⭐☆</strong> 公开接口稳定，热股排行数据质量高。<code>hot</code> 和 <code>feed</code> 需要登录态。</p>
+<h3 id="4-新浪微博-—-热搜王者"><a href="#4-新浪微博-—-热搜王者" class="headerlink" title="4. 新浪微博 — 热搜王者"></a>4. 新浪微博 — 热搜王者</h3><p>微博适配器的 <code>hot</code> 命令非常稳定，热搜榜数据实时性很好。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 热搜榜（公开，无需登录）</span></span><br><span class="line">opencli weibo hot -f yaml --window background</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关键词搜索（需要登录）</span></span><br><span class="line">opencli weibo search --keyword <span class="string">&quot;A股&quot;</span> -f yaml --window background</span><br></pre></td></tr></table></figure>
+
+<p><strong>评价：⭐⭐⭐⭐☆</strong> 热搜榜即开即用，搜索功能需要登录。财经话题的时效性不错。</p>
+<h3 id="5-X-Twitter-—-登录门槛高"><a href="#5-X-Twitter-—-登录门槛高" class="headerlink" title="5. X&#x2F;Twitter — 登录门槛高"></a>5. X&#x2F;Twitter — 登录门槛高</h3><p>Twitter 适配器功能完整，但<strong>几乎全部需要登录态</strong>，没有公开接口可用。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 用户信息（需要登录）</span></span><br><span class="line">opencli twitter user --username elonmusk -f yaml --window background</span><br><span class="line"></span><br><span class="line"><span class="comment"># 搜索推文（需要登录）</span></span><br><span class="line">opencli twitter search --query <span class="string">&quot;AI stocks&quot;</span> -f yaml --window background</span><br></pre></td></tr></table></figure>
+
+<p><strong>评价：⭐⭐⭐☆</strong> 功能齐全但强依赖登录。登录后 user&#x2F;search&#x2F;timeline 都能用，数据质量高。</p>
+<h2 id="平台能力对比"><a href="#平台能力对比" class="headerlink" title="平台能力对比"></a>平台能力对比</h2><table>
+<thead>
+<tr>
+<th>平台</th>
+<th align="center">热榜&#x2F;排行</th>
+<th align="center">搜索</th>
+<th align="center">详情</th>
+<th align="center">登录要求</th>
+<th align="center">评价</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B站</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">✅字幕&#x2F;视频</td>
+<td align="center">无</td>
+<td align="center">⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>抖音</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+<td align="center">无</td>
+<td align="center">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>雪球</td>
+<td align="center">✅热股</td>
+<td align="center">✅需登录</td>
+<td align="center">✅评论</td>
+<td align="center">部分需</td>
+<td align="center">⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>微博</td>
+<td align="center">✅热搜</td>
+<td align="center">✅需登录</td>
+<td align="center">✅</td>
+<td align="center">部分需</td>
+<td align="center">⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>Twitter</td>
+<td align="center">❌</td>
+<td align="center">✅需登录</td>
+<td align="center">✅</td>
+<td align="center">全部需</td>
+<td align="center">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>Reddit</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+<td align="center">无</td>
+<td align="center">⭐⭐⭐⭐</td>
+</tr>
+</tbody></table>
+<h2 id="财经数据矩阵"><a href="#财经数据矩阵" class="headerlink" title="财经数据矩阵"></a>财经数据矩阵</h2><p>把 OpenCLI 支持的所有能抓取财经信息的适配器梳理了一下，分成六大类：</p>
+<h3 id="A-专业财经平台"><a href="#A-专业财经平台" class="headerlink" title="A. 专业财经平台"></a>A. 专业财经平台</h3><table>
+<thead>
+<tr>
+<th>站点</th>
+<th>命令示例</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>雪球 xueqiu</td>
+<td><code>hot-stock</code> &#x2F; <code>hot</code> &#x2F; <code>comments</code></td>
+<td>A股热股、讨论、个股评论</td>
+</tr>
+<tr>
+<td>新浪财经 finance.sina</td>
+<td><code>news</code></td>
+<td>财经新闻</td>
+</tr>
+<tr>
+<td>同花顺 10jqka</td>
+<td><code>hot</code></td>
+<td>市场热点</td>
+</tr>
+<tr>
+<td>通达信 tdx</td>
+<td>市场数据</td>
+<td>行情报价</td>
+</tr>
+<tr>
+<td>Barchart</td>
+<td>美股数据</td>
+<td>美股排行</td>
+</tr>
+<tr>
+<td>Yahoo Finance</td>
+<td>市场数据</td>
+<td>全球市场</td>
+</tr>
+<tr>
+<td>Binance</td>
+<td><code>trending</code></td>
+<td>加密货币</td>
+</tr>
+</tbody></table>
+<h3 id="B-新闻资讯"><a href="#B-新闻资讯" class="headerlink" title="B. 新闻资讯"></a>B. 新闻资讯</h3><table>
+<thead>
+<tr>
+<th>站点</th>
+<th>命令示例</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>36kr</td>
+<td><code>hot</code></td>
+<td>科技创投</td>
+</tr>
+<tr>
+<td>今日头条</td>
+<td><code>hot</code></td>
+<td>综合新闻</td>
+</tr>
+<tr>
+<td>BBC</td>
+<td><code>news</code></td>
+<td>国际新闻</td>
+</tr>
+<tr>
+<td>Reuters</td>
+<td><code>news</code></td>
+<td>财经新闻</td>
+</tr>
+<tr>
+<td>知乎</td>
+<td><code>hot</code></td>
+<td>话题讨论</td>
+</tr>
+</tbody></table>
+<h3 id="C-社交媒体"><a href="#C-社交媒体" class="headerlink" title="C. 社交媒体"></a>C. 社交媒体</h3><table>
+<thead>
+<tr>
+<th>站点</th>
+<th>命令示例</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>微博 weibo</td>
+<td><code>hot</code> &#x2F; <code>search</code></td>
+<td>热搜+搜索</td>
+</tr>
+<tr>
+<td>Twitter</td>
+<td><code>user</code> &#x2F; <code>search</code></td>
+<td>大V动态</td>
+</tr>
+<tr>
+<td>Reddit</td>
+<td><code>hot -s &lt;sub&gt;</code></td>
+<td>海外讨论</td>
+</tr>
+<tr>
+<td>抖音 douyin</td>
+<td><code>hashtag</code> &#x2F; <code>videos</code></td>
+<td>短视频财经内容</td>
+</tr>
+<tr>
+<td>小红书</td>
+<td>帖子数据</td>
+<td>消费投资</td>
+</tr>
+</tbody></table>
+<h3 id="D-知识星球-微信公众号"><a href="#D-知识星球-微信公众号" class="headerlink" title="D. 知识星球 &amp; 微信公众号"></a>D. 知识星球 &amp; 微信公众号</h3><table>
+<thead>
+<tr>
+<th>站点</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>知识星球 zsxq</td>
+<td>付费圈子内容</td>
+</tr>
+<tr>
+<td>微信公众号 weixin</td>
+<td>公众号文章</td>
+</tr>
+</tbody></table>
+<h3 id="E-AI-科技"><a href="#E-AI-科技" class="headerlink" title="E. AI &amp; 科技"></a>E. AI &amp; 科技</h3><table>
+<thead>
+<tr>
+<th>站点</th>
+<th>命令示例</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AIbase</td>
+<td><code>hot</code></td>
+<td>AI 产品排行</td>
+</tr>
+<tr>
+<td>arXiv</td>
+<td>论文搜索</td>
+<td>AI 论文</td>
+</tr>
+<tr>
+<td>Hacker News</td>
+<td><code>hot</code></td>
+<td>科技前沿</td>
+</tr>
+</tbody></table>
+<h2 id="进阶玩法：每日自动化扫描"><a href="#进阶玩法：每日自动化扫描" class="headerlink" title="进阶玩法：每日自动化扫描"></a>进阶玩法：每日自动化扫描</h2><p>OpenCLI 最强的地方在于：<strong>它可以被自动化调度</strong>。</p>
+<p>我用 WorkBuddy 的 CRON 自动化功能，创建了一个每日定时任务：</p>
+<p><strong>任务配置：</strong></p>
+<ul>
+<li>执行时间：每天晚上 20:00</li>
+<li>扫描范围：雪球、新浪财经、同花顺、36kr、知乎、微博、Reddit、Twitter、Binance</li>
+<li>重点跟踪：X 上的 @aleabitoreddit（Serenity）每日新观点</li>
+<li>输出：结构化 Markdown 报告</li>
+</ul>
+<p><strong>报告结构：</strong></p>
+<ol>
+<li>今日市场热词 TOP 10</li>
+<li>A股市场情绪（雪球+同花顺+微博）</li>
+<li>美股&#x2F;全球市场关注（Reddit+Reuters）</li>
+<li>科技与创投动态（36kr+知乎）</li>
+<li>Serenity 跟踪报告</li>
+<li>今日风险信号</li>
+</ol>
+<p>每天晚上自动跑，第二天早上打开就能看到全网财经一页通。比手动刷 10 个 App 高效多了。</p>
+<h2 id="踩坑总结"><a href="#踩坑总结" class="headerlink" title="踩坑总结"></a>踩坑总结</h2><h3 id="1-短链接必须手动解析"><a href="#1-短链接必须手动解析" class="headerlink" title="1. 短链接必须手动解析"></a>1. 短链接必须手动解析</h3><p>抖音的 <code>v.douyin.com</code> 短链接不能直接传给 OpenCLI，需要先访问拿到真实 URL 中的 <code>aweme_id</code>，再构造完整链接。</p>
+<h3 id="2-登录态是最大门槛"><a href="#2-登录态是最大门槛" class="headerlink" title="2. 登录态是最大门槛"></a>2. 登录态是最大门槛</h3><p>大约 30% 的命令需要登录态。<strong>不要在自动化流程里依赖需要登录的命令</strong>，或者确保浏览器始终处于登录状态。</p>
+<h3 id="3-部分命令不稳定"><a href="#3-部分命令不稳定" class="headerlink" title="3. 部分命令不稳定"></a>3. 部分命令不稳定</h3><p>某些适配器可能因为网站改版而失效。建议在 CRON 任务中设置容错：失败则跳过，不要中断整体流程。</p>
+<h3 id="4-window-background-是必需品"><a href="#4-window-background-是必需品" class="headerlink" title="4. --window background 是必需品"></a>4. <code>--window background</code> 是必需品</h3><p>不加这个参数，每次调用都会弹出 Chrome 窗口，在自动化场景下会非常烦人。</p>
+<h3 id="5-f-yaml-比-JSON-更易读"><a href="#5-f-yaml-比-JSON-更易读" class="headerlink" title="5. -f yaml 比 JSON 更易读"></a>5. <code>-f yaml</code> 比 JSON 更易读</h3><p>YAML 格式在终端查看时比 JSON 更友好，尤其是数据量大的场景。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>OpenCLI 是目前我见过的<strong>最轻量的全网数据抓取方案</strong>。不需要写代码、不需要配环境、不需要管反爬——装一个 npm 包，150 个网站的数据就在你终端里了。</p>
+<p>特别适合：</p>
+<ul>
+<li><strong>财经信息聚合</strong>：一站扫描雪球、微博、Reddit、Twitter</li>
+<li><strong>内容创作辅助</strong>：B站字幕提取、抖音内容获取</li>
+<li><strong>自动化监控</strong>：配合 CRON 做每日定时扫描</li>
+</ul>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/nicepkg/opencli">https://github.com/nicepkg/opencli</a></p>
+<hr>
+<p><em>本文基于 2026 年 5 月实测，适配器数量和功能可能随版本更新变化。</em></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://kkitx.bond">itx-blog</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://kkitx.bond/2026/05/27/opencli-guide/">https://kkitx.bond/2026/05/27/opencli-guide/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://kkitx.bond" target="_blank">AI技术前沿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/AI/">AI</a><a class="post-meta__tags" href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a><a class="post-meta__tags" href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">自动化</a><a class="post-meta__tags" href="/tags/%E7%88%AC%E8%99%AB/">爬虫</a><a class="post-meta__tags" href="/tags/OpenCLI/">OpenCLI</a><a class="post-meta__tags" href="/tags/%E8%B4%A2%E7%BB%8F%E6%95%B0%E6%8D%AE/">财经数据</a></div><div class="post-share"><div class="social-share" data-image="/img/opencli-guide.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/05/27/serenity-supply-chain-investing/" title="从&quot;女股神&quot;Serenity学供应链瓶颈投资法 —— CPO+A股传导标的全拆解"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/serenity-supply-chain.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">从"女股神"Serenity学供应链瓶颈投资法 —— CPO+A股传导标的全拆解</div></div><div class="info-2"><div class="info-item-1">谁是 Serenity最近两周，X（Twitter）上一个叫 Serenity（@aleabitoreddit）的交易员彻底刷屏了。 公开数据显示，他的 **2026 年 YTD 收益一度超过 1,116%，持仓 25 只股票，胜率 100%**。 更离谱的是，他不是一个炒情绪的 meme 币赌徒——他是一位前 AI 研究科学家、RISC-V 基金会成员，自称 2018 年拒绝了英伟达 AI 团队的 offer（当时股价 6 美元）。  “我让 Gemini 来挑战我的论点。”  这不是一句口号。他的整个投研流程就是：手绘全球供应链地图 + AI 交叉验证压力测试 + 事件驱动映射。 他的核心研究全部免费公开在 X 上，不卖课、不带单群、不做付费订阅——只卖一份 1 美元的 Excel。 被路透社、彭博社、金融时报直接引用，X 粉丝超过 12 万（截至发稿），且还在快速增长。 核心方法论：Chokepoint 瓶颈投资法Serenity 和华尔街主流分析师完全反向：     华尔街卖方 Serenity    方向 从大公司往下看（NVDA → 供应链） 从瓶颈点往上反推（材料 ...</div></div></div></a><a class="pagination-related" href="/2026/05/26/browser-harness-vs-playwright-cli/" title="Browser Harness vs Playwright CLI - AI 浏览器自动化工具深度对比"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Harness.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Browser Harness vs Playwright CLI - AI 浏览器自动化工具深度对比</div></div><div class="info-2"><div class="info-item-1">前言AI 编程助手（Claude Code、Copilot 等）的普及催生了一个新需求：让 AI 操控浏览器完成复杂任务。无论是自动化测试、数据采集，还是帮你在网页上点来点去，AI + 浏览器都成了热门组合。 最近 GitHub 上冒出两个备受关注的项目，正好代表了两种截然不同的技术路线：    项目 Stars 开发者 语言 定位    Browser Harness 13.8k browser-use 团队 Python 自愈式 CDP 套件   Playwright CLI 10.7k Microsoft TypeScript Token 高效的 CLI 工具   今天就对它们做一个全面对比，帮你搞清楚哪个更适合你的场景。  项目简介Browser Harness “Self-healing harness that enables LLMs to complete any task.”  Browser Harness 是一个轻量级 CDP（Chrome DevTools Protocol）套件，核心理念是：一个 WebSocket 直连 Chrome，中间没有任何中间层...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/05/25/crawl4ai-guide/" title="Crawl4AI - 开源LLM友好型网络爬虫完全指南"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/crawl4ai.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-25</div><div class="info-item-2">Crawl4AI - 开源LLM友好型网络爬虫完全指南</div></div><div class="info-2"><div class="info-item-1">项目简介Crawl4AI 是目前 GitHub 上星标最多的开源网络爬虫项目（66.2k Stars），专为 AI 时代设计。它的核心理念是将网页内容转换为干净、结构化的 Markdown，为 RAG（检索增强生成）、AI Agent 和数据管道提供高质量的数据源。  “Crawl4AI turns the web into clean, LLM ready Markdown for RAG, agents, and data pipelines.”  项目数据：  GitHub Stars：66,200+ 主要语言：Python（98.8%） 许可证：Apache 2.0（可商用） 当前版本：v0.8.6 仓库地址：https://github.com/unclecode/crawl4ai 官网：https://crawl4ai.com 文档：https://docs.crawl4ai.com  为什么选择 Crawl4AI市面上爬虫工具不少，但 Crawl4AI 有几个让人眼前一亮的差异化优势： 1. 真正开源免费 不像很多”开源”爬虫需要付费账户和 API Token，Cr...</div></div></div></a><a class="pagination-related" href="/2026/05/26/browser-harness-vs-playwright-cli/" title="Browser Harness vs Playwright CLI - AI 浏览器自动化工具深度对比"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Harness.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-26</div><div class="info-item-2">Browser Harness vs Playwright CLI - AI 浏览器自动化工具深度对比</div></div><div class="info-2"><div class="info-item-1">前言AI 编程助手（Claude Code、Copilot 等）的普及催生了一个新需求：让 AI 操控浏览器完成复杂任务。无论是自动化测试、数据采集，还是帮你在网页上点来点去，AI + 浏览器都成了热门组合。 最近 GitHub 上冒出两个备受关注的项目，正好代表了两种截然不同的技术路线：    项目 Stars 开发者 语言 定位    Browser Harness 13.8k browser-use 团队 Python 自愈式 CDP 套件   Playwright CLI 10.7k Microsoft TypeScript Token 高效的 CLI 工具   今天就对它们做一个全面对比，帮你搞清楚哪个更适合你的场景。  项目简介Browser Harness “Self-healing harness that enables LLMs to complete any task.”  Browser Harness 是一个轻量级 CDP（Chrome DevTools Protocol）套件，核心理念是：一个 WebSocket 直连 Chrome，中间没有任何中间层...</div></div></div></a><a class="pagination-related" href="/2026/05/25/shannon-ai-pentest/" title="Shannon - AI自主渗透测试工具完全指南"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/hacker.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-25</div><div class="info-item-2">Shannon - AI自主渗透测试工具完全指南</div></div><div class="info-2"><div class="info-item-1">项目简介Shannon 是由 Keygraph 开发的自主化 AI 白盒渗透测试工具，专为 Web 应用程序和 API 设计。它通过分析源代码、执行真实漏洞利用、生成可复现 PoC 报告的方式，实现端到端的自动化安全测试。  “Thanks to tools like Claude Code and Cursor, your team ships code non-stop. But your penetration test? That happens once a year. This creates a massive security gap.”  项目数据：  GitHub Stars：43.6k 主要语言：TypeScript（92.5%） 许可证：AGPL-3.0 最新版本：v1.2.0（2026年5月） 仓库地址：https://github.com/KeygraphHQ/shannon  核心特性1. 完全自主运行单条命令即可启动完整渗透测试流程。Shannon 自动处理 2FA&#x2F;TOTP 登录（包括 SSO）、浏览器导航、漏洞利用和报告生成，全程无需...</div></div></div></a><a class="pagination-related" href="/2026/05/08/github-ai-projects/" title="2026年GitHub热门AI开源项目盘点"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/ai.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-08</div><div class="info-item-2">2026年GitHub热门AI开源项目盘点</div></div><div class="info-2"><div class="info-item-1">前言2026年，AI开源社区持续爆发。从大模型到工具链，无数优秀项目涌现。本文精选 GitHub 上最热门的 AI 开源项目，助你快速上手前沿技术。 榜单概览   项目 Stars 类别 简介    DeepSeek-R1 85k+ 大模型 国产开源推理模型   Ollama 120k+ 工具 本地运行大模型   ComfyUI 60k+ 绘图 Stable Diffusion GUI   Open WebUI 50k+ 工具 ChatGPT风格界面   Lobe Chat 45k+ 工具 多模型聊天界面   vLLM 30k+ 推理 高性能推理引擎   AutoGen 35k+ Agent 多智能体框架   Dify 40k+ 平台 AI应用开发平台   1. DeepSeek-R1GitHub： https://github.com/deepseek-ai/DeepSeek-R1 简介： DeepSeek 推出的开源推理模型，数学和编程能力媲美 o1-preview。 亮点：  完全开源，可商用 推理能力极强，适合复杂问题 支持 Ollama&#x2F;vLLM 等多种部署方...</div></div></div></a><a class="pagination-related" href="/2026/05/19/llama-deploy/" title="Llama 3.1 本地部署教程"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/llama.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-19</div><div class="info-item-2">Llama 3.1 本地部署教程</div></div><div class="info-2"><div class="info-item-1">项目介绍Meta 开源的 Llama 3.1 是目前最强的开源大语言模型之一，8B版本可以在消费级显卡上流畅运行。 GitHub: https://github.com/meta-llama/llama3 环境准备硬件要求   模型版本 显存需求 推荐显卡    8B 8GB RTX 3060&#x2F;4060   70B 40GB+ RTX 4090 x2   软件环境# Ubuntu 22.04 系统sudo apt updatesudo apt install nvidia-driver-535  部署方式一：Ollama（推荐）# 安装 Ollamacurl -fsSL https://ollama.com/install.sh | sh# 下载 Llama 3.1 8Bollama pull llama3.1:8b# 运行对话ollama run llama3.1:8b# API 服务ollama serve  部署方式二：llama.cpp# 克隆项目git clone https://github.com/ggerganov/llama.cppcd llama.c...</div></div></div></a><a class="pagination-related" href="/2026/05/22/ai-tools/" title="10个必备AI工具推荐"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/ai.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-22</div><div class="info-item-2">10个必备AI工具推荐</div></div><div class="info-2"><div class="info-item-1">编程开发类1. GitHub CopilotGitHub Copilot 是目前最强的AI编程助手，支持多种IDE。 核心功能：  代码自动补全 根据注释生成代码 单元测试生成 代码解释  使用技巧： // 写清晰的注释// 创建一个函数，接收列表并返回排序后的唯一值// Copilot会自动生成代码def get_unique_sorted(lst):    return sorted(set(lst))  2. CursorCursor是基于VSCode的AI IDE，内置强大AI能力。 优势：  内置Claude&#x2F;GPT支持 整个项目上下文理解 多文件重构  3. Codeium免费替代Copilot的选择，支持主流IDE。  写作办公类4. Notion AI笔记软件中的AI助手，可以：  自动生成内容大纲 智能摘要长文 多语言翻译  5. GammaAI驱动的演示文稿生成器： 输入: &quot;创建一个关于AI发展趋势的演示文稿&quot;输出: 自动生成10页精美PPT   设计创意类6. Midjourney顶级AI绘画工具： /imagine prom...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">itx-blog</div><div class="author-info-description">itx-blog 的个人博客</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">81</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/zz330226" target="_blank" title=""><i class="fab fa-github"></i></a></div></div><div class="card-widget card-widget sidebar-search-card" id="sidebar-search"><div class="item-headline"><i class="fas fa-search"></i><span>搜索</span></div><div class="item-content"><div class="sidebar-search-wrapper">
+  <div class="sidebar-search-input-wrap">
+    <input id="sidebar-search-input" type="search" placeholder="搜索文章..." autocomplete="off" />
+    <button id="sidebar-search-btn" title="搜索"><i class="fas fa-search"></i></button>
+  </div>
+  <div id="sidebar-search-results" class="sidebar-search-results"></div>
+</div>
+</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-OpenCLI"><span class="toc-number">1.</span> <span class="toc-text">什么是 OpenCLI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="toc-number">2.</span> <span class="toc-text">核心使用技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%8F%82%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text">基本参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%80%81%E9%97%AE%E9%A2%98"><span class="toc-number">2.2.</span> <span class="toc-text">登录态问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E5%A4%A7%E5%B9%B3%E5%8F%B0%E5%AE%9E%E6%88%98%E6%B5%8B%E8%AF%95"><span class="toc-number">3.</span> <span class="toc-text">五大平台实战测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-B%E7%AB%99-%E2%80%94-%E6%9C%80%E5%AE%8C%E5%96%84%E7%9A%84%E4%BD%93%E9%AA%8C"><span class="toc-number">3.1.</span> <span class="toc-text">1. B站 — 最完善的体验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%8A%96%E9%9F%B3-%E2%80%94-%E8%83%BD%E7%94%A8%E4%BD%86%E8%A6%81%E7%BB%95"><span class="toc-number">3.2.</span> <span class="toc-text">2. 抖音 — 能用但要绕</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%9B%AA%E7%90%83-%E2%80%94-%E8%B4%A2%E7%BB%8F%E6%95%B0%E6%8D%AE%E5%88%A9%E5%99%A8"><span class="toc-number">3.3.</span> <span class="toc-text">3. 雪球 — 财经数据利器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A-%E2%80%94-%E7%83%AD%E6%90%9C%E7%8E%8B%E8%80%85"><span class="toc-number">3.4.</span> <span class="toc-text">4. 新浪微博 — 热搜王者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-X-Twitter-%E2%80%94-%E7%99%BB%E5%BD%95%E9%97%A8%E6%A7%9B%E9%AB%98"><span class="toc-number">3.5.</span> <span class="toc-text">5. X&#x2F;Twitter — 登录门槛高</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B3%E5%8F%B0%E8%83%BD%E5%8A%9B%E5%AF%B9%E6%AF%94"><span class="toc-number">4.</span> <span class="toc-text">平台能力对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%A2%E7%BB%8F%E6%95%B0%E6%8D%AE%E7%9F%A9%E9%98%B5"><span class="toc-number">5.</span> <span class="toc-text">财经数据矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-%E4%B8%93%E4%B8%9A%E8%B4%A2%E7%BB%8F%E5%B9%B3%E5%8F%B0"><span class="toc-number">5.1.</span> <span class="toc-text">A. 专业财经平台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-%E6%96%B0%E9%97%BB%E8%B5%84%E8%AE%AF"><span class="toc-number">5.2.</span> <span class="toc-text">B. 新闻资讯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93"><span class="toc-number">5.3.</span> <span class="toc-text">C. 社交媒体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D-%E7%9F%A5%E8%AF%86%E6%98%9F%E7%90%83-%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7"><span class="toc-number">5.4.</span> <span class="toc-text">D. 知识星球 &amp; 微信公众号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#E-AI-%E7%A7%91%E6%8A%80"><span class="toc-number">5.5.</span> <span class="toc-text">E. AI &amp; 科技</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E7%8E%A9%E6%B3%95%EF%BC%9A%E6%AF%8F%E6%97%A5%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%AB%E6%8F%8F"><span class="toc-number">6.</span> <span class="toc-text">进阶玩法：每日自动化扫描</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B8%A9%E5%9D%91%E6%80%BB%E7%BB%93"><span class="toc-number">7.</span> <span class="toc-text">踩坑总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%9F%AD%E9%93%BE%E6%8E%A5%E5%BF%85%E9%A1%BB%E6%89%8B%E5%8A%A8%E8%A7%A3%E6%9E%90"><span class="toc-number">7.1.</span> <span class="toc-text">1. 短链接必须手动解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%99%BB%E5%BD%95%E6%80%81%E6%98%AF%E6%9C%80%E5%A4%A7%E9%97%A8%E6%A7%9B"><span class="toc-number">7.2.</span> <span class="toc-text">2. 登录态是最大门槛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4%E4%B8%8D%E7%A8%B3%E5%AE%9A"><span class="toc-number">7.3.</span> <span class="toc-text">3. 部分命令不稳定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-window-background-%E6%98%AF%E5%BF%85%E9%9C%80%E5%93%81"><span class="toc-number">7.4.</span> <span class="toc-text">4. --window background 是必需品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-f-yaml-%E6%AF%94-JSON-%E6%9B%B4%E6%98%93%E8%AF%BB"><span class="toc-number">7.5.</span> <span class="toc-text">5. -f yaml 比 JSON 更易读</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">8.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/05/27/daily-finance-2026-05-27/" title="每日财经扫描 | 美光破万亿、A股分化加剧、加密极度恐慌"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Daily-Finance.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="每日财经扫描 | 美光破万亿、A股分化加剧、加密极度恐慌"/></a><div class="content"><a class="title" href="/2026/05/27/daily-finance-2026-05-27/" title="每日财经扫描 | 美光破万亿、A股分化加剧、加密极度恐慌">每日财经扫描 | 美光破万亿、A股分化加剧、加密极度恐慌</a><time datetime="2026-05-27T12:00:00.000Z" title="发表于 2026-05-27 20:00:00">2026-05-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/05/27/mimo-api-price-cut/" title="小米 MiMo-V2.5 API 永久降价 99%，价格直接对标 DeepSeek"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/mimo-api.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="小米 MiMo-V2.5 API 永久降价 99%，价格直接对标 DeepSeek"/></a><div class="content"><a class="title" href="/2026/05/27/mimo-api-price-cut/" title="小米 MiMo-V2.5 API 永久降价 99%，价格直接对标 DeepSeek">小米 MiMo-V2.5 API 永久降价 99%，价格直接对标 DeepSeek</a><time datetime="2026-05-27T09:00:00.000Z" title="发表于 2026-05-27 17:00:00">2026-05-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/05/27/serenity-supply-chain-investing/" title="从&quot;女股神&quot;Serenity学供应链瓶颈投资法 —— CPO+A股传导标的全拆解"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/serenity-supply-chain.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="从&quot;女股神&quot;Serenity学供应链瓶颈投资法 —— CPO+A股传导标的全拆解"/></a><div class="content"><a class="title" href="/2026/05/27/serenity-supply-chain-investing/" title="从&quot;女股神&quot;Serenity学供应链瓶颈投资法 —— CPO+A股传导标的全拆解">从&quot;女股神&quot;Serenity学供应链瓶颈投资法 —— CPO+A股传导标的全拆解</a><time datetime="2026-05-27T00:00:00.000Z" title="发表于 2026-05-27 08:00:00">2026-05-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/05/27/opencli-guide/" title="OpenCLI 实战 - 用命令行征服全网150+网站"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/opencli-guide.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OpenCLI 实战 - 用命令行征服全网150+网站"/></a><div class="content"><a class="title" href="/2026/05/27/opencli-guide/" title="OpenCLI 实战 - 用命令行征服全网150+网站">OpenCLI 实战 - 用命令行征服全网150+网站</a><time datetime="2026-05-26T23:30:00.000Z" title="发表于 2026-05-27 07:30:00">2026-05-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/05/26/browser-harness-vs-playwright-cli/" title="Browser Harness vs Playwright CLI - AI 浏览器自动化工具深度对比"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Harness.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Browser Harness vs Playwright CLI - AI 浏览器自动化工具深度对比"/></a><div class="content"><a class="title" href="/2026/05/26/browser-harness-vs-playwright-cli/" title="Browser Harness vs Playwright CLI - AI 浏览器自动化工具深度对比">Browser Harness vs Playwright CLI - AI 浏览器自动化工具深度对比</a><time datetime="2026-05-26T11:00:00.000Z" title="发表于 2026-05-26 19:00:00">2026-05-26</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2024 - 2026 By itx-blog</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div><div class="footer_custom_text">Copyright © 2024-2026 By itx-blog</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"data-lang":"zh-CN"}
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'zz330226/zz330226.github.io',
+      'data-repo-id': 'R_kgDOMsQCjA',
+      'data-category-id': 'DIC_kwDOMsQCjM4C9vQM',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script src="/js/sidebar-search.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

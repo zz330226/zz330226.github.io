@@ -1,0 +1,324 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Python装饰器详解-从入门到精通 | AI技术前沿</title><meta name="author" content="itx-blog"><meta name="copyright" content="itx-blog"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="什么是装饰器装饰器（Decorator）是 Python 的高级特性，本质上是一个函数，用于「装饰」其他函数，在不修改原函数代码的情况下增加额外功能。 通俗理解：就像给手机贴膜，手机本身功能不变，但多了一层「保护」功能。装饰器就是给函数「贴膜」。 最简单的装饰器def my_decorator(func):    def wrapper():        print(&quot;函数开始执行&amp;q">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python装饰器详解-从入门到精通">
+<meta property="og:url" content="https://kkitx.bond/2026/05/14/python-decorator/index.html">
+<meta property="og:site_name" content="AI技术前沿">
+<meta property="og:description" content="什么是装饰器装饰器（Decorator）是 Python 的高级特性，本质上是一个函数，用于「装饰」其他函数，在不修改原函数代码的情况下增加额外功能。 通俗理解：就像给手机贴膜，手机本身功能不变，但多了一层「保护」功能。装饰器就是给函数「贴膜」。 最简单的装饰器def my_decorator(func):    def wrapper():        print(&quot;函数开始执行&amp;q">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://kkitx.bond/img/Decorator.jpg">
+<meta property="article:published_time" content="2026-05-14T02:00:00.000Z">
+<meta property="article:modified_time" content="2026-05-24T15:54:44.353Z">
+<meta property="article:author" content="itx-blog">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="函数式编程">
+<meta property="article:tag" content="装饰器">
+<meta property="article:tag" content="进阶">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kkitx.bond/img/Decorator.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Python装饰器详解-从入门到精通",
+  "url": "https://kkitx.bond/2026/05/14/python-decorator/",
+  "image": "https://kkitx.bond/img/Decorator.jpg",
+  "datePublished": "2026-05-14T02:00:00.000Z",
+  "dateModified": "2026-05-24T15:54:44.353Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "itx-blog",
+      "url": "https://kkitx.bond"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://kkitx.bond/2026/05/14/python-decorator/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="EhlOmXPwXuzsvHP_KMoh5sIXnaEzWSRHDOOVMBqeE7o"/><link rel="stylesheet" href="/css/index.css?v=5.5.5-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49B1F5","bgDark":"#1f1f1f","position":"top-center"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Python装饰器详解-从入门到精通',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/sidebar-search.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">81</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://picsum.photos/1920/800);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">AI技术前沿</span></a><a class="nav-page-title" href="/"><span class="site-name">Python装饰器详解-从入门到精通</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Python装饰器详解-从入门到精通</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-05-14T02:00:00.000Z" title="发表于 2026-05-14 10:00:00">2026-05-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-05-24T15:54:44.353Z" title="更新于 2026-05-24 23:54:44">2026-05-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Python%E5%BC%80%E5%8F%91/">Python开发</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="什么是装饰器"><a href="#什么是装饰器" class="headerlink" title="什么是装饰器"></a>什么是装饰器</h2><p>装饰器（Decorator）是 Python 的高级特性，本质上是一个函数，用于「装饰」其他函数，在不修改原函数代码的情况下增加额外功能。</p>
+<p><strong>通俗理解：</strong><br>就像给手机贴膜，手机本身功能不变，但多了一层「保护」功能。装饰器就是给函数「贴膜」。</p>
+<h2 id="最简单的装饰器"><a href="#最简单的装饰器" class="headerlink" title="最简单的装饰器"></a>最简单的装饰器</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">my_decorator</span>(<span class="params">func</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;函数开始执行&quot;</span>)</span><br><span class="line">        func()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;函数执行结束&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@my_decorator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">say_hello</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello!&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用</span></span><br><span class="line">say_hello()</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出：</strong></p>
+<figure class="highlight erlang-repl"><table><tr><td class="code"><pre><span class="line">函数开始执行</span><br><span class="line">Hello!</span><br><span class="line">函数执行结束</span><br></pre></td></tr></table></figure>
+
+<h2 id="装饰器的原理"><a href="#装饰器的原理" class="headerlink" title="装饰器的原理"></a>装饰器的原理</h2><p><code>@my_decorator</code> 等价于：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">say_hello = my_decorator(say_hello)</span><br></pre></td></tr></table></figure>
+
+<p>装饰器把原函数「包装」成新函数，调用时实际执行的是 wrapper。</p>
+<h2 id="带参数的装饰器"><a href="#带参数的装饰器" class="headerlink" title="带参数的装饰器"></a>带参数的装饰器</h2><p>原函数有参数时，wrapper 需要接收：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">my_decorator</span>(<span class="params">func</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;开始执行...&quot;</span>)</span><br><span class="line">        result = func(*args, **kwargs)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;执行结束!&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@my_decorator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(add(<span class="number">3</span>, <span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出：</strong></p>
+<figure class="highlight erlang-repl"><table><tr><td class="code"><pre><span class="line">开始执行...</span><br><span class="line">执行结束!</span><br><span class="line"><span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<p><code>*args, **kwargs</code> 让 wrapper 能接收任意参数。</p>
+<h2 id="实用装饰器示例"><a href="#实用装饰器示例" class="headerlink" title="实用装饰器示例"></a>实用装饰器示例</h2><h3 id="1-计时装饰器"><a href="#1-计时装饰器" class="headerlink" title="1. 计时装饰器"></a>1. 计时装饰器</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">timer</span>(<span class="params">func</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">        start = time.time()</span><br><span class="line">        result = func(*args, **kwargs)</span><br><span class="line">        end = time.time()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;func.__name__&#125;</span> 执行耗时: <span class="subst">&#123;end - start:<span class="number">.2</span>f&#125;</span>秒&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@timer</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">slow_function</span>():</span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;完成&quot;</span></span><br><span class="line"></span><br><span class="line">slow_function()</span><br><span class="line"><span class="comment"># 输出: slow_function 执行耗时: 2.00秒</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-日志装饰器"><a href="#2-日志装饰器" class="headerlink" title="2. 日志装饰器"></a>2. 日志装饰器</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">logger</span>(<span class="params">func</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;调用函数: <span class="subst">&#123;func.__name__&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;参数: args=<span class="subst">&#123;args&#125;</span>, kwargs=<span class="subst">&#123;kwargs&#125;</span>&quot;</span>)</span><br><span class="line">        result = func(*args, **kwargs)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;返回值: <span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@logger</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">calculate</span>(<span class="params">x, y, operation=<span class="string">&quot;add&quot;</span></span>):</span><br><span class="line">    <span class="keyword">if</span> operation == <span class="string">&quot;add&quot;</span>:</span><br><span class="line">        <span class="keyword">return</span> x + y</span><br><span class="line">    <span class="keyword">return</span> x - y</span><br><span class="line"></span><br><span class="line">calculate(<span class="number">10</span>, <span class="number">5</span>, operation=<span class="string">&quot;add&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-缓存装饰器"><a href="#3-缓存装饰器" class="headerlink" title="3. 缓存装饰器"></a>3. 缓存装饰器</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">cache</span>(<span class="params">func</span>):</span><br><span class="line">    cached_results = &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args</span>):</span><br><span class="line">        <span class="keyword">if</span> args <span class="keyword">in</span> cached_results:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;命中缓存: <span class="subst">&#123;args&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> cached_results[args]</span><br><span class="line">        result = func(*args)</span><br><span class="line">        cached_results[args] = result</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@cache</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fibonacci</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">return</span> fibonacci(n-<span class="number">1</span>) + fibonacci(n-<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(fibonacci(<span class="number">10</span>))  <span class="comment"># 第一次计算</span></span><br><span class="line"><span class="built_in">print</span>(fibonacci(<span class="number">10</span>))  <span class="comment"># 第二次命中缓存</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-权限验证装饰器"><a href="#4-权限验证装饰器" class="headerlink" title="4. 权限验证装饰器"></a>4. 权限验证装饰器</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">require_auth</span>(<span class="params">func</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs, user=<span class="literal">None</span></span>):</span><br><span class="line">        <span class="keyword">if</span> user <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> <span class="keyword">not</span> user.get(<span class="string">&#x27;is_admin&#x27;</span>):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;权限不足！&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        <span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@require_auth</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">delete_user</span>(<span class="params">user_id</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;删除用户 <span class="subst">&#123;user_id&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">delete_user(<span class="number">1</span>, user=&#123;<span class="string">&#x27;is_admin&#x27;</span>: <span class="literal">True</span>&#125;)   <span class="comment"># 成功</span></span><br><span class="line">delete_user(<span class="number">2</span>, user=&#123;<span class="string">&#x27;is_admin&#x27;</span>: <span class="literal">False</span>&#125;)  <span class="comment"># 权限不足</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="保留原函数信息"><a href="#保留原函数信息" class="headerlink" title="保留原函数信息"></a>保留原函数信息</h2><p>装饰器会覆盖原函数的元信息（名称、文档等），使用 <code>functools.wraps</code> 解决：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">my_decorator</span>(<span class="params">func</span>):</span><br><span class="line"><span class="meta">    @wraps(<span class="params">func</span>)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">        <span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@my_decorator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">example</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;这是一个示例函数&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(example.__name__)  <span class="comment"># example（不是 wrapper）</span></span><br><span class="line"><span class="built_in">print</span>(example.__doc__)   <span class="comment"># 这是一个示例函数</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="带参数的装饰器工厂"><a href="#带参数的装饰器工厂" class="headerlink" title="带参数的装饰器工厂"></a>带参数的装饰器工厂</h2><p>当装饰器本身需要参数时，需要三层嵌套：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">repeat</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">decorator</span>(<span class="params">func</span>):</span><br><span class="line"><span class="meta">        @wraps(<span class="params">func</span>)</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                result = func(*args, **kwargs)</span><br><span class="line">            <span class="keyword">return</span> result</span><br><span class="line">        <span class="keyword">return</span> wrapper</span><br><span class="line">    <span class="keyword">return</span> decorator</span><br><span class="line"></span><br><span class="line"><span class="meta">@repeat(<span class="params"><span class="number">3</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">say_hi</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hi!&quot;</span>)</span><br><span class="line"></span><br><span class="line">say_hi()</span><br><span class="line"><span class="comment"># 输出: Hi! Hi! Hi!</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="类装饰器"><a href="#类装饰器" class="headerlink" title="类装饰器"></a>类装饰器</h2><p>装饰器也可以是类：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CountCalls</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, func</span>):</span><br><span class="line">        <span class="variable language_">self</span>.func = func</span><br><span class="line">        <span class="variable language_">self</span>.count = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__call__</span>(<span class="params">self, *args, **kwargs</span>):</span><br><span class="line">        <span class="variable language_">self</span>.count += <span class="number">1</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;第 <span class="subst">&#123;self.count&#125;</span> 次调用&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.func(*args, **kwargs)</span><br><span class="line"></span><br><span class="line"><span class="meta">@CountCalls</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">greet</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello&quot;</span>)</span><br><span class="line"></span><br><span class="line">greet()  <span class="comment"># 第 1 次调用</span></span><br><span class="line">greet()  <span class="comment"># 第 2 次调用</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Python-内置装饰器"><a href="#Python-内置装饰器" class="headerlink" title="Python 内置装饰器"></a>Python 内置装饰器</h2><h3 id="property"><a href="#property" class="headerlink" title="@property"></a>@property</h3><p>将方法变成属性访问：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Circle</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, radius</span>):</span><br><span class="line">        <span class="variable language_">self</span>.radius = radius</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">area</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="number">3.14</span> * <span class="variable language_">self</span>.radius ** <span class="number">2</span></span><br><span class="line"></span><br><span class="line">c = Circle(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(c.area)  <span class="comment"># 78.5（像属性一样访问）</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="staticmethod-和-classmethod"><a href="#staticmethod-和-classmethod" class="headerlink" title="@staticmethod 和 @classmethod"></a>@staticmethod 和 @classmethod</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span>:</span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">static_method</span>():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;静态方法，不需要实例&quot;</span>)</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">class_method</span>(<span class="params">cls</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;类方法，类是 <span class="subst">&#123;cls.__name__&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">MyClass.static_method()</span><br><span class="line">MyClass.class_method()</span><br></pre></td></tr></table></figure>
+
+<h2 id="装饰器叠加"><a href="#装饰器叠加" class="headerlink" title="装饰器叠加"></a>装饰器叠加</h2><p>多个装饰器可以叠加使用，执行顺序从下到上：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@decorator1</span></span><br><span class="line"><span class="meta">@decorator2</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 等价于: func = decorator1(decorator2(func))</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>装饰器是 Python 进阶必备技能，核心要点：</p>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基本结构</td>
+<td>函数嵌套 + 返回 wrapper</td>
+</tr>
+<tr>
+<td>参数处理</td>
+<td>使用 <code>*args, **kwargs</code></td>
+</tr>
+<tr>
+<td>元信息保留</td>
+<td>使用 <code>@wraps(func)</code></td>
+</tr>
+<tr>
+<td>带参数装饰器</td>
+<td>三层嵌套或使用类</td>
+</tr>
+</tbody></table>
+<p><strong>常见用途：</strong></p>
+<ul>
+<li>日志记录</li>
+<li>性能计时</li>
+<li>权限验证</li>
+<li>缓存优化</li>
+<li>错误处理</li>
+</ul>
+<p>掌握装饰器，让你的 Python 代码更优雅、更强大！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://kkitx.bond">itx-blog</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://kkitx.bond/2026/05/14/python-decorator/">https://kkitx.bond/2026/05/14/python-decorator/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://kkitx.bond" target="_blank">AI技术前沿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a><a class="post-meta__tags" href="/tags/%E8%A3%85%E9%A5%B0%E5%99%A8/">装饰器</a><a class="post-meta__tags" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">函数式编程</a><a class="post-meta__tags" href="/tags/%E8%BF%9B%E9%98%B6/">进阶</a></div><div class="post-share"><div class="social-share" data-image="/img/Decorator.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/05/15/ai-drawing-comparison/" title="AI绘图工具对比-Midjourney vs Stable Diffusion vs DALL-E"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/ai_pic.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">AI绘图工具对比-Midjourney vs Stable Diffusion vs DALL-E</div></div><div class="info-2"><div class="info-item-1">AI 绘图工具崛起AI 绘图技术已从实验室走向大众。一张简单的文字描述，几秒钟就能生成精美图像。本文对比三款主流 AI 绘图工具，帮你找到最适合的创作伙伴。 三款工具概览   工具 开发公司 使用方式 价格    Midjourney Midjourney Inc Discord&#x2F;Web $10&#x2F;月起   Stable Diffusion Stability AI 本地部署&#x2F;Web 免费（开源）   DALL-E 3 OpenAI ChatGPT&#x2F;API $20&#x2F;月（含在Plus）   1. Midjourney特点 艺术风格最强，画面精致 操作简单，适合新手 仅通过 Discord 或 Web 使用  生成示例/imagine prompt: a futuristic city at sunset, cyberpunk style, highly detailed  优点 画面质感顶级，无需调参数 风格多样：写实、动漫、抽象、3D 社区活跃，大量优秀作品参考  缺点 需付费，无免费试用 无法本地部署 控制精度有限，随机性较强  ...</div></div></div></a><a class="pagination-related" href="/2026/05/13/python-regex/" title="Python正则表达式实战指南"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/python.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Python正则表达式实战指南</div></div><div class="info-2"><div class="info-item-1">正则表达式简介正则表达式（Regular Expression，简称 regex）是处理文本的强大工具。通过模式匹配，可以快速完成查找、提取、替换等操作。 Python 使用 re 模块处理正则表达式。 基本语法速查   符号 含义 示例    . 任意字符 a.c 匹配 “abc”、”a1c”   \d 数字 \d\d 匹配 “12”   \w 字母&#x2F;数字&#x2F;下划线 \w+ 匹配 “hello_123”   \s 空格&#x2F;制表符 \s+ 匹配连续空白   * 0次或多次 ab*c 匹配 “ac”、”abbc”   + 1次或多次 ab+c 匹配 “abc”、”abbc”   ? 0次或1次 ab?c 匹配 “ac”、”abc”   {n} 恰好n次 a{3} 匹配 “aaa”   {n,m} n到m次 a{2,4} 匹配 “aa”、”aaa”、”aaaa”   ^ 开头 ^Hello 匹配开头的 Hello   $ 结尾 end$ 匹配结尾的 end   [] 字符集合 [abc] 匹配 a&#x2F;b&#x2F;c   &#96; &#96; 或 ...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/05/13/python-regex/" title="Python正则表达式实战指南"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/python.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-13</div><div class="info-item-2">Python正则表达式实战指南</div></div><div class="info-2"><div class="info-item-1">正则表达式简介正则表达式（Regular Expression，简称 regex）是处理文本的强大工具。通过模式匹配，可以快速完成查找、提取、替换等操作。 Python 使用 re 模块处理正则表达式。 基本语法速查   符号 含义 示例    . 任意字符 a.c 匹配 “abc”、”a1c”   \d 数字 \d\d 匹配 “12”   \w 字母&#x2F;数字&#x2F;下划线 \w+ 匹配 “hello_123”   \s 空格&#x2F;制表符 \s+ 匹配连续空白   * 0次或多次 ab*c 匹配 “ac”、”abbc”   + 1次或多次 ab+c 匹配 “abc”、”abbc”   ? 0次或1次 ab?c 匹配 “ac”、”abc”   {n} 恰好n次 a{3} 匹配 “aaa”   {n,m} n到m次 a{2,4} 匹配 “aa”、”aaa”、”aaaa”   ^ 开头 ^Hello 匹配开头的 Hello   $ 结尾 end$ 匹配结尾的 end   [] 字符集合 [abc] 匹配 a&#x2F;b&#x2F;c   &#96; &#96; 或 ...</div></div></div></a><a class="pagination-related" href="/2026/05/25/crawl4ai-guide/" title="Crawl4AI - 开源LLM友好型网络爬虫完全指南"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/crawl4ai.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-25</div><div class="info-item-2">Crawl4AI - 开源LLM友好型网络爬虫完全指南</div></div><div class="info-2"><div class="info-item-1">项目简介Crawl4AI 是目前 GitHub 上星标最多的开源网络爬虫项目（66.2k Stars），专为 AI 时代设计。它的核心理念是将网页内容转换为干净、结构化的 Markdown，为 RAG（检索增强生成）、AI Agent 和数据管道提供高质量的数据源。  “Crawl4AI turns the web into clean, LLM ready Markdown for RAG, agents, and data pipelines.”  项目数据：  GitHub Stars：66,200+ 主要语言：Python（98.8%） 许可证：Apache 2.0（可商用） 当前版本：v0.8.6 仓库地址：https://github.com/unclecode/crawl4ai 官网：https://crawl4ai.com 文档：https://docs.crawl4ai.com  为什么选择 Crawl4AI市面上爬虫工具不少，但 Crawl4AI 有几个让人眼前一亮的差异化优势： 1. 真正开源免费 不像很多”开源”爬虫需要付费账户和 API Token，Cr...</div></div></div></a><a class="pagination-related" href="/2026/05/23/pytorch-intro/" title="PyTorch深度学习入门"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/pytorch.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-23</div><div class="info-item-2">PyTorch深度学习入门</div></div><div class="info-2"><div class="info-item-1">PyTorch 安装与环境配置# 创建虚拟环境conda create -n pytorch python=3.10conda activate pytorch# 安装PyTorch（GPU版本）pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118# 验证安装python -c &quot;import torch; print(torch.cuda.is_available())&quot;  Tensor 基础操作import torch# 创建张量x = torch.tensor([1, 2, 3, 4])y = torch.zeros(3, 4)z = torch.randn(2, 3)  # 随机正态分布# 张量运算a = torch.add(x, 2)b = x * 2c = x.view(2, 2)  # 改变形状# GPU加速if torch.cuda.is_available():    x = x.cuda()  构建第一个神经网络...</div></div></div></a><a class="pagination-related" href="/2026/05/12/fastapi-tutorial/" title="FastAPI快速入门-现代Python Web框架"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/FastAPI.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-12</div><div class="info-item-2">FastAPI快速入门-现代Python Web框架</div></div><div class="info-2"><div class="info-item-1">FastAPI 简介FastAPI 是现代、高性能的 Python Web 框架，基于 Starlette 和 Pydantic 构建。 核心优势：  性能媲美 NodeJS 和 Go 自动生成 API 文档（Swagger UI） 类型提示，编辑器支持友好 异步支持，高并发场景首选  安装pip install fastapi uvicorn  最简单的 APIfrom fastapi import FastAPIapp = FastAPI()@app.get(&quot;/&quot;)def home():    return &#123;&quot;message&quot;: &quot;Hello FastAPI&quot;&#125;@app.get(&quot;/items/&#123;item_id&#125;&quot;)def get_item(item_id: int):    return &#123;&quot;item_id&quot;: item_id&#125;  运行服务器： uvicorn main:app --reload  访问：  ht...</div></div></div></a><a class="pagination-related" href="/2026/05/20/python-async/" title="Python异步编程实战"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/python.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-20</div><div class="info-item-2">Python异步编程实战</div></div><div class="info-2"><div class="info-item-1">为什么需要异步编程在处理大量I&#x2F;O操作时，同步代码会严重阻塞程序执行。异步编程可以让程序在等待I&#x2F;O时继续执行其他任务。 同步 vs 异步对比# 同步方式 - 总耗时约6秒import timedef fetch_data(url):    time.sleep(2)  # 模拟网络请求    return f&quot;Data from &#123;url&#125;&quot;def main():    start = time.time()    results = []    for url in [&#x27;url1&#x27;, &#x27;url2&#x27;, &#x27;url3&#x27;]:        results.append(fetch_data(url))    print(f&quot;耗时: &#123;time.time() - start&#125;秒&quot;)    main()  # 异步方式 - 总耗时约2秒import asyncioasync def fetch_data(url):    awai...</div></div></div></a><a class="pagination-related" href="/2026/05/26/browser-harness-vs-playwright-cli/" title="Browser Harness vs Playwright CLI - AI 浏览器自动化工具深度对比"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Harness.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-26</div><div class="info-item-2">Browser Harness vs Playwright CLI - AI 浏览器自动化工具深度对比</div></div><div class="info-2"><div class="info-item-1">前言AI 编程助手（Claude Code、Copilot 等）的普及催生了一个新需求：让 AI 操控浏览器完成复杂任务。无论是自动化测试、数据采集，还是帮你在网页上点来点去，AI + 浏览器都成了热门组合。 最近 GitHub 上冒出两个备受关注的项目，正好代表了两种截然不同的技术路线：    项目 Stars 开发者 语言 定位    Browser Harness 13.8k browser-use 团队 Python 自愈式 CDP 套件   Playwright CLI 10.7k Microsoft TypeScript Token 高效的 CLI 工具   今天就对它们做一个全面对比，帮你搞清楚哪个更适合你的场景。  项目简介Browser Harness “Self-healing harness that enables LLMs to complete any task.”  Browser Harness 是一个轻量级 CDP（Chrome DevTools Protocol）套件，核心理念是：一个 WebSocket 直连 Chrome，中间没有任何中间层...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">itx-blog</div><div class="author-info-description">itx-blog 的个人博客</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">81</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/zz330226" target="_blank" title=""><i class="fab fa-github"></i></a></div></div><div class="card-widget card-widget sidebar-search-card" id="sidebar-search"><div class="item-headline"><i class="fas fa-search"></i><span>搜索</span></div><div class="item-content"><div class="sidebar-search-wrapper">
+  <div class="sidebar-search-input-wrap">
+    <input id="sidebar-search-input" type="search" placeholder="搜索文章..." autocomplete="off" />
+    <button id="sidebar-search-btn" title="搜索"><i class="fas fa-search"></i></button>
+  </div>
+  <div id="sidebar-search-results" class="sidebar-search-results"></div>
+</div>
+</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">什么是装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text">最简单的装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">装饰器的原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">带参数的装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%94%A8%E8%A3%85%E9%A5%B0%E5%99%A8%E7%A4%BA%E4%BE%8B"><span class="toc-number">5.</span> <span class="toc-text">实用装饰器示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%AE%A1%E6%97%B6%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="toc-number">5.1.</span> <span class="toc-text">1. 计时装饰器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%97%A5%E5%BF%97%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="toc-number">5.2.</span> <span class="toc-text">2. 日志装饰器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%BC%93%E5%AD%98%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="toc-number">5.3.</span> <span class="toc-text">3. 缓存装饰器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%9D%83%E9%99%90%E9%AA%8C%E8%AF%81%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="toc-number">5.4.</span> <span class="toc-text">4. 权限验证装饰器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E7%95%99%E5%8E%9F%E5%87%BD%E6%95%B0%E4%BF%A1%E6%81%AF"><span class="toc-number">6.</span> <span class="toc-text">保留原函数信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8%E5%B7%A5%E5%8E%82"><span class="toc-number">7.</span> <span class="toc-text">带参数的装饰器工厂</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="toc-number">8.</span> <span class="toc-text">类装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-%E5%86%85%E7%BD%AE%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="toc-number">9.</span> <span class="toc-text">Python 内置装饰器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#property"><span class="toc-number">9.1.</span> <span class="toc-text">@property</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#staticmethod-%E5%92%8C-classmethod"><span class="toc-number">9.2.</span> <span class="toc-text">@staticmethod 和 @classmethod</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8%E5%8F%A0%E5%8A%A0"><span class="toc-number">10.</span> <span class="toc-text">装饰器叠加</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">11.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/05/27/daily-finance-2026-05-27/" title="每日财经扫描 | 美光破万亿、A股分化加剧、加密极度恐慌"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Daily-Finance.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="每日财经扫描 | 美光破万亿、A股分化加剧、加密极度恐慌"/></a><div class="content"><a class="title" href="/2026/05/27/daily-finance-2026-05-27/" title="每日财经扫描 | 美光破万亿、A股分化加剧、加密极度恐慌">每日财经扫描 | 美光破万亿、A股分化加剧、加密极度恐慌</a><time datetime="2026-05-27T12:00:00.000Z" title="发表于 2026-05-27 20:00:00">2026-05-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/05/27/mimo-api-price-cut/" title="小米 MiMo-V2.5 API 永久降价 99%，价格直接对标 DeepSeek"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/mimo-api.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="小米 MiMo-V2.5 API 永久降价 99%，价格直接对标 DeepSeek"/></a><div class="content"><a class="title" href="/2026/05/27/mimo-api-price-cut/" title="小米 MiMo-V2.5 API 永久降价 99%，价格直接对标 DeepSeek">小米 MiMo-V2.5 API 永久降价 99%，价格直接对标 DeepSeek</a><time datetime="2026-05-27T09:00:00.000Z" title="发表于 2026-05-27 17:00:00">2026-05-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/05/27/serenity-supply-chain-investing/" title="从&quot;女股神&quot;Serenity学供应链瓶颈投资法 —— CPO+A股传导标的全拆解"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/serenity-supply-chain.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="从&quot;女股神&quot;Serenity学供应链瓶颈投资法 —— CPO+A股传导标的全拆解"/></a><div class="content"><a class="title" href="/2026/05/27/serenity-supply-chain-investing/" title="从&quot;女股神&quot;Serenity学供应链瓶颈投资法 —— CPO+A股传导标的全拆解">从&quot;女股神&quot;Serenity学供应链瓶颈投资法 —— CPO+A股传导标的全拆解</a><time datetime="2026-05-27T00:00:00.000Z" title="发表于 2026-05-27 08:00:00">2026-05-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/05/27/opencli-guide/" title="OpenCLI 实战 - 用命令行征服全网150+网站"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/opencli-guide.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OpenCLI 实战 - 用命令行征服全网150+网站"/></a><div class="content"><a class="title" href="/2026/05/27/opencli-guide/" title="OpenCLI 实战 - 用命令行征服全网150+网站">OpenCLI 实战 - 用命令行征服全网150+网站</a><time datetime="2026-05-26T23:30:00.000Z" title="发表于 2026-05-27 07:30:00">2026-05-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/05/26/browser-harness-vs-playwright-cli/" title="Browser Harness vs Playwright CLI - AI 浏览器自动化工具深度对比"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Harness.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Browser Harness vs Playwright CLI - AI 浏览器自动化工具深度对比"/></a><div class="content"><a class="title" href="/2026/05/26/browser-harness-vs-playwright-cli/" title="Browser Harness vs Playwright CLI - AI 浏览器自动化工具深度对比">Browser Harness vs Playwright CLI - AI 浏览器自动化工具深度对比</a><time datetime="2026-05-26T11:00:00.000Z" title="发表于 2026-05-26 19:00:00">2026-05-26</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2024 - 2026 By itx-blog</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div><div class="footer_custom_text">Copyright © 2024-2026 By itx-blog</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"data-lang":"zh-CN"}
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'zz330226/zz330226.github.io',
+      'data-repo-id': 'R_kgDOMsQCjA',
+      'data-category-id': 'DIC_kwDOMsQCjM4C9vQM',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script src="/js/sidebar-search.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
