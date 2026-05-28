@@ -1,7 +1,7 @@
 ---
 title: CodeGraph 部署与使用指南：让 AI 编程助手拥有语义级代码理解力
 date: 2026-05-25 10:00:00
-categories: AI工具
+categories: AI工具箱
 tags:
   - GitHub
   - AI

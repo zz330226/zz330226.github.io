@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://blog.kkming.dpdns.org
+url: https://kkitx.bond
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -97,7 +97,7 @@ ignore:
 
 robotstxt:
   path: robots.txt
-  content: "User-agent: *\nAllow: /\nSitemap: https://blog.kkming.dpdns.org/sitemap.xml"
+  content: "User-agent: *\nAllow: /\nSitemap: https://kkitx.bond/sitemap.xml"
 
 sitemap:
   path: sitemap.xml
