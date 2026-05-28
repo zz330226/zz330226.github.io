@@ -20,15 +20,15 @@
       
         <tags>
             
+            <tag> 每日财经 </tag>
+            
             <tag> A股 </tag>
             
             <tag> 美股 </tag>
             
-            <tag> 加密货币 </tag>
-            
-            <tag> 每日财经 </tag>
-            
             <tag> 港股 </tag>
+            
+            <tag> 加密货币 </tag>
             
             <tag> CPO </tag>
             
@@ -55,15 +55,15 @@
       
         <tags>
             
-            <tag> 财经日报 </tag>
-            
             <tag> A股 </tag>
             
             <tag> 美股 </tag>
             
-            <tag> 半导体 </tag>
-            
             <tag> 加密货币 </tag>
+            
+            <tag> 财经日报 </tag>
+            
+            <tag> 半导体 </tag>
             
         </tags>
       
@@ -444,13 +444,13 @@
             
             <tag> Linux </tag>
             
-            <tag> 监控 </tag>
+            <tag> Ubuntu </tag>
             
             <tag> 运维 </tag>
             
-            <tag> Shell </tag>
+            <tag> 监控 </tag>
             
-            <tag> Ubuntu </tag>
+            <tag> Shell </tag>
             
         </tags>
       
@@ -834,13 +834,13 @@
             
             <tag> Linux </tag>
             
-            <tag> 监控 </tag>
-            
-            <tag> 性能 </tag>
-            
             <tag> 运维 </tag>
             
+            <tag> 监控 </tag>
+            
             <tag> Shell </tag>
+            
+            <tag> 性能 </tag>
             
         </tags>
       
