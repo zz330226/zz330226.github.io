@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>Open Design：开源版 Claude Design，让 AI 编码代理变身设计引擎</title>
+      <link href="/2026/05/29/open-design-claude-design-alternative/"/>
+      <url>/2026/05/29/open-design-claude-design-alternative/</url>
+      
+        <content type="html"><![CDATA[<h2 id="什么是-Open-Design？"><a href="#什么是-Open-Design？" class="headerlink" title="什么是 Open Design？"></a>什么是 Open Design？</h2><p><a href="https://github.com/nexu-io/open-design">Open Design</a> 是一个开源、本地优先的设计工具，定位为 <strong>Claude Design 的开源替代方案</strong>。</p><p>它的核心理念非常直接：<strong>不重复造轮子</strong>。</p><p>市面上已经有了 Claude Code、Codex、Cursor、Gemini CLI 等强大的 AI 编码代理，Open Design 不再造一个，而是把这些现成的代理接入自己的设计工作流，让它们成为”设计引擎”。项目本身专注于提供技能库、设计系统和交互体验。</p><span id="more"></span><p>目前这个项目在 GitHub 上已经获得了 <strong>55,000+ Stars</strong>，6,200+ Forks，Apache-2.0 协议，社区非常活跃。</p><h2 id="核心特性"><a href="#核心特性" class="headerlink" title="核心特性"></a>核心特性</h2><h3 id="1-16-编码代理无缝接入"><a href="#1-16-编码代理无缝接入" class="headerlink" title="1. 16+ 编码代理无缝接入"></a>1. 16+ 编码代理无缝接入</h3><p>Open Design 能自动检测并接入你 PATH 中已安装的编码代理 CLI：</p><table><thead><tr><th>代理</th><th>支持状态</th></tr></thead><tbody><tr><td>Claude Code</td><td>✅ 优先支持</td></tr><tr><td>Codex (OpenAI)</td><td>✅</td></tr><tr><td>Cursor Agent</td><td>✅</td></tr><tr><td>Gemini CLI</td><td>✅</td></tr><tr><td>Copilot</td><td>✅</td></tr><tr><td>Qwen</td><td>✅</td></tr><tr><td>其他 OpenAI 兼容 API</td><td>✅（BYOK）</td></tr></tbody></table><p>如果没安装任何 CLI，也支持通过 API Key 直接调用。</p><h3 id="2-137-个可组合技能"><a href="#2-137-个可组合技能" class="headerlink" title="2. 137 个可组合技能"></a>2. 137 个可组合技能</h3><p>项目内置了 <strong>137 个设计技能</strong>，覆盖多种场景：</p><ul><li><strong>网页原型</strong>：SaaS 落地页、仪表盘、管理后台</li><li><strong>移动应用</strong>：iOS&#x2F;Android UI 原型</li><li><strong>PPT 演示文稿</strong>：自动生成幻灯片</li><li><strong>社交媒体轮播图</strong>：适配各平台尺寸</li><li><strong>邮件模板</strong>：HTML 邮件设计</li><li><strong>视频和图片</strong>：通过 gpt-image-2、Seedance 2.0 生成</li></ul><p>技能遵循 Claude Code 的 <code>SKILL.md</code> 规范，本质上就是文件夹里的文件，<strong>放入即可识别，无需安装插件</strong>。</p><h3 id="3-150-个内置设计系统"><a href="#3-150-个内置设计系统" class="headerlink" title="3. 150 个内置设计系统"></a>3. 150 个内置设计系统</h3><p>每个设计系统都包含完整的颜色、字体、间距等规范：</p><blockquote><p>Linear、Stripe、Vercel、Airbnb、Apple、Google Material、Ant Design 等 150 个主流设计系统开箱即用。</p></blockquote><p>生成设计时可以选择套用哪个设计系统，确保输出风格统一且专业。</p><h3 id="4-本地优先架构"><a href="#4-本地优先架构" class="headerlink" title="4. 本地优先架构"></a>4. 本地优先架构</h3><figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line">用户电脑 → <span class="keyword">Open</span> <span class="built_in">Design</span> Daemon → 你选择的 AI 代理 → 生成文件 → 保存到本地</span><br></pre></td></tr></table></figure><p>所有处理都在本地完成：</p><ul><li>项目数据保存在 <code>.od/</code> 目录</li><li>代理拥有真实的 <code>Read</code>、<code>Write</code>、<code>Bash</code> 权限</li><li>生成的文件直接保存到你的项目文件夹</li><li>不依赖云端服务，支持离线使用</li></ul><h3 id="5-交互式需求发现"><a href="#5-交互式需求发现" class="headerlink" title="5. 交互式需求发现"></a>5. 交互式需求发现</h3><p>生成设计前，Open Design 会通过内置的”问题表单”收集需求：</p><ul><li>目标受众是谁？</li><li>什么基调？（专业&#x2F;活泼&#x2F;极简…）</li><li>品牌色和字体偏好？</li><li>需要哪些页面&#x2F;组件？</li></ul><p><strong>先锁定方向再生成</strong>，有效减少后期反复修改。</p><h2 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h2><h3 id="方式一：下载桌面应用（推荐普通用户）"><a href="#方式一：下载桌面应用（推荐普通用户）" class="headerlink" title="方式一：下载桌面应用（推荐普通用户）"></a>方式一：下载桌面应用（推荐普通用户）</h3><p>访问 <a href="https://open-design.ai/">open-design.ai</a> 或 <a href="https://github.com/nexu-io/open-design/releases">GitHub Releases</a> 下载预编译安装包，无需 Node.js 环境，开箱即用。</p><h3 id="方式二：Docker-部署"><a href="#方式二：Docker-部署" class="headerlink" title="方式二：Docker 部署"></a>方式二：Docker 部署</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/nexu-io/open-design.git</span><br><span class="line"><span class="built_in">cd</span> open-design/deploy</span><br><span class="line"><span class="built_in">cp</span> .env.example .<span class="built_in">env</span>   <span class="comment"># 编辑 .env，设置 OD_API_TOKEN</span></span><br><span class="line">docker compose up -d</span><br><span class="line"><span class="comment"># 访问 http://localhost:7456</span></span><br></pre></td></tr></table></figure><h3 id="方式三：从源码运行"><a href="#方式三：从源码运行" class="headerlink" title="方式三：从源码运行"></a>方式三：从源码运行</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/nexu-io/open-design.git</span><br><span class="line"><span class="built_in">cd</span> open-design</span><br><span class="line">corepack <span class="built_in">enable</span></span><br><span class="line">corepack pnpm --version   <span class="comment"># 确保 pnpm 版本是 10.33.2</span></span><br><span class="line">pnpm install</span><br><span class="line">pnpm tools-dev run web</span><br></pre></td></tr></table></figure><p><strong>环境要求</strong>：Node.js 24+，pnpm 10.33.x。</p><h2 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h2><p>项目的技术栈比较现代：</p><table><thead><tr><th>层</th><th>技术</th></tr></thead><tbody><tr><td>前端</td><td>Next.js 16 + React 18 + TypeScript</td></tr><tr><td>后端守护进程</td><td>Node.js 24 + Express + SQLite</td></tr><tr><td>代理通信</td><td>child_process.spawn + 事件解析器</td></tr><tr><td>桌面应用</td><td>Electron（可选）</td></tr><tr><td>包管理</td><td>pnpm 工作区</td></tr></tbody></table><p>关键设计理念：</p><ul><li>**”提示栈就是产品”**：发送给 AI 代理的提示由多层可编辑文件组合而成（发现指令、身份章程、设计系统、技能定义），完全透明可定制</li><li>**”技能是文件，不是插件”**：遵循标准 <code>SKILL.md</code> 规范，放入目录即被识别</li><li><strong>内置 MCP 服务器</strong>：只读的 Model Context Protocol 服务器，允许 Claude Code 等代理直接访问 Open Design 的项目文件，实现无缝协作</li></ul><h2 id="适合谁用？"><a href="#适合谁用？" class="headerlink" title="适合谁用？"></a>适合谁用？</h2><table><thead><tr><th>用户类型</th><th>适用场景</th></tr></thead><tbody><tr><td>独立开发者</td><td>快速生成落地页、产品原型</td></tr><tr><td>设计师</td><td>用 AI 辅助生成初稿，再精修</td></tr><tr><td>创业团队</td><td>快速出 PPT、Dashboard 原型</td></tr><tr><td>AI 工具爱好者</td><td>探索 AI 生成设计的工作流</td></tr></tbody></table><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Open Design 的定位很聪明——它不做 AI 代理，而是做 AI 代理的”设计外挂”。你电脑上已有的 Claude Code、Codex 等工具就是它的引擎，它负责把设计工作流串联起来，提供 137 个技能和 150 个设计系统作为弹药。</p><p>如果你已经装了 Claude Code 之类的工具，又想尝试 AI 辅助设计，Open Design 值得一试。</p><hr><p><strong>项目地址</strong>：<a href="https://github.com/nexu-io/open-design">https://github.com/nexu-io/open-design</a><br><strong>官网</strong>：<a href="https://open-design.ai/">https://open-design.ai/</a><br><strong>协议</strong>：Apache-2.0</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> AI工具箱 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 开源项目 </tag>
+            
+            <tag> Claude Code </tag>
+            
+            <tag> AI设计 </tag>
+            
+            <tag> 前端开发 </tag>
+            
+            <tag> 设计工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>每日财经扫描 2026-05-28｜A股午后逆转创指涨近2%，算力硬件集体爆发</title>
       <link href="/2026/05/28/daily-finance-2026-05-28/"/>
       <url>/2026/05/28/daily-finance-2026-05-28/</url>
@@ -444,13 +477,13 @@
             
             <tag> Linux </tag>
             
-            <tag> Ubuntu </tag>
+            <tag> 监控 </tag>
             
             <tag> 运维 </tag>
             
-            <tag> 监控 </tag>
-            
             <tag> Shell </tag>
+            
+            <tag> Ubuntu </tag>
             
         </tags>
       
@@ -834,13 +867,13 @@
             
             <tag> Linux </tag>
             
-            <tag> 运维 </tag>
-            
             <tag> 监控 </tag>
             
-            <tag> Shell </tag>
-            
             <tag> 性能 </tag>
+            
+            <tag> 运维 </tag>
+            
+            <tag> Shell </tag>
             
         </tags>
       
