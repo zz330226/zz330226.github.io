@@ -98,9 +98,9 @@
       
         <tags>
             
-            <tag> 开源项目 </tag>
-            
             <tag> Claude Code </tag>
+            
+            <tag> 开源项目 </tag>
             
             <tag> AI设计 </tag>
             
@@ -310,6 +310,8 @@
             
             <tag> LLM </tag>
             
+            <tag> Claude Code </tag>
+            
             <tag> 浏览器自动化 </tag>
             
             <tag> Python </tag>
@@ -317,8 +319,6 @@
             <tag> TypeScript </tag>
             
             <tag> 开源项目 </tag>
-            
-            <tag> Claude Code </tag>
             
             <tag> Playwright </tag>
             
@@ -386,11 +386,11 @@
             
             <tag> AI </tag>
             
-            <tag> Claude Code </tag>
-            
             <tag> GitHub </tag>
             
             <tag> CodeGraph </tag>
+            
+            <tag> Claude Code </tag>
             
             <tag> MCP </tag>
             
@@ -555,13 +555,13 @@
             
             <tag> Linux </tag>
             
-            <tag> Ubuntu </tag>
+            <tag> 监控 </tag>
             
             <tag> 运维 </tag>
             
-            <tag> 监控 </tag>
-            
             <tag> Shell </tag>
+            
+            <tag> Ubuntu </tag>
             
         </tags>
       
@@ -945,13 +945,13 @@
             
             <tag> Linux </tag>
             
-            <tag> 运维 </tag>
-            
             <tag> 监控 </tag>
             
-            <tag> Shell </tag>
-            
             <tag> 性能 </tag>
+            
+            <tag> 运维 </tag>
+            
+            <tag> Shell </tag>
             
         </tags>
       
@@ -982,9 +982,9 @@
             
             <tag> LLM </tag>
             
-            <tag> 开源项目 </tag>
-            
             <tag> GitHub </tag>
+            
+            <tag> 开源项目 </tag>
             
         </tags>
       
