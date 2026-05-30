@@ -57,6 +57,8 @@
       
         <tags>
             
+            <tag> CPO </tag>
+            
             <tag> 财经 </tag>
             
             <tag> 每日扫描 </tag>
@@ -68,8 +70,6 @@
             <tag> 泡泡玛特 </tag>
             
             <tag> 段永平 </tag>
-            
-            <tag> CPO </tag>
             
             <tag> 光通信 </tag>
             
@@ -131,8 +131,6 @@
       
         <tags>
             
-            <tag> CPO </tag>
-            
             <tag> A股 </tag>
             
             <tag> 美股 </tag>
@@ -142,6 +140,8 @@
             <tag> 每日财经 </tag>
             
             <tag> 港股 </tag>
+            
+            <tag> CPO </tag>
             
         </tags>
       
@@ -199,9 +199,9 @@
       
         <tags>
             
-            <tag> AI </tag>
-            
             <tag> DeepSeek </tag>
+            
+            <tag> AI </tag>
             
             <tag> API </tag>
             
@@ -236,15 +236,15 @@
             
             <tag> 人工智能 </tag>
             
-            <tag> 财经 </tag>
-            
-            <tag> Serenity </tag>
-            
-            <tag> CPO </tag>
-            
             <tag> A股 </tag>
             
             <tag> 美股 </tag>
+            
+            <tag> CPO </tag>
+            
+            <tag> 财经 </tag>
+            
+            <tag> Serenity </tag>
             
             <tag> 供应链 </tag>
             
@@ -271,9 +271,9 @@
       
         <tags>
             
-            <tag> 自动化 </tag>
-            
             <tag> AI </tag>
+            
+            <tag> 自动化 </tag>
             
             <tag> 开源项目 </tag>
             
@@ -308,6 +308,8 @@
             
             <tag> AI </tag>
             
+            <tag> LLM </tag>
+            
             <tag> 浏览器自动化 </tag>
             
             <tag> Python </tag>
@@ -315,8 +317,6 @@
             <tag> TypeScript </tag>
             
             <tag> 开源项目 </tag>
-            
-            <tag> LLM </tag>
             
             <tag> Claude Code </tag>
             
@@ -349,11 +349,11 @@
             
             <tag> AI </tag>
             
+            <tag> LLM </tag>
+            
             <tag> Python </tag>
             
             <tag> 开源项目 </tag>
-            
-            <tag> LLM </tag>
             
             <tag> Playwright </tag>
             
@@ -417,13 +417,13 @@
       
         <tags>
             
-            <tag> AI </tag>
+            <tag> Claude </tag>
             
-            <tag> 开源项目 </tag>
+            <tag> AI </tag>
             
             <tag> LLM </tag>
             
-            <tag> Claude </tag>
+            <tag> 开源项目 </tag>
             
             <tag> 渗透测试 </tag>
             
@@ -518,11 +518,11 @@
       
         <tags>
             
+            <tag> ChatGPT </tag>
+            
             <tag> AI工具 </tag>
             
             <tag> 效率工具 </tag>
-            
-            <tag> ChatGPT </tag>
             
             <tag> Copilot </tag>
             
@@ -650,9 +650,9 @@
       
         <tags>
             
-            <tag> LLM </tag>
-            
             <tag> Claude </tag>
+            
+            <tag> LLM </tag>
             
             <tag> Anthropic </tag>
             
@@ -681,11 +681,11 @@
       
         <tags>
             
+            <tag> DeepSeek </tag>
+            
             <tag> AI </tag>
             
             <tag> LLM </tag>
-            
-            <tag> DeepSeek </tag>
             
             <tag> 本地部署 </tag>
             
@@ -716,13 +716,13 @@
             
             <tag> ChatGPT </tag>
             
-            <tag> AI </tag>
-            
-            <tag> LLM </tag>
-            
             <tag> Claude </tag>
             
             <tag> DeepSeek </tag>
+            
+            <tag> AI </tag>
+            
+            <tag> LLM </tag>
             
             <tag> 对比 </tag>
             
@@ -976,15 +976,15 @@
       
         <tags>
             
-            <tag> AI </tag>
+            <tag> DeepSeek </tag>
             
-            <tag> 开源项目 </tag>
+            <tag> AI </tag>
             
             <tag> LLM </tag>
             
-            <tag> GitHub </tag>
+            <tag> 开源项目 </tag>
             
-            <tag> DeepSeek </tag>
+            <tag> GitHub </tag>
             
         </tags>
       

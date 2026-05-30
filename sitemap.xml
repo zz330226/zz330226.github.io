@@ -352,6 +352,48 @@
   </url>
   
   <url>
+    <loc>https://kkitx.bond/tags/ChatGPT/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/Claude/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/DeepSeek/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/AI/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/LLM/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/%E5%AF%B9%E6%AF%94/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://kkitx.bond/tags/AI%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -366,13 +408,6 @@
   </url>
   
   <url>
-    <loc>https://kkitx.bond/tags/ChatGPT/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kkitx.bond/tags/Copilot/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -381,13 +416,6 @@
   
   <url>
     <loc>https://kkitx.bond/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkitx.bond/tags/AI/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -422,13 +450,6 @@
   </url>
   
   <url>
-    <loc>https://kkitx.bond/tags/LLM/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kkitx.bond/tags/Claude-Code/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -444,6 +465,20 @@
   
   <url>
     <loc>https://kkitx.bond/tags/CDP/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/Anthropic/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/AI%E6%96%B0%E9%97%BB/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -471,35 +506,70 @@
   </url>
   
   <url>
-    <loc>https://kkitx.bond/tags/Claude/</loc>
+    <loc>https://kkitx.bond/tags/%E8%B4%A2%E7%BB%8F%E6%97%A5%E6%8A%A5/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://kkitx.bond/tags/DeepSeek/</loc>
+    <loc>https://kkitx.bond/tags/A%E8%82%A1/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://kkitx.bond/tags/%E5%AF%B9%E6%AF%94/</loc>
+    <loc>https://kkitx.bond/tags/%E7%BE%8E%E8%82%A1/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://kkitx.bond/tags/Anthropic/</loc>
+    <loc>https://kkitx.bond/tags/%E5%8D%8A%E5%AF%BC%E4%BD%93/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://kkitx.bond/tags/AI%E6%96%B0%E9%97%BB/</loc>
+    <loc>https://kkitx.bond/tags/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/%E7%88%AC%E8%99%AB/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/RAG/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/%E6%AF%8F%E6%97%A5%E8%B4%A2%E7%BB%8F/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/%E6%B8%AF%E8%82%A1/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/CPO/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -548,13 +618,6 @@
   </url>
   
   <url>
-    <loc>https://kkitx.bond/tags/CPO/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kkitx.bond/tags/%E5%85%89%E9%80%9A%E4%BF%A1/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -563,20 +626,6 @@
   
   <url>
     <loc>https://kkitx.bond/tags/A%E8%82%A1%E6%98%A0%E5%B0%84/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkitx.bond/tags/%E7%88%AC%E8%99%AB/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkitx.bond/tags/RAG/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -611,41 +660,6 @@
   </url>
   
   <url>
-    <loc>https://kkitx.bond/tags/%E8%B4%A2%E7%BB%8F%E6%97%A5%E6%8A%A5/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkitx.bond/tags/A%E8%82%A1/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkitx.bond/tags/%E7%BE%8E%E8%82%A1/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkitx.bond/tags/%E5%8D%8A%E5%AF%BC%E4%BD%93/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkitx.bond/tags/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kkitx.bond/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -654,20 +668,6 @@
   
   <url>
     <loc>https://kkitx.bond/tags/Ollama/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkitx.bond/tags/%E6%AF%8F%E6%97%A5%E8%B4%A2%E7%BB%8F/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkitx.bond/tags/%E6%B8%AF%E8%82%A1/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -737,20 +737,6 @@
   </url>
   
   <url>
-    <loc>https://kkitx.bond/tags/Llama/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkitx.bond/tags/Meta/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kkitx.bond/tags/FastAPI/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -773,6 +759,48 @@
   
   <url>
     <loc>https://kkitx.bond/tags/%E5%BC%82%E6%AD%A5/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/%E6%80%A7%E8%83%BD/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/Llama/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/Meta/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/%E5%B0%8F%E7%B1%B3/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/%E9%99%8D%E4%BB%B7/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -856,13 +884,6 @@
   </url>
   
   <url>
-    <loc>https://kkitx.bond/tags/%E6%80%A7%E8%83%BD/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kkitx.bond/tags/%E8%A3%85%E9%A5%B0%E5%99%A8/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -878,27 +899,6 @@
   
   <url>
     <loc>https://kkitx.bond/tags/%E8%BF%9B%E9%98%B6/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkitx.bond/tags/%E5%B0%8F%E7%B1%B3/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkitx.bond/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkitx.bond/tags/%E9%99%8D%E4%BB%B7/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -926,14 +926,7 @@
   </url>
   
   <url>
-    <loc>https://kkitx.bond/tags/TTS/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkitx.bond/tags/%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/</loc>
+    <loc>https://kkitx.bond/tags/%E4%BE%9B%E5%BA%94%E9%93%BE/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -982,7 +975,14 @@
   </url>
   
   <url>
-    <loc>https://kkitx.bond/tags/%E4%BE%9B%E5%BA%94%E9%93%BE/</loc>
+    <loc>https://kkitx.bond/tags/TTS/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkitx.bond/tags/%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1019,14 +1019,14 @@
   </url>
   
   <url>
-    <loc>https://kkitx.bond/categories/GitHub%E7%B2%BE%E9%80%89/</loc>
+    <loc>https://kkitx.bond/categories/Python%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://kkitx.bond/categories/Python%E5%BC%80%E5%8F%91/</loc>
+    <loc>https://kkitx.bond/categories/GitHub%E7%B2%BE%E9%80%89/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
