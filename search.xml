@@ -13,8 +13,6 @@
       
       <categories>
           
-          <category> AI前沿资讯 </category>
-          
           <category> 财经热点 </category>
           
       </categories>
@@ -211,15 +209,15 @@
       
         <tags>
             
+            <tag> 每日财经 </tag>
+            
             <tag> A股 </tag>
             
             <tag> 美股 </tag>
             
-            <tag> 加密货币 </tag>
-            
-            <tag> 每日财经 </tag>
-            
             <tag> 港股 </tag>
+            
+            <tag> 加密货币 </tag>
             
             <tag> CPO </tag>
             
@@ -246,15 +244,15 @@
       
         <tags>
             
-            <tag> 财经日报 </tag>
-            
             <tag> A股 </tag>
             
             <tag> 美股 </tag>
             
-            <tag> 半导体 </tag>
-            
             <tag> 加密货币 </tag>
+            
+            <tag> 财经日报 </tag>
+            
+            <tag> 半导体 </tag>
             
         </tags>
       
