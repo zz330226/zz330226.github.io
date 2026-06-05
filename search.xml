@@ -4,6 +4,113 @@
   
     
     <entry>
+      <title>Claudian 深度体验：把 Claude Code 装进 Obsidian，知识库秒变 AI 工作台</title>
+      <link href="/2026/06/05/claudian-obsidian-ai/"/>
+      <url>/2026/06/05/claudian-obsidian-ai/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>如果你和我一样，日常用 Obsidian 管理知识库，又习惯了 Claude Code 那种「Agent 直接操作文件」的爽感，那你大概率想过一个问题：</p><p><strong>能不能把 Claude Code 塞进 Obsidian，让 AI 直接在我的笔记库里干活？</strong></p><p>最近 GitHub 上一个叫 <a href="https://github.com/YishenTu/claudian">Claudian</a> 的项目做到了这件事。12,300+ Star，619 次提交，38 个 Release——社区热情相当高。</p><p>一句话概括：<strong>Claudian 是一个 Obsidian 插件，它将 AI 编码代理（Claude Code、Codex 等）嵌入你的知识库，让你的笔记直接变成 AI 的工作目录。</strong></p><h2 id="Claudian-是什么？"><a href="#Claudian-是什么？" class="headerlink" title="Claudian 是什么？"></a>Claudian 是什么？</h2><blockquote><p>一个将 AI 编码代理嵌入 Obsidian 知识库的插件。你的知识库成为代理的工作目录——文件读写、搜索、bash 和多步骤工作流全部开箱即用。</p></blockquote><p>通俗讲：Claudian 在 Obsidian 侧边栏里跑了一个完整的 AI Agent。这个 Agent 能：</p><ul><li>读取和编辑你的笔记（带 diff 预览）</li><li>搜索整个知识库</li><li>执行 bash 命令</li><li>调用 MCP 工具</li><li>分步骤完成复杂任务（计划 → 审核 → 执行）</li></ul><p>本质上，它把一个<strong>终端里的 Claude Code</strong> 搬到了 Obsidian 的 UI 层，并且深度集成了 Obsidian 的知识库体系。</p><h2 id="核心功能拆解"><a href="#核心功能拆解" class="headerlink" title="核心功能拆解"></a>核心功能拆解</h2><h3 id="1-聊天侧边栏（Chat-Sidebar）"><a href="#1-聊天侧边栏（Chat-Sidebar）" class="headerlink" title="1. 聊天侧边栏（Chat Sidebar）"></a>1. 聊天侧边栏（Chat Sidebar）</h3><p>最直观的功能。打开侧边栏，和 AI 对话，它会直接操作你的知识库：</p><figure class="highlight sqf"><table><tr><td class="code"><pre><span class="line">用户：「帮我把所有关于『密集成交区』的笔记整理到一个新文件夹，并生成索引。」</span><br><span class="line"><span class="built_in">Agent</span>：扫描知识库 → 找到相关笔记 → 移动文件 → 创建索引页 → 完成</span><br></pre></td></tr></table></figure><p>对话支持多标签页，可以同时进行多个任务互不干扰。</p><h3 id="2-内联编辑（Inline-Edit）"><a href="#2-内联编辑（Inline-Edit）" class="headerlink" title="2. 内联编辑（Inline Edit）"></a>2. 内联编辑（Inline Edit）</h3><p>选中一段文字，快捷键触发，AI 直接在当前笔记中编辑。最亮眼的是<strong>词级 diff 预览</strong>——你可以逐词对比 AI 改了什么再决定接受。</p><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">原文：Claudian 是一个非常强大的 Obsidian 插件</span><br><span class="line">AI 改：Claudian 是一个极为强大的 Obsidian 插件</span><br><span class="line"><span class="code">      ^旧 | ^新 （diff 高亮对比）</span></span><br></pre></td></tr></table></figure><h3 id="3-斜杠命令与技能（Slash-Commands-Skills）"><a href="#3-斜杠命令与技能（Slash-Commands-Skills）" class="headerlink" title="3. 斜杠命令与技能（Slash Commands &amp; Skills）"></a>3. 斜杠命令与技能（Slash Commands &amp; Skills）</h3><p>输入 <code>/</code> 触发可复用的提示模板。支持用户级别和知识库级别的自定义技能，相当于给 AI 预设了一组「快捷键」。</p><p>比如你可以建一个 <code>/daily-note</code> 技能，一键让 AI 帮你生成每日复盘报告。</p><h3 id="4-提及（-Mention）"><a href="#4-提及（-Mention）" class="headerlink" title="4. @提及（@Mention）"></a>4. @提及（@Mention）</h3><p>输入 <code>@</code> 可以提及以下内容让 Agent 处理：</p><table><thead><tr><th>提及类型</th><th>用途</th></tr></thead><tbody><tr><td><code>@文件名</code></td><td>指定某个笔记文件</td></tr><tr><td><code>@子代理名</code></td><td>调用已配置的子代理</td></tr><tr><td><code>@MCP服务器</code></td><td>调用外部 MCP 工具</td></tr><tr><td><code>@外部目录</code></td><td>引用知识库外的文件</td></tr></tbody></table><p>这个设计很巧妙——把「上下文」显式化，让 AI 知道你要处理什么。</p><h3 id="5-计划模式（Plan-Mode）"><a href="#5-计划模式（Plan-Mode）" class="headerlink" title="5. 计划模式（Plan Mode）"></a>5. 计划模式（Plan Mode）</h3><p><code>Shift+Tab</code> 切换。Agent 先探索和设计方案，提交给你审批后再执行。不会像无头苍蝇一样乱改你的笔记。</p><h3 id="6-MCP-服务器支持"><a href="#6-MCP-服务器支持" class="headerlink" title="6. MCP 服务器支持"></a>6. MCP 服务器支持</h3><p>支持 stdio、SSE、HTTP 三种协议连接外部 MCP 工具。这意味着 Claudian 的 AI 可以调用你已有的 MCP 生态——数据库查询、API 调用、外部搜索等等。</p><h2 id="支持的-AI-后端"><a href="#支持的-AI-后端" class="headerlink" title="支持的 AI 后端"></a>支持的 AI 后端</h2><p>Claudian 的设计很灵活，不绑定单一 AI 提供者：</p><table><thead><tr><th>提供者</th><th>说明</th></tr></thead><tbody><tr><td><strong>Claude Code</strong></td><td>主力，需要 Claude Code CLI</td></tr><tr><td><strong>Codex CLI</strong></td><td>OpenAI 的开源编码代理</td></tr><tr><td><strong>Opencode</strong></td><td>来自 opencode.ai 的代理</td></tr><tr><td><strong>Pi</strong></td><td>来自 earendil-works 的开源代理</td></tr></tbody></table><p>对于已经装了 Claude Code CLI 的用户，开箱即用。Codex 用户也能无缝接入。</p><h2 id="技术架构一览"><a href="#技术架构一览" class="headerlink" title="技术架构一览"></a>技术架构一览</h2><p>项目完全用 TypeScript 构建（97.5%），代码结构清晰：</p><figure class="highlight glsl"><table><tr><td class="code"><pre><span class="line">src/</span><br><span class="line">├── core/           <span class="meta"># 提供者无关的运行时、注册表、类型契约</span></span><br><span class="line">├── providers/      <span class="meta"># Claude、Codex、Opencode、Pi 适配器</span></span><br><span class="line">├── features/       <span class="meta"># 聊天、内联编辑、设置 UI</span></span><br><span class="line">├── <span class="keyword">shared</span>/         <span class="meta"># 可复用 UI 组件</span></span><br><span class="line">├── i18n/           <span class="meta"># 10 种语言国际化</span></span><br><span class="line">└── style/          <span class="meta"># 模块化 CSS</span></span><br></pre></td></tr></table></figure><p>架构设计值得学习：<strong>core 层定义统一接口，providers 层各自实现适配</strong>。新增一个 AI 后端，只需在 providers 下加一个适配器即可。</p><h2 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h2><h3 id="方式一：Obsidian-社区插件（推荐）"><a href="#方式一：Obsidian-社区插件（推荐）" class="headerlink" title="方式一：Obsidian 社区插件（推荐）"></a>方式一：Obsidian 社区插件（推荐）</h3><ol><li>Obsidian → 设置 → 社区插件 → 浏览</li><li>搜索 <strong>Claudian</strong> → 安装 → 启用</li><li>确保系统已安装 Claude Code CLI</li></ol><h3 id="方式二：手动安装"><a href="#方式二：手动安装" class="headerlink" title="方式二：手动安装"></a>方式二：手动安装</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 进入知识库插件目录</span></span><br><span class="line"><span class="built_in">cd</span> &lt;你的知识库&gt;/.obsidian/plugins/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载最新 release</span></span><br><span class="line"><span class="comment"># main.js + manifest.json + styles.css</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 放入 claudian/ 文件夹，启用插件</span></span><br></pre></td></tr></table></figure><h3 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h3><ul><li>Obsidian v1.7.2+</li><li>Claude Code CLI（或其他支持的 AI 后端）</li><li>Claude 订阅或兼容 API（Openrouter、Kimi 等也可）</li></ul><h2 id="Claudian-能干什么？几个实际场景"><a href="#Claudian-能干什么？几个实际场景" class="headerlink" title="Claudian 能干什么？几个实际场景"></a>Claudian 能干什么？几个实际场景</h2><h3 id="场景一：知识库整理"><a href="#场景一：知识库整理" class="headerlink" title="场景一：知识库整理"></a>场景一：知识库整理</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">「把过去三个月的所有日记按周归档，每周一个文件夹，文件名统一为 YYYY-MM-<span class="selector-tag">DD</span>-主题<span class="selector-class">.md</span>」</span><br></pre></td></tr></table></figure><p>Agent 扫描日记 → 按周分组 → 创建文件夹 → 移动文件 → 重命名。手动做要半小时，AI 一分钟搞定。</p><h3 id="场景二：跨笔记研究"><a href="#场景二：跨笔记研究" class="headerlink" title="场景二：跨笔记研究"></a>场景二：跨笔记研究</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">「找出我所有笔记中关于『量化交易』的内容，汇总成一篇文章，标注来源笔记名称。」</span><br></pre></td></tr></table></figure><p>Agent 搜索全库 → 提取相关段落 → 汇总排版 → 生成文件。比手动搜索+复制粘贴高效太多。</p><h3 id="场景三：代码项目辅助"><a href="#场景三：代码项目辅助" class="headerlink" title="场景三：代码项目辅助"></a>场景三：代码项目辅助</h3><p>如果你在 Obsidian 里放代码片段或项目文档：</p><figure class="highlight"><table><tr><td class="code"><pre><span class="line">「这个项目里所有 API 接口整理成一个接口文档，包含路径、方法、参数说明。」</span><br></pre></td></tr></table></figure><p>Agent 扫描代码 → 识别接口 → 生成文档。把你的笔记库当项目用。</p><h2 id="隐私与数据"><a href="#隐私与数据" class="headerlink" title="隐私与数据"></a>隐私与数据</h2><p>Claudian 的隐私设计比较透明：</p><ul><li>发送到 API 的数据：用户输入 + 附加文件 + 图片 + 工具调用输出</li><li>本地存储：<code>vault/.claudian/</code>、<code>vault/.claude/</code>、<code>~/.claude/projects/</code></li><li>没有遥测信标，不跑后台网络请求（除了 AI 提供者和 MCP 端点）</li></ul><p>数据流向清晰，可控性较好。</p><h2 id="我的评价"><a href="#我的评价" class="headerlink" title="我的评价"></a>我的评价</h2><p><strong>亮点：</strong></p><ol><li><strong>深度集成 Obsidian</strong>——不是简单的 API 对话窗口，而是真正让 Agent 操作知识库</li><li><strong>多后端支持</strong>——不锁死 Claude，Codex&#x2F;Pi&#x2F;Opencode 都能用</li><li><strong>计划模式 + Diff 预览</strong>——给了用户足够的控制权和安全感</li><li><strong>开源、MIT 协议</strong>——随便用、随便改</li><li><strong>代码架构清晰</strong>——如果自己想做类似插件，参考价值很高</li></ol><p><strong>需要注意的点：</strong></p><ol><li>需要 Claude Code CLI 或等效后端，有一定门槛</li><li>仅限桌面端，移动端不支持</li><li>API 调用会产生费用（取决于使用的 AI 提供者）</li><li>项目迭代快，功能还不算完全稳定</li></ol><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Claudian 解决了一个真实痛点：<strong>AI 编码代理和知识管理的融合</strong>。</p><p>过去我们用 Obsidian 记笔记，用 Claude Code 写代码——两个世界，泾渭分明。Claudian 把它们打通了。你的笔记库存不再是静态文档，而变成了 AI 可以直接操作的工作空间。</p><p>对于重度 Obsidian 用户 + AI 使用者来说，这个插件值得一试。</p><blockquote><p><strong>GitHub</strong>: <a href="https://github.com/YishenTu/claudian">https://github.com/YishenTu/claudian</a><br><strong>Star</strong>: 12,300+ | <strong>License</strong>: MIT | <strong>Language</strong>: TypeScript</p></blockquote><hr><p><em>封面图：<code>/img/claudian.jpg</code></em></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> AI工具箱 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AI </tag>
+            
+            <tag> Claude Code </tag>
+            
+            <tag> GitHub </tag>
+            
+            <tag> Obsidian </tag>
+            
+            <tag> 知识管理 </tag>
+            
+            <tag> MCP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Serenity登顶X平台、中际旭创逼近茅台——A股&quot;撕裂行情&quot;下的CPO结构性卡位战</title>
+      <link href="/2026/06/04/daily-finance-2026-06-04/"/>
+      <url>/2026/06/04/daily-finance-2026-06-04/</url>
+      
+        <content type="html"><![CDATA[<p>A股今天上演了一出极致的”冰火两重天”——4300多只个股下跌，但半导体板块继续高歌猛进，京东方A、中船特气、江海股份三只股票涨停。更令人瞠目的是，中际旭创（1275元）距离贵州茅台（1268元）只差6块钱，”一个做光模块的公司差点追上茅台”成为雪球今日最热话题。与此同时，美股”最牛分析师”Serenity今天正式超越Elon Musk，成为X平台订阅数第一人，并发布了关于$SIVE作为NVLink CPO全生态激光卡脖子节点的万字长文。</p><span id="more"></span><h2 id="一、大盘概况：指数普跌，科技独舞"><a href="#一、大盘概况：指数普跌，科技独舞" class="headerlink" title="一、大盘概况：指数普跌，科技独舞"></a>一、大盘概况：指数普跌，科技独舞</h2><table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td>上证指数</td><td>4,057.78</td><td>-0.64%</td><td>12,746亿</td></tr><tr><td>深证成指</td><td>15,661.57</td><td>-0.27%</td><td>14,830亿</td></tr><tr><td>创业板指</td><td>4,088.88</td><td>-0.83%</td><td>6,976亿</td></tr></tbody></table><p>盘面上，电子化学品、元件、PCB、存储芯片等科技板块强势领涨，而油气、工业金属、白酒等传统板块领跌。市场正经历一场剧烈的风格切换——资金从消费蓝筹大幅流向科技成长。</p><p>美股方面，6月3日9连涨终于终结：道指跌1.21%，标普500跌0.74%，纳指跌0.89%。云计算全线回调（微软-3%、亚马逊-2%、甲骨文-5%），但芯片存储逆势走强——闪迪首次收于1800美元上方（+6%），西部数据+5%，美光+1%。</p><h2 id="二、雪球热股：半导体全线霸榜"><a href="#二、雪球热股：半导体全线霸榜" class="headerlink" title="二、雪球热股：半导体全线霸榜"></a>二、雪球热股：半导体全线霸榜</h2><table><thead><tr><th>排名</th><th>名称</th><th>涨跌幅</th><th>核心看点</th></tr></thead><tbody><tr><td>1</td><td>美光科技</td><td>+1.45%</td><td>万亿市值守稳，AI存储之王</td></tr><tr><td>2</td><td>博通</td><td>-0.49%</td><td>AVGO财报后市场冷静消化</td></tr><tr><td>3</td><td><strong>京东方A</strong></td><td><strong>+10.02%</strong> 🔥</td><td>玻璃基板概念涨停</td></tr><tr><td>4</td><td>东山精密</td><td>+6.17%</td><td>昨因”跌停”上热搜，今日强势修复</td></tr><tr><td>5</td><td><strong>大普微-UW</strong></td><td><strong>+11.88%</strong> 🔥</td><td>存储新贵连续拉升</td></tr><tr><td>6</td><td>中际旭创</td><td>+0.39%</td><td>1275元，距茅台仅6元</td></tr><tr><td>7</td><td>沪电股份</td><td>+8.49%</td><td>PCB板块共振上涨</td></tr><tr><td>10</td><td>兆易创新</td><td>+7.53%</td><td>存储芯片+MCU双轮驱动</td></tr><tr><td>16</td><td><strong>江海股份</strong></td><td><strong>+10.00%</strong> 🔥</td><td>超级电容概念涨停</td></tr><tr><td>20</td><td><strong>中船特气</strong></td><td><strong>+20.00%</strong> 🔥</td><td>电子特气涨停</td></tr></tbody></table><p>雪球今日热议第一条：<strong>台积电MRM问题释放英伟达NPO需求</strong>——2500万NPO需求被释放，1000万给老大（台积电），剩余由老二老三瓜分。AI集群互联正从单一GPU-GPU扩展到CPU、GPU、LPU等多芯片互联，对光互连需求是结构性利好。</p><p>但最引发共鸣的是KAIZEN投资之道的帖子：**”炒了二十一年股，今年这行情，是我见过最撕裂的。中际旭创1275，贵州茅台1281——一个做光模块的公司差点追上茅台，放在三年前你会觉得他疯了。”**</p><h2 id="三、密集成交区盯盘：蓝筹脱离支撑，科技弹性回归"><a href="#三、密集成交区盯盘：蓝筹脱离支撑，科技弹性回归" class="headerlink" title="三、密集成交区盯盘：蓝筹脱离支撑，科技弹性回归"></a>三、密集成交区盯盘：蓝筹脱离支撑，科技弹性回归</h2><p>今日扫描25只核心蓝筹+科技股，关键发现：</p><table><thead><tr><th>排名</th><th>代码</th><th>名称</th><th>现价</th><th>支撑位</th><th>压力位</th><th>盈亏比</th></tr></thead><tbody><tr><td>🥇</td><td>600900</td><td>长江电力</td><td>27.72</td><td>27.69</td><td>—</td><td><strong>36.36</strong></td></tr><tr><td>🥈</td><td>688981</td><td>中芯国际</td><td>134.88</td><td>133.69</td><td>149.46</td><td><strong>12.28</strong></td></tr><tr><td>🥉</td><td>600036</td><td>招商银行</td><td>38.10</td><td>37.97</td><td>39.54</td><td><strong>11.12</strong></td></tr><tr><td>4</td><td>601012</td><td>隆基绿能</td><td>13.34</td><td>—</td><td>15.04</td><td><strong>6.37</strong></td></tr><tr><td>5</td><td>300760</td><td>迈瑞医疗</td><td>142.59</td><td>—</td><td>157.60</td><td><strong>5.26</strong></td></tr></tbody></table><p><strong>核心统计</strong>：</p><ul><li>支撑附近（≤2%）：仅4只（16%），较前几日（32%→24%→16%）持续下降</li><li>盈亏比≥2：13只（52%），较上日48%提升</li><li>0只股票处于压力附近</li></ul><p><strong>解读</strong>：蓝筹正在系统性脱离支撑区进行价格修复，这是市场情绪回暖的重要信号。长江电力距支撑仅0.1%但盈亏比36.36，是当前最具性价比的防御型标的；中芯国际距支撑仅0.9%且上方空间10.8%，代表了科技+蓝筹的交集机会。</p><h2 id="四、Serenity今日爆发：超越马斯克，SIVE深度分析震动华尔街"><a href="#四、Serenity今日爆发：超越马斯克，SIVE深度分析震动华尔街" class="headerlink" title="四、Serenity今日爆发：超越马斯克，SIVE深度分析震动华尔街"></a>四、Serenity今日爆发：超越马斯克，SIVE深度分析震动华尔街</h2><p>今天的Serenity堪称”历史性一天”——<strong>超越Elon Musk成为X平台订阅数第一人</strong>（3,971赞，49万浏览），同时发布了多条重量级分析。</p><h3 id="📌-核心长文：-SIVE-—-CPO的结构性卡脖子节点"><a href="#📌-核心长文：-SIVE-—-CPO的结构性卡脖子节点" class="headerlink" title="📌 核心长文：$SIVE — CPO的结构性卡脖子节点"></a>📌 核心长文：$SIVE — CPO的结构性卡脖子节点</h3><p>这是今天最重要的一篇分析，Serenity以22点推理拆解了Sivers Semi（$SIVE）在CPO产业链中的核心地位：</p><p><strong>论点1：SIVE是激光瓶颈的掌控者</strong></p><ul><li>CW激光器是CPO瓶颈——$LITE财报已确认产能紧张</li><li>激光代工厂（住友&#x2F;古河&#x2F;Win Semi）产能被EML合同大量锁定</li><li>SIVE通过提前锁定Win Semi等代工厂产能，<strong>控制CW激光最终出货量</strong> → “激光界的$SNDK”</li><li>需求端：Ayar、Jabil、各插件厂商 + NVLink CPO生态 → 需求远超供给</li></ul><p><strong>论点2：SIVE是CPO生态的结构性咽喉</strong></p><ul><li>NVIDIA用$COHR&#x2F;$LITE（自有一体化），AVGO也是垂直整合</li><li><strong>但整个外部CPO生态——Marvell Celestial、Ayar、Lightmatter、Lightelligence、Jabil 1.6T LRO——全部围绕SIVE设计</strong></li><li>Ayar已从供应链页面移除Lumentum&#x2F;Macom，SIVE成为主要&#x2F;唯一激光源</li><li>SIVE是GlobalFoundries硅光子代工级参考激光设计，而所有主要CPO玩家都用GFS</li><li><strong>NVIDIA NVLink CPO三家列出的生态伙伴，全部使用SIVE激光</strong></li></ul><p><strong>结论</strong>：当CPO在H2 2027真正放量时（Goldman预测TAM从$0→$81-91B），SIVE将同时是Bottleneck + Chokepoint，Serenity判断”可能成为下一个$75B的$LITE”——而它今天的市值还不到一个包装Sivers激光器的公司（$POET，$2.4B）。</p><h3 id="📌-Goldman上调AI-Capex至-5-3万亿"><a href="#📌-Goldman上调AI-Capex至-5-3万亿" class="headerlink" title="📌 Goldman上调AI Capex至$5.3万亿"></a>📌 Goldman上调AI Capex至$5.3万亿</h3><p>四大云厂2025-2030年capex从$4.5T上调至$5.3T，2026-2031总capex预计$7.6万亿。Serenity的框架：这笔钱会向上游传导到SIVE（CPO激光）、SOI（硅光子衬底）、人形机器人供应链等微型卡脖子节点。</p><h3 id="📌-EU-CHIPS-Act-2-0：光子学正式纳入欧盟政策"><a href="#📌-EU-CHIPS-Act-2-0：光子学正式纳入欧盟政策" class="headerlink" title="📌 EU CHIPS Act 2.0：光子学正式纳入欧盟政策"></a>📌 EU CHIPS Act 2.0：光子学正式纳入欧盟政策</h3><p>欧盟正式发布CHIPS Act 2.0，<strong>光子学被确认为新的结构性政策方向</strong>，明确提及CPO、硅光子数据中心互联、PIC设计工具。SOI（Soitec&#x2F;Siltronic）和XFAB在影响分析中被直接点名。Serenity判断：欧盟光子学长期结构性受益，3-15个月内具体利好将释放。</p><h3 id="📌-AVGO财报：AI需求可见度到2028年"><a href="#📌-AVGO财报：AI需求可见度到2028年" class="headerlink" title="📌 AVGO财报：AI需求可见度到2028年"></a>📌 AVGO财报：AI需求可见度到2028年</h3><p>博通$100B+营收目标重申，AI需求可见度延伸到<strong>2028年</strong>（2026年下的订单跨度2年+），互联&#x2F;网络业务”需求无法满足”。Jensen Huang称MRVL为”下一个$1T公司”。</p><h3 id="📌-其他重要信号"><a href="#📌-其他重要信号" class="headerlink" title="📌 其他重要信号"></a>📌 其他重要信号</h3><ul><li><strong>XFAB vs POET估值对比</strong>：$1.7B vs $2.4B，XFAB有SiC&#x2F;GaN&#x2F;MEMS&#x2F;硅光子全栈+美国唯一高量产SiC代工厂+NVIDIA&#x2F;Nokia直接评估，远低于重置价值</li><li><strong>NBIS验证</strong>：$84→$260，Neocloud之王判断被市场完美验证</li><li>**台湾CPO持仓全线+10%**：Shunsin&#x2F;Foci&#x2F;Xintec集体起飞</li></ul><h2 id="五、风险与宏观信号"><a href="#五、风险与宏观信号" class="headerlink" title="五、风险与宏观信号"></a>五、风险与宏观信号</h2><ol><li><strong>美股9连涨终结</strong>：需观察是健康回调还是趋势反转</li><li><strong>A股极端撕裂</strong>：4300+下跌 vs 半导体暴涨，一旦科技方向逆转杀伤力极大</li><li><strong>Clarity Act加密监管</strong>：银行系推动，COIN&#x2F;HOOD承压</li><li><strong>黄金超越美债</strong>：ECB数据显示黄金占全球储备27%、美债降至22%，全球”去美元化”趋势加速</li><li><strong>Temu被罚2亿欧元</strong>：跨境电商合规成本全面上升</li></ol><h2 id="六、今日关键主题总结"><a href="#六、今日关键主题总结" class="headerlink" title="六、今日关键主题总结"></a>六、今日关键主题总结</h2><p>今天的市场可以概括为三条主线：</p><p><strong>第一条：科技继续逼空，但市场在分化。</strong> 半导体涨停潮（京东方A、中船特气、江海股份）与4300+下跌并存，中际旭创逼近茅台的”撕裂信号”已经引发广泛讨论。这不是全面的牛市，而是极致的结构性行情。</p><p><strong>第二条：CPO产业链逻辑持续验证。</strong> 从Ayar Labs加入NVLink CPO、Goldman上调AI Capex、到EU CHIPS Act 2.0纳入光子学——每一次信号都在强化”CPO是AI下一个超级周期”的判断。而SIVE作为激光卡脖子节点，正在成为整个生态的焦点。</p><p><strong>第三条：Serenity的”封神”时刻。</strong> 超越Elon Musk成为X平台#1订阅，不是偶然——YTD回报率超4500%、20+只标的实现100%-1000%涨幅，且全部基于公开Thesis。她正在重新定义什么是”投资研究”——不靠晒账户、不靠收费订阅，只靠信息发现和产业链拆解。</p><hr><p><strong>免责声明</strong>：本文仅为财经资讯整理与市场情绪观察，不构成任何投资建议。股市有风险，投资需谨慎。文中提及的任何股票代码仅供信息参考，不代表买卖推荐。</p><p><strong>数据来源</strong>：雪球、微博、知乎、Twitter&#x2F;X（@aleabitoreddit）、东方财富、中国经济网、凤凰财经、zone_monitor密集成交区扫描系统。部分站点（Reddit&#x2F;同花顺&#x2F;新浪财经&#x2F;36kr&#x2F;币安）因适配器问题连续多天数据缺失。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 财经热点 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 半导体 </tag>
+            
+            <tag> CPO </tag>
+            
+            <tag> 财经 </tag>
+            
+            <tag> 每日扫描 </tag>
+            
+            <tag> Serenity </tag>
+            
+            <tag> 密集成交区 </tag>
+            
+            <tag> 硅光子 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Sivers×GFS战略合作引爆光通信，Google $800亿AI融资震动华尔街 | 每日财经扫描 2026-06-02</title>
+      <link href="/2026/06/02/daily-finance-2026-06-02/"/>
+      <url>/2026/06/02/daily-finance-2026-06-02/</url>
+      
+        <content type="html"><![CDATA[<p>2026年6月2日，全球资本市场三件大事同时发生：<strong>Sivers Photonics与GlobalFoundries达成战略合作</strong>，将其激光器嵌入全球最大硅光子代工平台的默认技术路线；<strong>Google宣布$800亿史上最大AI融资</strong>，巴菲特$100亿亲自入局；<strong>A股光通信&#x2F;CPO板块全线爆发</strong>，中际旭创、罗博特科、新易盛集体大涨。Serenity YTD收益率突破3,840%，今日连发多条重磅分析。</p><hr><h2 id="TL-DR-今日概要"><a href="#TL-DR-今日概要" class="headerlink" title="TL;DR 今日概要"></a>TL;DR 今日概要</h2><table><thead><tr><th>维度</th><th>核心信号</th></tr></thead><tbody><tr><td><strong>A股主线</strong></td><td>CPO&#x2F;光通信集体爆发，工业富联+8.49%，新易盛+9.88%，东山精密昨跌停今涨停</td></tr><tr><td><strong>港股亮眼</strong></td><td>腾讯控股+10.46%登顶雪球热股，美团+9.27%，恒指科技强势反弹</td></tr><tr><td><strong>美股焦点</strong></td><td>Google $800亿AI融资（含巴菲特$100亿），MRVL被Jensen点名”下一个$1T”，FLNC+36%</td></tr><tr><td><strong>Serenity</strong></td><td>SIVE×GFS合作定为”公司历史最重大事件”，AAOI+20.1%称”你看到的下一个SNDK”</td></tr><tr><td><strong>密集区信号</strong></td><td>6只蓝筹在支撑位(24%)，中国平安距支撑仅0.1%，盈亏比127倍</td></tr><tr><td><strong>风险</strong></td><td>SIVE遭遇亚洲机器人农场攻击、Google巨额稀释、科技股极端波动</td></tr></tbody></table><hr><h2 id="一、A股情绪：光通信全线爆发，极端波动并存"><a href="#一、A股情绪：光通信全线爆发，极端波动并存" class="headerlink" title="一、A股情绪：光通信全线爆发，极端波动并存"></a>一、A股情绪：光通信全线爆发，极端波动并存</h2><p>今天的雪球热股榜简直就是一份”光通信产业链全景图”：</p><h3 id="热股-TOP-10"><a href="#热股-TOP-10" class="headerlink" title="热股 TOP 10"></a>热股 TOP 10</h3><table><thead><tr><th>排名</th><th>代码</th><th>名称</th><th>涨跌幅</th><th>热度</th></tr></thead><tbody><tr><td>1</td><td>00700</td><td>腾讯控股</td><td><strong>+10.46%</strong></td><td>11,252</td></tr><tr><td>2</td><td>MRVL</td><td>迈威尔科技</td><td>+7.04%</td><td>9,979</td></tr><tr><td>3</td><td>SZ002851</td><td>麦格米特</td><td><strong>+10.00%</strong></td><td>6,373</td></tr><tr><td>4</td><td>SZ002384</td><td>东山精密</td><td><strong>+10.00%</strong></td><td>5,619</td></tr><tr><td>5</td><td>09926</td><td>康方生物</td><td>-8.11%</td><td>5,062</td></tr><tr><td>6</td><td>SH603629</td><td>利通电子</td><td>-9.81%</td><td>4,021</td></tr><tr><td>7</td><td>SH601138</td><td>工业富联</td><td>+8.49%</td><td>3,747</td></tr><tr><td>8</td><td>SZ000636</td><td>风华高科</td><td>+8.83%</td><td>3,597</td></tr><tr><td>9</td><td>SZ000725</td><td>京东方A</td><td>+2.05%</td><td>3,538</td></tr><tr><td>10</td><td>SZ300476</td><td>胜宏科技</td><td>+1.97%</td><td>3,435</td></tr></tbody></table><p>三个特征值得注意：</p><p><strong>1. 光通信链疯了。</strong> 麦格米特涨停、东山精密昨日跌停今天直接涨停、中际旭创+5.47%（股价逼近1200元）、罗博特科+9.16%、新易盛+9.88%。这波上涨背后是Sivers×GFS合作的全球性催化——GFS硅光子平台将Sivers激光器作为默认路线，意味着所有通过GFS制造光模块的巨头（NVIDIA、Broadcom、Marvell、AMD）都将间接使用Sivers技术。</p><p><strong>2. 港股巨头觉醒。</strong> 腾讯一举涨超10%登上热股第一，美团+9.27%，恒指科技板块终于等来了一波像样的反弹。</p><p><strong>3. 极端波动是常态。</strong> 东山精密昨跌停今涨停，利通电子再跌9.81%，康方生物-8.11%。这种级别的日内波动说明资金在这个位置分歧极大——有人看到的是机会，有人看到的是风险。</p><h3 id="雪球大V怎么看？"><a href="#雪球大V怎么看？" class="headerlink" title="雪球大V怎么看？"></a>雪球大V怎么看？</h3><ul><li><strong>但斌</strong>：详细分析了Google $800亿AI融资，伯克希尔$100亿折价入局Alphabet，持仓达$320亿占组合10%——“精准印证了我此前伯克希尔会将谷歌配置至总仓位10%以上的判断”</li><li><strong>梁宏</strong>：强调CPU供不应求都在涨价，华为ARM架构深度绑定MRDIMM，国产替代比例会越来越高</li><li><strong>KAIZEN投资之道</strong>：”这次不一样”是投资中最危险的三句话之一，牛市赚钱熊市留住钱才是真本事</li></ul><hr><h2 id="二、密集成交区盯盘：蓝筹在支撑位集结"><a href="#二、密集成交区盯盘：蓝筹在支撑位集结" class="headerlink" title="二、密集成交区盯盘：蓝筹在支撑位集结"></a>二、密集成交区盯盘：蓝筹在支撑位集结</h2><p>今日扫描25只核心标的，发现一个有趣的现象：<strong>6只蓝筹股（24%）紧贴关键支撑位，没有一只在压力位附近。</strong></p><h3 id="盈亏比-TOP-5"><a href="#盈亏比-TOP-5" class="headerlink" title="盈亏比 TOP 5"></a>盈亏比 TOP 5</h3><table><thead><tr><th>排名</th><th>代码</th><th>名称</th><th>现价</th><th>支撑位</th><th>压力位</th><th>盈亏比</th></tr></thead><tbody><tr><td>1</td><td>601318</td><td><strong>中国平安</strong></td><td>54.08</td><td>54.05</td><td>58.21</td><td><strong>127.33</strong></td></tr><tr><td>2</td><td>600104</td><td><strong>上汽集团</strong></td><td>12.28</td><td>12.26</td><td>13.65</td><td><strong>69.75</strong></td></tr><tr><td>3</td><td>601398</td><td><strong>工商银行</strong></td><td>7.34</td><td>7.31</td><td>—</td><td><strong>9.76</strong></td></tr><tr><td>4</td><td>601012</td><td><strong>隆基绿能</strong></td><td>13.48</td><td>—</td><td>15.08</td><td><strong>5.93</strong></td></tr><tr><td>5</td><td>603986</td><td><strong>兆易创新</strong></td><td>474.69</td><td>471.28</td><td>—</td><td><strong>5.56</strong></td></tr></tbody></table><p>中国平安距支撑位仅0.1%、上汽集团仅0.2%——这种级别的精确度意味着市场对这两个价位的”底部共识”非常强。工商银行和兆易创新也稳稳守在支撑上方不足1%。</p><h3 id="支撑附近个股一览"><a href="#支撑附近个股一览" class="headerlink" title="支撑附近个股一览"></a>支撑附近个股一览</h3><table><thead><tr><th>代码</th><th>名称</th><th>现价</th><th>支撑位</th><th>距支撑</th></tr></thead><tbody><tr><td>601318</td><td>中国平安</td><td>54.08</td><td>54.05</td><td><strong>0.1%</strong></td></tr><tr><td>600104</td><td>上汽集团</td><td>12.28</td><td>12.26</td><td><strong>0.2%</strong></td></tr><tr><td>601398</td><td>工商银行</td><td>7.34</td><td>7.31</td><td>0.4%</td></tr><tr><td>603986</td><td>兆易创新</td><td>474.69</td><td>471.28</td><td>0.7%</td></tr><tr><td>600690</td><td>海尔智家</td><td>21.13</td><td>20.95</td><td>0.85%</td></tr><tr><td>600900</td><td>长江电力</td><td>27.96</td><td>27.69</td><td>1.0%</td></tr></tbody></table><p><strong>解读</strong>：24%的股票在支撑位、0%在压力位——这说明市场整体偏弱，但并非无序下跌。核心蓝筹正在关键支撑位上”集结”，接下来要么支撑有效反弹，要么跌破支撑加速下行。盈亏比≥2的股票有11只（44%），一旦大盘方向明确，上行空间可观。</p><hr><h2 id="三、美股-全球：Google-800亿与Jensen的万亿预言"><a href="#三、美股-全球：Google-800亿与Jensen的万亿预言" class="headerlink" title="三、美股&#x2F;全球：Google $800亿与Jensen的万亿预言"></a>三、美股&#x2F;全球：Google $800亿与Jensen的万亿预言</h2><h3 id="Google-800亿-AI融资"><a href="#Google-800亿-AI融资" class="headerlink" title="Google $800亿 AI融资"></a>Google $800亿 AI融资</h3><p>这可能是2026年全球最大的一笔企业融资：</p><ul><li><strong>$400亿 ATM（市价增发）</strong>：直接在公开市场卖股票</li><li><strong>$300亿 定向增发</strong>：向机构投资者配售</li><li><strong>$100亿 伯克希尔哈撒韦</strong>：巴菲特亲自入局</li></ul><p>Serenity的评论一针见血：”上游从LITE到AVGO到联发科到台积电到美光都应该受益（go brrr），但我不确定Google股东怎么想——毕竟这么大的资本开支不是靠自由现金流支撑的。”</p><p>换个角度看，Google需要外部融资$800亿来做AI基建，说明AI军备竞赛的规模远超市场预期。这对于上游的芯片、光模块、存储、电源管理等所有环节都是巨大的需求增量。</p><h3 id="Jensen-Huang：MRVL-“下一个-1T公司”"><a href="#Jensen-Huang：MRVL-“下一个-1T公司”" class="headerlink" title="Jensen Huang：MRVL &#x3D; “下一个$1T公司”"></a>Jensen Huang：MRVL &#x3D; “下一个$1T公司”</h3><p>在Computex上，黄仁勋公开表示Marvell将成为下一个万亿美元公司。Marvell现在市值$191B——也就是说Jensen看5倍空间。</p><p>Serenity持有MRVL仓位，但她的态度有趣：”我们对Jensen的5x有多大信心？”——毕竟黄仁勋是卖GPU的，Marvell是买GPU做网络芯片的，这种”背书”可能有利益关联。</p><p>但不管怎样，MRVL今天+7%，说明市场在认真对待这个判断。</p><h3 id="ARM：-134→-413，两个半月三倍"><a href="#ARM：-134→-413，两个半月三倍" class="headerlink" title="ARM：$134→$413，两个半月三倍"></a>ARM：$134→$413，两个半月三倍</h3><p>Serenity感叹：”应该买期权的，可以涨几千%而不是只赚3倍。”</p><p>ARM的暴涨背后是AI CPU需求的爆发——从AWS Graviton到Google Axion再到Microsoft Cobalt，所有超大规模数据中心的CPU都在往ARM架构迁移。Computex上NVIDIA也展示了基于ARM的新处理器，Counterpoint预测ARM将在2029年统治AI ASIC服务器市场。</p><hr><h2 id="四、Serenity-今日精华：SIVE×GFS-“公司历史最重大事件”"><a href="#四、Serenity-今日精华：SIVE×GFS-“公司历史最重大事件”" class="headerlink" title="四、Serenity 今日精华：SIVE×GFS &#x3D; “公司历史最重大事件”"></a>四、Serenity 今日精华：SIVE×GFS &#x3D; “公司历史最重大事件”</h2><p>今天Serenity发帖量堪比周日（6&#x2F;1）的水平。以下是按重要程度排列的核心内容：</p><h3 id="🥇-SIVE-×-GlobalFoundries-战略合作"><a href="#🥇-SIVE-×-GlobalFoundries-战略合作" class="headerlink" title="🥇 SIVE × GlobalFoundries 战略合作"></a>🥇 SIVE × GlobalFoundries 战略合作</h3><p><strong>时间</strong>：6&#x2F;2 15:55 CST（发帖仅4小时前）<br><strong>互动</strong>：2449赞 &#x2F; 214转发 &#x2F; 359评论 &#x2F; 35万阅读</p><p>核心内容：路透社报道Sivers Photonics与GlobalFoundries达成战略合作，<strong>Sivers激光器将被集成到GFS硅光子平台的参考设计中</strong>——覆盖可插拔光模块、CPO共封装光学和SiPH硅光子三大领域。</p><p>为什么这是”历史级”事件？因为GlobalFoundries是全球领先的光子学代工厂，NVIDIA、Broadcom、Marvell、AMD都通过GFS制造硅光子产品。Sivers成为GFS的”默认激光路线”，等于一夜间绑定了所有这些巨头的光模块需求。</p><p>Serenity的判断：”仅凭这条新闻，Sivers的中期市值就应该翻2-3倍。”</p><p>在正式消息公布前，她还发了一条”猜谜帖”（1676赞）让粉丝猜测是哪个光子公司，可见她对供应链信息的掌握程度。</p><h3 id="🥈-机器人农场攻击SIVE"><a href="#🥈-机器人农场攻击SIVE" class="headerlink" title="🥈 机器人农场攻击SIVE"></a>🥈 机器人农场攻击SIVE</h3><p>Serenity发现数十个假账号在X上批量散布SIVE的虚假信息——声称卖出了SIVE仓位、呼吁他人卖出、甚至被抓到用AI生成负面回复。这些账号的共同特征：</p><ul><li>全新购买的X账号</li><li>此前没有任何活动</li><li>突然开始大量发布相同内容</li><li>同时也为Alchemy Pay等亚洲项目做营销</li></ul><p>她表示将把证据提交给SEC调查。这提醒我们：<strong>SIVE相关的信息战已经升级到有组织攻击的层面，散户投资者需要格外警惕信息来源。</strong></p><h3 id="🥉-AAOI-20-1-“你看到的下一个SNDK”"><a href="#🥉-AAOI-20-1-“你看到的下一个SNDK”" class="headerlink" title="🥉 AAOI +20.1% &#x3D; “你看到的下一个SNDK”"></a>🥉 AAOI +20.1% &#x3D; “你看到的下一个SNDK”</h3><p>Serenity重申AAOI是她”最爱的美国光通信标的”，从$28首次推荐到现在的$150+，她认为仍有4-5倍空间（12-24个月）。但她也坦承短期压制因素：AAOI不断通过ATM增发融资（最近一笔$600M），这造成了持续的卖出压力。</p><h3 id="🏅-其他持仓更新"><a href="#🏅-其他持仓更新" class="headerlink" title="🏅 其他持仓更新"></a>🏅 其他持仓更新</h3><ul><li><strong>NBIS</strong>：Macron宣布在法国投资€80亿建AI云基础设施，目标240MW，”动漫主角光环确认”</li><li><strong>FLNC</strong>：与NVIDIA、Siemens合作开发Vera Rubin N72参考电源架构，单日+36%</li><li><strong>IQE</strong>：从$12涨到$54（4.5倍），”今天欧洲唯一收涨的光通信股”</li><li><strong>$EWY（韩国ETF期权）</strong>：+485%，存储芯片”令人恶心”的回报率</li><li><strong>XFAB</strong>：22点完整推理，1.28 P&#x2F;B的SiC&#x2F;GaN&#x2F;硅光子三重驱动标的，2.5-4x重估可能</li></ul><p>Serenity最新判断：<strong>CPO&#x2F;硅光子的收入拐点预计在H1→H2 2027</strong>，当前H2 2026是”提前布局期”。她的策略是”拥抱波动，等待那个拐点”。</p><hr><h2 id="五、科技创投与政策信号"><a href="#五、科技创投与政策信号" class="headerlink" title="五、科技创投与政策信号"></a>五、科技创投与政策信号</h2><h3 id="DeepSeek降价-vs-豆包收费"><a href="#DeepSeek降价-vs-豆包收费" class="headerlink" title="DeepSeek降价 vs 豆包收费"></a>DeepSeek降价 vs 豆包收费</h3><p>微博热搜第一的”DeepSeek降价”与知乎热榜的”豆包6月下旬收费”形成了有趣的对比：</p><ul><li><strong>DeepSeek</strong>选择继续降价抢市场，走的是”以价换量”路线</li><li><strong>字节豆包</strong>选择收费，说明AI助手赛道开始进入商业化验证阶段</li></ul><p>两条路没有对错：DeepSeek赌的是规模效应和生态锁定，豆包赌的是用户付费意愿。但市场会给出答案。</p><h3 id="新能源汽车：零跑破8万"><a href="#新能源汽车：零跑破8万" class="headerlink" title="新能源汽车：零跑破8万"></a>新能源汽车：零跑破8万</h3><p>零跑汽车5月交付突破8万台，小鹏、小米、理想、蔚来均超3万台，新能源渗透率预计升至62.5%。知乎406万热度的话题讨论了一个尖锐的问题：<strong>燃油车还有机会吗？</strong></p><p>答案越来越清晰——2026年的中国车市，燃油车已经从”主流”变成了”小众”。</p><h3 id="政策层面：999亿育儿补贴"><a href="#政策层面：999亿育儿补贴" class="headerlink" title="政策层面：999亿育儿补贴"></a>政策层面：999亿育儿补贴</h3><p>财政部下达999亿育儿补贴补助资金，全年预计共安排约1100亿。加上多地公积金提取范围扩大，房地产和消费刺激政策正在从”喊话”走向”真金白银”。</p><hr><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>今天的市场关键词是<strong>光通信</strong>。Sivers×GFS的战略合作从底层改变了全球硅光子供应链格局，A股CPO链集体爆发是对这一趋势的直接映射。Google的$800亿AI融资则从需求端验证了算力建设的超级周期远未结束。</p><p>但风险同样存在：SIVE遭遇有组织的做空攻击、科技股日内波动达到涨停跌停级别、标普9周连涨后Google巨额融资可能引发短期调整。</p><p>密集成交区数据告诉我们：蓝筹在支撑位集结，市场方向选择在即。44%的股票盈亏比≥2，一旦方向明确，有足够的操作空间。</p><hr><p><strong>免责声明</strong>：本文仅为信息整理与市场观察，不构成任何投资建议。文中提到的所有股票和投资观点仅供参考，投资者应独立判断并自行承担投资风险。Serenity（@aleabitoreddit）的分析代表其个人观点，不代表本文立场。</p><p><strong>数据来源</strong>：雪球、微博、知乎、Twitter&#x2F;X（opencli自动化采集）、密集成交区量化分析系统（zone_monitor）。Reddit&#x2F;36kr&#x2F;同花顺&#x2F;新浪财经&#x2F;Binance今日不可用。</p><hr><p><em>报告生成时间：2026-06-02 20:00 CST | 自动化财经扫描系统</em></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 财经热点 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 财经 </tag>
+            
+            <tag> 每日扫描 </tag>
+            
+            <tag> Serenity </tag>
+            
+            <tag> 密集成交区 </tag>
+            
+            <tag> CPO光通信 </tag>
+            
+            <tag> AI产业链 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Computex前夕科技股巨震：东山精密跌停，Serenity锁定XFAB硅光新标的</title>
       <link href="/2026/06/01/daily-finance-2026-06-01/"/>
       <url>/2026/06/01/daily-finance-2026-06-01/</url>
@@ -248,15 +355,15 @@
       
         <tags>
             
-            <tag> 每日财经 </tag>
-            
             <tag> A股 </tag>
             
             <tag> 美股 </tag>
             
-            <tag> 港股 </tag>
-            
             <tag> 加密货币 </tag>
+            
+            <tag> 每日财经 </tag>
+            
+            <tag> 港股 </tag>
             
             <tag> CPO </tag>
             
@@ -283,15 +390,15 @@
       
         <tags>
             
+            <tag> 财经日报 </tag>
+            
             <tag> A股 </tag>
             
             <tag> 美股 </tag>
             
-            <tag> 加密货币 </tag>
-            
-            <tag> 财经日报 </tag>
-            
             <tag> 半导体 </tag>
+            
+            <tag> 加密货币 </tag>
             
         </tags>
       
@@ -316,9 +423,9 @@
       
         <tags>
             
-            <tag> AI </tag>
-            
             <tag> DeepSeek </tag>
+            
+            <tag> AI </tag>
             
             <tag> API </tag>
             
@@ -390,9 +497,9 @@
             
             <tag> AI </tag>
             
-            <tag> 开源项目 </tag>
-            
             <tag> 自动化 </tag>
+            
+            <tag> 开源项目 </tag>
             
             <tag> 爬虫 </tag>
             
@@ -425,6 +532,8 @@
             
             <tag> AI </tag>
             
+            <tag> LLM </tag>
+            
             <tag> 浏览器自动化 </tag>
             
             <tag> Python </tag>
@@ -432,8 +541,6 @@
             <tag> TypeScript </tag>
             
             <tag> 开源项目 </tag>
-            
-            <tag> LLM </tag>
             
             <tag> Claude Code </tag>
             
@@ -466,11 +573,11 @@
             
             <tag> AI </tag>
             
+            <tag> LLM </tag>
+            
             <tag> Python </tag>
             
             <tag> 开源项目 </tag>
-            
-            <tag> LLM </tag>
             
             <tag> Playwright </tag>
             
@@ -507,9 +614,9 @@
             
             <tag> GitHub </tag>
             
-            <tag> CodeGraph </tag>
-            
             <tag> MCP </tag>
+            
+            <tag> CodeGraph </tag>
             
         </tags>
       
@@ -534,13 +641,13 @@
       
         <tags>
             
-            <tag> AI </tag>
+            <tag> Claude </tag>
             
-            <tag> 开源项目 </tag>
+            <tag> AI </tag>
             
             <tag> LLM </tag>
             
-            <tag> Claude </tag>
+            <tag> 开源项目 </tag>
             
             <tag> 渗透测试 </tag>
             
@@ -569,9 +676,9 @@
       
         <tags>
             
-            <tag> 开源项目 </tag>
-            
             <tag> AI工具 </tag>
+            
+            <tag> 开源项目 </tag>
             
             <tag> 本地部署 </tag>
             
@@ -672,13 +779,13 @@
             
             <tag> Linux </tag>
             
-            <tag> Ubuntu </tag>
+            <tag> 监控 </tag>
             
             <tag> 运维 </tag>
             
-            <tag> 监控 </tag>
-            
             <tag> Shell </tag>
+            
+            <tag> Ubuntu </tag>
             
         </tags>
       
@@ -767,9 +874,9 @@
       
         <tags>
             
-            <tag> LLM </tag>
-            
             <tag> Claude </tag>
+            
+            <tag> LLM </tag>
             
             <tag> Anthropic </tag>
             
@@ -798,11 +905,11 @@
       
         <tags>
             
+            <tag> DeepSeek </tag>
+            
             <tag> AI </tag>
             
             <tag> LLM </tag>
-            
-            <tag> DeepSeek </tag>
             
             <tag> 本地部署 </tag>
             
@@ -831,15 +938,15 @@
       
         <tags>
             
-            <tag> AI </tag>
-            
-            <tag> LLM </tag>
-            
             <tag> ChatGPT </tag>
             
             <tag> Claude </tag>
             
             <tag> DeepSeek </tag>
+            
+            <tag> AI </tag>
+            
+            <tag> LLM </tag>
             
             <tag> 对比 </tag>
             
@@ -1062,13 +1169,13 @@
             
             <tag> Linux </tag>
             
-            <tag> 运维 </tag>
-            
             <tag> 监控 </tag>
             
-            <tag> Shell </tag>
-            
             <tag> 性能 </tag>
+            
+            <tag> 运维 </tag>
+            
+            <tag> Shell </tag>
             
         </tags>
       
@@ -1093,13 +1200,13 @@
       
         <tags>
             
-            <tag> AI </tag>
+            <tag> DeepSeek </tag>
             
-            <tag> 开源项目 </tag>
+            <tag> AI </tag>
             
             <tag> LLM </tag>
             
-            <tag> DeepSeek </tag>
+            <tag> 开源项目 </tag>
             
             <tag> GitHub </tag>
             
