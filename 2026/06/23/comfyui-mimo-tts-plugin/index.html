@@ -1,0 +1,355 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>ComfyUI MiMo TTS：把小米语音合成塞进 ComfyUI 工作流，8种音色+克隆+剧本配音一键搞定 | AI技术前沿</title><meta name="author" content="itx-blog"><meta name="copyright" content="itx-blog"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一个开箱即用的 ComfyUI 语音合成插件，基于小米 MiMo TTS API，支持8种预设音色、音色克隆、音色设计、JSON剧本批量配音和音频拼接，让你的 ComfyUI 工作流从此会说话。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ComfyUI MiMo TTS：把小米语音合成塞进 ComfyUI 工作流，8种音色+克隆+剧本配音一键搞定">
+<meta property="og:url" content="https://kkitx.bond/2026/06/23/comfyui-mimo-tts-plugin/index.html">
+<meta property="og:site_name" content="AI技术前沿">
+<meta property="og:description" content="一个开箱即用的 ComfyUI 语音合成插件，基于小米 MiMo TTS API，支持8种预设音色、音色克隆、音色设计、JSON剧本批量配音和音频拼接，让你的 ComfyUI 工作流从此会说话。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://kkitx.bond/img/comfyui-mimo-tts.jpg">
+<meta property="article:published_time" content="2026-06-23T10:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-23T11:50:31.816Z">
+<meta property="article:author" content="itx-blog">
+<meta property="article:tag" content="AI工具">
+<meta property="article:tag" content="ComfyUI">
+<meta property="article:tag" content="TTS">
+<meta property="article:tag" content="小米MiMo">
+<meta property="article:tag" content="开源项目">
+<meta property="article:tag" content="语音合成">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kkitx.bond/img/comfyui-mimo-tts.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ComfyUI MiMo TTS：把小米语音合成塞进 ComfyUI 工作流，8种音色+克隆+剧本配音一键搞定",
+  "url": "https://kkitx.bond/2026/06/23/comfyui-mimo-tts-plugin/",
+  "image": "https://kkitx.bond/img/comfyui-mimo-tts.jpg",
+  "datePublished": "2026-06-23T10:00:00.000Z",
+  "dateModified": "2026-06-23T11:50:31.816Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "itx-blog",
+      "url": "https://kkitx.bond"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://kkitx.bond/2026/06/23/comfyui-mimo-tts-plugin/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="EhlOmXPwXuzsvHP_KMoh5sIXnaEzWSRHDOOVMBqeE7o"/><link rel="stylesheet" href="/css/index.css?v=5.5.5-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49B1F5","bgDark":"#1f1f1f","position":"top-center"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ComfyUI MiMo TTS：把小米语音合成塞进 ComfyUI 工作流，8种音色+克隆+剧本配音一键搞定',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="google-site-verification" content="rnKi7wXXX7_x4ufuU-oOzdIu0ivhZfW9ebXKHD0mWbs" /><link rel="stylesheet" href="/css/sidebar-search.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">51</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">135</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://picsum.photos/1920/800);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">AI技术前沿</span></a><a class="nav-page-title" href="/"><span class="site-name">ComfyUI MiMo TTS：把小米语音合成塞进 ComfyUI 工作流，8种音色+克隆+剧本配音一键搞定</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">ComfyUI MiMo TTS：把小米语音合成塞进 ComfyUI 工作流，8种音色+克隆+剧本配音一键搞定</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-06-23T10:00:00.000Z" title="发表于 2026-06-23 18:00:00">2026-06-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-06-23T11:50:31.816Z" title="更新于 2026-06-23 19:50:31">2026-06-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/GitHub%E7%B2%BE%E9%80%89/">GitHub精选</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>最近在 GitHub 上发现了一个非常实用的 ComfyUI 自定义节点项目：<a target="_blank" rel="noopener" href="https://github.com/kkitx/comfyui-mimo-tts"><strong>ComfyUI MiMo TTS</strong></a>。它把小米 MiMo 的语音合成 API 封装成了 ComfyUI 节点，让你能在工作流里直接用节点生成语音——从简单的”文字转语音”到复杂的”多角色剧本配音+拼接”，全在一个工作流里搞定。</p>
+<span id="more"></span>
+
+<h2 id="为什么值得关注？"><a href="#为什么值得关注？" class="headerlink" title="为什么值得关注？"></a>为什么值得关注？</h2><p>ComfyUI 生态里虽然图像生成、视频生成类的插件已经非常丰富，但<strong>语音合成</strong>一直是个比较空白的领域。大多数 TTS 工具要么需要独立部署服务，要么需要复杂的 Python 环境配置。而 MiMo TTS 直接把小米商用级 TTS API 桥接到了 ComfyUI 的节点系统里——<strong>一个 <code>git clone</code> 就能跑</strong>。</p>
+<h2 id="五大核心节点"><a href="#五大核心节点" class="headerlink" title="五大核心节点"></a>五大核心节点</h2><p>这个插件提供了 5 个节点，覆盖了从基础到进阶的所有场景：</p>
+<table>
+<thead>
+<tr>
+<th>节点</th>
+<th>功能</th>
+<th>一句话理解</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>MiMo TTS</strong></td>
+<td>预置音色合成</td>
+<td>选音色→输文字→出音频</td>
+</tr>
+<tr>
+<td><strong>MiMo 音色克隆</strong></td>
+<td>参考音频克隆音色</td>
+<td>给一段音频，克隆它的声音</td>
+</tr>
+<tr>
+<td><strong>MiMo 音色设计</strong></td>
+<td>文字描述定制音色</td>
+<td>“青年女性，声音甜美温柔” → 新音色</td>
+</tr>
+<tr>
+<td><strong>MiMo 剧本配音</strong></td>
+<td>JSON 剧本批量配音</td>
+<td>一段 JSON，自动生成多人对话</td>
+</tr>
+<tr>
+<td><strong>MiMo 音频拼接</strong></td>
+<td>多路音频合并</td>
+<td>5路音频输入，合并成一条输出</td>
+</tr>
+</tbody></table>
+<h2 id="8-种预设音色-18-种情感标签"><a href="#8-种预设音色-18-种情感标签" class="headerlink" title="8 种预设音色 + 18 种情感标签"></a>8 种预设音色 + 18 种情感标签</h2><p>插件内置了 8 种预设音色，覆盖了中文和英文场景：</p>
+<blockquote>
+<p><strong>中文音色</strong>：冰糖（甜美少女）、茉莉（温柔知性）、苏打（阳光少年）、白桦（沉稳大叔）<br><strong>英文音色</strong>：Mia（青春活力）、Chloe（优雅知性）、Milo（磁性男声）、Dean（专业播音）</p>
+</blockquote>
+<p>每种音色还可以搭配 <strong>18 种情感标签</strong>（开心、悲伤、愤怒、惊讶等），让语音表达更加自然。这在做短视频配音、有声内容创作时非常有用。</p>
+<h2 id="剧本配音：JSON-驱动多角色对话"><a href="#剧本配音：JSON-驱动多角色对话" class="headerlink" title="剧本配音：JSON 驱动多角色对话"></a>剧本配音：JSON 驱动多角色对话</h2><p>最让我惊艳的是<strong>剧本配音</strong>功能。你只需要写一段 JSON，就能批量生成多角色对话：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;characters&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;小玲&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;voice&quot;</span><span class="punctuation">:</span> <span class="string">&quot;冰糖&quot;</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;哥哥&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;voice&quot;</span><span class="punctuation">:</span> <span class="string">&quot;白桦&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;lines&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span><span class="attr">&quot;char&quot;</span><span class="punctuation">:</span> <span class="string">&quot;小玲&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;text&quot;</span><span class="punctuation">:</span> <span class="string">&quot;你好！&quot;</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span><span class="attr">&quot;char&quot;</span><span class="punctuation">:</span> <span class="string">&quot;哥哥&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;text&quot;</span><span class="punctuation">:</span> <span class="string">&quot;你好啊！&quot;</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span><span class="attr">&quot;char&quot;</span><span class="punctuation">:</span> <span class="string">&quot;小玲&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;text&quot;</span><span class="punctuation">:</span> <span class="string">&quot;今天天气真好&quot;</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span><span class="attr">&quot;char&quot;</span><span class="punctuation">:</span> <span class="string">&quot;哥哥&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;text&quot;</span><span class="punctuation">:</span> <span class="string">&quot;是啊，出去走走吧&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>节点会自动为每个角色用对应音色生成语音，然后拼接成完整对话。以前要手动一条条生成再拼接的工作，现在一个节点全部搞定。</p>
+<p>配合 MiMo 音频拼接节点，你还可以把不同场景的对话片段串联起来，做出完整的”广播剧”效果。</p>
+<h2 id="音色克隆-音色设计：创造独一无二的声音"><a href="#音色克隆-音色设计：创造独一无二的声音" class="headerlink" title="音色克隆 + 音色设计：创造独一无二的声音"></a>音色克隆 + 音色设计：创造独一无二的声音</h2><p><strong>音色克隆</strong>节点支持上传参考音频来克隆音色——不管是你的声音、朋友的声音，只要有一段清晰的音频样本，就能让 MiMo 复刻出来。</p>
+<p><strong>音色设计</strong>节点更进一步，直接用文字描述来创造新音色。输入”青年女性，声音甜美温柔”，AI 就能按你的描述合成一个新音色。这种”自然语言编程”式的交互方式，对非专业用户非常友好。</p>
+<h2 id="ComfyUI-工作流示例"><a href="#ComfyUI-工作流示例" class="headerlink" title="ComfyUI 工作流示例"></a>ComfyUI 工作流示例</h2><h3 id="基础用法：一行流水线"><a href="#基础用法：一行流水线" class="headerlink" title="基础用法：一行流水线"></a>基础用法：一行流水线</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">MiMo</span> TTS → PreviewAudio</span><br></pre></td></tr></table></figure>
+
+<p>最简单的方式，一端接入文本和音色，另一端输出音频。</p>
+<h3 id="多角色对话"><a href="#多角色对话" class="headerlink" title="多角色对话"></a>多角色对话</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">MiMo <span class="title function_">TTS</span> <span class="params">(小玲)</span> ──→ audio_1 ──┐</span><br><span class="line">                                ├──→ MiMo Audio Concat → SaveAudio</span><br><span class="line">MiMo <span class="title function_">TTS</span> <span class="params">(哥哥)</span> ──→ audio_2 ──┘</span><br></pre></td></tr></table></figure>
+
+<p>两个 MiMo TTS 节点分别配置不同音色，经过音频拼接节点合并，最终输出一段完整的对话音频。</p>
+<h3 id="音色克隆"><a href="#音色克隆" class="headerlink" title="音色克隆"></a>音色克隆</h3><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">Load Audio → MiMo Voice <span class="keyword">Clone</span> <span class="title">→ PreviewAudio</span></span><br></pre></td></tr></table></figure>
+
+<p>先加载参考音频，克隆音色后再用新音色合成文本——不需要写任何代码。</p>
+<h2 id="安装和配置"><a href="#安装和配置" class="headerlink" title="安装和配置"></a>安装和配置</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ComfyUI/custom_nodes</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/kkitx/comfyui-mimo-tts.git</span><br></pre></td></tr></table></figure>
+
+<p>或者直接下载 ZIP 解压到 <code>ComfyUI/custom_nodes/</code> 目录。</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>编辑 <code>config.env</code> 文件：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">MIMO_API_KEY</span>=你的API密钥</span><br><span class="line"><span class="attr">MIMO_API_BASE</span>=http://你的服务器地址/v1</span><br></pre></td></tr></table></figure>
+
+<p>也可以在节点界面上直接填入 <code>api_key</code> 和 <code>api_base</code>，节点界面设置的优先级更高，方便随时切换。</p>
+<h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><ul>
+<li>ComfyUI 0.25.0+</li>
+<li>PyTorch（ComfyUI 自带）</li>
+<li>torchaudio（音色克隆和音频拼接需要）</li>
+<li>ffmpeg（可选，用于高级音频处理）</li>
+</ul>
+<h2 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h2><table>
+<thead>
+<tr>
+<th>场景</th>
+<th>推荐节点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>短视频配音</td>
+<td>MiMo TTS（预置音色）</td>
+</tr>
+<tr>
+<td>有声书&#x2F;播客</td>
+<td>剧本配音 + 音频拼接</td>
+</tr>
+<tr>
+<td>个性化语音助手</td>
+<td>音色克隆</td>
+</tr>
+<tr>
+<td>角色扮演&#x2F;AI互动</td>
+<td>音色设计</td>
+</tr>
+<tr>
+<td>批量语音生成</td>
+<td>剧本配音（JSON 驱动）</td>
+</tr>
+</tbody></table>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>ComfyUI MiMo TTS 是一个非常”对味”的开源插件——它没有尝试自己造 TTS 引擎，而是巧妙地桥接了小米 MiMo 的商用级 API，让 ComfyUI 工作流从此有了”说话”的能力。</p>
+<p>5 个节点分工明确，从简单到复杂都有覆盖。尤其是<strong>剧本配音</strong>和<strong>音色设计</strong>这两个节点，把过去需要多个工具配合的流程做到了一个节点里，效率提升非常明显。</p>
+<p>对于已经在用 ComfyUI 做 AI 内容创作的人来说，这个插件补上了语音合成的关键一环——图像、视频、音频终于在同一个工作流里产生了化学反应。</p>
+<hr>
+<p><strong>项目地址</strong>：<a target="_blank" rel="noopener" href="https://github.com/kkitx/comfyui-mimo-tts">https://github.com/kkitx/comfyui-mimo-tts</a><br><strong>协议</strong>：MIT（完全开放，商用友好）<br><strong>环境要求</strong>：ComfyUI 0.25.0+</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://kkitx.bond">itx-blog</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://kkitx.bond/2026/06/23/comfyui-mimo-tts-plugin/">https://kkitx.bond/2026/06/23/comfyui-mimo-tts-plugin/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://kkitx.bond" target="_blank">AI技术前沿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/AI%E5%B7%A5%E5%85%B7/">AI工具</a><a class="post-meta__tags" href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a><a class="post-meta__tags" href="/tags/ComfyUI/">ComfyUI</a><a class="post-meta__tags" href="/tags/%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/">语音合成</a><a class="post-meta__tags" href="/tags/TTS/">TTS</a><a class="post-meta__tags" href="/tags/%E5%B0%8F%E7%B1%B3MiMo/">小米MiMo</a></div><div class="post-share"><div class="social-share" data-image="/img/comfyui-mimo-tts.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/06/22/daily-finance-2026-06-22/" title="端午归来A股放量开门红：上证+1.66%成交3.73万亿，美伊谈判忽明忽暗，半导体光通信继续领涨"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/daily-finance.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">端午归来A股放量开门红：上证+1.66%成交3.73万亿，美伊谈判忽明忽暗，半导体光通信继续领涨</div></div><div class="info-2"><div class="info-item-1">端午假期三天，场外资金憋着一股劲——节后首个交易日，A股放量中阳，三大指数齐涨，成交冲上3.73万亿的半年次高水平。但美伊谈判的阴云再次笼罩全球市场：霍尔木兹海峡在20日突然关闭的消息经过周末发酵，成为今天所有交易员都在盯的变量。  一、大盘：放量普涨，科技主线依旧   指数 收盘点位 涨跌幅    上证指数 4158.30 +1.66%   深证成指 16352.03 +2.00%   创业板指 4353.91 +2.39%   科创50 — 微涨0.02%   北证50 — -1.75%    成交额: 3.73万亿元（半年以来第二高量） 涨跌比: 2691涨 vs 2376跌，153涨停，33跌停 核心驱动: 端午假期场外资金进场+美伊谈判进展预期+科技股赚钱效应扩散  市场风格依然是极致的”科技吃肉、传统喝汤”：半导体、光通信、电子化学品霸屏涨幅榜，银行、消费等权重方向继续被抽血。  二、热股扫描：半导体霸榜，存储芯片爆发   排名 股票 代码 现价 涨跌幅 热力值    1 长川科技 SZ300604 268.49 +1.66% 10628   2 兆易创新 SH603...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/05/24/voicebox-deploy/" title="Voicebox-开源AI语音工作室部署教程"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/voicebox.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-24</div><div class="info-item-2">Voicebox-开源AI语音工作室部署教程</div></div><div class="info-2"><div class="info-item-1">项目简介Voicebox 是一个本地优先的 AI 语音工作室，被誉为 ElevenLabs 和 WisprFlow 的开源替代品。该项目由 jamiepine 开发，目前已获得超过 27.9k Star，采用 MIT 开源许可证。 核心定位：将语音合成（TTS）、语音识别（STT）和 AI Agent 语音输出三大功能集成在一个应用中，完全本地运行，数据不离设备。 主要特性🎙️ 语音输出（TTS）Voicebox 内置 7 个 TTS 引擎：    引擎 特点    Qwen3-TTS 阿里最新多语言TTS模型   Qwen CustomVoice 支持自定义声音克隆   LuxTTS 高质量中文语音   Chatterbox Multilingual 多语言支持   Chatterbox Turbo 快速生成模式   HumeAI TADA 情感语音合成   Kokoro 轻量级高效引擎   亮点功能：  支持 23 种语言 零样本语音克隆：仅需几秒参考音频即可克隆声音 50+ 预设声音可直接使用 表情标签支持：[laugh]、[sigh]、[gasp] 等情感控制 8 种后...</div></div></div></a><a class="pagination-related" href="/2026/05/25/crawl4ai-guide/" title="Crawl4AI - 开源LLM友好型网络爬虫完全指南"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/crawl4ai.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-25</div><div class="info-item-2">Crawl4AI - 开源LLM友好型网络爬虫完全指南</div></div><div class="info-2"><div class="info-item-1">项目简介Crawl4AI 是目前 GitHub 上星标最多的开源网络爬虫项目（66.2k Stars），专为 AI 时代设计。它的核心理念是将网页内容转换为干净、结构化的 Markdown，为 RAG（检索增强生成）、AI Agent 和数据管道提供高质量的数据源。  “Crawl4AI turns the web into clean, LLM ready Markdown for RAG, agents, and data pipelines.”  项目数据：  GitHub Stars：66,200+ 主要语言：Python（98.8%） 许可证：Apache 2.0（可商用） 当前版本：v0.8.6 仓库地址：https://github.com/unclecode/crawl4ai 官网：https://crawl4ai.com 文档：https://docs.crawl4ai.com  为什么选择 Crawl4AI市面上爬虫工具不少，但 Crawl4AI 有几个让人眼前一亮的差异化优势： 1. 真正开源免费 不像很多”开源”爬虫需要付费账户和 API Token，Cr...</div></div></div></a><a class="pagination-related" href="/2026/05/25/shannon-ai-pentest/" title="Shannon - AI自主渗透测试工具完全指南"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/hacker.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-25</div><div class="info-item-2">Shannon - AI自主渗透测试工具完全指南</div></div><div class="info-2"><div class="info-item-1">项目简介Shannon 是由 Keygraph 开发的自主化 AI 白盒渗透测试工具，专为 Web 应用程序和 API 设计。它通过分析源代码、执行真实漏洞利用、生成可复现 PoC 报告的方式，实现端到端的自动化安全测试。  “Thanks to tools like Claude Code and Cursor, your team ships code non-stop. But your penetration test? That happens once a year. This creates a massive security gap.”  项目数据：  GitHub Stars：43.6k 主要语言：TypeScript（92.5%） 许可证：AGPL-3.0 最新版本：v1.2.0（2026年5月） 仓库地址：https://github.com/KeygraphHQ/shannon  核心特性1. 完全自主运行单条命令即可启动完整渗透测试流程。Shannon 自动处理 2FA&#x2F;TOTP 登录（包括 SSO）、浏览器导航、漏洞利用和报告生成，全程无需...</div></div></div></a><a class="pagination-related" href="/2026/05/26/browser-harness-vs-playwright-cli/" title="Browser Harness vs Playwright CLI - AI 浏览器自动化工具深度对比"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Harness.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-26</div><div class="info-item-2">Browser Harness vs Playwright CLI - AI 浏览器自动化工具深度对比</div></div><div class="info-2"><div class="info-item-1">前言AI 编程助手（Claude Code、Copilot 等）的普及催生了一个新需求：让 AI 操控浏览器完成复杂任务。无论是自动化测试、数据采集，还是帮你在网页上点来点去，AI + 浏览器都成了热门组合。 最近 GitHub 上冒出两个备受关注的项目，正好代表了两种截然不同的技术路线：    项目 Stars 开发者 语言 定位    Browser Harness 13.8k browser-use 团队 Python 自愈式 CDP 套件   Playwright CLI 10.7k Microsoft TypeScript Token 高效的 CLI 工具   今天就对它们做一个全面对比，帮你搞清楚哪个更适合你的场景。  项目简介Browser Harness “Self-healing harness that enables LLMs to complete any task.”  Browser Harness 是一个轻量级 CDP（Chrome DevTools Protocol）套件，核心理念是：一个 WebSocket 直连 Chrome，中间没有任何中间层...</div></div></div></a><a class="pagination-related" href="/2026/05/19/llama-deploy/" title="Llama 3.1 本地部署教程"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/llama.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-19</div><div class="info-item-2">Llama 3.1 本地部署教程</div></div><div class="info-2"><div class="info-item-1">项目介绍Meta 开源的 Llama 3.1 是目前最强的开源大语言模型之一，8B版本可以在消费级显卡上流畅运行。 GitHub: https://github.com/meta-llama/llama3 环境准备硬件要求   模型版本 显存需求 推荐显卡    8B 8GB RTX 3060&#x2F;4060   70B 40GB+ RTX 4090 x2   软件环境# Ubuntu 22.04 系统sudo apt updatesudo apt install nvidia-driver-535  部署方式一：Ollama（推荐）# 安装 Ollamacurl -fsSL https://ollama.com/install.sh | sh# 下载 Llama 3.1 8Bollama pull llama3.1:8b# 运行对话ollama run llama3.1:8b# API 服务ollama serve  部署方式二：llama.cpp# 克隆项目git clone https://github.com/ggerganov/llama.cppcd llama.c...</div></div></div></a><a class="pagination-related" href="/2026/05/29/open-design-claude-design-alternative/" title="Open Design：开源版 Claude Design，让 AI 编码代理变身设计引擎"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/open-design.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-29</div><div class="info-item-2">Open Design：开源版 Claude Design，让 AI 编码代理变身设计引擎</div></div><div class="info-2"><div class="info-item-1">什么是 Open Design？Open Design 是一个开源、本地优先的设计工具，定位为 Claude Design 的开源替代方案。 它的核心理念非常直接：不重复造轮子。 市面上已经有了 Claude Code、Codex、Cursor、Gemini CLI 等强大的 AI 编码代理，Open Design 不再造一个，而是把这些现成的代理接入自己的设计工作流，让它们成为”设计引擎”。项目本身专注于提供技能库、设计系统和交互体验。   目前这个项目在 GitHub 上已经获得了 55,000+ Stars，6,200+ Forks，Apache-2.0 协议，社区非常活跃。 核心特性1. 16+ 编码代理无缝接入Open Design 能自动检测并接入你 PATH 中已安装的编码代理 CLI：    代理 支持状态    Claude Code ✅ 优先支持   Codex (OpenAI) ✅   Cursor Agent ✅   Gemini CLI ✅   Copilot ✅   Qwen ✅   其他 OpenAI 兼容 API ✅（BYOK）   如果没安装任何...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">itx-blog</div><div class="author-info-description">itx-blog 的个人博客</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">51</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">135</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/zz330226" target="_blank" title=""><i class="fab fa-github"></i></a></div></div><div class="card-widget card-widget sidebar-search-card" id="sidebar-search"><div class="item-headline"><i class="fas fa-search"></i><span>搜索</span></div><div class="item-content"><div class="sidebar-search-wrapper">
+  <div class="sidebar-search-input-wrap">
+    <input id="sidebar-search-input" type="search" placeholder="搜索文章..." autocomplete="off" />
+    <button id="sidebar-search-btn" title="搜索"><i class="fas fa-search"></i></button>
+  </div>
+  <div id="sidebar-search-results" class="sidebar-search-results"></div>
+</div>
+</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%80%BC%E5%BE%97%E5%85%B3%E6%B3%A8%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">为什么值得关注？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E5%A4%A7%E6%A0%B8%E5%BF%83%E8%8A%82%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">五大核心节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E7%A7%8D%E9%A2%84%E8%AE%BE%E9%9F%B3%E8%89%B2-18-%E7%A7%8D%E6%83%85%E6%84%9F%E6%A0%87%E7%AD%BE"><span class="toc-number">3.</span> <span class="toc-text">8 种预设音色 + 18 种情感标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%A7%E6%9C%AC%E9%85%8D%E9%9F%B3%EF%BC%9AJSON-%E9%A9%B1%E5%8A%A8%E5%A4%9A%E8%A7%92%E8%89%B2%E5%AF%B9%E8%AF%9D"><span class="toc-number">4.</span> <span class="toc-text">剧本配音：JSON 驱动多角色对话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9F%B3%E8%89%B2%E5%85%8B%E9%9A%86-%E9%9F%B3%E8%89%B2%E8%AE%BE%E8%AE%A1%EF%BC%9A%E5%88%9B%E9%80%A0%E7%8B%AC%E4%B8%80%E6%97%A0%E4%BA%8C%E7%9A%84%E5%A3%B0%E9%9F%B3"><span class="toc-number">5.</span> <span class="toc-text">音色克隆 + 音色设计：创造独一无二的声音</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ComfyUI-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A4%BA%E4%BE%8B"><span class="toc-number">6.</span> <span class="toc-text">ComfyUI 工作流示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%EF%BC%9A%E4%B8%80%E8%A1%8C%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="toc-number">6.1.</span> <span class="toc-text">基础用法：一行流水线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%A7%92%E8%89%B2%E5%AF%B9%E8%AF%9D"><span class="toc-number">6.2.</span> <span class="toc-text">多角色对话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9F%B3%E8%89%B2%E5%85%8B%E9%9A%86"><span class="toc-number">6.3.</span> <span class="toc-text">音色克隆</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="toc-number">7.</span> <span class="toc-text">安装和配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">7.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-number">7.2.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96"><span class="toc-number">7.3.</span> <span class="toc-text">依赖</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">8.</span> <span class="toc-text">适用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">9.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/06/23/comfyui-mimo-tts-plugin/" title="ComfyUI MiMo TTS：把小米语音合成塞进 ComfyUI 工作流，8种音色+克隆+剧本配音一键搞定"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/comfyui-mimo-tts.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ComfyUI MiMo TTS：把小米语音合成塞进 ComfyUI 工作流，8种音色+克隆+剧本配音一键搞定"/></a><div class="content"><a class="title" href="/2026/06/23/comfyui-mimo-tts-plugin/" title="ComfyUI MiMo TTS：把小米语音合成塞进 ComfyUI 工作流，8种音色+克隆+剧本配音一键搞定">ComfyUI MiMo TTS：把小米语音合成塞进 ComfyUI 工作流，8种音色+克隆+剧本配音一键搞定</a><time datetime="2026-06-23T10:00:00.000Z" title="发表于 2026-06-23 18:00:00">2026-06-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/06/22/daily-finance-2026-06-22/" title="端午归来A股放量开门红：上证+1.66%成交3.73万亿，美伊谈判忽明忽暗，半导体光通信继续领涨"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/daily-finance.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="端午归来A股放量开门红：上证+1.66%成交3.73万亿，美伊谈判忽明忽暗，半导体光通信继续领涨"/></a><div class="content"><a class="title" href="/2026/06/22/daily-finance-2026-06-22/" title="端午归来A股放量开门红：上证+1.66%成交3.73万亿，美伊谈判忽明忽暗，半导体光通信继续领涨">端午归来A股放量开门红：上证+1.66%成交3.73万亿，美伊谈判忽明忽暗，半导体光通信继续领涨</a><time datetime="2026-06-22T12:30:00.000Z" title="发表于 2026-06-22 20:30:00">2026-06-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/06/20/daily-finance-2026-06-20/" title="A股历史性时刻：中际旭创市值1.53万亿超越茅台，科技新王正式登基"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/daily-finance.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="A股历史性时刻：中际旭创市值1.53万亿超越茅台，科技新王正式登基"/></a><div class="content"><a class="title" href="/2026/06/20/daily-finance-2026-06-20/" title="A股历史性时刻：中际旭创市值1.53万亿超越茅台，科技新王正式登基">A股历史性时刻：中际旭创市值1.53万亿超越茅台，科技新王正式登基</a><time datetime="2026-06-20T12:30:00.000Z" title="发表于 2026-06-20 20:30:00">2026-06-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/06/19/daily-finance-2026-06-19/" title="美伊谈判突遭推迟！A股冰火两重天：中际旭创登顶市值王，老登股全线溃败"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/daily-finance.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="美伊谈判突遭推迟！A股冰火两重天：中际旭创登顶市值王，老登股全线溃败"/></a><div class="content"><a class="title" href="/2026/06/19/daily-finance-2026-06-19/" title="美伊谈判突遭推迟！A股冰火两重天：中际旭创登顶市值王，老登股全线溃败">美伊谈判突遭推迟！A股冰火两重天：中际旭创登顶市值王，老登股全线溃败</a><time datetime="2026-06-19T12:30:00.000Z" title="发表于 2026-06-19 20:30:00">2026-06-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/06/18/daily-finance-2026-06-18/" title="FOMC鹰派首秀砸晕美股，A股创业板/科创50却逆势创历史新高"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/daily-finance.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="FOMC鹰派首秀砸晕美股，A股创业板/科创50却逆势创历史新高"/></a><div class="content"><a class="title" href="/2026/06/18/daily-finance-2026-06-18/" title="FOMC鹰派首秀砸晕美股，A股创业板/科创50却逆势创历史新高">FOMC鹰派首秀砸晕美股，A股创业板/科创50却逆势创历史新高</a><time datetime="2026-06-18T12:30:00.000Z" title="发表于 2026-06-18 20:30:00">2026-06-18</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2024 - 2026 By itx-blog</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div><div class="footer_custom_text">Copyright © 2024-2026 By itx-blog</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"data-lang":"zh-CN"}
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'zz330226/zz330226.github.io',
+      'data-repo-id': 'R_kgDOMsQCjA',
+      'data-category-id': 'DIC_kwDOMsQCjM4C9vQM',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script src="/js/sidebar-search.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
