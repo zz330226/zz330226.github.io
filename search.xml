@@ -801,11 +801,11 @@
             
             <tag> GitHub </tag>
             
-            <tag> MCP </tag>
-            
             <tag> Obsidian </tag>
             
             <tag> 知识管理 </tag>
+            
+            <tag> MCP </tag>
             
         </tags>
       
@@ -1389,9 +1389,9 @@
             
             <tag> GitHub </tag>
             
-            <tag> CodeGraph </tag>
-            
             <tag> MCP </tag>
+            
+            <tag> CodeGraph </tag>
             
         </tags>
       
@@ -1554,13 +1554,13 @@
             
             <tag> Linux </tag>
             
-            <tag> 监控 </tag>
+            <tag> Ubuntu </tag>
             
             <tag> 运维 </tag>
             
-            <tag> Shell </tag>
+            <tag> 监控 </tag>
             
-            <tag> Ubuntu </tag>
+            <tag> Shell </tag>
             
         </tags>
       
@@ -1944,13 +1944,13 @@
             
             <tag> Linux </tag>
             
-            <tag> 监控 </tag>
-            
-            <tag> 性能 </tag>
-            
             <tag> 运维 </tag>
             
+            <tag> 监控 </tag>
+            
             <tag> Shell </tag>
+            
+            <tag> 性能 </tag>
             
         </tags>
       
