@@ -329,13 +329,13 @@
       
         <tags>
             
-            <tag> CPO </tag>
-            
             <tag> 财经 </tag>
             
             <tag> 每日扫描 </tag>
             
             <tag> Serenity </tag>
+            
+            <tag> CPO </tag>
             
             <tag> 光子学 </tag>
             
@@ -475,13 +475,13 @@
       
         <tags>
             
-            <tag> CPO </tag>
-            
             <tag> 财经 </tag>
             
             <tag> 每日扫描 </tag>
             
             <tag> Serenity </tag>
+            
+            <tag> CPO </tag>
             
             <tag> 中际旭创 </tag>
             
@@ -549,13 +549,13 @@
             
             <tag> 半导体 </tag>
             
-            <tag> CPO </tag>
-            
             <tag> 财经 </tag>
             
             <tag> 每日扫描 </tag>
             
             <tag> Serenity </tag>
+            
+            <tag> CPO </tag>
             
             <tag> 密集成交区 </tag>
             
@@ -584,13 +584,13 @@
       
         <tags>
             
-            <tag> CPO </tag>
-            
             <tag> 财经 </tag>
             
             <tag> 每日扫描 </tag>
             
             <tag> Serenity </tag>
+            
+            <tag> CPO </tag>
             
             <tag> 密集成交区 </tag>
             
@@ -621,13 +621,13 @@
       
         <tags>
             
-            <tag> CPO </tag>
-            
             <tag> 财经 </tag>
             
             <tag> 每日扫描 </tag>
             
             <tag> Serenity </tag>
+            
+            <tag> CPO </tag>
             
             <tag> 密集成交区 </tag>
             
@@ -808,13 +808,13 @@
       
         <tags>
             
-            <tag> CPO </tag>
-            
             <tag> 财经 </tag>
             
             <tag> 每日扫描 </tag>
             
             <tag> Serenity </tag>
+            
+            <tag> CPO </tag>
             
             <tag> 密集成交区 </tag>
             
@@ -882,19 +882,19 @@
       
         <tags>
             
-            <tag> CPO </tag>
-            
             <tag> 财经 </tag>
             
             <tag> 每日扫描 </tag>
             
             <tag> Serenity </tag>
             
+            <tag> CPO </tag>
+            
             <tag> 密集成交区 </tag>
             
-            <tag> 人形机器人 </tag>
-            
             <tag> AI芯片 </tag>
+            
+            <tag> 人形机器人 </tag>
             
         </tags>
       
@@ -956,13 +956,13 @@
       
         <tags>
             
-            <tag> CPO </tag>
-            
             <tag> 财经 </tag>
             
             <tag> 每日扫描 </tag>
             
             <tag> Serenity </tag>
+            
+            <tag> CPO </tag>
             
             <tag> 密集成交区 </tag>
             
@@ -999,11 +999,11 @@
             
             <tag> GitHub </tag>
             
-            <tag> MCP </tag>
-            
             <tag> Obsidian </tag>
             
             <tag> 知识管理 </tag>
+            
+            <tag> MCP </tag>
             
         </tags>
       
@@ -1030,13 +1030,13 @@
             
             <tag> 半导体 </tag>
             
-            <tag> CPO </tag>
-            
             <tag> 财经 </tag>
             
             <tag> 每日扫描 </tag>
             
             <tag> Serenity </tag>
+            
+            <tag> CPO </tag>
             
             <tag> 密集成交区 </tag>
             
@@ -1100,13 +1100,13 @@
       
         <tags>
             
-            <tag> CPO </tag>
-            
             <tag> 财经 </tag>
             
             <tag> 每日扫描 </tag>
             
             <tag> Serenity </tag>
+            
+            <tag> CPO </tag>
             
             <tag> 密集成交区 </tag>
             
@@ -1178,13 +1178,13 @@
       
         <tags>
             
-            <tag> CPO </tag>
-            
             <tag> 财经 </tag>
             
             <tag> 每日扫描 </tag>
             
             <tag> Serenity </tag>
+            
+            <tag> CPO </tag>
             
             <tag> 密集成交区 </tag>
             
@@ -1254,8 +1254,6 @@
       
         <tags>
             
-            <tag> CPO </tag>
-            
             <tag> 财经 </tag>
             
             <tag> 每日扫描 </tag>
@@ -1267,6 +1265,8 @@
             <tag> 泡泡玛特 </tag>
             
             <tag> 段永平 </tag>
+            
+            <tag> CPO </tag>
             
             <tag> 光通信 </tag>
             
@@ -1334,11 +1334,11 @@
             
             <tag> 加密货币 </tag>
             
+            <tag> CPO </tag>
+            
             <tag> 每日财经 </tag>
             
             <tag> 港股 </tag>
-            
-            <tag> CPO </tag>
             
         </tags>
       
@@ -1437,11 +1437,11 @@
             
             <tag> 美股 </tag>
             
-            <tag> CPO </tag>
-            
             <tag> 财经 </tag>
             
             <tag> Serenity </tag>
+            
+            <tag> CPO </tag>
             
             <tag> 供应链 </tag>
             
@@ -1468,9 +1468,9 @@
       
         <tags>
             
-            <tag> 自动化 </tag>
-            
             <tag> AI </tag>
+            
+            <tag> 自动化 </tag>
             
             <tag> 开源项目 </tag>
             
@@ -1587,9 +1587,9 @@
             
             <tag> GitHub </tag>
             
-            <tag> CodeGraph </tag>
-            
             <tag> MCP </tag>
+            
+            <tag> CodeGraph </tag>
             
         </tags>
       
@@ -1715,11 +1715,11 @@
       
         <tags>
             
+            <tag> ChatGPT </tag>
+            
             <tag> AI工具 </tag>
             
             <tag> 效率工具 </tag>
-            
-            <tag> ChatGPT </tag>
             
             <tag> Copilot </tag>
             
